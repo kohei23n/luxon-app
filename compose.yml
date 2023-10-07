@@ -36,7 +36,7 @@ services:
       - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=website
-      - MYSQL_USER=posse
+      - MYSQL_DATABASE=luxon_db
+      - MYSQL_USER=root
       - MYSQL_PASSWORD=password
       - TZ=Asia/Tokyo

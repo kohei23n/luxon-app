@@ -17,10 +17,26 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $table = 'luxon_mst_user';
+    protected $primaryKey = 'mus_user_id';
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'mus_email_address',
+        'mus_user_password',
+        'mus_user_first_name',
+        'mus_user_last_name',
+        'mus_current_university',
+        'mus_service_plan',
+        'mus_first_industry_preference',
+        'mus_second_industry_preference',
+        'mus_dedicated_mentor',
+        'mus_access_right',
+        'mus_delete_flag',
+        'mus_deletion_datetime',
+        'mus_registration_datetime',
+        'mus_update_datetime',
+        'mus_update_timestamp',
     ];
 
     /**
@@ -29,7 +45,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'mus_user_password',
         'remember_token',
     ];
 
@@ -39,7 +55,12 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'mus_update_timestamp' => 'datetime',
+        'mus_user_password' => 'hashed',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->mus_user_password;
+    }
 }
