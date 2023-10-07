@@ -1,3 +1,3 @@
 # luxon-app
 
-http://localhost
+ブラウザで `http://localhost` にアクセス
