@@ -19,7 +19,10 @@ class SelectionStatus extends Model
         'tss_selection_status',
         'tss_preference_ranking',
         'tss_selection_date',
+        'tss_delete_flag',
+        'tss_deletion_datetime',
         'tss_registration_datetime',
         'tss_update_datetime',
+        'tss_update_timestamp',
     ];
 }

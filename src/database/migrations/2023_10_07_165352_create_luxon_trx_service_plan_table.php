@@ -25,8 +25,6 @@ return new class extends Migration
             $table->dateTime('tsp_registration_datetime')->comment('登録日時');
             $table->dateTime('tsp_update_datetime')->comment('更新日時');
             $table->timestamp('tsp_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
-
-            $table->foreign('tsp_user_id', 'fk:luxon_mst_user_id')->references('mus_user_id')->on('luxon_mst_user');
         });
     }
 
@@ -35,6 +33,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('luxon_trx_service_plan');
+        Schema::enableForeignKeyConstraints();
     }
 };

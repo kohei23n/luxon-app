@@ -15,16 +15,16 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
-    {
-        //ユーザー情報表示
-        $user = auth()->user();
+    // public function edit(Request $request): View
+    // {
+    //     //ユーザー情報表示
+    //     $user = auth()->user();
 
-        // tss_user_idが一致する情報を取得
-        $selectionStatuses = SelectionStatus::where('tss_user_id', $user->mus_user_id)->get();
+    //     // tss_user_idが一致する情報を取得
+    //     $selectionStatuses = SelectionStatus::where('tss_user_id', $user->mus_user_id)->get();
 
-        return view('profile.edit', compact('user', 'selectionStatuses'));
-    }
+    //     return view('profile.edit', compact('user', 'selectionStatuses'));
+    // }
 
     /**
      * Update the user's profile information.

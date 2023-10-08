@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IndexController;
 
+// マイページ
+use App\Http\Controllers\Profile\IndexController as ProfileIndex;
+
 // 予約
 use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
 
@@ -21,17 +24,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexController::class)->middleware(['auth', 'verified'])->name('index');
 
-// 予約
-Route::get('/reserve', ReserveIndex::class)->name('reserve.index');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// マイページ
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile', ProfileIndex::class)->name('profile.index');
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// 予約
+Route::get('/reserve', ReserveIndex::class)->name('reserve.index');
 
 require __DIR__.'/auth.php';

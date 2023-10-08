@@ -12,7 +12,7 @@
                     <a href="">選考対策</a>
                     <a href="">業界研究</a>
                     <a href="{{ route('reserve.index') }}">予約</a>
-                    <a href="{{ route('profile.edit') }}">マイページ</a>
+                    <a href="{{ route('profile.index') }}">マイページ</a>
                 </div>
             </div>
         </div>
