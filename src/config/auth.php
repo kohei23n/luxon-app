@@ -63,8 +63,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-            'email' => 'mus_email_address',
-            'password' => 'mus_user_password',
+            'table' => 'luxon_mst_user',
         ],
 
         // 'users' => [

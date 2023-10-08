@@ -9,19 +9,18 @@
         <div>
             <x-input-label for="mus_email_address" :value="__('Email')" />
             <x-text-input id="mus_email_address" class="block mt-1 w-full" type="email" name="mus_email_address" :value="old('mus_email_address')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-error :messages="$errors->get('mus_email_address')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
+            <x-input-label for="mus_user_password" :value="__('Password')" />
+            <x-text-input id="mus_user_password" class="block mt-1 w-full"
                             type="password"
-                            name="password"
+                            name="mus_user_password"
                             required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('mus_user_password')" class="mt-2" />
         </div>
 
         <!-- Remember Me -->

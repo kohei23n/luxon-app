@@ -21,6 +21,9 @@ class User extends Authenticatable
     protected $table = 'luxon_mst_user';
     protected $primaryKey = 'mus_user_id';
 
+    const CREATED_AT = 'mus_registration_datetime';
+    const UPDATED_AT = 'mus_update_datetime';
+
     protected $fillable = [
         'mus_email_address',
         'mus_user_password',

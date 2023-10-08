@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\SelectionStatus;
 
 class ProfileController extends Controller
 {
@@ -16,9 +17,17 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        // return view('profile.edit', [
+        //     'user' => $request->user(),
+        // ]);
+
+        //ユーザー情報表示
+        $user = auth()->user();
+
+        // tss_user_idが一致する情報を取得
+        $selectionStatuses = SelectionStatus::where('tss_user_id', $user->mus_user_id)->get();
+
+        return view('profile.edit', compact('user', 'selectionStatuses'));
     }
 
     /**
@@ -26,13 +35,23 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $user->fill([
+            'mus_email_address' => $request->mus_email_address,
+            'mus_user_first_name' => $request->mus_user_first_name,
+            'mus_user_last_name' => $request->mus_user_last_name,
+            'mus_current_university' => $request->mus_current_university,
+            'mus_service_plan' => $request->mus_service_plan,
+            'mus_first_industry_preference' => $request->mus_first_industry_preference,
+            'mus_second_industry_preference' => $request->mus_second_industry_preference,
+        ]);
+
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
 
-        $request->user()->save();
+        $user->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
