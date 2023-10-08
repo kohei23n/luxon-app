@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Models\SelectionStatus;
-use App\Models\SelectionPlan;
+use App\Models\ServicePlan;
+use App\Models\Mentor;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
@@ -17,15 +18,10 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        //ユーザー情報表示
-        $user = auth()->user();
+        // $user = auth()->user()->load('servicePlan', 'dedicatedMentor', 'selectionStatuses');
 
-        // プラン情報取得
-        $plan = SelectionPlan::where('tsp_plan_id', $user->mus_service_plan)->first();
+        $user = auth()->user()->with(['servicePlan', 'dedicatedMentor', 'selectionStatuses'])->first();
 
-        // 選考情報を取得
-        $selectionStatuses = SelectionStatus::where('tss_user_id', $user->mus_user_id)->get();
-
-        return view('profile.index', compact('user', 'selectionStatuses'));
+        return view('profile.index', compact('user'));
     }
 }

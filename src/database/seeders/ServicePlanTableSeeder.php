@@ -19,7 +19,7 @@ class ServicePlanTableSeeder extends Seeder
             'tsp_event_attendance' => 1,
             'tsp_interview_count' => 3,
             'tsp_case_study_count' => 0,
-            'tsp_service_plan_month' => date('Y-m-d'),
+            'tsp_service_plan_month' => date('Y-m'),
         ]);
     }
 }

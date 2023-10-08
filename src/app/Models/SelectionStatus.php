@@ -25,4 +25,9 @@ class SelectionStatus extends Model
         'tss_update_datetime',
         'tss_update_timestamp',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'tss_user_id', 'mus_user_id');
+    }
 }
