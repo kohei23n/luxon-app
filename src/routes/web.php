@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IndexController;
+
+// 予約
+use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', IndexController::class)->middleware(['auth', 'verified'])->name('index');
+
+// 予約
+Route::get('/reserve', ReserveIndex::class)->name('reserve.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
