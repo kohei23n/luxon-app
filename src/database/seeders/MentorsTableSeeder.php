@@ -22,6 +22,7 @@ class MentorsTableSeeder extends Seeder
             'mme_lecture_create_salary' => 2000,
             'mme_lecture_salary' => 2000,
             'mme_line_url' => 'https://line.me/R/ti/p/%40test',
+            'mme_timerex_url' => 'https://timrex.com/testlink',
         ]);
     }
 }

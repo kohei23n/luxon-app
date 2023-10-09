@@ -7,12 +7,20 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Research\IndexController as ResearchIndex;
 
 // マイページ
-use App\Http\Controllers\Profile\IndexController as ProfileIndex;
+// トップ
+use App\Http\Controllers\MyPage\IndexController as MyPageIndex;
+// プラン
+use App\Http\Controllers\MyPage\Plan\IndexController as MyPagePlanIndex;
+// プラン：個人情報
+use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfileUpdate;
+use App\Http\Controllers\MyPage\Plan\Profile\DeleteController as MyPagePlanProfileDelete;
+// 選考情報
+use App\Http\Controllers\MyPage\Selection\IndexController as MyPageSelectionIndex;
+use App\Http\Controllers\MyPage\Selection\CreateController as MyPageSelectionCreate;
+use App\Http\Controllers\MyPage\Selection\UpdateController as MyPageSelectionUpdate;
 // 個人情報
 use App\Http\Controllers\Profile\UpdateController as ProfileUpdate;
-// 選考
-use App\Http\Controllers\Profile\Selection\CreateController as ProfileSelectionCreate;
-use App\Http\Controllers\Profile\Selection\UpdateController as ProfileSelectionUpdate;
+
 
 // 予約
 use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
@@ -43,17 +51,22 @@ Route::middleware('auth')->group(function () {
 
 // マイページ
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', ProfileIndex::class)->name('profile.index');
-    // 個人情報
-    Route::get('/profile/edit', [ProfileUpdate::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile/edit', [ProfileUpdate::class, 'update'])->name('profile.update');
+    // トップ
+    Route::get('/mypage', MyPageIndex::class)->name('mypage.index');
+    // プラン
+    Route::get('/mypage/plan', MyPagePlanIndex::class)->name('mypage.planIndex');
+    // プラン：個人情報
+    Route::get('/mypage/plan/pi/edit', [MyPagePlanProfileUpdate::class, 'edit'])->name('mypage.plan.profileEdit');
+    Route::patch('/mypage/plan/pi/edit', [MyPagePlanProfileUpdate::class, 'update'])->name('mypage.plan.profileUpdate');
     // ここは後で直したい
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // 選考情報
+    Route::get('/mypage/selection', MyPageSelectionIndex::class)->name('mypage.selectionIndex');
+    Route::get('/mypage/selection/add', [MyPageSelectionCreate::class, 'add'])->name('mypage.selectionAdd');
+    Route::post('/mypage/selection/add', [MyPageSelectionCreate::class, 'create'])->name('mypage.selectionCreate');
+    Route::get('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'edit'])->name('mypage.selectionEdit');
+    Route::patch('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'update'])->name('mypage.selectionUpdate');
     // 選考
-    Route::get('/profile/selection/add', [ProfileSelectionCreate::class, 'add'])->name('profile.selectionAdd');
-    Route::post('/profile/selection/add', [ProfileSelectionCreate::class, 'create'])->name('profile.selectionCreate');
-    Route::get('/profile/selection/edit/{id}', [ProfileSelectionUpdate::class, 'edit'])->name('profile.selectionEdit');
-    Route::patch('/profile/selection/edit/{id}', [ProfileSelectionUpdate::class, 'update'])->name('profile.selectionUpdate');
 });
 
 // 予約

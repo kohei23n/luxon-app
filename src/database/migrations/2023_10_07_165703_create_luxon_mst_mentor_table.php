@@ -27,6 +27,7 @@ return new class extends Migration
             $table->dateTime('mme_update_datetime')->comment('更新日時');
             $table->timestamp('mme_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
             $table->string('mme_line_url', 150)->nullable()->comment('LINE URL');
+            $table->string('mme_timerex_url', 150)->nullable()->comment('TimeRex URL');
         });
     }
 

@@ -53,7 +53,6 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">個人情報</h2>
-                <a href="{{ route('profile.edit') }}">編集ボタン</a>
             </div>
 
         </div>
