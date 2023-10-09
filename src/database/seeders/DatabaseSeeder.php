@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             MentorsTableSeeder::class,
             UsersTableSeeder::class,
             SelectionStatusTableSeeder::class,
+            IndustriesTableSeeder::class,
         ]);
     }
 }

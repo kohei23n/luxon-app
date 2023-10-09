@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Research;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Industry;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
         //ユーザー情報表示
-        $user = auth()->user();
+        $industries = Industry::all();
 
-        return view('reserve.index', compact('user'));
+        return view('research.index', compact('industries'));
     }
 }
