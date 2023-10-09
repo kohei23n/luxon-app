@@ -1,12 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
+            {{ __('マイページ') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+
+            <p>ようこそ、{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}さん</p>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">プラン情報</h2>
@@ -27,7 +29,6 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">選考情報</h2>
-                <p class="mt-1 text-sm text-gray-600">テキストが入ります。</p>
                 <div class="max-w-xl">
                     <table>
                         <tr>
@@ -42,11 +43,19 @@
                                 <td>{{ $status->tss_selection_status }}</td>
                                 <td>{{ $status->tss_preference_ranking }}</td>
                                 <td>{{ $status->tss_selection_date }}</td>
+                                <td><a href="{{ route('profile.selectionEdit', $status->tss_selection_status_id) }}">編集ボタン</a></td>
                             </tr>
                         @endforeach
                     </table>
                 </div>
+                <a href="{{ route('profile.selectionAdd') }}">追加ボタン</a>
             </div>
+
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <h2 class="text-lg font-medium text-gray-900">個人情報</h2>
+                <a href="{{ route('profile.edit') }}">編集ボタン</a>
+            </div>
+
         </div>
     </div>
 </x-app-layout>

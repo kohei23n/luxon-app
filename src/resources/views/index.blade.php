@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="">選考対策</a>
-                    <a href="">業界研究</a>
+                    <a href="{{ route('research.index') }}">業界研究</a>
                     <a href="{{ route('reserve.index') }}">予約</a>
                     <a href="{{ route('profile.index') }}">マイページ</a>
                 </div>

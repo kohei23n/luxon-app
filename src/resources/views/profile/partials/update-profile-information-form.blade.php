@@ -70,10 +70,10 @@
 
             <!-- サービスプラン -->
             <div class="mt-4">
-                <x-input-label for="mus_service_plan" :value="__('サービスプラン')" />
-                <x-text-input id="mus_service_plan" class="block mt-1 w-full" type="text" name="mus_service_plan"
-                    :value="$user->mus_service_plan" />
-                <x-input-error :messages="$errors->get('mus_service_plan')" class="mt-2" />
+                <x-input-label for="mus_service_plan_id" :value="__('サービスプラン')" />
+                <x-text-input id="mus_service_plan_id" class="block mt-1 w-full" type="text" name="mus_service_plan_id"
+                    :value="$user->mus_service_plan_id" />
+                <x-input-error :messages="$errors->get('mus_service_plan_id')" class="mt-2" />
             </div>
 
             <!-- 第一志望業界 -->

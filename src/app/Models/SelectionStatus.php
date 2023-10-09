@@ -9,6 +9,7 @@ class SelectionStatus extends Model
 {
     use HasFactory;
     protected $table = 'luxon_trx_selection_status';
+    protected $primaryKey = 'tss_selection_status_id';
 
     const CREATED_AT = 'tss_registration_datetime';
     const UPDATED_AT = 'tss_update_datetime';
