@@ -66,4 +66,19 @@ class User extends Authenticatable
     {
         return $this->mus_user_password;
     }
+
+    public function servicePlan()
+    {
+        return $this->belongsTo(ServicePlan::class, 'mus_service_plan_id', 'tsp_service_plan_id');
+    }
+
+    public function dedicatedMentor()
+    {
+        return $this->belongsTo(Mentor::class, 'mus_dedicated_mentor_id', 'mme_mentor_id');
+    }
+
+    public function selectionStatuses()
+    {
+        return $this->hasMany(SelectionStatus::class, 'tss_user_id', 'mus_user_id');
+    }
 }
