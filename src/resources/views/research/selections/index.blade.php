@@ -16,10 +16,11 @@
                         @foreach ($details as $detail)
                             <div>
                                 <p>{{ $detail->msd_selection_detail }}</p>
-                                <!-- 他の詳細もここに表示する -->
                             </div>
                         @endforeach
                     @endforeach
+
+                    <a href="{{ route('research.selectionsAdd') }}">新しい情報を追加する</a>
                 </div>
             </div>
         </div>
