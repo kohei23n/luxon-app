@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SelectionStatusTableSeeder::class,
             IndustriesTableSeeder::class,
             CompaniesTableSeeder::class,
+            SelectionPhaseTableSeeder::class,
             SelectionDetailTableSeeder::class,
         ]);
     }

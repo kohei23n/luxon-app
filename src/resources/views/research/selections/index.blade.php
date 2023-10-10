@@ -20,7 +20,7 @@
                         @endforeach
                     @endforeach
 
-                    <a href="{{ route('research.selectionsAdd') }}">新しい情報を追加する</a>
+                    <a href="{{ route('research.selectionsAdd', $id) }}">新しい情報を追加する</a>
                 </div>
             </div>
         </div>

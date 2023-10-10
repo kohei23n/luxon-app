@@ -17,7 +17,7 @@ class SelectionDetail extends Model
 
     protected $fillable = [
         'msd_company_id',
-        'msd_selection_phase_name',
+        'msd_selection_phase_id',
         'msd_selection_detail',
         'msd_selection_materials_URL',
         'msd_delete_flag',
@@ -30,5 +30,10 @@ class SelectionDetail extends Model
     public function company()
     {
         return $this->belongsTo(Company::class, 'msd_company_id', 'mco_company_id');
+    }
+
+    public function selectionPhase()
+    {
+        return $this->belongsTo(SelectionPhase::class, 'msd_selection_phase_id', 'msp_phase_id');
     }
 }

@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function () {
     // 業界研究：選考情報
     Route::get('/research/company/{id}', ResearchSelectionsIndex::class)->name('research.selectionsIndex');
     // 業界研究：選考情報追加
-    Route::get('/research/company/{id}', [ResearchSelectionsCreate::class, 'add'])->name('research.selectionsIndex');
+    Route::get('/research/company/{id}/add', [ResearchSelectionsCreate::class, 'add'])->name('research.selectionsAdd');
     Route::post('/research/company/{id}/add', [ResearchSelectionsCreate::class, 'create'])->name('research.selectionsCreate');
 
     // 予約：トップ

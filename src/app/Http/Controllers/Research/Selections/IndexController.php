@@ -10,11 +10,12 @@ class IndexController extends Controller
     public function __invoke($id)
     {
         //ユーザー情報表示
-        $selections = SelectionDetail::with(['company'])
+        $selections = SelectionDetail::with(['company', 'selectionPhase'])
         ->where('msd_company_id', $id)
+        ->orderBy('msd_selection_phase_id', 'asc')
         ->get()
-        ->groupBy('msd_selection_phase_name');
+        ->groupBy('selectionPhase.msp_phase_name');
 
-        return view('research.selections.index', compact('selections'));
+        return view('research.selections.index', compact('selections', 'id'));
     }
 }

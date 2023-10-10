@@ -4,42 +4,42 @@ namespace App\Http\Controllers\Research\Selections;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SelectionStatus;
+use App\Models\SelectionDetail;
+use App\Models\SelectionPhase;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 
 class CreateController extends Controller
 {
-    public function add()
-    {
-        return view('research.selections.add');
+  public function add($id)
+  {
+    //ユーザー情報表示
+    $selectionDetails = SelectionDetail::where('msd_company_id', $id)->get();
+
+    $selectionPhases = SelectionPhase::all();
+
+    return view('research.selections.add', compact('selectionDetails', 'id', 'selectionPhases'));
+  }
+
+  public function create(Request $request, $id): RedirectResponse
+  {
+    // リクエストデータのバリデーション
+    $request->validate([
+      'msd_selection_phase_id' => 'required|integer',
+      'msd_selection_detail' => 'required|string',
+    ]);
+
+    // データの保存
+    $status = SelectionDetail::create([
+      'msd_company_id' => $id,
+      'msd_selection_phase_id' => $request->msd_selection_phase_id,
+      'msd_selection_detail' => $request->msd_selection_detail,
+    ]);
+
+    if ($status) {
+      return Redirect::route('research.selectionsIndex', $id)->with('status', 'selection-detail-created');
+    } else {
+      return Redirect::route('research.selectionsIndex', $id)->with('error', 'error-creating-selection-detail');
     }
-
-    public function create(Request $request): RedirectResponse
-    {
-        // リクエストデータのバリデーション
-        $request->validate([
-            'tss_company_name' => 'required|string|max:255',
-            'tss_selection_status' => 'required|string|in:選考前,選考中,合格,不合格',
-            'tss_preference_ranking' => 'required|integer|min:1',
-            'tss_selection_date' => 'required|date',
-        ]);
-
-        $user = auth()->user()->first();
-
-        // データの保存
-        $status = SelectionStatus::create([
-            'tss_user_id' => $user->mus_user_id,
-            'tss_company_name' => $request->tss_company_name,
-            'tss_selection_status' => $request->tss_selection_status,
-            'tss_preference_ranking' => $request->tss_preference_ranking,
-            'tss_selection_date' => $request->tss_selection_date,
-        ]);
-
-        if ($status) {
-            return Redirect::route('mypage.selectionIndex')->with('status', 'selection-status-created');
-        } else {
-            return Redirect::route('mypage.selectionIndex')->with('error', 'error-creating-selection-status');
-        }
-    }
+  }
 }
