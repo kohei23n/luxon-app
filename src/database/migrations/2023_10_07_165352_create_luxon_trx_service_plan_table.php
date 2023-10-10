@@ -19,14 +19,12 @@ return new class extends Migration
             $table->integer('tsp_event_attendance')->comment('イベント回数');
             $table->integer('tsp_interview_count')->comment('面談回数');
             $table->integer('tsp_case_study_count')->comment('ケース面接対策');
-            $table->dateTime('tsp_service_plan_month')->comment('サービス対象月');
+            $table->string('tsp_service_plan_month', 50)->comment('サービス対象月');
             $table->char('tsp_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('tsp_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tsp_registration_datetime')->comment('登録日時');
             $table->dateTime('tsp_update_datetime')->comment('更新日時');
             $table->timestamp('tsp_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
-
-            $table->foreign('tsp_user_id', 'fk:luxon_mst_user_id')->references('mus_user_id')->on('luxon_mst_user');
         });
     }
 
@@ -35,6 +33,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('luxon_trx_service_plan');
+        Schema::enableForeignKeyConstraints();
     }
 };
