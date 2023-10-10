@@ -5,8 +5,10 @@ use App\Http\Controllers\IndexController;
 
 // 業界研究
 use App\Http\Controllers\Research\IndexController as ResearchIndex;
-// 業界研究：業界別情報
-use App\Http\Controllers\Research\Industry\IndexController as ResearchIndustryIndex;
+// 業界研究：業界別会社情報
+use App\Http\Controllers\Research\Companies\IndexController as ResearchCompaniesIndex;
+// 業界研究：選考情報
+use App\Http\Controllers\Research\Selections\IndexController as ResearchSelectionsIndex;
 
 // 予約
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
@@ -53,7 +55,8 @@ Route::middleware('auth')->group(function () {
     // 業界研究
     Route::get('/research', ResearchIndex::class)->name('research.index');
     // 業界研究：業界別情報
-    Route::get('/research/industry/{id}', ResearchIndustryIndex::class)->name('research.industryIndex');
+    Route::get('/research/industry/{id}', ResearchCompaniesIndex::class)->name('research.companiesIndex');
+    Route::get('/research/company/{id}', ResearchSelectionsIndex::class)->name('research.selectionsIndex');
 
     // 予約：トップ
     Route::get('/reserve', function () {

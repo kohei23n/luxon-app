@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <h1>業界一覧</h1>
                     @foreach($industries as $industry)
-                        <a href="{{ route('research.industryIndex', $industry->min_industry_id) }}">{{ $industry->min_industry_name }}</a>
+                        <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}">{{ $industry->min_industry_name }}</a>
                     @endforeach
                 </div>
             </div>

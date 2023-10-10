@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SelectionDetail;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             SelectionStatusTableSeeder::class,
             IndustriesTableSeeder::class,
+            CompaniesTableSeeder::class,
+            SelectionDetailTableSeeder::class,
         ]);
     }
 }

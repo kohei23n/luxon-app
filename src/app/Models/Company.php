@@ -20,11 +20,11 @@ class Company extends Model
     'mco_company_name',
     'mco_company_logo_s3_url',
     'mco_company_overview',
-    'min_delete_flag',
-    'min_deletion_datetime',
-    'min_registration_datetime',
-    'min_update_datetime',
-    'min_update_timestamp',
+    'mco_delete_flag',
+    'mco_deletion_datetime',
+    'mco_registration_datetime',
+    'mco_update_datetime',
+    'mco_update_timestamp',
   ];
 
   public function industry()
