@@ -9,9 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h1>業界一覧</h1>
-                    @foreach($industries as $industry)
-                        <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}">{{ $industry->min_industry_name }}</a>
+                    <h1>企業一覧</h1>
+                    @foreach($companies as $company)
+                        <a href="{{ route('research.selectionsIndex', $company->mco_company_id) }}">{{ $company->mco_company_name }}</a>
                     @endforeach
                 </div>
             </div>
