@@ -81,4 +81,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(SelectionStatus::class, 'tss_user_id', 'mus_user_id');
     }
+
+    public function eventParticipants()
+    {
+        return $this->hasMany(EventParticipant::class, 'tep_user_id', 'mus_user_id');
+    }
 }

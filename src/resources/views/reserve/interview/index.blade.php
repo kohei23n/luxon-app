@@ -12,6 +12,8 @@
                     <p>メンター：{{ $mentor->mme_last_name }}{{ $mentor->mme_first_name }}</p>
                     <p>メンターLINE：{{ $mentor->mme_line_url }}</p>
                     <p>面談予約URL：{{ $mentor->mme_timerex_url }}</p>
+
+                    <a href="{{ route('reserve.index') }}">戻る</a>
                 </div>
             </div>
         </div>

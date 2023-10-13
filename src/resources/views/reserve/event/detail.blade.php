@@ -9,16 +9,21 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <h1>{{ $event->mev_event_name }}</h1>
 
-            <h1>{{ $event->mev_event_overview }}</h1>
+            <h2>{{ $event->mev_event_overview }}</h2>
 
             <p>{{ $event->mev_event_datetime }}</p>
             <p>{{ $event->mev_event_description }}</p>
 
             @if ($isAlreadyBooked)
                 <p>このイベントはすでに予約されています。</p>
+            @elseif ($plan->tsp_event_attendance <= 0)
+                <p>イベント枠がありません</p>
             @else
                 <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}">予約</a>
             @endif
+
+            <p>チケット：{{ $plan->tsp_event_attendance }}</p>
+            <a href="{{ route('reserve.eventIndex') }}">戻る</a>
         </div>
     </div>
 </x-app-layout>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\EventParticipant;
 
 class Event extends Model
 {
@@ -27,4 +28,9 @@ class Event extends Model
         'mev_update_datetime',
         'mev_update_timestamp',
     ];
+
+    public function eventParticipants()
+    {
+        return $this->hasMany(EventParticipant::class, 'tep_event_id', 'mev_event_id');
+    }
 }

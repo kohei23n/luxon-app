@@ -15,6 +15,7 @@
                     <a href="">お気に入り</a>
                     <a href="">お知らせ</a>
                 </div>
+                <a href="{{ route('reserve.index') }}">戻る</a>
             </div>
         </div>
     </div>

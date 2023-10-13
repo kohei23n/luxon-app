@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Event;
 
 class EventParticipant extends Model
 {
@@ -23,4 +24,14 @@ class EventParticipant extends Model
         'tep_update_datetime',
         'tep_update_timestamp',
     ];
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'tep_event_id', 'mev_event_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'tep_user_id', 'mus_user_id');
+    }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Reserve\Event;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
-use App\Models\EventParticipant;
 
 class ShowController extends Controller
 {
@@ -13,10 +12,11 @@ class ShowController extends Controller
     $event = Event::findOrFail($id);
 
     $user = auth()->user();
-    $isAlreadyBooked = EventParticipant::where('tep_event_id', $event->mev_event_id)
-      ->where('tep_user_id', $user->mus_user_id)
+    $plan = $user->servicePlan;
+    $isAlreadyBooked = $user->eventParticipants()
+      ->where('tep_event_id', $event->mev_event_id)
       ->exists();
 
-    return view('reserve.event.detail', compact('event', 'isAlreadyBooked'));
+    return view('reserve.event.detail', compact('event', 'plan', 'isAlreadyBooked'));
   }
 }

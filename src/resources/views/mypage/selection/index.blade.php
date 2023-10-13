@@ -32,6 +32,7 @@
                     </table>
                 </div>
                 <a href="{{ route('mypage.selectionAdd') }}">追加ボタン</a>
+                <a href="{{ route('mypage.index') }}">戻る</a>
             </div>
 
         </div>

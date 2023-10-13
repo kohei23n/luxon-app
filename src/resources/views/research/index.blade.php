@@ -14,6 +14,7 @@
                         <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}">{{ $industry->min_industry_name }}</a>
                     @endforeach
                 </div>
+                <a href="{{ route('index') }}">戻る</a>
             </div>
         </div>
     </div>

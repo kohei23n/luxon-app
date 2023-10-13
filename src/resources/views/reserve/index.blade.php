@@ -9,10 +9,17 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    <h1>所持チケット</h1>
+                    <ul>
+                        <li>イベント枠：{{ $plan->tsp_event_attendance }}</li>
+                        <li>ES添削・ケース添削枠：{{ $plan->tsp_case_study_count }}</li>
+                    </ul>
                     <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
                     <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
                     <a href="">ES添削</a>
                     <a href="">ケース添削</a>
+
+                    <a href="{{ route('index') }}">戻る</a>
                 </div>
             </div>
         </div>

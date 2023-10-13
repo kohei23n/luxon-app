@@ -9,6 +9,7 @@ class ServicePlan extends Model
 {
     use HasFactory;
     protected $table = 'luxon_trx_service_plan';
+    protected $primaryKey = 'tsp_service_plan_id';
 
     const CREATED_AT = 'tsp_registration_datetime';
     const UPDATED_AT = 'tsp_update_datetime';

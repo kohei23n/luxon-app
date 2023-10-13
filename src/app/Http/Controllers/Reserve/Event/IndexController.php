@@ -11,6 +11,11 @@ class IndexController extends Controller
 {
   public function __invoke(Request $request)
   {
+    // 残り回数の取得
+    $user = auth()->user();
+    $plan = $user->servicePlan;
+
+    // 月ごとのイベント一覧
     $year = $request->get('year', date('Y'));
     $month = $request->get('month', date('m'));
     $daysInMonth = Carbon::parse("$year-$month-01")->daysInMonth;
@@ -27,6 +32,6 @@ class IndexController extends Controller
       return date('Y-m-d', strtotime($event->mev_event_datetime));
     });
 
-    return view('reserve.event.index', compact('groupedEvents', 'year', 'month', 'daysInMonth', 'previousMonth', 'nextMonth'));
+    return view('reserve.event.index', compact('plan', 'year', 'month', 'daysInMonth', 'previousMonth', 'nextMonth','groupedEvents'));
   }
 }

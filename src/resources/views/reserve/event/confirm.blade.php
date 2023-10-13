@@ -20,6 +20,9 @@
                 <input type="hidden" name="mev_event_id" value="{{ $event->mev_event_id }}">
                 <button type="submit">予約を確定する</button>
             </form>
+
+            <p>チケット：{{ $plan->tsp_event_attendance }}</p>
+            <a href="{{ route('reserve.eventShow') }}">戻る</a>
         </div>
     </div>
 </x-app-layout>

@@ -13,10 +13,14 @@ class CreateController extends Controller
 {
   public function add($id)
   {
-    //ユーザー情報表示
+    // 残り回数の取得
+    $user = auth()->user();
+    $plan = $user->servicePlan;
+
+    // イベントの取得
     $event = Event::findOrFail($id);
 
-    return view('reserve.event.confirm', compact('event'));
+    return view('reserve.event.confirm', compact('plan', 'event'));
   }
 
   public function create(Request $request, $id): RedirectResponse
@@ -33,6 +37,10 @@ class CreateController extends Controller
       'tep_event_id' => $id,
       'tep_user_id' => $user->mus_user_id,
     ]);
+
+    // ユーザーのチケット残数を1減らす
+    $user->servicePlan->tsp_event_attendance = $user->servicePlan->tsp_event_attendance - 1;
+    $user->servicePlan->save();
 
     if ($participant) {
       return Redirect::route('reserve.eventIndex')->with('status', 'event-status-created');

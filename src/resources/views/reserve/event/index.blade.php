@@ -7,6 +7,9 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            <h1>チケット：{{ $plan->tsp_event_attendance }}</h1>
+
             <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}">前月</a>
             <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}">次月</a>
 
@@ -29,6 +32,8 @@
                     @endfor
                 </tbody>
             </table>
+
+            <a href="{{ route('reserve.index') }}">戻る</a>
 
         </div>
     </div>

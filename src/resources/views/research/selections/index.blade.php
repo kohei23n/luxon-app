@@ -21,6 +21,7 @@
                     @endforeach
 
                     <a href="{{ route('research.selectionsAdd', $id) }}">新しい情報を追加する</a>
+                    <a href="{{ route('research.companiesIndex', $detail->msd_company_id) }}">戻る</a>
                 </div>
             </div>
         </div>

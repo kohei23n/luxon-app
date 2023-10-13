@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ServicePlan;
 
 class IndexController extends Controller
 {

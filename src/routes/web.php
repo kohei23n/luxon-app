@@ -12,6 +12,7 @@ use App\Http\Controllers\Research\Selections\IndexController as ResearchSelectio
 use App\Http\Controllers\Research\Selections\CreateController as ResearchSelectionsCreate;
 
 // 予約
+use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
 use App\Http\Controllers\Reserve\Event\IndexController as ReserveEventIndex;
 use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
@@ -67,9 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/research/company/{id}/add', [ResearchSelectionsCreate::class, 'create'])->name('research.selectionsCreate');
 
     // 予約：トップ
-    Route::get('/reserve', function () {
-        return view('reserve.index');
-    })->name('reserve.index');
+    Route::get('/reserve', ReserveIndex::class)->name('reserve.index');
     // 予約：面談
     Route::get('/reserve/interview', ReserveInterviewIndex::class)->name('reserve.interviewIndex');
     // 予約：イベント

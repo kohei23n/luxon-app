@@ -14,6 +14,7 @@
                         <a href="{{ route('research.selectionsIndex', $company->mco_company_id) }}">{{ $company->mco_company_name }}</a>
                     @endforeach
                 </div>
+                <a href="{{ route('research.index') }}">戻る</a>
             </div>
         </div>
     </div>
