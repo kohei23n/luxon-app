@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
-                    <a href="{{ route('mypage.selectionIndex') }}">イベント予約</a>
+                    <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
                     <a href="">ES添削</a>
                     <a href="">ケース添削</a>
                 </div>

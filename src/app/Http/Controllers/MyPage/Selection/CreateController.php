@@ -25,7 +25,7 @@ class CreateController extends Controller
             'tss_selection_date' => 'required|date',
         ]);
 
-        $user = auth()->user()->first();
+        $user = auth()->user();
 
         // データの保存
         $status = SelectionStatus::create([

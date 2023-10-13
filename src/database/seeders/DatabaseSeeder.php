@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Event;
 use App\Models\SelectionDetail;
 use Illuminate\Database\Seeder;
 
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
             CompaniesTableSeeder::class,
             SelectionPhaseTableSeeder::class,
             SelectionDetailTableSeeder::class,
+            EventTableSeeder::class,
         ]);
     }
 }

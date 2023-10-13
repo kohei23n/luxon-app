@@ -11,7 +11,7 @@ class UpdateController extends Controller
 {
     public function edit()
     {
-        $user = auth()->user()->first();
+        $user = auth()->user();
 
         return view('mypage.plan.profile.edit', compact('user'));
     }

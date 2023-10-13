@@ -13,6 +13,9 @@ use App\Http\Controllers\Research\Selections\CreateController as ResearchSelecti
 
 // 予約
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
+use App\Http\Controllers\Reserve\Event\IndexController as ReserveEventIndex;
+use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
+use App\Http\Controllers\Reserve\Event\CreateController as ReserveEventCreate;
 
 // マイページ
 // トップ
@@ -69,6 +72,11 @@ Route::middleware('auth')->group(function () {
     })->name('reserve.index');
     // 予約：面談
     Route::get('/reserve/interview', ReserveInterviewIndex::class)->name('reserve.interviewIndex');
+    // 予約：イベント
+    Route::get('/reserve/event', ReserveEventIndex::class)->name('reserve.eventIndex');
+    Route::get('/reserve/event/{id}', ReserveEventShow::class)->name('reserve.eventShow');
+    Route::get('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'add'])->name('reserve.eventAdd');
+    Route::post('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'create'])->name('reserve.eventCreate');
 
     // マイページトップ
     Route::get('/mypage', MyPageIndex::class)->name('mypage.index');

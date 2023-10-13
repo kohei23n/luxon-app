@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Event extends Model
+{
+    use HasFactory;
+    protected $table = 'luxon_mst_event';
+    protected $primaryKey = 'mev_event_id';
+
+    const CREATED_AT = 'mev_registration_datetime';
+    const UPDATED_AT = 'mev_update_datetime';
+
+    protected $fillable = [
+        'mev_industry_id',
+        'mev_company_id',
+        'mev_event_name',
+        'mev_event_datetime',
+        'mev_event_participate_url',
+        'mev_event_materials_url',
+        'mev_delete_flag',
+        'mev_deletion_datetime',
+        'mev_registration_datetime',
+        'mev_update_datetime',
+        'mev_update_timestamp',
+    ];
+}
