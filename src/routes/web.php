@@ -13,10 +13,16 @@ use App\Http\Controllers\Research\Selections\CreateController as ResearchSelecti
 
 // 予約
 use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
+// 予約：面談
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
+// 予約：イベント
 use App\Http\Controllers\Reserve\Event\IndexController as ReserveEventIndex;
 use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
 use App\Http\Controllers\Reserve\Event\CreateController as ReserveEventCreate;
+// 予約：ES
+use App\Http\Controllers\Reserve\Es\CreateController as ReserveEsCreate;
+// 予約：ケース
+use App\Http\Controllers\Reserve\Case\CreateController as ReserveCaseCreate;
 
 // マイページ
 // トップ
@@ -76,6 +82,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/reserve/event/{id}', ReserveEventShow::class)->name('reserve.eventShow');
     Route::get('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'add'])->name('reserve.eventAdd');
     Route::post('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'create'])->name('reserve.eventCreate');
+    // 予約：ケース
+    Route::get('/reserve/case', [ReserveCaseCreate::class, 'add'])->name('reserve.caseAdd');
+    Route::post('/reserve/case', [ReserveCaseCreate::class, 'create'])->name('reserve.caseCreate');
+    // 予約：ES
+    Route::get('/reserve/entrysheet', [ReserveEsCreate::class, 'add'])->name('reserve.esAdd');
+    Route::post('/reserve/entrysheet', [ReserveEsCreate::class, 'create'])->name('reserve.esCreate');
+    // 予約完了画面
+    Route::get('/reserve/complete', function () {
+        return view('reserve.complete');
+    })->name('reserve.complete');
 
     // マイページトップ
     Route::get('/mypage', MyPageIndex::class)->name('mypage.index');

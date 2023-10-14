@@ -22,7 +22,7 @@
             </form>
 
             <p>チケット：{{ $plan->tsp_event_attendance }}</p>
-            <a href="{{ route('reserve.eventShow') }}">戻る</a>
+            <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}">戻る</a>
         </div>
     </div>
 </x-app-layout>

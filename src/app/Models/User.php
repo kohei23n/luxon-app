@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\ServicePlan;
+use App\Models\Mentor;
+use App\Models\SelectionStatus;
+use App\Models\EventParticipant;
+use App\Models\CaseQuestion;
+use App\Models\EsQuestion;
 
 class User extends Authenticatable
 {
@@ -85,5 +91,15 @@ class User extends Authenticatable
     public function eventParticipants()
     {
         return $this->hasMany(EventParticipant::class, 'tep_user_id', 'mus_user_id');
+    }
+
+    public function caseQuestions()
+    {
+        return $this->hasMany(CaseQuestion::class, 'mca_case_user_id', 'mus_user_id');
+    }
+
+    public function esQuestions() 
+    {
+        return $this->hasMany(EsQuestion::class, 'mes_case_user_id', 'mus_user_id');
     }
 }

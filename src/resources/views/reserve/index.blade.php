@@ -16,8 +16,8 @@
                     </ul>
                     <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
                     <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
-                    <a href="">ES添削</a>
-                    <a href="">ケース添削</a>
+                    <a href="{{ route('reserve.esAdd') }}">ES添削</a>
+                    <a href="{{ route('reserve.caseAdd') }}">ケース添削</a>
 
                     <a href="{{ route('index') }}">戻る</a>
                 </div>

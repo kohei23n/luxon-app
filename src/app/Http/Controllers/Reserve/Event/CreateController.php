@@ -43,9 +43,9 @@ class CreateController extends Controller
     $user->servicePlan->save();
 
     if ($participant) {
-      return Redirect::route('reserve.eventIndex')->with('status', 'event-status-created');
+      return Redirect::route('reserve.complete')->with('status', 'event-status-created');
     } else {
-      return Redirect::route('reserve.eventIndex')->with('error', 'error-creating-event-status');
+      return Redirect::route('reserve.complete')->with('error', 'error-creating-event-status');
     }
   }
 }

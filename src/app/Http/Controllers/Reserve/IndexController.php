@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Reserve;
 
 use App\Http\Controllers\Controller;
-use App\Models\ServicePlan;
 
 class IndexController extends Controller
 {

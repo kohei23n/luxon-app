@@ -9,7 +9,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('research.selectionsAdd', $id) }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('research.selectionsCreate', $id) }}" class="mt-6 space-y-6">
         @csrf
         @method('post')
 

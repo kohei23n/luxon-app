@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Company;
+use App\Models\EsQuestion;
 
 class Industry extends Model
 {
@@ -29,5 +31,9 @@ class Industry extends Model
     public function companies()
     {
         return $this->hasMany(Company::class, 'mco_company_id', 'min_company_id');
+    }
+
+    public function esQuestions() {
+        return $this->hasMany(EsQuestion::class, 'mes_industry_id', 'min_industry_id');
     }
 }
