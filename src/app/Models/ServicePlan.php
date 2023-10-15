@@ -20,6 +20,7 @@ class ServicePlan extends Model
         'tsp_subscribe_price',
         'tsp_event_attendance',
         'tsp_interview_count',
+        'tsp_es_count',
         'tsp_case_study_count',
         'tsp_service_plan_month',
         'tsp_delete_flag',

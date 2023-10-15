@@ -18,6 +18,7 @@ class SelectionDetail extends Model
     const UPDATED_AT = 'msd_update_datetime';
 
     protected $fillable = [
+        'msd_industry_id',
         'msd_company_id',
         'msd_selection_phase_id',
         'msd_selection_detail',

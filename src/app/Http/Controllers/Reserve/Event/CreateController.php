@@ -14,8 +14,7 @@ class CreateController extends Controller
   public function add($id)
   {
     // 残り回数の取得
-    $user = auth()->user();
-    $plan = $user->servicePlan;
+    $plan = auth()->user()->servicePlan;
 
     // イベントの取得
     $event = Event::findOrFail($id);

@@ -11,8 +11,7 @@ class ShowController extends Controller
   {
     $event = Event::findOrFail($id);
 
-    $user = auth()->user();
-    $plan = $user->servicePlan;
+    $plan = auth()->user()->servicePlan;
     $isAlreadyBooked = $user->eventParticipants()
       ->where('tep_event_id', $event->mev_event_id)
       ->exists();

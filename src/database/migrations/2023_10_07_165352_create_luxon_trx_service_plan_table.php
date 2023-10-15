@@ -18,7 +18,8 @@ return new class extends Migration
             $table->integer('tsp_subscribe_price')->comment('利用プラン金額');
             $table->unsignedInteger('tsp_event_attendance')->comment('イベント回数');
             $table->unsignedInteger('tsp_interview_count')->comment('面談回数');
-            $table->unsignedInteger('tsp_case_study_count')->comment('ケース面接対策');
+            $table->unsignedInteger('tsp_es_count')->comment('ES添削回数');
+            $table->unsignedInteger('tsp_case_study_count')->comment('ケース添削回数');
             $table->string('tsp_service_plan_month', 50)->comment('サービス対象月');
             $table->char('tsp_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('tsp_deletion_datetime')->nullable()->comment('削除日時');

@@ -9,8 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <h1>チケット：{{ $plan->tsp_event_attendance }}</h1>
+            <a href="{{ route('reserve.ticketEdit') }}">チケット増やすボタン</a>
+
+            <br>
 
             <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}">前月</a>
+            <h1>{{ $month }}月</h1>
             <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}">次月</a>
 
             <table>

@@ -23,6 +23,8 @@ use App\Http\Controllers\Reserve\Event\CreateController as ReserveEventCreate;
 use App\Http\Controllers\Reserve\Es\CreateController as ReserveEsCreate;
 // 予約：ケース
 use App\Http\Controllers\Reserve\Case\CreateController as ReserveCaseCreate;
+// 予約：チケット追加
+use App\Http\Controllers\Reserve\Ticket\UpdateController as ReserveTicketUpdate;
 
 // マイページ
 // トップ
@@ -92,6 +94,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/reserve/complete', function () {
         return view('reserve.complete');
     })->name('reserve.complete');
+    // 予約：チケット追加
+    Route::get('/reserve/ticket', [ReserveTicketUpdate::class, 'edit'])->name('reserve.ticketEdit');
+    Route::post('/reserve/ticket', [ReserveTicketUpdate::class, 'update'])->name('reserve.ticketUpdate');
 
     // マイページトップ
     Route::get('/mypage', MyPageIndex::class)->name('mypage.index');

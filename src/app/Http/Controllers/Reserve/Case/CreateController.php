@@ -13,8 +13,7 @@ class CreateController extends Controller
   public function add()
   {
     // 残りチケット数を取得
-    $user = auth()->user();
-    $plan = $user->servicePlan;
+    $plan = auth()->user()->servicePlan;
 
     return view('reserve.case.add', compact('plan'));
   }

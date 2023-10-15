@@ -14,8 +14,7 @@ class CreateController extends Controller
   public function add()
   {
     // 残りチケット数を取得
-    $user = auth()->user();
-    $plan = $user->servicePlan;
+    $plan = auth()->user()->servicePlan;
 
     $companies = Company::with('industry')->get();
 
@@ -40,7 +39,7 @@ class CreateController extends Controller
     ]);
 
     // ユーザーのチケット残数を1減らす
-    $user->servicePlan->tsp_case_study_count = $user->servicePlan->tsp_case_study_count - 1;
+    $user->servicePlan->tsp_es_count = $user->servicePlan->tsp_es_count - 1;
     $user->servicePlan->save();
 
     if ($case) {
