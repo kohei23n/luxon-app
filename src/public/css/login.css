@@ -1,5 +1,5 @@
 body{
-    background-color: navy;
+    background-color: #15397A;
     width: 100%;
     height: 100%;
 
@@ -15,7 +15,7 @@ body{
 .w-full{ 
     width: 100%;
     height: 100%;
-    background-color: navy;
+    background-color: #15397A;
     color: white;
     margin-top: 15%;
     
@@ -27,6 +27,6 @@ body{
     text-align: center;
 }
 .ease-in-out{
-    background-color: yellow;
-    color: blue;
+    background-color: #FFFF33;
+    color: #15397A;
 }
