@@ -9,8 +9,8 @@
 
             <p>現在のチケット数</p>
             <ul>
-                <li>イベント参加枠：{{ $plan->tsp_event_attendance }}</li>
                 <li>面談枠：{{ $plan->tsp_interview_count }}</li>
+                <li>イベント枠：{{ $plan->tsp_event_attendance }}</li>
                 <li>ES添削枠：{{ $plan->tsp_es_count }}</li>
                 <li>ケース添削枠：{{ $plan->tsp_case_study_count }}</li>
             </ul>
