@@ -1,6 +1,7 @@
-<head>
+@section('head')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-</head>
+@endsection
+
 <x-app-layout>
     <div class="colum-information">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

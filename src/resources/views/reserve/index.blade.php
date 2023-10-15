@@ -1,15 +1,17 @@
-<head>
+@section('head')
     <link rel="stylesheet" href="{{ asset('css/reserving.css') }}">
-</head>
+@endsection
+
 <x-app-layout>
     <div class="py-12">
         <div class="ticket-list">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <p>所持チケット</p>
                 <ul>
-                    <li>イベント枠:-枚</li>
-                    <li>ES添削:-枚</li>
-                    <li>ケース添削:-枚</li>
+                    <li>面談枠：{{ $plan->tsp_interview_count }}</li>
+                    <li>イベント枠：{{ $plan->tsp_event_attendance }}</li>
+                    <li>ES添削枠：{{ $plan->tsp_es_count }}</li>
+                    <li>ケース添削枠：{{ $plan->tsp_case_study_count }}</li>
                 </ul>
             </div>
         </div>
@@ -17,30 +19,23 @@
         <div class="reserving-list">
             <div class="reserving-box">
                 <div class="p-6 text-gray-900">
-                    <h1>所持チケット</h1>
-                    <ul>
-                        <li>面談枠：{{ $plan->tsp_interview_count }}</li>
-                        <li>イベント枠：{{ $plan->tsp_event_attendance }}</li>
-                        <li>ES添削枠：{{ $plan->tsp_es_count }}</li>
-                        <li>ケース添削枠：{{ $plan->tsp_case_study_count }}</li>
-                    </ul>
                     <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
                 </div>
             </div>
             <div class="reserving-box">
                 <div class="p-6 text-gray-900">
-                    <a href="{{ route('mypage.selectionIndex') }}">イベント予約</a>
+                    <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
                 </div>
             </div>
             <div class="box-bottom">
                 <div class="reserving-box-mini">
                     <div class="p-6 text-gray-900">
-                        <a href="">ES添削</a>
+                        <a href="{{ route('reserve.esAdd') }}">ES添削</a>
                     </div>
                 </div>
                 <div class="reserving-box-mini">
                     <div class="p-6 text-gray-900">
-                        <a href="">ケース添削</a>
+                        <a href="{{ route('reserve.caseAdd') }}">ケース添削</a>
                     </div>
                 </div>
             </div>
