@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h1>選考詳細一覧</h1>
+                    <h1>{{ $industry->mco_company_name }}の選考詳細一覧</h1>
                     @foreach ($selections as $phaseName => $details)
                         <h2>選考段階：{{ $phaseName }}</h2>
 
@@ -21,7 +21,7 @@
                     @endforeach
 
                     <a href="{{ route('research.selectionsAdd', $id) }}">新しい情報を追加する</a>
-                    <a href="{{ route('research.companiesIndex', $detail->msd_company_id) }}">戻る</a>
+                    <a href="{{ route('research.companiesIndex', $industry->mco_industry_id) }}">戻る</a>
                 </div>
             </div>
         </div>

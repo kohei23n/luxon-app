@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Industry;
 use App\Models\Company;
+use App\Models\SelectionPhase;
 
 class SelectionDetail extends Model
 {
@@ -26,6 +28,11 @@ class SelectionDetail extends Model
         'msd_update_datetime',
         'msd_update_timestamp',
     ];
+
+    public function industry()
+    {
+        return $this->belongsTo(Industry::class, 'msd_industry_id', 'min_industry_id');
+    }
 
     public function company()
     {
