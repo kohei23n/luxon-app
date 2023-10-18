@@ -23,5 +23,10 @@ class UsersTableSeeder extends Seeder
             'mus_second_industry_preference' => '総合コンサル',
             'mus_dedicated_mentor_id' => 1,
         ]);
+        User::create([
+            'mus_email_address' => 'admin@gmail.com',
+            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_is_admin' => true,
+        ]);
     }
 }

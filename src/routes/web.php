@@ -58,10 +58,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// 業界研究
-Route::middleware('auth')->group(function () {
-});
-
 // マイページ
 Route::middleware('auth')->group(function () {
 
@@ -115,6 +111,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/mypage/selection/add', [MyPageSelectionCreate::class, 'create'])->name('mypage.selectionCreate');
     Route::get('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'edit'])->name('mypage.selectionEdit');
     Route::patch('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'update'])->name('mypage.selectionUpdate');
+});
+
+// 管理者
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('admin.index');
 });
 
 require __DIR__ . '/auth.php';

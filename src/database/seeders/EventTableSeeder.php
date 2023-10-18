@@ -18,7 +18,7 @@ class EventTableSeeder extends Seeder
             'mev_event_name' => '戦略イベントA',
             'mev_event_overview' => '戦略イベントAの概要が入ります',
             'mev_event_description' => '戦略イベントAの詳細が入ります',
-            'mev_event_datetime' => '2023-10-10 10:00:00',
+            'mev_event_datetime' => '2023-11-10 10:00:00',
             'mev_event_participate_url' => 'https://www.google.com/',
         ]);
         Event::create([
@@ -27,7 +27,7 @@ class EventTableSeeder extends Seeder
             'mev_event_name' => '戦略イベントB',
             'mev_event_overview' => '戦略イベントBの概要が入ります',
             'mev_event_description' => '戦略イベントBの詳細が入ります',
-            'mev_event_datetime' => '2023-10-11 10:00:00',
+            'mev_event_datetime' => '2023-11-15 10:00:00',
             'mev_event_participate_url' => 'https://www.google.com/',
         ]);
         Event::create([
@@ -37,7 +37,7 @@ class EventTableSeeder extends Seeder
             'mev_event_overview' => '戦略イベントCの概要が入ります',
             'mev_event_description' => '戦略イベントCの詳細が入ります',
             'mev_event_description' => '戦略イベントCでは、戦略についての説明を行います。',
-            'mev_event_datetime' => '2023-10-17 10:00:00',
+            'mev_event_datetime' => '2023-11-20 10:00:00',
             'mev_event_participate_url' => 'https://www.google.com/',
         ]);
     }

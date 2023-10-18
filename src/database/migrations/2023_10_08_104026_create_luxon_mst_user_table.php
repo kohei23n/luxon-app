@@ -23,7 +23,8 @@ return new class extends Migration
             $table->unsignedInteger('mus_service_plan_id')->nullable()->comment('サービスプラン');
             $table->string('mus_first_industry_preference', 50)->nullable()->comment('第一志望業界');
             $table->string('mus_second_industry_preference', 50)->nullable()->comment('第二志望業界');
-            $table->unsignedInteger('mus_dedicated_mentor_id')->nullable()->comment('専属メンター'); // NULL可
+            $table->unsignedInteger('mus_dedicated_mentor_id')->nullable()->comment('専属メンター');
+            $table->boolean('mus_is_admin')->default(false)->comment('管理者フラグ');
             $table->char('mus_access_right', 1)->default('0')->comment('閲覧権限');
             $table->char('mus_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('mus_deletion_datetime')->nullable()->comment('削除日時');

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             SelectionPhaseTableSeeder::class,
             SelectionDetailTableSeeder::class,
             EventTableSeeder::class,
+            EventParticipateTableSeeder::class,
             CaseTableSeeder::class,
             EsTableSeeder::class,
         ]);

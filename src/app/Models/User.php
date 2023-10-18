@@ -24,6 +24,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
+    const IS_ADMIN = 1;
+
     protected $table = 'luxon_mst_user';
     protected $primaryKey = 'mus_user_id';
 
@@ -40,6 +42,7 @@ class User extends Authenticatable
         'mus_first_industry_preference',
         'mus_second_industry_preference',
         'mus_dedicated_mentor',
+        'mus_is_admin',
         'mus_access_right',
         'mus_delete_flag',
         'mus_deletion_datetime',
@@ -98,7 +101,7 @@ class User extends Authenticatable
         return $this->hasMany(CaseQuestion::class, 'mca_case_user_id', 'mus_user_id');
     }
 
-    public function esQuestions() 
+    public function esQuestions()
     {
         return $this->hasMany(EsQuestion::class, 'mes_case_user_id', 'mus_user_id');
     }

@@ -11,6 +11,17 @@
     <div class="event-remainder">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <h2>イベントリマインダー</h2>
+
+            @foreach ($upcomingEvents as $event)
+                <div>
+                    <h3>{{ $event->mev_event_name }}</h3>
+                    <p class="card-text">{{ $event->mev_event_datetime }}</p>
+                </div>
+            @endforeach
+
+            <ul>
+                <li></li>
+            </ul>
         </div>
     </div>
     <div class="entry-reminder">

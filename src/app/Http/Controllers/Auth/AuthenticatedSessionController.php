@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,6 +30,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // ログインしたユーザーを取得
+        $user = auth()->user();
+
+        // ユーザーが管理者の場合は ADMIN_HOME にリダイレクト
+        if ($user->mus_is_admin == User::IS_ADMIN) {
+            return redirect(RouteServiceProvider::ADMIN_HOME);
+        }
+
+        // それ以外の場合は通常のホームページにリダイレクト
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
