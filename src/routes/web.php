@@ -39,6 +39,10 @@ use App\Http\Controllers\MyPage\Selection\IndexController as MyPageSelectionInde
 use App\Http\Controllers\MyPage\Selection\CreateController as MyPageSelectionCreate;
 use App\Http\Controllers\MyPage\Selection\UpdateController as MyPageSelectionUpdate;
 
+// 管理者
+use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
+use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,7 +64,6 @@ Route::get('/dashboard', function () {
 
 // マイページ
 Route::middleware('auth')->group(function () {
-
     // 業界研究
     Route::get('/research', ResearchIndex::class)->name('research.index');
     // 業界研究：会社情報
@@ -111,6 +114,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/mypage/selection/add', [MyPageSelectionCreate::class, 'create'])->name('mypage.selectionCreate');
     Route::get('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'edit'])->name('mypage.selectionEdit');
     Route::patch('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'update'])->name('mypage.selectionUpdate');
+
+    // 管理者
+
+    // イベント追加
+    Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
+    Route::post('/admin/event/add', [AdminEventCreate::class, 'create'])->name('admin.eventCreate');
+    // イベント詳細
+    Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
 });
 
 // 管理者

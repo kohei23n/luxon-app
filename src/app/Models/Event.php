@@ -19,6 +19,8 @@ class Event extends Model
         'mev_industry_id',
         'mev_company_id',
         'mev_event_name',
+        'mev_event_overview',
+        'mev_event_description',
         'mev_event_datetime',
         'mev_event_participate_url',
         'mev_event_materials_url',

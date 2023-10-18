@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('luxon_mst_event', function (Blueprint $table) {
             $table->increments('mev_event_id')->comment('イベントID');
             $table->unsignedInteger('mev_industry_id')->comment('業界ID');
-            $table->unsignedInteger('mev_company_id')->comment('会社ID');
+            $table->unsignedInteger('mev_company_id')->nullable()->comment('会社ID');
             $table->string('mev_event_name', 50)->comment('イベント名');
             $table->string('mev_event_overview', 150)->comment('イベント概要');
-            $table->string('mev_event_description', 150)->comment('イベント詳細');
+            $table->string('mev_event_description', 150)->nullable()->comment('イベント詳細');
             $table->dateTime('mev_event_datetime')->comment('イベント日時');
             $table->string('mev_event_participate_url', 150)->comment('イベント参加URL');
             $table->string('mev_event_materials_url', 150)->nullable()->comment('イベント資料URL');
