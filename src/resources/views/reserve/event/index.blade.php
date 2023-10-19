@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            <h1>チケット：{{ $plan->tsp_event_attendance }}</h1>
+            <h1>チケット：{{ $count->tud_event_attendance_remaining }}</h1>
             <a href="{{ route('reserve.ticketEdit') }}">チケット増やすボタン</a>
 
             <br>

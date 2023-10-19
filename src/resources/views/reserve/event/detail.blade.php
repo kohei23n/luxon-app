@@ -16,13 +16,13 @@
 
             @if ($isAlreadyBooked)
                 <p>このイベントはすでに予約されています。</p>
-            @elseif ($plan->tsp_event_attendance <= 0)
+            @elseif ($count->tud_event_attendance_remaining <= 0)
                 <p>イベント枠がありません</p>
             @else
                 <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}">予約</a>
             @endif
 
-            <p>チケット：{{ $plan->tsp_event_attendance }}</p>
+            <p>チケット：{{ $count->tud_event_attendance_remaining }}</p>
             <a href="{{ route('reserve.eventIndex') }}">戻る</a>
         </div>
     </div>

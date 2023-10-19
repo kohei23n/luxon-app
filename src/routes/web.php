@@ -40,8 +40,13 @@ use App\Http\Controllers\MyPage\Selection\CreateController as MyPageSelectionCre
 use App\Http\Controllers\MyPage\Selection\UpdateController as MyPageSelectionUpdate;
 
 // 管理者
+
+// イベント追加、管理
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
+// 面談枠管理
+use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
+use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
 
 use Illuminate\Support\Facades\Route;
 
@@ -122,6 +127,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/event/add', [AdminEventCreate::class, 'create'])->name('admin.eventCreate');
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
+    
+    // 面談枠管理
+    Route::get('/admin/count', AdminCountIndex::class)->name('admin.countIndex');
+    Route::get('/admin/count/edit/{id}', [AdminCountUpdate::class, 'edit'])->name('admin.countEdit');
+    Route::patch('/admin/count/edit/{id}', [AdminCountUpdate::class, 'update'])->name('admin.countUpdate');
 });
 
 // 管理者

@@ -13,17 +13,17 @@ class EsTableSeeder extends Seeder
     public function run(): void
     {
         EsQuestion::create([
-            'mes_user_id' => 1,
-            // 'mes_industry_id' => 1,
-            'mes_company_id' => 1,
-            'mes_es_url' => 'https://www.google.com/',
+            'tes_user_id' => 1,
+            // 'tes_industry_id' => 1,
+            'tes_company_id' => 1,
+            'tes_es_url' => 'https://www.google.com/',
         ]);
 
         EsQuestion::create([
-            'mes_user_id' => 1,
-            // 'mes_industry_id' => 1,
-            'mes_company_id' => 2,
-            'mes_es_url' => 'https://www.google2.com/',
+            'tes_user_id' => 1,
+            // 'tes_industry_id' => 1,
+            'tes_company_id' => 2,
+            'tes_es_url' => 'https://www.google2.com/',
         ]);
     }
 }

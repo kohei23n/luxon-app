@@ -13,28 +13,28 @@ class CreateController extends Controller
   public function add()
   {
     // 残りチケット数を取得
-    $plan = auth()->user()->servicePlan;
+    $count = auth()->user()->userDetail;
 
-    return view('reserve.case.add', compact('plan'));
+    return view('reserve.case.add', compact('count'));
   }
 
   public function create(Request $request): RedirectResponse
   {
     // リクエストデータのバリデーション
     $request->validate([
-      'mca_case_content' => 'required|string|max:255',
-      'mca_case_time' => 'required|integer',
-      'mca_case_url' => 'required|string|max:150',
+      'tca_case_content' => 'required|string|max:255',
+      'tca_case_time' => 'required|integer',
+      'tca_case_url' => 'required|string|max:150',
     ]);
 
     $user = auth()->user();
 
     // データの保存
     $case = CaseQuestion::create([
-      'mca_case_user_id' => $user->mus_user_id,
-      'mca_case_content' => $request->mca_case_content,
-      'mca_case_time' => $request->mca_case_time,
-      'mca_case_url' => $request->mca_case_url
+      'tca_case_user_id' => $user->mus_user_id,
+      'tca_case_content' => $request->tca_case_content,
+      'tca_case_time' => $request->tca_case_time,
+      'tca_case_url' => $request->tca_case_url
     ]);
 
     // ユーザーのチケット残数を1減らす

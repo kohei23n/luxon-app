@@ -33,12 +33,13 @@ class Industry extends Model
         return $this->hasMany(Company::class, 'mco_company_id', 'min_company_id');
     }
 
-    public function selectionDetails() 
+    public function selectionDetails()
     {
         return $this->hasMany(SelectionDetail::class, 'msd_industry_id', 'min_industry_id');
     }
 
-    public function esQuestions() {
-        return $this->hasMany(EsQuestion::class, 'mes_industry_id', 'min_industry_id');
+    public function esQuestions()
+    {
+        return $this->hasMany(EsQuestion::class, 'tes_industry_id', 'min_industry_id');
     }
 }

@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Reserve\Ticket;
+namespace App\Http\Controllers\Admin\Count;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\User;
 
 class UpdateController extends Controller
 {
-  public function edit()
+  public function edit($id)
   {
     // 残りチケット数を取得
-    $count = auth()->user()->userDetail;
+    $count = User::findOrfail($id)->userDetail;
 
-    return view('reserve.ticket.edit', compact('count'));
+    return view('admin.count.edit', compact('id', 'count'));
   }
 
-  public function update(Request $request): RedirectResponse
+  public function update(Request $request, $id): RedirectResponse
   {
     // リクエストデータのバリデーション
     // $request->validate([
@@ -27,7 +28,7 @@ class UpdateController extends Controller
     //   'tsp_case_study_count' => 'required|integer',
     // ]);
 
-    $count = auth()->user()->userDetail;
+    $count = User::findOrfail($id)->userDetail;
 
     // データの保存
     $count->update([
@@ -38,9 +39,9 @@ class UpdateController extends Controller
     ]);
 
     if ($count) {
-      return Redirect::route('reserve.complete')->with('status', 'ticket-status-updated');
+      return Redirect::route('admin.countEdit', $id)->with('status', 'ticket-status-updated');
     } else {
-      return Redirect::route('reserve.complete')->with('error', 'error-updating-ticket-status');
+      return Redirect::route('admin.countEdit', $id)->with('error', 'error-updating-ticket-status');
     }
   }
 }

@@ -8,10 +8,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <p>所持チケット</p>
                 <ul>
-                    <li>面談枠：{{ $plan->tsp_interview_count }}</li>
-                    <li>イベント枠：{{ $plan->tsp_event_attendance }}</li>
-                    <li>ES添削枠：{{ $plan->tsp_es_count }}</li>
-                    <li>ケース添削枠：{{ $plan->tsp_case_study_count }}</li>
+                    <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
+                    <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
+                    <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
+                    <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
                 </ul>
             </div>
         </div>

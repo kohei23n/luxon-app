@@ -76,6 +76,11 @@ class User extends Authenticatable
         return $this->mus_user_password;
     }
 
+    public function userDetail()
+    {
+        return $this->hasOne(UserDetail::class, 'tud_user_id', 'mus_user_id');
+    }
+
     public function servicePlan()
     {
         return $this->belongsTo(ServicePlan::class, 'mus_service_plan_id', 'tsp_service_plan_id');
@@ -98,7 +103,7 @@ class User extends Authenticatable
 
     public function caseQuestions()
     {
-        return $this->hasMany(CaseQuestion::class, 'mca_case_user_id', 'mus_user_id');
+        return $this->hasMany(CaseQuestion::class, 'tca_case_user_id', 'mus_user_id');
     }
 
     public function esQuestions()

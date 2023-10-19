@@ -14,12 +14,12 @@ class CreateController extends Controller
   public function add($id)
   {
     // 残り回数の取得
-    $plan = auth()->user()->servicePlan;
+    $count = auth()->user()->userDetail;
 
     // イベントの取得
     $event = Event::findOrFail($id);
 
-    return view('reserve.event.confirm', compact('plan', 'event'));
+    return view('reserve.event.confirm', compact('count', 'event'));
   }
 
   public function create(Request $request, $id): RedirectResponse

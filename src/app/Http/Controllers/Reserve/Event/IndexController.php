@@ -12,7 +12,7 @@ class IndexController extends Controller
   public function __invoke(Request $request)
   {
     // 残り回数の取得
-    $plan = auth()->user()->servicePlan;
+    $count = auth()->user()->userDetail;
 
     // 月ごとのイベント一覧
     $year = $request->get('year', date('Y'));
@@ -31,6 +31,6 @@ class IndexController extends Controller
       return date('Y-m-d', strtotime($event->mev_event_datetime));
     });
 
-    return view('reserve.event.index', compact('plan', 'year', 'month', 'daysInMonth', 'previousMonth', 'nextMonth', 'groupedEvents'));
+    return view('reserve.event.index', compact('count', 'year', 'month', 'daysInMonth', 'previousMonth', 'nextMonth', 'groupedEvents'));
   }
 }

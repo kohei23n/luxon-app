@@ -9,25 +9,25 @@ class EsQuestion extends Model
 {
     use HasFactory;
     protected $table = 'luxon_trx_es';
-    protected $primaryKey = 'mes_es_id';
+    protected $primaryKey = 'tes_es_id';
 
-    const CREATED_AT = 'mes_registration_datetime';
-    const UPDATED_AT = 'mes_update_datetime';
+    const CREATED_AT = 'tes_registration_datetime';
+    const UPDATED_AT = 'tes_update_datetime';
 
     protected $fillable = [
-        'mes_es_id',
-        'mes_user_id',
-        'mes_company_id',
-        'mes_es_url',
-        'mes_delete_flag',
-        'mes_deletion_datetime',
-        'mes_registration_datetime',
-        'mes_update_datetime',
-        'mes_update_timestamp',
+        'tes_es_id',
+        'tes_user_id',
+        'tes_company_id',
+        'tes_es_url',
+        'tes_delete_flag',
+        'tes_deletion_datetime',
+        'tes_registration_datetime',
+        'tes_update_datetime',
+        'tes_update_timestamp',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'mca_case_user_id', 'mus_user_id');
+        return $this->belongsTo(User::class, 'tca_case_user_id', 'mus_user_id');
     }
 }

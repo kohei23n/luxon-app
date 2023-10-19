@@ -14,28 +14,28 @@ class CreateController extends Controller
   public function add()
   {
     // 残りチケット数を取得
-    $plan = auth()->user()->servicePlan;
+    $count = auth()->user()->userDetail;
 
     $companies = Company::with('industry')->get();
 
-    return view('reserve.es.add', compact('plan', 'companies'));
+    return view('reserve.es.add', compact('count', 'companies'));
   }
 
   public function create(Request $request): RedirectResponse
   {
     // リクエストデータのバリデーション
     $request->validate([
-      'mes_company_id' => 'required|exists:luxon_trx_es,mes_company_id', // esテーブルにIDが存在することを確認
-      'mes_es_url' => 'required|string|max:150',
+      'tes_company_id' => 'required|exists:luxon_trx_es,tes_company_id', // esテーブルにIDが存在することを確認
+      'tes_es_url' => 'required|string|max:150',
     ]);
 
     $user = auth()->user();
 
     // データの保存
     $case = EsQuestion::create([
-      'mes_user_id' => $user->mus_user_id,
-      'mes_company_id' => $request->mes_company_id,
-      'mes_es_url' => $request->mes_es_url
+      'tes_user_id' => $user->mus_user_id,
+      'tes_company_id' => $request->tes_company_id,
+      'tes_es_url' => $request->tes_es_url
     ]);
 
     // ユーザーのチケット残数を1減らす

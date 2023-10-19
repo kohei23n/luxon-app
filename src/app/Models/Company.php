@@ -35,6 +35,6 @@ class Company extends Model
 
   public function esQuestions()
   {
-    return $this->hasMany(EsQuestion::class, 'mes_company_id', 'mco_company_id');
+    return $this->hasMany(EsQuestion::class, 'tes_company_id', 'mco_company_id');
   }
 }

@@ -10,28 +10,28 @@
                 @csrf
                 @method('post')
 
-                <p>ES添削・ケース添削チケット：{{ $plan->tsp_case_study_count }}</p>
+                <p>ES添削チケット：{{ $count->tud_es_count_remaining }}</p>
 
                 {{-- チケットが0より大きい場合は表示 --}}
-                @if ($plan->tsp_case_study_count > 0)
+                @if ($count->tud_es_count_remaining > 0)
                     <!-- 会社 -->
                     <div class="mt-4">
-                        <x-input-label for="mes_company_id" :value="__('会社')" />
-                        <select id="mes_company_id" name="mes_company_id">
+                        <x-input-label for="tes_company_id" :value="__('会社')" />
+                        <select id="tes_company_id" name="tes_company_id">
                             @foreach ($companies as $company)
                                 <option value="{{ $company->mco_company_id }}">
                                     {{ $company->mco_company_name }}（{{ $company->industry->min_industry_name }}）
                                 </option>
                             @endforeach
                         </select>
-                        <x-input-error :messages="$errors->get('mes_company_id')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('tes_company_id')" class="mt-2" />
                     </div>
 
                     <!-- ドキュメントURL -->
                     <div class="mt-4">
-                        <x-input-label for="mes_es_url" :value="__('ドキュメントURL')" />
-                        <x-text-input id="mes_es_url" class="block mt-1 w-full" type="text" name="mes_es_url" />
-                        <x-input-error :messages="$errors->get('mes_es_url')" class="mt-2" />
+                        <x-input-label for="tes_es_url" :value="__('ドキュメントURL')" />
+                        <x-text-input id="tes_es_url" class="block mt-1 w-full" type="text" name="tes_es_url" />
+                        <x-input-error :messages="$errors->get('tes_es_url')" class="mt-2" />
                     </div>
 
                     <div class="flex items-center gap-4">

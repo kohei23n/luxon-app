@@ -12,8 +12,8 @@ class IndexController extends Controller
     $user = auth()->user();
 
     // 残り回数の取得
-    $plan = $user->servicePlan;
+    $count = $user->userDetail;
 
-    return view('reserve.index', compact('plan'));
+    return view('reserve.index', compact('count'));
   }
 }

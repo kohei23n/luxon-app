@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             EventParticipateTableSeeder::class,
             CaseTableSeeder::class,
             EsTableSeeder::class,
+            UserDetailTableSeeder::class,
         ]);
     }
 }

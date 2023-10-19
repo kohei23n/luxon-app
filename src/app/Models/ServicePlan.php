@@ -34,4 +34,9 @@ class ServicePlan extends Model
     {
         return $this->hasMany(User::class, 'mus_service_plan_id', 'tsp_service_plan_id');
     }
+
+    public function userDetails()
+    {
+        return $this->hasMany(UserDetail::class, 'tud_service_plan_id', 'tsp_service_plan_id');
+    }
 }

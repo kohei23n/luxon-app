@@ -21,7 +21,7 @@
                 <button type="submit">予約を確定する</button>
             </form>
 
-            <p>チケット：{{ $plan->tsp_event_attendance }}</p>
+            <p>チケット：{{ $count->tud_event_attendance_remaining }}</p>
             <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}">戻る</a>
         </div>
     </div>
