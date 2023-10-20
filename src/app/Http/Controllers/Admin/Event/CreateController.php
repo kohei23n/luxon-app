@@ -48,7 +48,7 @@ class CreateController extends Controller
       'mev_company_id' => 'required|integer',
       'mev_event_name' => 'required|string|max:255',
       'mev_event_overview' => 'required|string|max:255',
-      'mev_event_description' => 'required|string|max:255',
+      'mev_event_description' => 'nullable|string|max:255',
       'mev_event_datetime' => 'required|date',
       'mev_event_participate_url' => 'required|string|max:255',
       'mev_event_materials_url' => 'nullable|string|max:255',

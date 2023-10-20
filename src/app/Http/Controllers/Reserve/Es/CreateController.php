@@ -39,8 +39,8 @@ class CreateController extends Controller
     ]);
 
     // ユーザーのチケット残数を1減らす
-    $user->servicePlan->tsp_es_count = $user->servicePlan->tsp_es_count - 1;
-    $user->servicePlan->save();
+    $user->userDetail->tud_es_count_remaining = $user->userDetail->tud_es_count_remaining - 1;
+    $user->userDetail->save();
 
     if ($case) {
       return Redirect::route('reserve.complete')->with('status', 'es-status-created');

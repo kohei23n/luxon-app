@@ -49,7 +49,7 @@
                         style="width:78px; height:78px;">選考対策</a>
                 <a class="btn" href="{{ route('research.index') }}">
                     <img src="{{ asset('images/research-industry.png') }}" alt="Image Description"
-                        style="width:78px; height:78px;">業界研究</a>
+                        style="width:78px; height:78px;">選考情報</a>
                 <a class="btn" href="{{ route('reserve.index') }}">
                     <img src="{{ asset('images/reserving.png') }}" alt="Image Description"
                         style="width:78px; height:78px;">予約</a>

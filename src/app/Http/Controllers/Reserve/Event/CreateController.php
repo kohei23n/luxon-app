@@ -38,8 +38,8 @@ class CreateController extends Controller
     ]);
 
     // ユーザーのチケット残数を1減らす
-    $user->servicePlan->tsp_event_attendance = $user->servicePlan->tsp_event_attendance - 1;
-    $user->servicePlan->save();
+    $user->userDetail->tud_event_attendance_remaining = $user->userDetail->tud_event_attendance_remaining - 1;
+    $user->userDetail->save();
 
     if ($participant) {
       return Redirect::route('reserve.complete')->with('status', 'event-status-created');
