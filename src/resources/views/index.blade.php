@@ -3,31 +3,20 @@
 @endsection
 
 <x-app-layout>
-    <div class="colum-information">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <h2>コラム・企業情報等</h2>
-        </div>
+    <div class="section-box">
+        <h2 class="section-header">コラム・企業情報等</h2>
     </div>
-    <div class="event-remainder">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <h2>イベントリマインダー</h2>
-
-            @foreach ($upcomingEvents as $event)
-                <div>
-                    <h3>{{ $event->mev_event_name }}</h3>
-                    <p class="card-text">{{ $event->mev_event_datetime }}</p>
-                </div>
-            @endforeach
-
-            <ul>
-                <li></li>
-            </ul>
-        </div>
+    <div class="section-box">
+        <h2 class="section-header">イベントリマインダー</h2>
+        @foreach ($upcomingEvents as $event)
+            <div class="event-box">
+                <h3>{{ $event->mev_event_name }}</h3>
+                <p class="card-text">{{ $event->mev_event_datetime }}</p>
+            </div>
+        @endforeach
     </div>
-    <div class="entry-reminder">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <h2>エントリーリマインダー</h2>
-        </div>
+    <div class="entry-reminder section-box">
+        <h2 class="section-header">エントリーリマインダー</h2>
     </div>
     <div class="list-box">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

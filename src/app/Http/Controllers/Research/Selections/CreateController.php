@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Research\Selections;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SelectionDetail;
-use App\Models\SelectionPhase;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\SelectionDetail;
+use App\Models\SelectionPhase;
+use App\Models\Company;
 
 class CreateController extends Controller
 {
@@ -29,8 +30,11 @@ class CreateController extends Controller
       'msd_selection_detail' => 'required|string',
     ]);
 
+    $industryId = Company::findOrFail($id)->mco_industry_id;
+
     // データの保存
     $status = SelectionDetail::create([
+      'msd_industry_id' => $industryId,
       'msd_company_id' => $id,
       'msd_selection_phase_id' => $request->msd_selection_phase_id,
       'msd_selection_detail' => $request->msd_selection_detail,

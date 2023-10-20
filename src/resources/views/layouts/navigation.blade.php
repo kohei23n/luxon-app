@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8" style="padding: 0;">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-16 bg-color">
             <div class="flex">
                 <h1>Tachyon</h1>
                 <div class="search-box">

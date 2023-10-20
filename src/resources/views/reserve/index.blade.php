@@ -3,19 +3,19 @@
 @endsection
 
 <x-app-layout>
-    <div class="py-12">
-        <div class="ticket-list">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <p>所持チケット</p>
-                <ul>
-                    <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
-                    <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
-                    <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
-                    <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
-                </ul>
-            </div>
-        </div>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('イベント予約') }}
+        </h2>
+        <ul class="flex text-xs justify-between mt-2">
+            <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
+            <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
+            <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
+            <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
+        </ul>
+    </x-slot>
 
+    <div class="py-6">
         <div class="reserving-list">
             <div class="reserving-box">
                 <div class="p-6 text-gray-900">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="list-box">
+    <div class="fixed w-full left-0">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="btn-list">
                 <a class="btn" href="">
