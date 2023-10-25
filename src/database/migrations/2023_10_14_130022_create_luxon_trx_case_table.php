@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('luxon_trx_case', function (Blueprint $table) {
             $table->increments('tca_case_id')->comment('ケースID');
             $table->unsignedInteger('tca_case_user_id')->comment('回答者のユーザーID');
+            $table->unsignedInteger('tca_mentor_id')->nullable()->comment('メンターのユーザーID');
             $table->string('tca_case_content', 255)->comment('ケース内容');
             $table->unsignedInteger('tca_case_time')->comment('ケース思考時間');
             $table->string('tca_case_url', 150)->comment('ケースのドキュメントURL');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->timestamp('tca_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
 
             $table->foreign('tca_case_user_id')->references('mus_user_id')->on('luxon_mst_user');
+            $table->foreign('tca_mentor_id')->references('mme_mentor_id')->on('luxon_mst_mentor');
         });
     }
 

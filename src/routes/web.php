@@ -45,13 +45,15 @@ use App\Http\Controllers\MyPage\Selection\UpdateController as MyPageSelectionUpd
 use App\Http\Controllers\Admin\Mentee\IndexController as AdminMenteeIndex;
 // メンター情報
 use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
+// チケット割り振り
+use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
+use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
+
 
 // イベント追加、管理
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
-// 面談枠管理
-use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
-use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
+
 // ES管理
 use App\Http\Controllers\Admin\Es\IndexController as AdminEsIndex;
 // ケース管理
@@ -135,6 +137,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/mentee', AdminMenteeIndex::class)->name('admin.menteeIndex');
     // メンター情報
     Route::get('/admin/mentor', AdminMentorIndex::class)->name('admin.mentorIndex');
+    // チケット割り振り
+    Route::get('/admin/count', AdminCountIndex::class)->name('admin.countIndex');
+    Route::get('/admin/count/edit/{id}', [AdminCountUpdate::class, 'edit'])->name('admin.countEdit');
+    Route::patch('/admin/count/edit/{id}', [AdminCountUpdate::class, 'update'])->name('admin.countUpdate');
+    // 添削割り振り
+    Route::get('/admin/review', function () {
+        return view('admin.review.index');
+    })->name('admin.reviewHome');
+
 
     // イベント追加
     Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
@@ -142,10 +153,6 @@ Route::middleware('auth')->group(function () {
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
     
-    // 面談枠管理
-    Route::get('/admin/count', AdminCountIndex::class)->name('admin.countIndex');
-    Route::get('/admin/count/edit/{id}', [AdminCountUpdate::class, 'edit'])->name('admin.countEdit');
-    Route::patch('/admin/count/edit/{id}', [AdminCountUpdate::class, 'update'])->name('admin.countUpdate');
 
     // ES管理
     Route::get('/admin/es', AdminEsIndex::class)->name('admin.esIndex');

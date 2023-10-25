@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('luxon_trx_es', function (Blueprint $table) {
             $table->increments('tes_es_id')->comment('ESID');
             $table->unsignedInteger('tes_user_id')->comment('回答者のユーザーID');
-            // $table->unsignedInteger('tes_industry_id')->comment('業界ID');
+            $table->unsignedInteger('tes_mentor_id')->nullable()->comment('メンターのユーザーID');
             $table->unsignedInteger('tes_company_id')->comment('会社ID');
             $table->string('tes_es_url', 150)->comment('ESのドキュメントURL');
             $table->boolean('tes_is_returned')->default(false)->comment('返却フラグ');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamp('tes_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
 
             $table->foreign('tes_user_id')->references('mus_user_id')->on('luxon_mst_user');
-            // $table->foreign('tes_industry_id')->references('min_industry_id')->on('luxon_mst_industry');
+            $table->foreign('tes_mentor_id')->references('mme_mentor_id')->on('luxon_mst_mentor');
             $table->foreign('tes_company_id')->references('mco_company_id')->on('luxon_mst_company');
         });
     }
