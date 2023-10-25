@@ -12,6 +12,6 @@ class IndexController extends Controller
         //選考情報表示
         $mentors = Mentor::all();
 
-        return view('admin.mentee.index', compact('mentors'));
+        return view('admin.mentor.index', compact('mentors'));
     }
 }
