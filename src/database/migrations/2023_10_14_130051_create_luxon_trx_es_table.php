@@ -17,6 +17,7 @@ return new class extends Migration
             // $table->unsignedInteger('tes_industry_id')->comment('業界ID');
             $table->unsignedInteger('tes_company_id')->comment('会社ID');
             $table->string('tes_es_url', 150)->comment('ESのドキュメントURL');
+            $table->boolean('tes_is_returned')->default(false)->comment('返却フラグ');
             $table->char('tes_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('tes_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tes_registration_datetime')->comment('登録日時');

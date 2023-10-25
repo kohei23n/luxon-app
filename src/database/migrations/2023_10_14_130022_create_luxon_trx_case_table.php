@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tca_case_content', 255)->comment('ケース内容');
             $table->unsignedInteger('tca_case_time')->comment('ケース思考時間');
             $table->string('tca_case_url', 150)->comment('ケースのドキュメントURL');
+            $table->boolean('tca_is_returned')->default(false)->comment('返却フラグ');
             $table->char('tca_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('tca_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tca_registration_datetime')->comment('登録日時');

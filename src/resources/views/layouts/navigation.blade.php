@@ -4,9 +4,9 @@
         <div class="flex justify-between h-16 bg-color">
             <div class="flex">
                 <h1>Tachyon</h1>
-                <div class="search-box">
+                {{-- <div class="search-box">
                     <p>企業を検索🔍</p>
-                </div>    
+                </div>     --}}
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('index') }}">
