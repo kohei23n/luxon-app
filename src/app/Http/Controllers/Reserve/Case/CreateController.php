@@ -31,7 +31,7 @@ class CreateController extends Controller
 
     // データの保存
     $case = CaseQuestion::create([
-      'tca_case_user_id' => $user->mus_user_id,
+      'tca_user_id' => $user->mus_user_id,
       'tca_case_content' => $request->tca_case_content,
       'tca_case_time' => $request->tca_case_time,
       'tca_case_url' => $request->tca_case_url

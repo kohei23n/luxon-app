@@ -28,6 +28,6 @@ class EsQuestion extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'tca_case_user_id', 'mus_user_id');
+        return $this->belongsTo(User::class, 'tca_user_id', 'mus_user_id');
     }
 }

@@ -48,16 +48,17 @@ use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
 // チケット割り振り
 use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
 use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
+// 添削割り振り
+// ES
+use App\Http\Controllers\Admin\Review\Es\IndexController as AdminEsIndex;
+// ケース
+use App\Http\Controllers\Admin\Review\Case\IndexController as AdminCaseIndex;
 
 
 // イベント追加、管理
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
 
-// ES管理
-use App\Http\Controllers\Admin\Es\IndexController as AdminEsIndex;
-// ケース管理
-use App\Http\Controllers\Admin\Case\IndexController as AdminCaseIndex;
 
 use Illuminate\Support\Facades\Route;
 
@@ -145,7 +146,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/review', function () {
         return view('admin.review.index');
     })->name('admin.reviewHome');
-
+    // ES
+    Route::get('/admin/es', AdminEsIndex::class)->name('admin.esIndex');
+    // ケース
+    Route::get('/admin/case', AdminCaseIndex::class)->name('admin.caseIndex');
 
     // イベント追加
     Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
@@ -153,12 +157,6 @@ Route::middleware('auth')->group(function () {
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
     
-
-    // ES管理
-    Route::get('/admin/es', AdminEsIndex::class)->name('admin.esIndex');
-
-    // ケース管理
-    Route::get('/admin/case', AdminCaseIndex::class)->name('admin.caseIndex');
 });
 
 // 管理者

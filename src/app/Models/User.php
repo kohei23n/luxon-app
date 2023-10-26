@@ -103,7 +103,7 @@ class User extends Authenticatable
 
     public function caseQuestions()
     {
-        return $this->hasMany(CaseQuestion::class, 'tca_case_user_id', 'mus_user_id');
+        return $this->hasMany(CaseQuestion::class, 'tca_user_id', 'mus_user_id');
     }
 
     public function esQuestions()
