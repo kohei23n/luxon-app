@@ -13,6 +13,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+
+        <!-- Page Specific Styles -->
+        @yield('head')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

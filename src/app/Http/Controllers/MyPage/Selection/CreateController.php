@@ -20,12 +20,12 @@ class CreateController extends Controller
         // リクエストデータのバリデーション
         $request->validate([
             'tss_company_name' => 'required|string|max:255',
-            'tss_selection_status' => 'required|string|in:選考前,選考中,合格,不合格',
+            'tss_selection_status' => 'required|string',
             'tss_preference_ranking' => 'required|integer|min:1',
             'tss_selection_date' => 'required|date',
         ]);
 
-        $user = auth()->user()->first();
+        $user = auth()->user();
 
         // データの保存
         $status = SelectionStatus::create([

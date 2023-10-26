@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\ServicePlan;
+use App\Models\Mentor;
+use App\Models\SelectionStatus;
+use App\Models\EventParticipant;
+use App\Models\CaseQuestion;
+use App\Models\EsQuestion;
 
 class User extends Authenticatable
 {
@@ -17,6 +23,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    const IS_ADMIN = 1;
 
     protected $table = 'luxon_mst_user';
     protected $primaryKey = 'mus_user_id';
@@ -34,6 +42,7 @@ class User extends Authenticatable
         'mus_first_industry_preference',
         'mus_second_industry_preference',
         'mus_dedicated_mentor',
+        'mus_is_admin',
         'mus_access_right',
         'mus_delete_flag',
         'mus_deletion_datetime',
@@ -67,6 +76,11 @@ class User extends Authenticatable
         return $this->mus_user_password;
     }
 
+    public function userDetail()
+    {
+        return $this->hasOne(UserDetail::class, 'tud_user_id', 'mus_user_id');
+    }
+
     public function servicePlan()
     {
         return $this->belongsTo(ServicePlan::class, 'mus_service_plan_id', 'tsp_service_plan_id');
@@ -80,5 +94,20 @@ class User extends Authenticatable
     public function selectionStatuses()
     {
         return $this->hasMany(SelectionStatus::class, 'tss_user_id', 'mus_user_id');
+    }
+
+    public function eventParticipants()
+    {
+        return $this->hasMany(EventParticipant::class, 'tep_user_id', 'mus_user_id');
+    }
+
+    public function caseQuestions()
+    {
+        return $this->hasMany(CaseQuestion::class, 'tca_user_id', 'mus_user_id');
+    }
+
+    public function esQuestions()
+    {
+        return $this->hasMany(EsQuestion::class, 'mes_case_user_id', 'mus_user_id');
     }
 }

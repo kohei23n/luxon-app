@@ -9,6 +9,7 @@ class ServicePlan extends Model
 {
     use HasFactory;
     protected $table = 'luxon_trx_service_plan';
+    protected $primaryKey = 'tsp_service_plan_id';
 
     const CREATED_AT = 'tsp_registration_datetime';
     const UPDATED_AT = 'tsp_update_datetime';
@@ -19,6 +20,7 @@ class ServicePlan extends Model
         'tsp_subscribe_price',
         'tsp_event_attendance',
         'tsp_interview_count',
+        'tsp_es_count',
         'tsp_case_study_count',
         'tsp_service_plan_month',
         'tsp_delete_flag',
@@ -31,5 +33,10 @@ class ServicePlan extends Model
     public function users()
     {
         return $this->hasMany(User::class, 'mus_service_plan_id', 'tsp_service_plan_id');
+    }
+
+    public function userDetails()
+    {
+        return $this->hasMany(UserDetail::class, 'tud_service_plan_id', 'tsp_service_plan_id');
     }
 }

@@ -1,3 +1,7 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserving.css') }}">
+@endsection
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -5,15 +9,16 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-              <div class="p-6 text-gray-900">
-                <p>メンター：{{ $mentor->mme_last_name }}{{ $mentor->mme_first_name }}</p>
-                <p>メンターLINE：{{ $mentor->mme_line_url }}</p>
-                <p>面談予約URL：{{ $mentor->mme_timerex_url }}</p>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="mentor-details">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <p class="mentor-name">メンター：{{ $mentor->mme_last_name }}{{ $mentor->mme_first_name }}</p>
+                    <p class="mentor-line">メンターLINE：{{ $mentor->mme_line_url }}</p>
+                    <p class="mentor-reserve">面談予約URL：{{ $mentor->mme_timerex_url }}</p>
+                    <a href="{{ route('reserve.index') }}" class="mentor-back-button">戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

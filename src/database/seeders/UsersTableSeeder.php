@@ -15,13 +15,40 @@ class UsersTableSeeder extends Seeder
         User::create([
             'mus_email_address' => 'test@gmail.com',
             'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
-            'mus_user_first_name' => '太郎',
+            'mus_user_first_name' => '一郎',
             'mus_user_last_name' => 'テスト',
             'mus_current_university' => '東京大学',
             'mus_service_plan_id' => 1,
             'mus_first_industry_preference' => 'IT・通信',
             'mus_second_industry_preference' => '総合コンサル',
             'mus_dedicated_mentor_id' => 1,
+        ]);
+        User::create([
+            'mus_email_address' => 'test2@gmail.com',
+            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_user_first_name' => '次郎',
+            'mus_user_last_name' => 'テスト',
+            'mus_current_university' => '慶應義塾大学',
+            'mus_service_plan_id' => 1,
+            'mus_first_industry_preference' => 'IT・通信',
+            'mus_second_industry_preference' => '総合コンサル',
+            'mus_dedicated_mentor_id' => 1,
+        ]);
+        User::create([
+            'mus_email_address' => 'test3@gmail.com',
+            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_user_first_name' => '三郎',
+            'mus_user_last_name' => 'テスト',
+            'mus_current_university' => '東京大学',
+            'mus_service_plan_id' => 1,
+            'mus_first_industry_preference' => 'IT・通信',
+            'mus_second_industry_preference' => '総合コンサル',
+            'mus_dedicated_mentor_id' => 1,
+        ]);
+        User::create([
+            'mus_email_address' => 'admin@gmail.com',
+            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_is_admin' => true,
         ]);
     }
 }

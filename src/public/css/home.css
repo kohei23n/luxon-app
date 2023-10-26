@@ -1,8 +1,8 @@
 
-.flex{
+.bg-color {
     background-color: #15397A;
 }
-.flex h1{
+.bg-color h1{
     color: white;
     font-size: 40px;
     margin-left: 15px;
@@ -21,10 +21,7 @@
     margin-top: 6px;
     margin-left: 6px;
 }
-.py-12{
-    bottom: 0;
-    padding: 0;
-}
+
 .btn-list{
     display: flex;
     gap: 12px;
@@ -34,45 +31,42 @@
     text-align: center;
     border-color: #999999;
 }
-.list-box{
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.colum-information{
+
+/* Base styles for all sections */
+.section-box {
     width: 100%;
-    height: 128px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    background-color: #f7f7f7;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.colum-information h2{
+
+.section-header {
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 128px;
-    font-size: 30px;
+    background-color: #f7f7f7;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
 }
-.event-remainder{
-    width: 100%;
-    height: 120px;
+
+/* Event reminder section */
+.event-box {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px dashed #e0e0e0;
+    background-color: #fafafa;
 }
-.event-remainder h2{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 120px;
-    font-size: 30px;
+
+.event-box:last-child {
+    border-bottom: none;
 }
-.entry-reminder{
-    width: 100%;
-    height: 120px;
-    margin-bottom: 15px;
+
+.event-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
-.entry-reminder h2{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 120px;
-    font-size: 30px;
+
+.card-text {
+    color: #777;
 }

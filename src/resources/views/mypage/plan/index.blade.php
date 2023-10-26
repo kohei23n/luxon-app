@@ -18,22 +18,28 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">専属メンター情報</h2>
-                <p>氏名：{{ $user->dedicatedMentor->mme_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mme_first_name ?? 'なし' }}</p>
+                <p>氏名：{{ $user->dedicatedMentor->mme_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mme_first_name ?? 'なし' }}
+                </p>
                 <p>メンターLINE URL：{{ $user->dedicatedMentor->mme_line_url ?? 'なし' }}</p>
                 <p>TimeRex URL：{{ $user->dedicatedMentor->mme_timerex_url ?? 'なし' }}</p>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">参加回数</h2>
-                <p>個別面談回数：{{ $user->servicePlan->tsp_interview_count ?? 'なし' }}</p>
-                <p>イベント参加回数：{{ $user->servicePlan->tsp_event_attendance ?? 'なし' }}</p>
-                <p>ケース対策回数：{{ $user->servicePlan->tsp_case_study_count ?? 'なし' }}</p>
+                <ul>
+                    <li>面談枠：{{ $user->userDetail->tud_interview_count_remaining ?? 'なし' }}</li>
+                    <li>イベント枠：{{ $user->userDetail->tud_event_attendance_remaining ?? 'なし' }}</li>
+                    <li>ES添削枠：{{ $user->userDetail->tud_es_count_remaining ?? 'なし' }}</li>
+                    <li>ケース添削枠：{{ $user->userDetail->tud_case_study_count_remaining ?? 'なし' }}</li>
+                </ul>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-              <h2 class="text-lg font-medium text-gray-900">累積添削回数</h2>
-              <p>後に実装</p>
-          </div>
+                <h2 class="text-lg font-medium text-gray-900">累積添削回数</h2>
+                <p>後に実装</p>
+            </div>
+
+            <a href="{{ route('mypage.index') }}">戻る</a>
 
         </div>
     </div>
