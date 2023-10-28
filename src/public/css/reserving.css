@@ -22,7 +22,7 @@
 
 .reserving-box{
    width: 80%;
-   height: 88px;
+   height: 140px;
    justify-content: center;
    align-items: center;
    display: flex;
@@ -43,10 +43,11 @@
    background-color: #15397A;
    width: 39%;
    border-radius: 10px;
-   height: 88px;
+   height: 140px;
    justify-content: center;
    align-items: center;
    display: flex;
+   margin-bottom: 30px;
 }
 .reserving-box-mini a{
    color: white;
@@ -96,4 +97,10 @@
    background-color: #e6e6e6;
    color: #555;
    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+}
+.btn-list {
+   bottom: 0;
+   width: 100%;
+   display: flex;
+   margin-top: 10px;
 }
