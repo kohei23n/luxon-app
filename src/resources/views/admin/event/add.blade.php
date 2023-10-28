@@ -97,41 +97,6 @@
                 </div>
             </form>
 
-            <!-- カレンダービュー -->
-            <a href="{{ route('admin.eventAdd', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}">前月</a>
-            <h1>{{ $month }}月</h1>
-            <a href="{{ route('admin.eventAdd', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}">次月</a>
-            
-            <table>
-                <thead>
-                    <!-- ヘッダー部分（曜日表示など） -->
-                </thead>
-                <tbody>
-                    @for ($i = 1; $i <= $daysInMonth; $i++)
-                        <tr>
-                            <td>
-                                {{ $i }}
-                                @foreach ($groupedEvents["$year-$month-$i"] ?? [] as $event)
-                                    <div>
-                                        <a href="{{ route('admin.eventShow', $event->mev_event_id) }}">{{ $event->mev_event_name }}</a>
-                                    </div>
-                                @endforeach
-                            </td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-
-            <!-- 選択された日付のイベント一覧 -->
-            @if(isset($selectedDateEvents) && count($selectedDateEvents) > 0)
-                <h3>{{ $selectedDate }}のイベント一覧</h3>
-                <ul>
-                    @foreach ($selectedDateEvents as $event)
-                        <li>{{ $event->mev_event_name }}</li>
-                    @endforeach
-                </ul>
-            @endif
-
             <a href="{{ route('admin.index') }}">戻る</a>
 
         </div>

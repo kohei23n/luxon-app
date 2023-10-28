@@ -57,12 +57,11 @@ use App\Http\Controllers\Admin\Review\Es\UpdateController as AdminEsUpdate;
 use App\Http\Controllers\Admin\Review\Case\CountController as AdminCaseCount;
 use App\Http\Controllers\Admin\Review\Case\IndexController as AdminCaseIndex;
 use App\Http\Controllers\Admin\Review\Case\UpdateController as AdminCaseUpdate;
-
-
-// イベント追加、管理
-use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
+// イベント管理
+use App\Http\Controllers\Admin\Event\IndexController as AdminEventIndex;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
-
+// イベント追加
+use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 
 use Illuminate\Support\Facades\Route;
 
@@ -163,13 +162,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/case/index', AdminCaseIndex::class)->name('admin.caseIndex');
     Route::get('/admin/case/{id}', [AdminCaseUpdate::class, 'edit'])->name('admin.caseEdit');
     Route::patch('/admin/case/{id}', [AdminCaseUpdate::class, 'update'])->name('admin.caseUpdate');
-
     // イベント追加
     Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
     Route::post('/admin/event/add', [AdminEventCreate::class, 'create'])->name('admin.eventCreate');
+    // イベント一覧
+    Route::get('/admin/event', AdminEventIndex::class)->name('admin.eventIndex');
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
-    
 });
 
 require __DIR__ . '/auth.php';
