@@ -17,6 +17,7 @@ class EsQuestion extends Model
     protected $fillable = [
         'tes_es_id',
         'tes_user_id',
+        'tes_mentor_id',
         'tes_company_id',
         'tes_es_url',
         'tes_delete_flag',
@@ -28,6 +29,16 @@ class EsQuestion extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'tca_user_id', 'mus_user_id');
+        return $this->belongsTo(User::class, 'tes_user_id', 'mus_user_id');
+    }
+
+    public function mentor()
+    {
+        return $this->belongsTo(Mentor::class, 'tes_mentor_id', 'mme_mentor_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'tes_company_id', 'mco_company_id');
     }
 }

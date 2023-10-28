@@ -39,4 +39,9 @@ class Mentor extends Model
     {
         return $this->hasMany(CaseQuestion::class, 'tca_mentor_id', 'mme_mentor_id');
     }
+
+    public function esQuestions()
+    {
+        return $this->hasMany(EsQuestion::class, 'tes_mentor_id', 'mme_mentor_id');
+    }
 }

@@ -14,13 +14,13 @@ class IndexController extends Controller
 
         switch ($type) {
             case 'unassigned':
-                $entrySheets = EsQuestion::where('tes_mentor_id', null)->get();
+                $entrySheets = EsQuestion::with(['user', 'mentor', 'company'])->where('tes_mentor_id', null)->get();
                 break;
             case 'assigned':
-                $entrySheets = EsQuestion::whereNotNull('tes_mentor_id')->where('tes_is_returned', false)->get();
+                $entrySheets = EsQuestion::with(['user', 'mentor', 'company'])->whereNotNull('tes_mentor_id')->where('tes_is_returned', false)->get();
                 break;
             case 'returned':
-                $entrySheets = EsQuestion::where('tes_is_returned', true)->get();
+                $entrySheets = EsQuestion::with(['user', 'mentor', 'company'])->where('tes_is_returned', true)->get();
                 break;
             default:
                 $entrySheets = EsQuestion::all(); 

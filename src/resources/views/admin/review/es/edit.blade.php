@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('ケース割り振り') }}
+            {{ __('ES割り振り') }}
         </h2>
     </x-slot>
     <div>
@@ -11,27 +11,27 @@
                 @csrf
             </form>
 
-            <form method="post" action="{{ route('admin.caseUpdate', $id) }}" class="mt-6 space-y-6">
+            <form method="post" action="{{ route('admin.esUpdate', $id) }}" class="mt-6 space-y-6">
                 @csrf
                 @method('patch')
 
                 <!-- ケース情報 -->
                 <div class="mt-4">
-                    <p>提出者：{{ $case->user->mus_user_last_name }}{{ $case->user->mus_user_first_name }}</p>
-                    <p>ケース設問：{{ $case->tca_case_content }}</p>
-                    <p>ドキュメントURL：{{ $case->tca_case_url }}</p>
+                    <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
+                    <p>会社：{{ $sheet->company->mco_company_name }}</p>
+                    <p>ドキュメントURL：{{ $sheet->tes_es_url }}</p>
                 </div>
 
-                <!-- ケース割り振り -->
+                <!-- ES割り振り -->
                 <div class="mt-4">
-                    <x-input-label for="tca_mentor_id" :value="__('ケース割り当て')" />
-                    <select id="tca_mentor_id" name="tca_mentor_id">
+                    <x-input-label for="tes_mentor_id" :value="__('ケース割り当て')" />
+                    <select id="tes_mentor_id" name="tes_mentor_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($mentors as $mentor)
                             <option value="{{ $mentor->mme_mentor_id }}">{{ $mentor->mme_last_name }}</option>
                         @endforeach
                     </select>
-                    <x-input-error :messages="$errors->get('tca_mentor_id')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('tes_mentor_id')" class="mt-2" />
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -44,7 +44,7 @@
                 </div>
             </form>
 
-            <a href="{{ route('admin.caseCount') }}">戻る</a>
+            <a href="{{ route('admin.esCount') }}">戻る</a>
 
         </div>
     </div>

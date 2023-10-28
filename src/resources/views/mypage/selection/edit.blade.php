@@ -25,6 +25,7 @@
             <div class="mt-4">
                 <x-input-label for="tss_selection_status" :value="__('選考ステータス')" />
                 <select id="tss_selection_status" name="tss_selection_status">
+                    <option value="" disabled selected>選択してください</option>
                     <option value="選考前" {{ $status->tss_selection_status == '選考前' ? 'selected' : '' }}>選考前</option>
                     <option value="選考中"  {{ $status->tss_selection_status == '選考中' ? 'selected' : '' }}>選考中</option>
                     <option value="合格"  {{ $status->tss_selection_status == '合格' ? 'selected' : '' }}>合格</option>

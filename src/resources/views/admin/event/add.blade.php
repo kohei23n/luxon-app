@@ -18,6 +18,7 @@
                     <div class="mt-4">
                         <x-input-label for="mev_industry_id" :value="__('業界')" />
                         <select id="mev_industry_id" name="mev_industry_id">
+                            <option value="" disabled selected>選択してください</option>
                             @foreach ($industries as $industry)
                                 <option value="{{ $industry->min_industry_id }}">{{ $industry->min_industry_name }}</option>
                             @endforeach
@@ -29,6 +30,7 @@
                     <div class="mt-4">
                         <x-input-label for="mev_company_id" :value="__('会社')" />
                         <select id="mev_company_id" name="mev_company_id">
+                            <option value="" disabled selected>選択してください</option>
                             @foreach ($companies as $company)
                                 <option value="{{ $company->mco_company_id }}">{{ $company->mco_company_name }}</option>
                             @endforeach

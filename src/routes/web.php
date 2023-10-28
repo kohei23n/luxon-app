@@ -52,6 +52,7 @@ use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
 // ES
 use App\Http\Controllers\Admin\Review\Es\CountController as AdminEsCount;
 use App\Http\Controllers\Admin\Review\Es\IndexController as AdminEsIndex;
+use App\Http\Controllers\Admin\Review\Es\UpdateController as AdminEsUpdate;
 // ケース
 use App\Http\Controllers\Admin\Review\Case\CountController as AdminCaseCount;
 use App\Http\Controllers\Admin\Review\Case\IndexController as AdminCaseIndex;
@@ -155,6 +156,8 @@ Route::middleware('auth')->group(function () {
     // ES
     Route::get('/admin/es', AdminEsCount::class)->name('admin.esCount');
     Route::get('/admin/es/index', AdminEsIndex::class)->name('admin.esIndex');
+    Route::get('/admin/es/{id}', [AdminEsUpdate::class, 'edit'])->name('admin.esEdit');
+    Route::patch('/admin/es/{id}', [AdminEsUpdate::class, 'update'])->name('admin.esUpdate');
     // ケース
     Route::get('/admin/case', AdminCaseCount::class)->name('admin.caseCount');
     Route::get('/admin/case/index', AdminCaseIndex::class)->name('admin.caseIndex');
