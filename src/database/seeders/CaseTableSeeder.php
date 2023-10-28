@@ -18,5 +18,17 @@ class CaseTableSeeder extends Seeder
             'tca_case_time' => 10,
             'tca_case_url' => 'https://www.google.com/',
         ]);
+        CaseQuestion::create([
+            'tca_user_id' => 2,
+            'tca_case_content' => 'ラーメン屋の売上向上施策を考えてください。',
+            'tca_case_time' => 10,
+            'tca_case_url' => 'https://www.google.com/',
+        ]);
+        CaseQuestion::create([
+            'tca_user_id' => 2,
+            'tca_case_content' => 'メガネ屋の売上向上施策を考えてください。',
+            'tca_case_time' => 10,
+            'tca_case_url' => 'https://www.google.com/',
+        ]);
     }
 }

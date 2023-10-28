@@ -15,21 +15,28 @@ class CaseQuestion extends Model
     const UPDATED_AT = 'tca_update_datetime';
 
     protected $fillable = [
-        'tes_es_id',
-        'tes_user_id',
-        'tes_industry_id',
-        'tes_company_id',
-        'tes_es_url',
-        'tes_delete_flag',
-        'tes_deletion_datetime',
-        'tes_registration_datetime',
-        'tes_update_datetime',
-        'tes_update_timestamp',
+        'tca_case_id',
+        'tca_user_id',
+        'tca_mentor_id',
+        'tca_case_content',
+        'tca_case_time',
+        'tca_case_url',
+        'tca_is_returned',
+        'tca_delete_flag',
+        'tca_deletion_datetime',
+        'tca_registration_datetime',
+        'tca_update_datetime',
+        'tca_update_timestamp',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'tca_user_id', 'mus_user_id');
+    }
+
+    public function mentor()
+    {
+        return $this->belongsTo(Mentor::class, 'tca_mentor_id', 'mme_mentor_id');
     }
 
     public function industry()

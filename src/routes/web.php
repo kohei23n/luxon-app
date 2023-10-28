@@ -50,9 +50,12 @@ use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
 use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
 // 添削割り振り
 // ES
+use App\Http\Controllers\Admin\Review\Es\CountController as AdminEsCount;
 use App\Http\Controllers\Admin\Review\Es\IndexController as AdminEsIndex;
 // ケース
+use App\Http\Controllers\Admin\Review\Case\CountController as AdminCaseCount;
 use App\Http\Controllers\Admin\Review\Case\IndexController as AdminCaseIndex;
+use App\Http\Controllers\Admin\Review\Case\UpdateController as AdminCaseUpdate;
 
 
 // イベント追加、管理
@@ -133,6 +136,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'update'])->name('mypage.selectionUpdate');
 
     // 管理者
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('admin.index');
 
     // メンティー情報
     Route::get('/admin/mentee', AdminMenteeIndex::class)->name('admin.menteeIndex');
@@ -147,9 +153,13 @@ Route::middleware('auth')->group(function () {
         return view('admin.review.index');
     })->name('admin.reviewHome');
     // ES
-    Route::get('/admin/es', AdminEsIndex::class)->name('admin.esIndex');
+    Route::get('/admin/es', AdminEsCount::class)->name('admin.esCount');
+    Route::get('/admin/es/index', AdminEsIndex::class)->name('admin.esIndex');
     // ケース
-    Route::get('/admin/case', AdminCaseIndex::class)->name('admin.caseIndex');
+    Route::get('/admin/case', AdminCaseCount::class)->name('admin.caseCount');
+    Route::get('/admin/case/index', AdminCaseIndex::class)->name('admin.caseIndex');
+    Route::get('/admin/case/{id}', [AdminCaseUpdate::class, 'edit'])->name('admin.caseEdit');
+    Route::patch('/admin/case/{id}', [AdminCaseUpdate::class, 'update'])->name('admin.caseUpdate');
 
     // イベント追加
     Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
@@ -157,13 +167,6 @@ Route::middleware('auth')->group(function () {
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
     
-});
-
-// 管理者
-Route::middleware('auth')->group(function () {
-    Route::get('/admin', function () {
-        return view('admin.index');
-    })->name('admin.index');
 });
 
 require __DIR__ . '/auth.php';

@@ -3,21 +3,29 @@
 namespace App\Http\Controllers\Admin\Review\Es;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\EsQuestion;
 
 class IndexController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        //未割り振りのケースの合計を取得
-        $unassigned = EsQuestion::where('tes_mentor_id', null)->count();
+        $type = $request->input('type');
 
-        // 割り振り済み、未返却のケースの合計を取得
-        $assigned = EsQuestion::whereNotNull('tes_mentor_id')->where('tes_is_returned', false)->count();
+        switch ($type) {
+            case 'unassigned':
+                $entrySheets = EsQuestion::where('tes_mentor_id', null)->get();
+                break;
+            case 'assigned':
+                $entrySheets = EsQuestion::whereNotNull('tes_mentor_id')->where('tes_is_returned', false)->get();
+                break;
+            case 'returned':
+                $entrySheets = EsQuestion::where('tes_is_returned', true)->get();
+                break;
+            default:
+                $entrySheets = EsQuestion::all(); 
+        }
 
-        // 返却済みのケースの合計を取得
-        $returned = EsQuestion::where('tes_is_returned', true)->count();
-
-        return view('admin.review.es.count', compact('unassigned', 'assigned', 'returned'));
+        return view('admin.review.es.index', compact('entrySheets', 'type'));
     }
 }

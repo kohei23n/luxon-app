@@ -34,4 +34,9 @@ class Mentor extends Model
     {
         return $this->hasMany(User::class, 'mus_service_plan_id', 'tsp_service_plan_id');
     }
+
+    public function caseQuestions()
+    {
+        return $this->hasMany(CaseQuestion::class, 'tca_mentor_id', 'mme_mentor_id');
+    }
 }
