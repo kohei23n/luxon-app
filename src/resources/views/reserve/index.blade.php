@@ -15,7 +15,7 @@
         </ul>
     </x-slot>
 
-    <div class="py-6">
+    <div class="py-6" style="margin-bottom:70px;">
         <div class="reserving-list">
             <div class="reserving-box">
                 <div class="p-6 text-gray-900">

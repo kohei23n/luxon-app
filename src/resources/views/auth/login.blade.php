@@ -1,9 +1,8 @@
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
-
-<x-guest-layout>
-    <h1>Tachyon</h1>
+<x-guest-layout style="width: 100%; height: 100%;">
+    <h1 class="mt-32">Tachyon</h1>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <h2>Mentee Sign In</h2>
