@@ -1,0 +1,114 @@
+.greet{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.plan-container {
+    width: 360px;
+    height: 120px;
+    display: flex;
+    background-color: #15397A;
+    margin-bottom: 10px;
+
+}
+.plan-container img{
+    width: 105px;
+    height: 105px;
+    left: 10px;
+    object-fit: cover;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+
+}
+.plan-container p {
+    font-size: 32px;
+    position: absolute;
+    left: 40%;
+    margin-top: 35px;
+    color: white;
+}
+.selection-information-container {
+    width: 360px;
+    height: 120px;
+    display: flex;
+    background-color: #15397A;
+    margin-bottom: 10px;
+
+}
+.selection-information-container img{
+    width: 105px;
+    height: 105px;
+    left: 10px;
+    object-fit: cover;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+
+}
+.selection-information-container p {
+    font-size: 32px;
+    position: absolute;
+    left: 40%;
+    margin-top: 35px;
+    color: white;
+}
+.reference-container {
+    width: 360px;
+    height: 120px;
+    display: flex;
+    background-color: #15397A;
+    margin-bottom: 10px;
+
+}
+.reference-container img{
+    width: 105px;
+    height: 105px;
+    left: 10px;
+    object-fit: cover;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+
+}
+.reference-container p {
+    font-size: 32px;
+    position: absolute;
+    left: 40%;
+    margin-top: 35px;
+    color: white;
+}
+.news-container {
+    width: 360px;
+    height: 120px;
+    display: flex;
+    background-color: #15397A;
+    margin-bottom: 30px;
+
+}
+.news-container img{
+    width: 105px;
+    height: 105px;
+    left: 10px;
+    object-fit: cover;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+
+}
+.news-container p {
+    font-size: 32px;
+    position: absolute;
+    left: 40%;
+    margin-top: 35px;
+    color: white;
+}
+.back-btn{
+    padding: 10px;
+    background-color: #15397A;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 80px;
+    border-radius: 7px;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}

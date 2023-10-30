@@ -1,0 +1,26 @@
+
+.selection-table-title th{
+    width: 20%;
+    background-color: #15397A;
+    color: white;
+    padding: 10px;
+}
+.corporation-name{
+    margin-right: 20px;
+    width: 80px;
+}
+.edit-btn{
+    background-color: red;
+    width: 80px;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+}
+table, th, td {
+    border:1px solid #333;
+  }
