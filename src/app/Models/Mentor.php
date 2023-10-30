@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Auth\Authenticatable as AuthAuthenticatable;
 
-class Mentor extends Model
+class Mentor extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable, AuthAuthenticatable;
     protected $table = 'luxon_mst_mentor';
 
     const CREATED_AT = 'mme_registration_datetime';
@@ -29,6 +30,31 @@ class Mentor extends Model
         'mme_update_timestamp',
         'mme_line_url'
     ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'mme_password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'mme_update_timestamp' => 'datetime',
+        'mme_password' => 'hashed',
+    ];
+
+    public function getAuthPassword()
+    {
+        return $this->mme_password;
+    }
 
     public function users()
     {

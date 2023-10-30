@@ -78,21 +78,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', IndexController::class)->middleware(['auth', 'verified'])->name('index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// ユーザー
+Route::middleware(['auth:web'])->group(function () {
 
-// マイページ
-Route::middleware('auth')->group(function () {
     // 選考情報
-    Route::get('/research', ResearchIndex::class)->name('research.index');
-    // 選考情報：会社情報
-    Route::get('/research/industry/{id}', ResearchCompaniesIndex::class)->name('research.companiesIndex');
-    // 選考情報：選考情報
-    Route::get('/research/company/{id}', ResearchSelectionsIndex::class)->name('research.selectionsIndex');
-    // 選考情報：選考情報追加
-    Route::get('/research/company/{id}/add', [ResearchSelectionsCreate::class, 'add'])->name('research.selectionsAdd');
-    Route::post('/research/company/{id}/add', [ResearchSelectionsCreate::class, 'create'])->name('research.selectionsCreate');
+    Route::group(['prefix' => 'research', 'as' => 'research.'], function () {
+        // 選考情報
+        Route::get('/', ResearchIndex::class)->name('index');
+        // 選考情報：会社情報
+        Route::get('/industry/{id}', ResearchCompaniesIndex::class)->name('companiesIndex');
+        Route::group(['prefix' => 'company/{id}', 'as' => 'company.'], function () {
+            Route::get('/', ResearchSelectionsIndex::class)->name('selectionsIndex');
+            Route::get('/add', [ResearchSelectionsCreate::class, 'add'])->name('selectionsAdd');
+            Route::post('/add', [ResearchSelectionsCreate::class, 'create'])->name('selectionsCreate');
+        });
+    });
 
     // 予約：トップ
     Route::get('/reserve', ReserveIndex::class)->name('reserve.index');

@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'mentor' => [
+            'driver' => 'session',
+            'provider' => 'mentors',
+        ],
     ],
 
     /*
@@ -66,10 +71,11 @@ return [
             'table' => 'luxon_mst_user',
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'mentors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Mentor::class,
+            'table' => 'luxon_mst_mentor',
+        ],
     ],
 
     /*
@@ -94,6 +100,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'mentors' => [
+            'provider' => 'mentors',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
