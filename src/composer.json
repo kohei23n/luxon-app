@@ -52,6 +52,7 @@
             "php artisan clear-compiled",  
             "php artisan config:cache",
             "php artisan cache:clear",
+            "php artisan optimize:clear",  
             "chmod -R 777 public/"  
         ],
         "compile": [
