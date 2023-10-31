@@ -31,6 +31,7 @@ class AuthenticatedSessionController extends Controller
         // ユーザーログインを試みる
         if (Auth::guard('web')->attempt(['mus_email_address' => $request->mus_email_address, 'password' => $request->mus_user_password])) {
             $request->session()->regenerate();
+
             $user = Auth::guard('web')->user();
 
             if ($user->mus_is_admin == User::IS_ADMIN) {
@@ -41,27 +42,32 @@ class AuthenticatedSessionController extends Controller
         }
 
         // 手動でパスワードの確認
-        $mentor = Mentor::where('mme_email_address', $request->mus_email_address)->first();
+        // $mentor = Mentor::where('mme_email_address', $request->mus_email_address)->first();
 
-        if ($mentor) {
-            $isPasswordCorrect = Hash::check($request->mus_user_password, $mentor->mme_password);
-            if ($isPasswordCorrect) {
-                \Log::info('Password is correct for mentor with email: ' . $mentor->mme_email_address);
-            } else {
-                \Log::info('Password is incorrect for mentor with email: ' . $mentor->mme_email_address);
-            }
-        } else {
-            \Log::info('Mentor with email ' . $request->mus_email_address . ' not found.');
-        }
+        // if ($mentor) {
+        //     $isPasswordCorrect = Hash::check($request->mus_user_password, $mentor->mme_password);
+        //     if ($isPasswordCorrect) {
+        //         \Log::info('Password is correct for mentor with email: ' . $mentor->mme_email_address);
+        //     } else {
+        //         \Log::info('Password is incorrect for mentor with email: ' . $mentor->mme_email_address);
+        //     }
+        // } else {
+        //     \Log::info('Mentor with email ' . $request->mus_email_address . ' not found.');
+        // }
 
         // メンターログインを試みる
         if (Auth::guard('mentor')->attempt(['mme_email_address' => $request->mus_email_address, 'password' => $request->mus_user_password])) {
             $request->session()->regenerate();
 
-            $response = redirect()->intended(RouteServiceProvider::MENTOR_HOME);
-            \Log::info($response);
+            \Log::info('Authentication successful for:', [Auth::guard('mentor')->user()]);
 
-            return redirect()->intended(RouteServiceProvider::MENTOR_HOME);
+            if (Auth::guard('mentor')->check()) {
+                \Log::info('User is authenticated via mentor guard');
+            } else {
+                \Log::info('User is NOT authenticated via mentor guard');
+            }
+
+            return redirect(RouteServiceProvider::MENTOR_HOME);
         } else {
             \Log::info($request->all());
         }
