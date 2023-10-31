@@ -76,10 +76,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', IndexController::class)->middleware(['auth', 'verified'])->name('index');
-
 // ユーザー
 Route::middleware(['auth:web'])->group(function () {
+
+    Route::get('/', IndexController::class)->name('index');
 
     // 選考情報
     Route::group(['prefix' => 'research', 'as' => 'research.'], function () {
@@ -169,6 +169,14 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('/admin/event', AdminEventIndex::class)->name('admin.eventIndex');
     // イベント詳細
     Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
+});
+
+Route::middleware(['auth:mentor'])->group(function () {
+    Route::prefix('mentor')->name('mentor.')->group(function(){
+        Route::get('/mentor', function () {
+            return view('mentor.index');
+        })->name('index');
+    });
 });
 
 require __DIR__ . '/auth.php';
