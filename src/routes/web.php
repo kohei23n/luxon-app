@@ -77,7 +77,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ユーザー
-Route::middleware(['auth:web'])->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::get('/', IndexController::class)->name('index');
 
@@ -87,95 +87,125 @@ Route::middleware(['auth:web'])->group(function () {
         Route::get('/', ResearchIndex::class)->name('index');
         // 選考情報：会社情報
         Route::get('/industry/{id}', ResearchCompaniesIndex::class)->name('companiesIndex');
-        Route::group(['prefix' => 'company/{id}', 'as' => 'company.'], function () {
+        Route::prefix('company/{id}')->group(function () {
             Route::get('/', ResearchSelectionsIndex::class)->name('selectionsIndex');
             Route::get('/add', [ResearchSelectionsCreate::class, 'add'])->name('selectionsAdd');
             Route::post('/add', [ResearchSelectionsCreate::class, 'create'])->name('selectionsCreate');
         });
     });
 
-    // 予約：トップ
-    Route::get('/reserve', ReserveIndex::class)->name('reserve.index');
-    // 予約：面談
-    Route::get('/reserve/interview', ReserveInterviewIndex::class)->name('reserve.interviewIndex');
-    // 予約：イベント
-    Route::get('/reserve/event', ReserveEventIndex::class)->name('reserve.eventIndex');
-    Route::get('/reserve/event/{id}', ReserveEventShow::class)->name('reserve.eventShow');
-    Route::get('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'add'])->name('reserve.eventAdd');
-    Route::post('/reserve/event/{id}/confirm', [ReserveEventCreate::class, 'create'])->name('reserve.eventCreate');
-    // 予約：ケース
-    Route::get('/reserve/case', [ReserveCaseCreate::class, 'add'])->name('reserve.caseAdd');
-    Route::post('/reserve/case', [ReserveCaseCreate::class, 'create'])->name('reserve.caseCreate');
-    // 予約：ES
-    Route::get('/reserve/entrysheet', [ReserveEsCreate::class, 'add'])->name('reserve.esAdd');
-    Route::post('/reserve/entrysheet', [ReserveEsCreate::class, 'create'])->name('reserve.esCreate');
-    // 予約完了画面
-    Route::get('/reserve/complete', function () {
-        return view('reserve.complete');
-    })->name('reserve.complete');
-    // 予約：チケット追加
-    Route::get('/reserve/ticket', [ReserveTicketUpdate::class, 'edit'])->name('reserve.ticketEdit');
-    Route::post('/reserve/ticket', [ReserveTicketUpdate::class, 'update'])->name('reserve.ticketUpdate');
+    // 予約
+    Route::group(['prefix' => 'reserve', 'as' => 'reserve.'], function () {
+        // 予約：トップ
+        Route::get('/', ReserveIndex::class)->name('index');
+        // 予約：面談
+        Route::get('/interview', ReserveInterviewIndex::class)->name('interviewIndex');
+        // 予約：イベント
+        Route::prefix('event')->group(function () {
+            Route::get('/', ReserveEventIndex::class)->name('eventIndex');
+            Route::get('/{id}', ReserveEventShow::class)->name('eventShow');
+            Route::get('/{id}/confirm', [ReserveEventCreate::class, 'add'])->name('eventAdd');
+            Route::post('/{id}/confirm', [ReserveEventCreate::class, 'create'])->name('eventCreate');
+        });
+        // 予約：ケース
+        Route::prefix('case')->group(function () {
+            Route::get('/', [ReserveCaseCreate::class, 'add'])->name('caseAdd');
+            Route::post('/', [ReserveCaseCreate::class, 'create'])->name('caseCreate');
+        });
+        // 予約：ES
+        Route::prefix('entrysheet')->group(function () {
+            Route::get('/', [ReserveEsCreate::class, 'add'])->name('esAdd');
+            Route::post('/', [ReserveEsCreate::class, 'create'])->name('esCreate');
+        });
+        // 予約完了画面
+        Route::get('/complete', function () {
+            return view('reserve.complete');
+        })->name('complete');
+        // 予約：チケット追加
+        Route::prefix('ticket')->group(function () {
+            Route::get('/', [ReserveTicketUpdate::class, 'edit'])->name('ticketEdit');
+            Route::post('/', [ReserveTicketUpdate::class, 'update'])->name('ticketUpdate');
+        });
+    });
 
     // マイページトップ
-    Route::get('/mypage', MyPageIndex::class)->name('mypage.index');
+    Route::group(['prefix' => 'mypage', 'as' => 'mypage.'], function () {
+        Route::get('', MyPageIndex::class)->name('index');
+        // プラン
+        Route::get('/plan', MyPagePlanIndex::class)->name('planIndex');
+        // プラン：個人情報
+        Route::group(['prefix' => 'pi/edit', 'as' => 'plan.'], function () {
+            Route::get('/', [MyPagePlanProfileUpdate::class, 'edit'])->name('profileEdit');
+            Route::patch('/', [MyPagePlanProfileUpdate::class, 'update'])->name('profileUpdate');
+        });
+        // ここは後で直したい
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // プラン
-    Route::get('/mypage/plan', MyPagePlanIndex::class)->name('mypage.planIndex');
-    // プラン：個人情報
-    Route::get('/mypage/plan/pi/edit', [MyPagePlanProfileUpdate::class, 'edit'])->name('mypage.plan.profileEdit');
-    Route::patch('/mypage/plan/pi/edit', [MyPagePlanProfileUpdate::class, 'update'])->name('mypage.plan.profileUpdate');
-    // ここは後で直したい
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    // 選考情報
-    Route::get('/mypage/selection', MyPageSelectionIndex::class)->name('mypage.selectionIndex');
-    Route::get('/mypage/selection/add', [MyPageSelectionCreate::class, 'add'])->name('mypage.selectionAdd');
-    Route::post('/mypage/selection/add', [MyPageSelectionCreate::class, 'create'])->name('mypage.selectionCreate');
-    Route::get('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'edit'])->name('mypage.selectionEdit');
-    Route::patch('/mypage/selection/edit/{id}', [MyPageSelectionUpdate::class, 'update'])->name('mypage.selectionUpdate');
+        // 選考情報
+        Route::prefix('selection')->group(function () {
+            Route::get('', MyPageSelectionIndex::class)->name('selectionIndex');
+            Route::prefix('add')->group(function () {
+                Route::get('/', [MyPageSelectionCreate::class, 'add'])->name('selectionAdd');
+                Route::post('/', [MyPageSelectionCreate::class, 'create'])->name('selectionCreate');
+            });
+            Route::prefix('edit/{id}')->group(function () {
+                Route::get('/', [MyPageSelectionUpdate::class, 'edit'])->name('selectionEdit');
+                Route::patch('/', [MyPageSelectionUpdate::class, 'update'])->name('selectionUpdate');
+            });
+        });
+    });
 
     // 管理者
-    Route::get('/admin', function () {
-        return view('admin.index');
-    })->name('admin.index');
+    Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+        Route::get('/', function () {
+            return view('admin.index');
+        })->name('index');
 
-    // メンティー情報
-    Route::get('/admin/mentee', AdminMenteeIndex::class)->name('admin.menteeIndex');
-    // メンター情報
-    Route::get('/admin/mentor', AdminMentorIndex::class)->name('admin.mentorIndex');
-    // チケット割り振り
-    Route::get('/admin/count', AdminCountIndex::class)->name('admin.countIndex');
-    Route::get('/admin/count/edit/{id}', [AdminCountUpdate::class, 'edit'])->name('admin.countEdit');
-    Route::patch('/admin/count/edit/{id}', [AdminCountUpdate::class, 'update'])->name('admin.countUpdate');
-    // 添削割り振り
-    Route::get('/admin/review', function () {
-        return view('admin.review.index');
-    })->name('admin.reviewHome');
-    // ES
-    Route::get('/admin/es', AdminEsCount::class)->name('admin.esCount');
-    Route::get('/admin/es/index', AdminEsIndex::class)->name('admin.esIndex');
-    Route::get('/admin/es/{id}', [AdminEsUpdate::class, 'edit'])->name('admin.esEdit');
-    Route::patch('/admin/es/{id}', [AdminEsUpdate::class, 'update'])->name('admin.esUpdate');
-    // ケース
-    Route::get('/admin/case', AdminCaseCount::class)->name('admin.caseCount');
-    Route::get('/admin/case/index', AdminCaseIndex::class)->name('admin.caseIndex');
-    Route::get('/admin/case/{id}', [AdminCaseUpdate::class, 'edit'])->name('admin.caseEdit');
-    Route::patch('/admin/case/{id}', [AdminCaseUpdate::class, 'update'])->name('admin.caseUpdate');
-    // イベント追加
-    Route::get('/admin/event/add', [AdminEventCreate::class, 'add'])->name('admin.eventAdd');
-    Route::post('/admin/event/add', [AdminEventCreate::class, 'create'])->name('admin.eventCreate');
-    // イベント一覧
-    Route::get('/admin/event', AdminEventIndex::class)->name('admin.eventIndex');
-    // イベント詳細
-    Route::get('/admin/event/{id}', AdminEventShow::class)->name('admin.eventShow');
-});
+        // メンティー情報
+        Route::get('/mentee', AdminMenteeIndex::class)->name('menteeIndex');
+        // メンター情報
+        Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');
+        // チケット割り振り
+        Route::prefix('count')->group(function () {
+            Route::get('/', AdminCountIndex::class)->name('countIndex');
+            Route::get('/edit/{id}', [AdminCountUpdate::class, 'edit'])->name('countEdit');
+            Route::patch('/edit/{id}', [AdminCountUpdate::class, 'update'])->name('countUpdate');
+        });
+        // 添削割り振り
+        Route::get('/review', function () {
+            return view('admin.review.index');
+        })->name('reviewHome');
+        // ES
+        Route::prefix('es')->group(function () {
+            Route::get('/', AdminEsCount::class)->name('esCount');
+            Route::get('/index', AdminEsIndex::class)->name('esIndex');
+            Route::get('/{id}', [AdminEsUpdate::class, 'edit'])->name('esEdit');
+            Route::patch('/{id}', [AdminEsUpdate::class, 'update'])->name('esUpdate');
+        });
+        // ケース
+        Route::prefix('case')->group(function () {
+            Route::get('/', AdminCaseCount::class)->name('caseCount');
+            Route::get('/index', AdminCaseIndex::class)->name('caseIndex');
+            Route::get('/{id}', [AdminCaseUpdate::class, 'edit'])->name('caseEdit');
+            Route::patch('/{id}', [AdminCaseUpdate::class, 'update'])->name('caseUpdate');
+        });
+        // イベント
+        Route::prefix('event')->group(function () {
+            // イベント追加
+            Route::get('/add', [AdminEventCreate::class, 'add'])->name('eventAdd');
+            Route::post('/add', [AdminEventCreate::class, 'create'])->name('eventCreate');
+            // イベント一覧
+            Route::get('/', AdminEventIndex::class)->name('eventIndex');
+            // イベント詳細
+            Route::get('/{id}', AdminEventShow::class)->name('eventShow');
+        });
+    });
 
-Route::middleware(['auth:mentor'])->group(function () {
-    Route::prefix('mentor')->group(function () {
+    // 管理者
+    Route::group(['prefix' => 'mentor', 'as' => 'mentor.'], function () { 
         Route::get('/', function () {
             return view('mentor.index');
-        })->name('mentor.index');
+        })->name('index');
     });
 });
 
