@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         }
 
         // ユーザーがメンターの場合は MENTOR_HOME にリダイレクト
-        if ($user->mus_is_admin == User::IS_MENTOR) {
+        if ($user->mus_is_mentor == User::IS_MENTOR) {
             return redirect(RouteServiceProvider::MENTOR_HOME);
         }
 
