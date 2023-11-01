@@ -16,6 +16,9 @@ class UserDetail extends Model
 
     protected $fillable = [
         'tud_user_id',
+        'tud_current_university',
+        'tud_first_industry_preference',
+        'tud_second_industry_preference',
         'tud_service_plan_id',
         'tud_event_attendance_remaining',
         'tud_interview_count_remaining',
