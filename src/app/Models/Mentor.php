@@ -26,9 +26,16 @@ class Mentor extends Model
         'mme_line_url'
     ];
 
-    public function users()
+    // メンター詳細が属するユーザー
+    public function user()
     {
-        return $this->hasMany(User::class, 'mme_service_plan_id', 'tsp_service_plan_id');
+        return $this->belongsTo(User::class, 'mme_user_id');
+    }
+
+    // このメンターが担当するユーザー
+    public function mentees()
+    {
+        return $this->hasMany(User::class, 'mus_dedicated_mentor_id');
     }
 
     public function caseQuestions()

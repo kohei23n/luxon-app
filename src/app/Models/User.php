@@ -38,7 +38,7 @@ class User extends Authenticatable
         'mus_user_password',
         'mus_user_first_name',
         'mus_user_last_name',
-        'mus_dedicated_mentor',
+        'mus_dedicated_mentor_id',
         'mus_is_admin',
         'mus_is_mentor',
         'mus_access_right',
@@ -79,9 +79,16 @@ class User extends Authenticatable
         return $this->hasOne(UserDetail::class, 'tud_user_id', 'mus_user_id');
     }
 
+    // ユーザーが持つ専属メンター
     public function dedicatedMentor()
     {
-        return $this->belongsTo(Mentor::class, 'mus_dedicated_mentor_id', 'mme_mentor_id');
+        return $this->belongsTo(Mentor::class, 'mus_dedicated_mentor_id');
+    }
+
+    // ユーザーがメンターである場合のメンター詳細
+    public function mentorProfile()
+    {
+        return $this->hasOne(Mentor::class, 'mme_user_id');
     }
 
     public function selectionStatuses()
