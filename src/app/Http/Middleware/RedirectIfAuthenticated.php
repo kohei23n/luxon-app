@@ -21,13 +21,10 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                if ($guard === 'mentor') {
-                    return redirect(RouteServiceProvider::MENTOR_HOME);
-                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }
-
+        
         return $next($request);
     }
 }

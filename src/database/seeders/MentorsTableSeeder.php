@@ -14,10 +14,7 @@ class MentorsTableSeeder extends Seeder
     public function run(): void
     {
         Mentor::create([
-            'mme_email_address' => 'mentor1@gmail.com',
-            'mme_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
-            'mme_first_name' => '次郎',
-            'mme_last_name' => '麺多亜',
+            'mme_user_id' => 5,
             'mme_interview_salary' => 2000,
             'mme_lecture_create_salary' => 2000,
             'mme_lecture_salary' => 2000,
@@ -25,13 +22,10 @@ class MentorsTableSeeder extends Seeder
             'mme_timerex_url' => 'https://timrex.com/testlink',
         ]);
         Mentor::create([
-            'mme_email_address' => 'mentor2@gmail.com',
-            'mme_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
-            'mme_first_name' => '次郎',
-            'mme_last_name' => '面田阿',
-            'mme_interview_salary' => 2000,
-            'mme_lecture_create_salary' => 2000,
-            'mme_lecture_salary' => 2000,
+            'mme_user_id' => 6,
+            'mme_interview_salary' => 3000,
+            'mme_lecture_create_salary' => 3000,
+            'mme_lecture_salary' => 3000,
             'mme_line_url' => 'https://line.me/R/ti/p/%40test',
             'mme_timerex_url' => 'https://timrex.com/testlink',
         ]);

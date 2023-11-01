@@ -15,6 +15,9 @@ class UserDetailTableSeeder extends Seeder
     {
         UserDetail::create([
             'tud_user_id' => 1,
+            'tud_current_university' => '東京大学',
+            'tud_first_industry_preference' => 'IT・通信',
+            'tud_second_industry_preference' => '総合コンサル',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 1,
             'tud_interview_count_remaining' => 1,
@@ -23,6 +26,9 @@ class UserDetailTableSeeder extends Seeder
         ]);
         UserDetail::create([
             'tud_user_id' => 2,
+            'tud_current_university' => '慶應義塾大学',
+            'tud_first_industry_preference' => 'IT・通信',
+            'tud_second_industry_preference' => '総合コンサル',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 2,
             'tud_interview_count_remaining' => 2,
@@ -31,6 +37,9 @@ class UserDetailTableSeeder extends Seeder
         ]);
         UserDetail::create([
             'tud_user_id' => 3,
+            'tud_current_university' => '早稲田大学',
+            'tud_first_industry_preference' => 'IT・通信',
+            'tud_second_industry_preference' => '総合コンサル',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 3,
             'tud_interview_count_remaining' => 3,

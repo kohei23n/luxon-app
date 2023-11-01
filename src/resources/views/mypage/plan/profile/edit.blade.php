@@ -79,14 +79,6 @@
                                     <x-input-error :messages="$errors->get('mus_current_university')" class="mt-2" />
                                 </div>
 
-                                <!-- サービスプラン -->
-                                <div class="mt-4">
-                                    <x-input-label for="mus_service_plan_id" :value="__('サービスプラン')" />
-                                    <x-text-input id="mus_service_plan_id" class="block mt-1 w-full" type="text"
-                                        name="mus_service_plan_id" :value="$user->mus_service_plan_id" />
-                                    <x-input-error :messages="$errors->get('mus_service_plan_id')" class="mt-2" />
-                                </div>
-
                                 <!-- 第一志望業界 -->
                                 <div class="mt-4">
                                     <x-input-label for="mus_first_industry_preference" :value="__('第一志望業界')" />

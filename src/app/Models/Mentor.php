@@ -58,7 +58,7 @@ class Mentor extends Authenticatable
 
     public function users()
     {
-        return $this->hasMany(User::class, 'mus_service_plan_id', 'tsp_service_plan_id');
+        return $this->hasMany(User::class, 'mme_service_plan_id', 'tsp_service_plan_id');
     }
 
     public function caseQuestions()

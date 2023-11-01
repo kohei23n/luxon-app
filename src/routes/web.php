@@ -172,10 +172,10 @@ Route::middleware(['auth:web'])->group(function () {
 });
 
 Route::middleware(['auth:mentor'])->group(function () {
-    Route::prefix('mentor')->name('mentor.')->group(function(){
+    Route::prefix('mentor')->group(function () {
         Route::get('/', function () {
             return view('mentor.index');
-        })->name('index');
+        })->name('mentor.index');
     });
 });
 

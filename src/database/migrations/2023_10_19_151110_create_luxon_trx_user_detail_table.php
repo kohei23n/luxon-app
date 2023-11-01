@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('luxon_trx_user_detail', function (Blueprint $table) {
             $table->increments('tud_detail_id')->comment('利用詳細ID');
             $table->unsignedInteger('tud_user_id')->comment('ユーザーID');
+            $table->string('tud_current_university', 50)->nullable()->comment('所属大学');
+            $table->string('tud_first_industry_preference', 50)->nullable()->comment('第一志望業界');
+            $table->string('tud_second_industry_preference', 50)->nullable()->comment('第二志望業界');
             $table->unsignedInteger('tud_service_plan_id')->comment('プランID');
             $table->unsignedInteger('tud_event_attendance_remaining')->comment('イベント参加可能回数');
             $table->unsignedInteger('tud_interview_count_remaining')->comment('面談可能回数');

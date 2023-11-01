@@ -25,7 +25,6 @@ class UpdateController extends Controller
             'mus_user_first_name' => $request->mus_user_first_name,
             'mus_user_last_name' => $request->mus_user_last_name,
             'mus_current_university' => $request->mus_current_university,
-            'mus_service_plan_id' => $request->mus_service_plan_id,
             'mus_first_industry_preference' => $request->mus_first_industry_preference,
             'mus_second_industry_preference' => $request->mus_second_industry_preference,
         ]);

@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Event;
-use App\Models\SelectionDetail;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ServicePlanTableSeeder::class,
-            MentorsTableSeeder::class,
             UsersTableSeeder::class,
+            MentorsTableSeeder::class,
             SelectionStatusTableSeeder::class,
             IndustriesTableSeeder::class,
             CompaniesTableSeeder::class,

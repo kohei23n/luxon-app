@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('luxon_mst_mentor', function (Blueprint $table) {
             $table->increments('mme_mentor_id')->comment('メンターID');
-            $table->string('mme_email_address', 50)->comment('メールアドレス');
-            $table->string('mme_password', 255)->comment('パスワード');
-            $table->string('mme_first_name', 50)->comment('メンター名');
-            $table->string('mme_last_name', 50)->comment('メンター姓');
+            $table->unsignedInteger('mme_user_id')->comment('ユーザーID');
             $table->integer('mme_interview_salary')->comment('面談給与');
             $table->integer('mme_lecture_create_salary')->comment('講義作成給与');
             $table->integer('mme_lecture_salary')->comment('講義給与');
@@ -28,6 +25,8 @@ return new class extends Migration
             $table->timestamp('mme_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
             $table->string('mme_line_url', 150)->nullable()->comment('LINE URL');
             $table->string('mme_timerex_url', 150)->nullable()->comment('TimeRex URL');
+
+            $table->foreign('mme_user_id')->references('mus_user_id')->on('luxon_mst_user');
         });
     }
 

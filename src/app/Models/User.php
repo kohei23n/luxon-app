@@ -25,6 +25,7 @@ class User extends Authenticatable
      */
 
     const IS_ADMIN = 1;
+    const IS_MENTOR = 1;
 
     protected $table = 'luxon_mst_user';
     protected $primaryKey = 'mus_user_id';
@@ -79,11 +80,6 @@ class User extends Authenticatable
     public function userDetail()
     {
         return $this->hasOne(UserDetail::class, 'tud_user_id', 'mus_user_id');
-    }
-
-    public function servicePlan()
-    {
-        return $this->belongsTo(ServicePlan::class, 'mus_service_plan_id', 'tsp_service_plan_id');
     }
 
     public function dedicatedMentor()
