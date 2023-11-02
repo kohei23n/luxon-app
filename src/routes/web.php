@@ -139,7 +139,7 @@ Route::middleware('auth')->group(function () {
             Route::patch('/', [MyPagePlanProfileUpdate::class, 'update'])->name('profileUpdate');
         });
         // ここは後で直したい
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profileDestroy');
 
         // 選考情報
         Route::prefix('selection')->group(function () {
