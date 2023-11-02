@@ -65,6 +65,10 @@ use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 
 // メンター
 use App\Http\Controllers\Mentor\IndexController as MentorIndex;
+use App\Http\Controllers\Mentor\Es\IndexController as MentorEsIndex;
+use App\Http\Controllers\Mentor\Es\UpdateController as MentorEsUpdate;
+use App\Http\Controllers\Mentor\Case\IndexController as MentorCaseIndex;
+use App\Http\Controllers\Mentor\Case\UpdateController as MentorCaseUpdate;
 
 use Illuminate\Support\Facades\Route;
 
@@ -207,6 +211,18 @@ Route::middleware('auth')->group(function () {
     // メンター
     Route::group(['prefix' => 'mentor', 'as' => 'mentor.'], function () { 
         Route::get('/', MentorIndex::class)->name('index');
+        // ES
+        Route::prefix('es')->group(function () {
+            Route::get('/', MentorEsIndex::class)->name('esIndex');
+            Route::get('/edit/{id}', [MentorEsUpdate::class, 'edit'])->name('esEdit');
+            Route::patch('/edit/{id}', [MentorEsUpdate::class, 'update'])->name('esUpdate');
+        });
+        // ケース
+        Route::prefix('case')->group(function () {
+            Route::get('/', MentorCaseIndex::class)->name('caseIndex');
+            Route::get('/edit/{id}', [MentorCaseUpdate::class, 'edit'])->name('caseEdit');
+            Route::patch('/edit/{id}', [MentorCaseUpdate::class, 'update'])->name('caseUpdate');
+        });
     });
 });
 

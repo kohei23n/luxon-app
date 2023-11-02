@@ -13,6 +13,8 @@ class CaseQuestion extends Model
 
     const CREATED_AT = 'tca_registration_datetime';
     const UPDATED_AT = 'tca_update_datetime';
+    const IS_NOT_RETURNED = 0;
+    const IS_RETURNED = 1;
 
     protected $fillable = [
         'tca_case_id',
