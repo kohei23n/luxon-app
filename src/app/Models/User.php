@@ -25,6 +25,7 @@ class User extends Authenticatable
      */
 
     const IS_ADMIN = 1;
+    const IS_MENTOR = 1;
 
     protected $table = 'luxon_mst_user';
     protected $primaryKey = 'mus_user_id';
@@ -37,12 +38,9 @@ class User extends Authenticatable
         'mus_user_password',
         'mus_user_first_name',
         'mus_user_last_name',
-        'mus_current_university',
-        'mus_service_plan',
-        'mus_first_industry_preference',
-        'mus_second_industry_preference',
-        'mus_dedicated_mentor',
+        'mus_dedicated_mentor_id',
         'mus_is_admin',
+        'mus_is_mentor',
         'mus_access_right',
         'mus_delete_flag',
         'mus_deletion_datetime',
@@ -81,14 +79,16 @@ class User extends Authenticatable
         return $this->hasOne(UserDetail::class, 'tud_user_id', 'mus_user_id');
     }
 
-    public function servicePlan()
-    {
-        return $this->belongsTo(ServicePlan::class, 'mus_service_plan_id', 'tsp_service_plan_id');
-    }
-
+    // ユーザーが持つ専属メンター
     public function dedicatedMentor()
     {
-        return $this->belongsTo(Mentor::class, 'mus_dedicated_mentor_id', 'mme_mentor_id');
+        return $this->belongsTo(User::class, 'mus_dedicated_mentor_id');
+    }
+
+    // ユーザーがメンターである場合のメンター詳細
+    public function mentorProfile()
+    {
+        return $this->hasOne(Mentor::class, 'mme_user_id');
     }
 
     public function selectionStatuses()

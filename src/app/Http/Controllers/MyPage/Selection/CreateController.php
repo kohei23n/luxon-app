@@ -4,15 +4,18 @@ namespace App\Http\Controllers\MyPage\Selection;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SelectionStatus;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\SelectionStatus;
+use App\Models\SelectionPhase;
 
 class CreateController extends Controller
 {
     public function add()
     {
-        return view('mypage.selection.add');
+        $selectionPhases = SelectionPhase::all();
+
+        return view('mypage.selection.add', compact('selectionPhases'));
     }
 
     public function create(Request $request): RedirectResponse

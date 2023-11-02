@@ -7,8 +7,8 @@
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <a href="{{ route('admin.esIndex') }}">ES添削</a><br>
-            <a href="{{ route('admin.caseIndex') }}">ケース添削</a><br>
+            <a href="{{ route('admin.esCount') }}">ES添削</a><br>
+            <a href="{{ route('admin.caseCount') }}">ケース添削</a><br>
 
             <a href="{{ route('admin.index') }}">戻る</a>
         </div>

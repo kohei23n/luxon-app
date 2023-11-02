@@ -18,6 +18,7 @@
                     <div class="mt-4">
                         <x-input-label for="mev_industry_id" :value="__('業界')" />
                         <select id="mev_industry_id" name="mev_industry_id">
+                            <option value="" disabled selected>選択してください</option>
                             @foreach ($industries as $industry)
                                 <option value="{{ $industry->min_industry_id }}">{{ $industry->min_industry_name }}</option>
                             @endforeach
@@ -29,6 +30,7 @@
                     <div class="mt-4">
                         <x-input-label for="mev_company_id" :value="__('会社')" />
                         <select id="mev_company_id" name="mev_company_id">
+                            <option value="" disabled selected>選択してください</option>
                             @foreach ($companies as $company)
                                 <option value="{{ $company->mco_company_id }}">{{ $company->mco_company_name }}</option>
                             @endforeach
@@ -94,41 +96,6 @@
                     @endif
                 </div>
             </form>
-
-            <!-- カレンダービュー -->
-            <a href="{{ route('admin.eventAdd', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}">前月</a>
-            <h1>{{ $month }}月</h1>
-            <a href="{{ route('admin.eventAdd', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}">次月</a>
-            
-            <table>
-                <thead>
-                    <!-- ヘッダー部分（曜日表示など） -->
-                </thead>
-                <tbody>
-                    @for ($i = 1; $i <= $daysInMonth; $i++)
-                        <tr>
-                            <td>
-                                {{ $i }}
-                                @foreach ($groupedEvents["$year-$month-$i"] ?? [] as $event)
-                                    <div>
-                                        <a href="{{ route('admin.eventShow', $event->mev_event_id) }}">{{ $event->mev_event_name }}</a>
-                                    </div>
-                                @endforeach
-                            </td>
-                        </tr>
-                    @endfor
-                </tbody>
-            </table>
-
-            <!-- 選択された日付のイベント一覧 -->
-            @if(isset($selectedDateEvents) && count($selectedDateEvents) > 0)
-                <h3>{{ $selectedDate }}のイベント一覧</h3>
-                <ul>
-                    @foreach ($selectedDateEvents as $event)
-                        <li>{{ $event->mev_event_name }}</li>
-                    @endforeach
-                </ul>
-            @endif
 
             <a href="{{ route('admin.index') }}">戻る</a>
 

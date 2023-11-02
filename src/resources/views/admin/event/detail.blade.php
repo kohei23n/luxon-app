@@ -21,7 +21,7 @@
                 @endforeach
             </ul>
 
-            <a href="{{ route('admin.eventAdd') }}">戻る</a>
+            <a href="{{ route('admin.eventIndex') }}">戻る</a>
         </div>
     </div>
 </x-app-layout>

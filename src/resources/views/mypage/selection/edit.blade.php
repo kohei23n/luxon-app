@@ -25,10 +25,10 @@
             <div class="mt-4">
                 <x-input-label for="tss_selection_status" :value="__('選考ステータス')" />
                 <select id="tss_selection_status" name="tss_selection_status">
-                    <option value="選考前" {{ $status->tss_selection_status == '選考前' ? 'selected' : '' }}>選考前</option>
-                    <option value="選考中"  {{ $status->tss_selection_status == '選考中' ? 'selected' : '' }}>選考中</option>
-                    <option value="合格"  {{ $status->tss_selection_status == '合格' ? 'selected' : '' }}>合格</option>
-                    <option value="不合格"  {{ $status->tss_selection_status == '不合格' ? 'selected' : '' }}>不合格</option>
+                    <option value="" disabled selected>選択してください</option>
+                    @foreach ($selectionPhases as $phase)
+                        <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
+                    @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('tss_selection_status')" class="mt-2" />
             </div>

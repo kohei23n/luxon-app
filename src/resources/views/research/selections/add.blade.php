@@ -18,6 +18,7 @@
             <div class="mt-4">
                 <x-input-label for="msd_selection_phase_id" :value="__('選考段階')" />
                 <select id="msd_selection_phase_id" name="msd_selection_phase_id">
+                    <option value="" disabled selected>選択してください</option>
                     @foreach ($selectionPhases as $phase)
                         <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
                     @endforeach

@@ -8,7 +8,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $user = auth()->user()->with(['servicePlan', 'dedicatedMentor'])->first();
+        $user = auth()->user();
+        $user->load('userDetail', 'dedicatedMentor.mentorProfile');
 
         return view('mypage.plan.index', compact('user'));
     }

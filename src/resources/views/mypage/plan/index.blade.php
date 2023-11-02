@@ -10,18 +10,18 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">会員証</h2>
+                <p>会員ID：{{ $user->mus_user_id }}</p>
                 <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
-                <p>大学：{{ $user->mus_current_university }}</p>
-                <p>会員番号：{{ $user->mus_user_id }}</p>
+                <p>大学：{{ $user->userDetail->tud_current_university }}</p>
                 <a href="{{ route('mypage.plan.profileEdit') }}">編集ボタン</a>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <h2 class="text-lg font-medium text-gray-900">専属メンター情報</h2>
-                <p>氏名：{{ $user->dedicatedMentor->mme_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mme_first_name ?? 'なし' }}
+                <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
                 </p>
-                <p>メンターLINE URL：{{ $user->dedicatedMentor->mme_line_url ?? 'なし' }}</p>
-                <p>TimeRex URL：{{ $user->dedicatedMentor->mme_timerex_url ?? 'なし' }}</p>
+                <p>メンターLINE URL：{{ $user->dedicatedMentor->mentorProfile->mme_line_url ?? 'なし' }}</p>
+                <p>TimeRex URL：{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url ?? 'なし' }}</p>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">

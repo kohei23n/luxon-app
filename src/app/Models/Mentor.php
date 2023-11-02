@@ -14,10 +14,6 @@ class Mentor extends Model
     const UPDATED_AT = 'mme_update_datetime';
 
     protected $fillable = [
-        'mme_email_address',
-        'mme_password',
-        'mme_first_name',
-        'mme_last_name',
         'mme_interview_salary',
         'mme_lecture_create_salary',
         'mme_lecture_salary',
@@ -30,8 +26,25 @@ class Mentor extends Model
         'mme_line_url'
     ];
 
-    public function users()
+    // メンター詳細が属するユーザー
+    public function user()
     {
-        return $this->hasMany(User::class, 'mus_service_plan_id', 'tsp_service_plan_id');
+        return $this->belongsTo(User::class, 'mme_user_id');
+    }
+
+    // このメンターが担当するユーザー
+    public function mentees()
+    {
+        return $this->hasMany(User::class, 'mus_dedicated_mentor_id');
+    }
+
+    public function caseQuestions()
+    {
+        return $this->hasMany(CaseQuestion::class, 'tca_mentor_id', 'mme_mentor_id');
+    }
+
+    public function esQuestions()
+    {
+        return $this->hasMany(EsQuestion::class, 'tes_mentor_id', 'mme_mentor_id');
     }
 }

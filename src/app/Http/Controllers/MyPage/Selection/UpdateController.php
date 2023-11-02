@@ -4,9 +4,10 @@ namespace App\Http\Controllers\MyPage\Selection;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SelectionStatus;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\SelectionStatus;
+use App\Models\SelectionPhase;
 
 class UpdateController extends Controller
 {
@@ -14,8 +15,9 @@ class UpdateController extends Controller
   {
     $status = SelectionStatus::where('tss_selection_status_id', $id)->first();
     $formattedDate = date('Y-m-d', strtotime($status->tss_selection_date));
+    $selectionPhases = SelectionPhase::all();
 
-    return view('mypage.selection.edit', compact('status', 'formattedDate'));
+    return view('mypage.selection.edit', compact('status', 'formattedDate', 'selectionPhases'));
   }
 
   public function update(Request $request, $id): RedirectResponse

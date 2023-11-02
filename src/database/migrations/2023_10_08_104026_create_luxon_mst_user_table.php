@@ -16,25 +16,21 @@ return new class extends Migration
         Schema::create('luxon_mst_user', function (Blueprint $table) {
             $table->increments('mus_user_id')->comment('ユーザーID');
             $table->string('mus_email_address', 50)->unique()->comment('メールアドレス');
-            $table->string('mus_user_password', 255)->comment('ユーザーパスワード'); // パスワードはハッシュ化するため、長さを255に
+            $table->string('mus_user_password', 255)->comment('ユーザーパスワード'); 
             $table->string('mus_user_first_name', 50)->nullable()->comment('ユーザー名');
             $table->string('mus_user_last_name', 50)->nullable()->comment('ユーザー姓');
-            $table->string('mus_current_university', 50)->nullable()->comment('所属大学');
-            $table->unsignedInteger('mus_service_plan_id')->nullable()->comment('サービスプラン');
-            $table->string('mus_first_industry_preference', 50)->nullable()->comment('第一志望業界');
-            $table->string('mus_second_industry_preference', 50)->nullable()->comment('第二志望業界');
-            $table->unsignedInteger('mus_dedicated_mentor_id')->nullable()->comment('専属メンター');
             $table->boolean('mus_is_admin')->default(false)->comment('管理者フラグ');
+            $table->boolean('mus_is_mentor')->default(false)->comment('メンターフラグ');
+            $table->unsignedInteger('mus_dedicated_mentor_id')->nullable()->comment('担当メンターID');
             $table->char('mus_access_right', 1)->default('0')->comment('閲覧権限');
             $table->char('mus_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('mus_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('mus_registration_datetime')->useCurrent()->comment('登録日時');
             $table->dateTime('mus_update_datetime')->useCurrent()->comment('更新日時');
             $table->timestamp('mus_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
-            $table->rememberToken(); // これはLaravelの認証機能に必要
+            $table->rememberToken();
 
-            $table->foreign('mus_service_plan_id')->references('tsp_service_plan_id')->on('luxon_trx_service_plan');
-            $table->foreign('mus_dedicated_mentor_id')->references('mme_mentor_id')->on('luxon_mst_mentor');
+            $table->foreign('mus_dedicated_mentor_id')->references('mus_user_id')->on('luxon_mst_user');
         });
     }
 

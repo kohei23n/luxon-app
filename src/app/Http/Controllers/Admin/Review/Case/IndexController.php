@@ -3,21 +3,29 @@
 namespace App\Http\Controllers\Admin\Review\Case;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\CaseQuestion;
 
 class IndexController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        //未割り振りのケースの合計を取得
-        $unassigned = CaseQuestion::where('tca_mentor_id', null)->count();
+        $type = $request->input('type');
 
-        // 割り振り済み、未返却のケースの合計を取得
-        $assigned = CaseQuestion::whereNotNull('tca_mentor_id')->where('tca_is_returned', false)->count();
+        switch ($type) {
+            case 'unassigned':
+                $cases = CaseQuestion::with(['user', 'mentor'])->where('tca_mentor_id', null)->get();
+                break;
+            case 'assigned':
+                $cases = CaseQuestion::with(['user', 'mentor'])->whereNotNull('tca_mentor_id')->where('tca_is_returned', false)->get();
+                break;
+            case 'returned':
+                $cases = CaseQuestion::with(['user', 'mentor'])->where('tca_is_returned', true)->get();
+                break;
+            default:
+                $cases = CaseQuestion::with(['user', 'mentor'])->get(); 
+        }
 
-        // 返却済みのケースの合計を取得
-        $returned = CaseQuestion::where('tca_is_returned', true)->count();
-
-        return view('admin.review.case.count', compact('unassigned', 'assigned', 'returned'));
+        return view('admin.review.case.index', compact('cases', 'type'));
     }
 }

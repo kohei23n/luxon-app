@@ -12,29 +12,24 @@ class UpdateController extends Controller
     public function edit()
     {
         $user = auth()->user();
+        $user->load('userDetail');
 
         return view('mypage.plan.profile.edit', compact('user'));
     }
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        // ユーザー詳細を取得
         $user = $request->user();
+        $userDetail = $user->userDetail()->first();
 
-        $user->fill([
-            'mus_email_address' => $request->mus_email_address,
-            'mus_user_first_name' => $request->mus_user_first_name,
-            'mus_user_last_name' => $request->mus_user_last_name,
-            'mus_current_university' => $request->mus_current_university,
-            'mus_service_plan_id' => $request->mus_service_plan_id,
-            'mus_first_industry_preference' => $request->mus_first_industry_preference,
-            'mus_second_industry_preference' => $request->mus_second_industry_preference,
+        // user_detail モデルに対する入力値で更新
+        $userDetail->fill([
+            'tud_first_industry_preference' => $request->tud_first_industry_preference,
+            'tud_second_industry_preference' => $request->tud_second_industry_preference,
         ]);
 
-        if ($user->isDirty('email')) {
-            $user->email_verified_at = null;
-        }
-
-        $user->save();
+        $userDetail->save();
 
         return Redirect::route('mypage.plan.profileEdit')->with('status', 'profile-updated');
     }
