@@ -63,6 +63,9 @@ use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
 // イベント追加
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 
+// メンター
+use App\Http\Controllers\Mentor\IndexController as MentorIndex;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -201,11 +204,9 @@ Route::middleware('auth')->group(function () {
         });
     });
 
-    // 管理者
+    // メンター
     Route::group(['prefix' => 'mentor', 'as' => 'mentor.'], function () { 
-        Route::get('/', function () {
-            return view('mentor.index');
-        })->name('index');
+        Route::get('/', MentorIndex::class)->name('index');
     });
 });
 
