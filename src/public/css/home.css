@@ -35,6 +35,7 @@
 /* Base styles for all sections */
 .section-box {
     width: 100%;
+    height: 200px;
     background-color: #f7f7f7;
     margin: 1rem 0;
     border-radius: 8px;
@@ -69,4 +70,10 @@
 
 .card-text {
     color: #777;
+}
+.list-box {
+    width: 100%;
+    bottom: 0;
+    height: auto;
+
 }

@@ -1,7 +1,6 @@
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
-
 <x-guest-layout>
     <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
     <!-- Session Status -->
@@ -47,7 +46,7 @@
                 </a>
             @endif
 
-            <x-primary-button style="color: #15397A;;" class="ml-3">
+            <x-primary-button style="color: white;" class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
