@@ -34,7 +34,7 @@ class EsQuestion extends Model
 
     public function mentor()
     {
-        return $this->belongsTo(Mentor::class, 'tes_mentor_id', 'mme_mentor_id');
+        return $this->belongsTo(User::class, 'tes_mentor_id', 'mus_user_id');
     }
 
     public function company()

@@ -15,7 +15,7 @@
                 @csrf
                 @method('patch')
 
-                <!-- ケース情報 -->
+                <!-- ES情報 -->
                 <div class="mt-4">
                     <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
                     <p>会社：{{ $sheet->company->mco_company_name }}</p>
@@ -24,11 +24,11 @@
 
                 <!-- ES割り振り -->
                 <div class="mt-4">
-                    <x-input-label for="tes_mentor_id" :value="__('ケース割り当て')" />
+                    <x-input-label for="tes_mentor_id" :value="__('ES割り当て')" />
                     <select id="tes_mentor_id" name="tes_mentor_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($mentors as $mentor)
-                            <option value="{{ $mentor->mme_mentor_id }}">{{ $mentor->mme_last_name }}</option>
+                            <option value="{{ $mentor->mus_user_id }}">{{ $mentor->mus_user_last_name }}</option>
                         @endforeach
                     </select>
                     <x-input-error :messages="$errors->get('tes_mentor_id')" class="mt-2" />

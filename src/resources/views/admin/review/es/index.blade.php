@@ -30,7 +30,7 @@
                     @if ($type == 'unassigned')
                         <a href="{{ route('admin.esEdit', $sheet->tes_es_id) }}">割り振る</a>
                     @else
-                        <p>添削メンター：{{ $sheet->mentor->mme_last_name }}</p>
+                        <p>添削メンター：{{ $sheet->mentor->mus_user_last_name }}</p>
                     @endif
                     <br><br>
                 @empty

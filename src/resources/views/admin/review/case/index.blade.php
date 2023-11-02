@@ -30,7 +30,7 @@
                     @if ($type == 'unassigned')
                         <a href="{{ route('admin.caseEdit', $case->tca_case_id) }}">割り振る</a>
                     @else
-                        <p>添削メンター：{{ $case->mentor->mme_last_name }}</p>
+                        <p>添削メンター：{{ $case->mentor->mus_user_last_name }}</p>
                     @endif
                     <br><br>
                 @empty

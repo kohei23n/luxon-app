@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\CaseQuestion;
-use App\Models\Mentor;
+use App\Models\User;
 
 class UpdateController extends Controller
 {
@@ -15,7 +15,7 @@ class UpdateController extends Controller
   {
     $case = CaseQuestion::with('user')->findOrfail($id);
 
-    $mentors = Mentor::all();
+    $mentors = User::whereHas('mentorProfile')->get();
 
     return view('admin.review.case.edit', compact('id', 'case', 'mentors'));
   }

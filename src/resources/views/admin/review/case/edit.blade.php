@@ -28,7 +28,7 @@
                     <select id="tca_mentor_id" name="tca_mentor_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($mentors as $mentor)
-                            <option value="{{ $mentor->mme_mentor_id }}">{{ $mentor->mme_last_name }}</option>
+                            <option value="{{ $mentor->mus_user_id }}">{{ $mentor->mus_user_last_name }}</option>
                         @endforeach
                     </select>
                     <x-input-error :messages="$errors->get('tca_mentor_id')" class="mt-2" />
