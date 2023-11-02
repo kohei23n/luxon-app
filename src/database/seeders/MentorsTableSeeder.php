@@ -14,7 +14,7 @@ class MentorsTableSeeder extends Seeder
     public function run(): void
     {
         Mentor::create([
-            'mme_user_id' => 5,
+            'mme_user_id' => 1,
             'mme_interview_salary' => 2000,
             'mme_lecture_create_salary' => 2000,
             'mme_lecture_salary' => 2000,
@@ -22,7 +22,7 @@ class MentorsTableSeeder extends Seeder
             'mme_timerex_url' => 'https://timrex.com/testlink',
         ]);
         Mentor::create([
-            'mme_user_id' => 6,
+            'mme_user_id' => 2,
             'mme_interview_salary' => 3000,
             'mme_lecture_create_salary' => 3000,
             'mme_lecture_salary' => 3000,

@@ -82,7 +82,7 @@ class User extends Authenticatable
     // ユーザーが持つ専属メンター
     public function dedicatedMentor()
     {
-        return $this->belongsTo(Mentor::class, 'mus_dedicated_mentor_id');
+        return $this->belongsTo(User::class, 'mus_dedicated_mentor_id');
     }
 
     // ユーザーがメンターである場合のメンター詳細

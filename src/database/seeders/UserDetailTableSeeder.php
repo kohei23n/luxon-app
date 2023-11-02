@@ -14,7 +14,7 @@ class UserDetailTableSeeder extends Seeder
     public function run(): void
     {
         UserDetail::create([
-            'tud_user_id' => 1,
+            'tud_user_id' => 4,
             'tud_current_university' => '東京大学',
             'tud_first_industry_preference' => 'IT・通信',
             'tud_second_industry_preference' => '総合コンサル',
@@ -25,7 +25,7 @@ class UserDetailTableSeeder extends Seeder
             'tud_es_count_remaining' => 1,
         ]);
         UserDetail::create([
-            'tud_user_id' => 2,
+            'tud_user_id' => 5,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => 'IT・通信',
             'tud_second_industry_preference' => '総合コンサル',
@@ -36,7 +36,7 @@ class UserDetailTableSeeder extends Seeder
             'tud_es_count_remaining' => 2,
         ]);
         UserDetail::create([
-            'tud_user_id' => 3,
+            'tud_user_id' => 6,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => 'IT・通信',
             'tud_second_industry_preference' => '総合コンサル',
