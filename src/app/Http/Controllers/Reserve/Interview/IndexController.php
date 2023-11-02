@@ -10,9 +10,15 @@ class IndexController extends Controller
   {
     $user = auth()->user();
 
-    // メンター情報表示
+    // dedicatedMentorとそのmentorProfileを事前ロードする
+    $user->load('dedicatedMentor.mentorProfile');
+
+    // メンター情報を取得する
     $mentor = $user->dedicatedMentor;
 
-    return view('reserve.interview.index', compact('mentor'));
+    // もしメンターがいれば、そのメンタープロファイルを取得する
+    $mentorProfile = $mentor ? $mentor->mentorProfile : null;
+
+    return view('reserve.interview.index', compact('mentor', 'mentorProfile'));
   }
 }
