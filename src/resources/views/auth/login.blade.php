@@ -3,7 +3,7 @@
 @endsection
 
 <x-guest-layout>
-    <h1>Tachyon</h1>
+    <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <h2>Mentee Sign In</h2>

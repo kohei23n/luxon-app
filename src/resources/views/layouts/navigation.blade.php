@@ -3,7 +3,7 @@
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8" style="padding: 0;">
         <div class="flex justify-between h-16 bg-color">
             <div class="flex">
-                <h1>Tachyon</h1>
+                <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
                 {{-- <div class="search-box">
                     <p>企業を検索🔍</p>
                 </div>     --}}
