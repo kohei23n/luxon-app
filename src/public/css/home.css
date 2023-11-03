@@ -29,6 +29,7 @@
 .btn{
     width: 80px;
     text-align: center;
+    font-size: 12px;
     border-color: #999999;
 }
 
@@ -75,5 +76,4 @@
     width: 100%;
     bottom: 0;
     height: auto;
-
 }

@@ -2,7 +2,9 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 <x-guest-layout>
-    <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
+    <a href="{{ route('index') }}">
+        <h1>Tachyon</h1>
+    </a>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <h2>Mentee Sign In</h2>
@@ -11,7 +13,7 @@
         @csrf
 
         <!-- Email Address -->
-        <div class="mt-4">
+        <div>
             <x-input-label for="mus_email_address" style="color:white;" :value="__('Email')" />
             <x-text-input style="margin-top: 10px; background-color: white; color: black;" id="mus_email_address"
                 class="block mt-1 w-full" type="email" name="mus_email_address" :value="old('mus_email_address')" required autofocus
@@ -20,7 +22,7 @@
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
+        <div>
             <x-input-label for="mus_user_password" style="color:white;" :value="__('Password')" />
             <x-text-input style="margin-top: 10px; background-color: white; color: black;" id="mus_user_password"
                 class="block mt-1 w-full" type="password" name="mus_user_password" required

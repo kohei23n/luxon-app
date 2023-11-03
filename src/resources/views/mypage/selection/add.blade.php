@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('選考情報追加') }}
         </h2>
     </x-slot>
@@ -9,20 +9,20 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('mypage.selectionCreate') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('mypage.selectionCreate') }}">
         @csrf
         @method('post')
 
         <div>
             <!-- 企業名 -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="tss_company_name" :value="__('企業名')" />
                 <x-text-input id="tss_company_name" class="block mt-1 w-full" type="text" name="tss_company_name" />
                 <x-input-error :messages="$errors->get('tss_company_name')" class="mt-2" />
             </div>
 
             <!-- 選考ステータス -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="tss_selection_status" :value="__('選考ステータス')" />
                 <select id="tss_selection_status" name="tss_selection_status">
                     <option value="" disabled selected>選択してください</option>
@@ -34,7 +34,7 @@
             </div>
 
             <!-- 志望順位 -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="tss_preference_ranking" :value="__('志望順位')" />
                 <x-text-input id="tss_preference_ranking" class="block mt-1 w-full" type="number"
                     name="tss_preference_ranking" />
@@ -42,7 +42,7 @@
             </div>
 
             <!-- 選考日時 -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="tss_selection_date" :value="__('選考日時')" />
                 <x-text-input id="tss_selection_date" class="block mt-1 w-full" type="date"
                     name="tss_selection_date" />
@@ -51,13 +51,16 @@
 
         </div>
 
-        <div class="flex items-center gap-4">
+        <div>
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600">{{ __('Saved.') }}</p>
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>

@@ -5,19 +5,13 @@
             <div class="flex">
                 @if (auth()->user() && auth()->user()->mus_is_admin)
                     {{-- 管理者用のリンク --}}
-                    <a href="{{ route('admin.index') }}">
-                        <h1>Tachyon</h1>
-                    </a>
+                    <a href="{{ route('admin.index') }}"><h1>Tachyon</h1></a>
                 @elseif (auth()->user() && auth()->user()->mus_is_mentor)
                     {{-- メンター用のリンク --}}
-                    <a href="{{ route('mentor.index') }}">
-                        <h1>Tachyon</h1>
-                    </a>
+                    <a href="{{ route('mentor.index') }}"><h1>Tachyon</h1></a>
                 @else
                     {{-- その他のユーザー用のリンク --}}
-                    <a href="{{ route('index') }}">
-                        <h1>Tachyon</h1>
-                    </a>
+                    <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
                 @endif
             </div>
 

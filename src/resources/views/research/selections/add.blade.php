@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('選考情報追加') }}
         </h2>
     </x-slot>
@@ -9,13 +9,13 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('research.selectionsCreate', $id) }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('research.selectionsCreate', $id) }}">
         @csrf
         @method('post')
 
         <div>
             <!-- 選考段階 -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="msd_selection_phase_id" :value="__('選考段階')" />
                 <select id="msd_selection_phase_id" name="msd_selection_phase_id">
                     <option value="" disabled selected>選択してください</option>
@@ -27,7 +27,7 @@
             </div>
 
             <!-- 選考詳細 -->
-            <div class="mt-4">
+            <div>
                 <x-input-label for="msd_selection_detail" :value="__('選考詳細')" />
                 <x-text-input id="msd_selection_detail" class="block mt-1 w-full" type="text"
                     name="msd_selection_detail" />
@@ -35,13 +35,17 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div>
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600">{{ __('Saved.') }}</p>
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>
+
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>

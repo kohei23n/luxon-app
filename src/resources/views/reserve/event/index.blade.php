@@ -4,13 +4,13 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('イベント予約') }}
         </h2>
     </x-slot>
 
     <div class="py-12 calendar-container">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div>
 
             <p>チケット：{{ $count->tud_event_attendance_remaining }}</p>
             <a href="{{ route('reserve.ticketEdit') }}" class="event-link">チケットを増やす</a>
