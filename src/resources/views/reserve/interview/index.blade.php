@@ -10,15 +10,13 @@
     </x-slot>
 
     <div class="mentor-details">
-        <div>
-            <div>
-                <div>
-                    <p class="mentor-name">メンター：{{ $mentor->mus_user_last_name }}{{ $mentor->mus_user_first_name }}</p>
-                    <p class="mentor-line">メンターLINE：{{ $mentor->mentorProfile->mme_line_url }}</p>
-                    <p class="mentor-reserve">面談予約URL：{{ $mentor->mentorProfile->mme_timerex_url }}</p>
-                    <a href="{{ route('reserve.index') }}" class="mentor-back-button">戻る</a>
-                </div>
-            </div>
-        </div>
+        <p class="mentor-name">メンター：{{ $mentor->mus_user_last_name }}{{ $mentor->mus_user_first_name }}</p>
+        <p class="mentor-line">メンターLINE：{{ $mentor->mentorProfile->mme_line_url }}</p>
+        <p class="mentor-reserve">面談予約URL：{{ $mentor->mentorProfile->mme_timerex_url }}</p>
+        <a href="{{ route('reserve.index') }}" class="mentor-back-button">戻る</a>
+    </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
     </div>
 </x-app-layout>

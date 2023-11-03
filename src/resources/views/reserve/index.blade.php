@@ -41,22 +41,8 @@
             </div>
         </div>
     </div>
-    <div class="fixed w-full left-0">
-        <div>
-            <div class="btn-list">
-                <a class="btn" href="">
-                    <img src="{{ asset('images/selection-preparation.png') }}" alt="Image Description"
-                        style="width:78px; height:78px;">選考対策</a>
-                <a class="btn" href="{{ route('research.index') }}">
-                    <img src="{{ asset('images/research-industry.png') }}" alt="Image Description"
-                        style="width:78px; height:78px;">選考情報</a>
-                <a class="btn" href="{{ route('reserve.index') }}">
-                    <img src="{{ asset('images/reserving.png') }}" alt="Image Description"
-                        style="width:78px; height:78px;">予約</a>
-                <a class="btn" href="{{ route('mypage.index') }}">
-                    <img src="{{ asset('images/my-page.png') }}" alt="Image Description"
-                        style="width:78px; height:78px;">マイページ</a>
-            </div>
-        </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
     </div>
 </x-app-layout>

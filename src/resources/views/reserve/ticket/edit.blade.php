@@ -69,4 +69,8 @@
 
         </div>
     </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>

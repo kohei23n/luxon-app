@@ -26,4 +26,8 @@
             <a href="{{ route('reserve.eventIndex') }}">戻る</a>
         </div>
     </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>

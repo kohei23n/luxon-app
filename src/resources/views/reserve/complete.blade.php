@@ -5,4 +5,8 @@
             <a href="{{ route('reserve.index') }}">戻る</a>
         </div>
     </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>
