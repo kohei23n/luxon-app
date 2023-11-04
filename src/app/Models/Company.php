@@ -32,9 +32,4 @@ class Company extends Model
   {
     return $this->belongsTo(Industry::class, 'mco_industry_id', 'min_industry_id');
   }
-
-  public function esQuestions()
-  {
-    return $this->hasMany(EsQuestion::class, 'tes_company_id', 'mco_company_id');
-  }
 }
