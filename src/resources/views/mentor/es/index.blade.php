@@ -11,7 +11,7 @@
             @foreach ($entrySheets as $entrySheet)
                 <a href="{{ route('mentor.esEdit', $entrySheet->tes_es_id) }}">
                     <p>提出者：{{ $entrySheet->user->mus_user_last_name }}{{ $entrySheet->user->mus_user_first_name }}</p>
-                    <p>会社名：{{ $entrySheet->company->mco_company_name }}</p>
+                    <p>会社名：{{ $entrySheet->tes_company_name }}</p>
                 </a><br>
             @endforeach
             <p>返却済み</p>
@@ -19,7 +19,7 @@
                 <div>
                     <p>提出者：{{ $returnedSheet->user->mus_user_last_name }}{{ $returnedSheet->user->mus_user_first_name }}
                     </p>
-                    <p>会社名：{{ $returnedSheet->company->mco_company_name }}</p>
+                    <p>会社名：{{ $returnedSheet->tes_company_name }}</p>
                 </div><br>
             @endforeach
             <br>

@@ -16,19 +16,17 @@
         <div>
             <x-input-label for="mus_email_address" style="color:white;" :value="__('Email')" />
             <x-text-input style="margin-top: 10px; background-color: white; color: black;" id="mus_email_address"
-                class="block mt-1 w-full" type="email" name="mus_email_address" :value="old('mus_email_address')" required autofocus
-                autocomplete="username" />
-            <x-input-error :messages="$errors->get('mus_email_address')" class="mt-2" />
+                type="email" name="mus_email_address" :value="old('mus_email_address')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('mus_email_address')" />
         </div>
 
         <!-- Password -->
         <div>
             <x-input-label for="mus_user_password" style="color:white;" :value="__('Password')" />
             <x-text-input style="margin-top: 10px; background-color: white; color: black;" id="mus_user_password"
-                class="block mt-1 w-full" type="password" name="mus_user_password" required
-                autocomplete="current-password" />
+                type="password" name="mus_user_password" required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('mus_user_password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('mus_user_password')" />
         </div>
 
         <!-- Remember Me -->

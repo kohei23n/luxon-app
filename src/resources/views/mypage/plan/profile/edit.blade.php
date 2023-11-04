@@ -48,17 +48,17 @@
                         <!-- 第一志望業界 -->
                         <div>
                             <x-input-label for="tud_first_industry_preference" :value="__('第一志望業界')" />
-                            <x-text-input id="tud_first_industry_preference" class="block mt-1 w-full" type="text"
+                            <x-text-input id="tud_first_industry_preference" type="text"
                                 name="tud_first_industry_preference" :value="$user->userDetail->tud_first_industry_preference" />
-                            <x-input-error :messages="$errors->get('tud_first_industry_preference')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('tud_first_industry_preference')" />
                         </div>
 
                         <!-- 第二志望業界 -->
                         <div>
                             <x-input-label for="tud_second_industry_preference" :value="__('第二志望業界')" />
-                            <x-text-input id="tud_second_industry_preference" class="block mt-1 w-full" type="text"
+                            <x-text-input id="tud_second_industry_preference" type="text"
                                 name="tud_second_industry_preference" :value="$user->userDetail->tud_second_industry_preference" />
-                            <x-input-error :messages="$errors->get('tud_second_industry_preference')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('tud_second_industry_preference')" />
                         </div>
                     </div>
 

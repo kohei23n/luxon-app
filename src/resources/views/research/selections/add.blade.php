@@ -23,14 +23,14 @@
                         <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
                     @endforeach
                 </select>
-                <x-input-error :messages="$errors->get('msd_selection_phase_id')" class="mt-2" />
+                <x-input-error :messages="$errors->get('msd_selection_phase_id')" />
             </div>
 
             <!-- 選考詳細 -->
             <div>
                 <x-input-label for="msd_selection_detail" :value="__('選考詳細')" />
                 <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10"></textarea>
-                <x-input-error :messages="$errors->get('msd_selection_detail')" class="mt-2" />
+                <x-input-error :messages="$errors->get('msd_selection_detail')" />
             </div>
         </div>
 

@@ -25,7 +25,7 @@
             <div>
                 @forelse ($entrySheets as $sheet)
                     <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
-                    <p>会社：{{ $sheet->company->mco_company_name }}</p>
+                    <p>会社：{{ $sheet->tes_company_name }}</p>
                     <p>ドキュメントURL：{{ $sheet->tes_es_url }}</p>
                     @if ($type == 'unassigned')
                         <a href="{{ route('admin.esEdit', $sheet->tes_es_id) }}">割り振る</a>

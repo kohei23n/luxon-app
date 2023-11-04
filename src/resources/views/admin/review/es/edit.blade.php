@@ -18,7 +18,7 @@
                 <!-- ES情報 -->
                 <div>
                     <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
-                    <p>会社：{{ $sheet->company->mco_company_name }}</p>
+                    <p>会社：{{ $sheet->tes_company_name }}</p>
                     <p>ドキュメントURL：{{ $sheet->tes_es_url }}</p>
                 </div>
 
@@ -31,7 +31,7 @@
                             <option value="{{ $mentor->mus_user_id }}">{{ $mentor->mus_user_last_name }}</option>
                         @endforeach
                     </select>
-                    <x-input-error :messages="$errors->get('tes_mentor_id')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('tes_mentor_id')" />
                 </div>
 
                 <div>

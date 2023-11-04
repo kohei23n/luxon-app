@@ -20,7 +20,7 @@ class EsQuestion extends Model
         'tes_es_id',
         'tes_user_id',
         'tes_mentor_id',
-        'tes_company_id',
+        'tes_company_name',
         'tes_es_url',
         'tes_is_returned',
         'tes_delete_flag',

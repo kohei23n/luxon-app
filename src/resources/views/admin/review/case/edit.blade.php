@@ -31,7 +31,7 @@
                             <option value="{{ $mentor->mus_user_id }}">{{ $mentor->mus_user_last_name }}</option>
                         @endforeach
                     </select>
-                    <x-input-error :messages="$errors->get('tca_mentor_id')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('tca_mentor_id')" />
                 </div>
 
                 <div>

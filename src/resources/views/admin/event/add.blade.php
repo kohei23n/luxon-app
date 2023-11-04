@@ -24,7 +24,7 @@
                                 </option>
                             @endforeach
                         </select>
-                        <x-input-error :messages="$errors->get('mev_industry_id')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('mev_industry_id')" />
                     </div>
 
                     <!-- 会社ID -->
@@ -36,55 +36,49 @@
                                 <option value="{{ $company->mco_company_id }}">{{ $company->mco_company_name }}</option>
                             @endforeach
                         </select>
-                        <x-input-error :messages="$errors->get('mev_company_id')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('mev_company_id')" />
                     </div>
 
                     <!-- イベント名 -->
                     <div>
                         <x-input-label for="mev_event_name" :value="__('イベント名')" />
-                        <x-text-input id="mev_event_name" class="block mt-1 w-full" type="text"
-                            name="mev_event_name" />
-                        <x-input-error :messages="$errors->get('mev_event_name')" class="mt-2" />
+                        <x-text-input id="mev_event_name" type="text" name="mev_event_name" />
+                        <x-input-error :messages="$errors->get('mev_event_name')" />
                     </div>
 
                     <!-- イベント概要 -->
                     <div>
                         <x-input-label for="mev_event_overview" :value="__('イベント概要')" />
-                        <x-text-input id="mev_event_overview" class="block mt-1 w-full" type="text"
-                            name="mev_event_overview" />
-                        <x-input-error :messages="$errors->get('mev_event_overview')" class="mt-2" />
+                        <x-text-input id="mev_event_overview" type="text" name="mev_event_overview" />
+                        <x-input-error :messages="$errors->get('mev_event_overview')" />
                     </div>
 
                     <!-- イベント詳細（任意） -->
                     <div>
                         <x-input-label for="mev_event_description" :value="__('イベント詳細（任意）')" />
-                        <x-text-input id="mev_event_description" class="block mt-1 w-full" type="text"
-                            name="mev_event_description" />
-                        <x-input-error :messages="$errors->get('mev_event_description')" class="mt-2" />
+                        <x-text-input id="mev_event_description" type="text" name="mev_event_description" />
+                        <x-input-error :messages="$errors->get('mev_event_description')" />
                     </div>
 
                     <!-- イベント日時 -->
                     <div>
                         <x-input-label for="mev_event_datetime" :value="__('イベント日時')" />
-                        <x-text-input id="mev_event_datetime" class="block mt-1 w-full" type="date"
-                            name="mev_event_datetime" />
-                        <x-input-error :messages="$errors->get('mev_event_datetime')" class="mt-2" />
+                        <x-text-input id="mev_event_datetime" type="date" name="mev_event_datetime" />
+                        <x-input-error :messages="$errors->get('mev_event_datetime')" />
                     </div>
 
                     <!-- イベント参加URL -->
                     <div>
                         <x-input-label for="mev_event_participate_url" :value="__('イベント参加URL')" />
-                        <x-text-input id="mev_event_participate_url" class="block mt-1 w-full" type="text"
-                            name="mev_event_participate_url" />
-                        <x-input-error :messages="$errors->get('mev_event_participate_url')" class="mt-2" />
+                        <x-text-input id="mev_event_participate_url" type="text" name="mev_event_participate_url" />
+                        <x-input-error :messages="$errors->get('mev_event_participate_url')" />
                     </div>
 
                     <!-- イベント資料URL（任意） -->
                     <div>
                         <x-input-label for="mev_event_materials_url" :value="__('イベント資料URL（任意）')" />
-                        <x-text-input id="mev_event_materials_url" class="block mt-1 w-full" type="text"
-                            name="mev_event_materials_url" />
-                        <x-input-error :messages="$errors->get('mev_event_materials_url')" class="mt-2" />
+                        <x-text-input id="mev_event_materials_url" type="text" name="mev_event_materials_url" />
+                        <x-input-error :messages="$errors->get('mev_event_materials_url')" />
                     </div>
                 </div>
 

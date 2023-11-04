@@ -14,23 +14,16 @@
             @if ($count->tud_es_count_remaining > 0)
                 <!-- 会社 -->
                 <div>
-                    <x-input-label for="tes_company_id" :value="__('会社')" />
-                    <select id="tes_company_id" name="tes_company_id">
-                        <option value="" disabled selected>選択してください</option>
-                        @foreach ($companies as $company)
-                            <option value="{{ $company->mco_company_id }}">
-                                {{ $company->mco_company_name }}（{{ $company->industry->min_industry_name }}）
-                            </option>
-                        @endforeach
-                    </select>
-                    <x-input-error :messages="$errors->get('tes_company_id')" class="mt-2" />
+                    <label for="tes_company_name">会社</label>
+                    <input type="text" id="tes_company_name" name="tes_company_name">
+                    <x-input-error :messages="$errors->get('tes_company_name')" />
                 </div>
 
                 <!-- ドキュメントURL -->
                 <div>
-                    <x-input-label for="tes_es_url" :value="__('ドキュメントURL')" />
-                    <x-text-input id="tes_es_url" class="block mt-1 w-full" type="text" name="tes_es_url" />
-                    <x-input-error :messages="$errors->get('tes_es_url')" class="mt-2" />
+                    <label for="tes_es_url">ドキュメントURL</label>
+                    <input type="text" id="tes_es_url" name="tes_es_url">
+                    <x-input-error :messages="$errors->get('tes_es_url')" />
                 </div>
 
                 <div>

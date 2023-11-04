@@ -26,33 +26,31 @@
                 <!-- 面談枠 -->
                 <div>
                     <x-input-label for="tud_interview_count_remaining" :value="__('面談枠追加')" />
-                    <x-text-input id="tud_interview_count_remaining" class="block mt-1 w-full" type="number"
-                        name="tud_interview_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_interview_count_remaining')" class="mt-2" />
+                    <x-text-input id="tud_interview_count_remaining" type="number" name="tud_interview_count_remaining" />
+                    <x-input-error :messages="$errors->get('tud_interview_count_remaining')" />
                 </div>
 
                 <!-- イベント参加枠 -->
                 <div>
                     <x-input-label for="tud_event_attendance_remaining" :value="__('イベント枠追加')" />
-                    <x-text-input id="tud_event_attendance_remaining" class="block mt-1 w-full" type="number"
+                    <x-text-input id="tud_event_attendance_remaining" type="number"
                         name="tud_event_attendance_remaining" />
-                    <x-input-error :messages="$errors->get('tud_event_attendance_remaining')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('tud_event_attendance_remaining')" />
                 </div>
 
                 <!-- ES添削枠 -->
                 <div>
                     <x-input-label for="tud_es_count_remaining" :value="__('ES添削枠追加')" />
-                    <x-text-input id="tud_es_count_remaining" class="block mt-1 w-full" type="number"
-                        name="tud_es_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_es_count_remaining')" class="mt-2" />
+                    <x-text-input id="tud_es_count_remaining" type="number" name="tud_es_count_remaining" />
+                    <x-input-error :messages="$errors->get('tud_es_count_remaining')" />
                 </div>
 
                 <!-- ケース添削枠 -->
                 <div>
                     <x-input-label for="tud_case_study_count_remaining" :value="__('ケース添削枠追加')" />
-                    <x-text-input id="tud_case_study_count_remaining" class="block mt-1 w-full" type="number"
+                    <x-text-input id="tud_case_study_count_remaining" type="number"
                         name="tud_case_study_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_case_study_count_remaining')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('tud_case_study_count_remaining')" />
                 </div>
 
                 <div>
