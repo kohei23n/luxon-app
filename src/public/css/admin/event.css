@@ -1,0 +1,49 @@
+/* ユーザーの方をコピペしてます */
+
+.calendar-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar-day {
+  border: 1px solid #ddd;
+  padding: 4px;
+  text-align: center;
+}
+
+.event-link {
+  display: block;
+  margin-top: 5px;
+  background-color: #e9e9e9;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.event-show-link {
+  display: block;
+  margin-top: 5px;
+  background-color: #e9e9e9;
+  color: black;
+  font-size: 8px;
+}
+
+.event-link:hover {
+  background-color: #d4d4d4;
+}

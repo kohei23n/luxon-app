@@ -1,16 +1,16 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/event.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/event.css') }}">
 @endsection
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('イベント確認') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div>
             <!-- カレンダービュー -->
             <div class="calendar-navigation">
                 <a href="{{ route('admin.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"

@@ -20,7 +20,7 @@ class EsQuestion extends Model
         'tes_es_id',
         'tes_user_id',
         'tes_mentor_id',
-        'tes_company_id',
+        'tes_company_name',
         'tes_es_url',
         'tes_is_returned',
         'tes_delete_flag',
@@ -38,10 +38,5 @@ class EsQuestion extends Model
     public function mentor()
     {
         return $this->belongsTo(User::class, 'tes_mentor_id', 'mus_user_id');
-    }
-
-    public function company()
-    {
-        return $this->belongsTo(Company::class, 'tes_company_id', 'mco_company_id');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Reserve\Case;
+namespace App\Http\Controllers\Prep\Case;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class CreateController extends Controller
     // 残りチケット数を取得
     $count = auth()->user()->userDetail;
 
-    return view('reserve.case.add', compact('count'));
+    return view('prep.case.add', compact('count'));
   }
 
   public function create(Request $request): RedirectResponse

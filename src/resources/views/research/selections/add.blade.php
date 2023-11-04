@@ -1,6 +1,10 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/research/selections.css') }}">
+@endsection
+
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('選考情報追加') }}
         </h2>
     </x-slot>
@@ -9,39 +13,42 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('research.selectionsCreate', $id) }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('research.selectionsCreate', $id) }}">
         @csrf
         @method('post')
 
         <div>
             <!-- 選考段階 -->
-            <div class="mt-4">
-                <x-input-label for="msd_selection_phase_id" :value="__('選考段階')" />
+            <div>
+                <label for="msd_selection_phase_id">選考段階</label>
                 <select id="msd_selection_phase_id" name="msd_selection_phase_id">
                     <option value="" disabled selected>選択してください</option>
                     @foreach ($selectionPhases as $phase)
                         <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
                     @endforeach
                 </select>
-                <x-input-error :messages="$errors->get('msd_selection_phase_id')" class="mt-2" />
+                <x-input-error :messages="$errors->get('msd_selection_phase_id')" />
             </div>
 
             <!-- 選考詳細 -->
-            <div class="mt-4">
-                <x-input-label for="msd_selection_detail" :value="__('選考詳細')" />
-                <x-text-input id="msd_selection_detail" class="block mt-1 w-full" type="text"
-                    name="msd_selection_detail" />
-                <x-input-error :messages="$errors->get('msd_selection_detail')" class="mt-2" />
+            <div>
+                <label for="msd_selection_detail">選考詳細</label>
+                <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10"></textarea>
+                <x-input-error :messages="$errors->get('msd_selection_detail')" />
             </div>
         </div>
 
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+        <div>
+            <button type="submit">追加</button>
 
             @if (session('status') === 'profile-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600">{{ __('Saved.') }}</p>
+                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>
+
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
+    </div>
 </x-app-layout>

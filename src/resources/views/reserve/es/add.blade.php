@@ -1,55 +1,52 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserve/es.css') }}">
+@endsection
+
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+            @csrf
+        </form>
 
-            <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-                @csrf
-            </form>
+        <form method="post" action="{{ route('reserve.esCreate') }}">
+            @csrf
+            @method('post')
 
-            <form method="post" action="{{ route('reserve.esCreate') }}" class="mt-6 space-y-6">
-                @csrf
-                @method('post')
+            <p>ES添削チケット：{{ $count->tud_es_count_remaining }}</p>
 
-                <p>ES添削チケット：{{ $count->tud_es_count_remaining }}</p>
+            {{-- チケットが0より大きい場合は表示 --}}
+            @if ($count->tud_es_count_remaining > 0)
+                <!-- 会社 -->
+                <div>
+                    <label for="tes_company_name">会社</label>
+                    <input type="text" id="tes_company_name" name="tes_company_name">
+                    <x-input-error :messages="$errors->get('tes_company_name')" />
+                </div>
 
-                {{-- チケットが0より大きい場合は表示 --}}
-                @if ($count->tud_es_count_remaining > 0)
-                    <!-- 会社 -->
-                    <div class="mt-4">
-                        <x-input-label for="tes_company_id" :value="__('会社')" />
-                        <select id="tes_company_id" name="tes_company_id">
-                            <option value="" disabled selected>選択してください</option>
-                            @foreach ($companies as $company)
-                                <option value="{{ $company->mco_company_id }}">
-                                    {{ $company->mco_company_name }}（{{ $company->industry->min_industry_name }}）
-                                </option>
-                            @endforeach
-                        </select>
-                        <x-input-error :messages="$errors->get('tes_company_id')" class="mt-2" />
-                    </div>
+                <!-- ドキュメントURL -->
+                <div>
+                    <label for="tes_es_url">ドキュメントURL</label>
+                    <input type="text" id="tes_es_url" name="tes_es_url">
+                    <x-input-error :messages="$errors->get('tes_es_url')" />
+                </div>
 
-                    <!-- ドキュメントURL -->
-                    <div class="mt-4">
-                        <x-input-label for="tes_es_url" :value="__('ドキュメントURL')" />
-                        <x-text-input id="tes_es_url" class="block mt-1 w-full" type="text" name="tes_es_url" />
-                        <x-input-error :messages="$errors->get('tes_es_url')" class="mt-2" />
-                    </div>
+                <div>
+                    <button type="submit">提出</button>
 
-                    <div class="flex items-center gap-4">
-                        <x-primary-button>{{ __('提出') }}</x-primary-button>
+                    @if (session('status') === 'profile-updated')
+                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
+                            {{ __('Saved.') }}</p>
+                    @endif
+                </div>
+            @else
+                <p>チケットがありません。</p>
+            @endif
+        </form>
 
-                        @if (session('status') === 'profile-updated')
-                            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                                class="text-sm text-gray-600">{{ __('Saved.') }}</p>
-                        @endif
-                    </div>
-                @else
-                    <p>チケットがありません。</p>
-                @endif
-            </form>
-
-            <a href="{{ route('reserve.index') }}">戻る</a>
-
-        </div>
+        <a href="{{ route('reserve.index') }}">戻る</a>
+    </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
     </div>
 </x-app-layout>

@@ -1,8 +1,16 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserve/complete.css') }}">
+@endsection
+
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div>
             <p>完了しました！</p>
             <a href="{{ route('reserve.index') }}">戻る</a>
         </div>
+    </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
     </div>
 </x-app-layout>

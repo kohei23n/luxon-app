@@ -25,8 +25,8 @@ class CreateController extends Controller
   {
     // リクエストデータのバリデーション
     $request->validate([
-      'tes_company_id' => 'required|exists:luxon_trx_es,tes_company_id', // esテーブルにIDが存在することを確認
-      'tes_es_url' => 'required|string|max:150',
+      'tes_company_name' => 'required|string|max:50', 
+      'tes_es_url' => 'required|string|max:100',
     ]);
 
     $user = auth()->user();
@@ -34,7 +34,7 @@ class CreateController extends Controller
     // データの保存
     $case = EsQuestion::create([
       'tes_user_id' => $user->mus_user_id,
-      'tes_company_id' => $request->tes_company_id,
+      'tes_company_name' => $request->tes_company_name,
       'tes_es_url' => $request->tes_es_url
     ]);
 
