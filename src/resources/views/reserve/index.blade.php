@@ -18,26 +18,13 @@
     <div class="py-6" style="margin-bottom:70px;">
         <div class="reserving-list">
             <div class="reserving-box">
-                <div>
-                    <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
-                </div>
+                <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
             </div>
             <div class="reserving-box">
-                <div>
-                    <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
-                </div>
+                <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
             </div>
-            <div class="box-bottom">
-                <div class="reserving-box-mini">
-                    <div>
-                        <a href="{{ route('reserve.esAdd') }}">ES添削</a>
-                    </div>
-                </div>
-                <div class="reserving-box-mini">
-                    <div>
-                        <a href="{{ route('reserve.caseAdd') }}">ケース添削</a>
-                    </div>
-                </div>
+            <div class="reserving-box">
+                <a href="{{ route('reserve.esAdd') }}">ES添削</a>
             </div>
         </div>
     </div>

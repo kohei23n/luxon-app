@@ -88,6 +88,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', IndexController::class)->name('index');
 
+    // 選考対策
+    Route::group(['prefix' => 'prep', 'as' => 'prep.'], function () {
+        // 選考対策
+        Route::get('/', function () {
+            return view('prep.index');
+        })->name('index');
+    });
+
     // 選考情報
     Route::group(['prefix' => 'research', 'as' => 'research.'], function () {
         // 選考情報
