@@ -15,14 +15,14 @@
 
         <!-- 企業名 -->
         <div>
-            <x-input-label for="tss_company_name" :value="__('企業名')" />
-            <x-text-input id="tss_company_name" type="text" name="tss_company_name" />
+            <label for="tss_company_name">企業名</label>
+            <input type="text" id="tss_company_name" name="tss_company_name">
             <x-input-error :messages="$errors->get('tss_company_name')" />
         </div>
 
         <!-- 選考ステータス -->
         <div>
-            <x-input-label for="tss_selection_status" :value="__('選考ステータス')" />
+            <label for="tss_selection_status">選考ステータス</label>
             <select id="tss_selection_status" name="tss_selection_status">
                 <option value="" disabled selected>選択してください</option>
                 @foreach ($selectionPhases as $phase)
@@ -34,15 +34,15 @@
 
         <!-- 志望順位 -->
         <div>
-            <x-input-label for="tss_preference_ranking" :value="__('志望順位')" />
-            <x-text-input id="tss_preference_ranking" type="number" name="tss_preference_ranking" />
+            <label for="tss_preference_ranking">志望順位</label>
+            <input type="number" id="tss_preference_ranking" name="tss_preference_ranking">
             <x-input-error :messages="$errors->get('tss_preference_ranking')" />
         </div>
 
         <!-- 選考日時 -->
         <div>
-            <x-input-label for="tss_selection_date" :value="__('選考日時')" />
-            <x-text-input id="tss_selection_date" type="date" name="tss_selection_date" />
+            <label for="tss_selection_date">選考日時</label>
+            <input type="date" id="tss_selection_date" name="tss_selection_date">
             <x-input-error :messages="$errors->get('tss_selection_date')" />
         </div>
 

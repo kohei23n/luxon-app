@@ -24,7 +24,7 @@
 
                 <!-- ES割り振り -->
                 <div>
-                    <x-input-label for="tes_mentor_id" :value="__('ES割り当て')" />
+                    <label for="tes_mentor_id">ES割り当て</label>
                     <select id="tes_mentor_id" name="tes_mentor_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($mentors as $mentor)

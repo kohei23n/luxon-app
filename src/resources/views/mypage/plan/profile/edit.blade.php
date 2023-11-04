@@ -29,35 +29,30 @@
                     <div>
                         <!-- メールアドレス -->
                         <div>
-                            <x-input-label :value="__('メールアドレス')" />
-                            <p>{{ $user->mus_email_address }}</p>
+                            <p>メールアドレス：{{ $user->mus_email_address }}</p>
                         </div>
 
                         <!-- 名前 -->
                         <div>
-                            <x-input-label :value="__('名前')" />
-                            <p>{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
+                            <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
                         </div>
 
                         <!-- 所属大学 -->
                         <div>
-                            <x-input-label :value="__('所属大学')" />
-                            <p>{{ $user->userDetail->tud_current_university }}</p>
+                            <p>所属大学：{{ $user->userDetail->tud_current_university }}</p>
                         </div>
 
                         <!-- 第一志望業界 -->
                         <div>
-                            <x-input-label for="tud_first_industry_preference" :value="__('第一志望業界')" />
-                            <x-text-input id="tud_first_industry_preference" type="text"
-                                name="tud_first_industry_preference" :value="$user->userDetail->tud_first_industry_preference" />
+                            <label for="tud_first_industry_preference">第一志望業界</label>
+                            <input type="text" id="tud_first_industry_preference" name="tud_first_industry_preference" value="{{ $user->userDetail->tud_first_industry_preference }}">
                             <x-input-error :messages="$errors->get('tud_first_industry_preference')" />
                         </div>
 
                         <!-- 第二志望業界 -->
                         <div>
-                            <x-input-label for="tud_second_industry_preference" :value="__('第二志望業界')" />
-                            <x-text-input id="tud_second_industry_preference" type="text"
-                                name="tud_second_industry_preference" :value="$user->userDetail->tud_second_industry_preference" />
+                            <label for="tud_second_industry_preference">第二志望業界</label>
+                            <input type="text" id="tud_second_industry_preference" name="tud_second_industry_preference" value="{{ $user->userDetail->tud_second_industry_preference }}">
                             <x-input-error :messages="$errors->get('tud_second_industry_preference')" />
                         </div>
                     </div>

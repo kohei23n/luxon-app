@@ -16,7 +16,7 @@
         <div>
             <!-- 選考段階 -->
             <div>
-                <x-input-label for="msd_selection_phase_id" :value="__('選考段階')" />
+                <label for="msd_selection_phase_id">選考段階</label>
                 <select id="msd_selection_phase_id" name="msd_selection_phase_id">
                     <option value="" disabled selected>選択してください</option>
                     @foreach ($selectionPhases as $phase)
@@ -28,7 +28,7 @@
 
             <!-- 選考詳細 -->
             <div>
-                <x-input-label for="msd_selection_detail" :value="__('選考詳細')" />
+                <label for="msd_selection_detail">選考詳細</label>
                 <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10"></textarea>
                 <x-input-error :messages="$errors->get('msd_selection_detail')" />
             </div>

@@ -7,6 +7,7 @@
     <div>
         <a href="{{ route('reserve.caseAdd') }}">ケース添削</a><br>
         <a href="">ケースノック</a><br>
+        <a href="">エントリーリマインダー</a><br>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

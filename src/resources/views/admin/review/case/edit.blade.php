@@ -24,7 +24,7 @@
 
                 <!-- ケース割り振り -->
                 <div>
-                    <x-input-label for="tca_mentor_id" :value="__('ケース割り当て')" />
+                    <label for="tca_mentor_id">ケース割り当て</label>
                     <select id="tca_mentor_id" name="tca_mentor_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($mentors as $mentor)
