@@ -15,8 +15,8 @@ return new class extends Migration
             $table->increments('tes_es_id')->comment('ESID');
             $table->unsignedInteger('tes_user_id')->comment('回答者のユーザーID');
             $table->unsignedInteger('tes_mentor_id')->nullable()->comment('メンターのユーザーID');
-            $table->unsignedInteger('tes_company_id')->comment('会社ID');
-            $table->string('tes_es_url', 150)->comment('ESのドキュメントURL');
+            $table->string('tes_company_name', 50)->comment('会社名');
+            $table->string('tes_es_url', 100)->comment('ESのドキュメントURL');
             $table->boolean('tes_is_returned')->default(false)->comment('返却フラグ');
             $table->char('tes_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('tes_deletion_datetime')->nullable()->comment('削除日時');
@@ -26,7 +26,6 @@ return new class extends Migration
 
             $table->foreign('tes_user_id')->references('mus_user_id')->on('luxon_mst_user');
             $table->foreign('tes_mentor_id')->references('mme_mentor_id')->on('luxon_mst_mentor');
-            $table->foreign('tes_company_id')->references('mco_company_id')->on('luxon_mst_company');
         });
     }
 

@@ -1,11 +1,15 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserve/ticket.css') }}">
+@endsection
+
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2>
             {{ __('チケット申請') }}
         </h2>
     </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <div>
 
             <p>現在のチケット数</p>
             <ul>
@@ -19,47 +23,44 @@
                 @csrf
             </form>
 
-            <form method="post" action="{{ route('reserve.ticketUpdate') }}" class="mt-6 space-y-6">
+            <form method="post" action="{{ route('reserve.ticketUpdate') }}">
                 @csrf
                 @method('post')
 
                 <!-- イベント参加枠 -->
-                <div class="mt-4">
-                    <x-input-label for="tud_event_attendance_remaining" :value="__('イベント枠追加')" />
-                    <x-text-input id="tud_event_attendance_remaining" class="block mt-1 w-full" type="number"
-                        name="tud_event_attendance_remaining" />
-                    <x-input-error :messages="$errors->get('tud_event_attendance_remaining')" class="mt-2" />
+                <div>
+                    <label for="tud_event_attendance_remaining">イベント枠追加</label>
+                    <input type="number"id="tud_event_attendance_remaining" name="tud_event_attendance_remaining" >
+                    <x-input-error :messages="$errors->get('tud_event_attendance_remaining')" />
                 </div>
 
                 <!-- 面談枠 -->
-                <div class="mt-4">
-                    <x-input-label for="tud_interview_count_remaining" :value="__('面談枠追加')" />
-                    <x-text-input id="tud_interview_count_remaining" class="block mt-1 w-full" type="number"
-                        name="tud_interview_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_interview_count_remaining')" class="mt-2" />
+                <div>
+                    <label for="tud_interview_count_remaining">面談枠追加</label>
+                    <input type="number"id="tud_interview_count_remaining" name="tud_interview_count_remaining" >
+                    <x-input-error :messages="$errors->get('tud_interview_count_remaining')" />
                 </div>
 
                 <!-- ES添削枠 -->
-                <div class="mt-4">
-                    <x-input-label for="tud_es_count_remaining" :value="__('ES添削枠追加')" />
-                    <x-text-input id="tud_es_count_remaining" class="block mt-1 w-full" type="number" name="tud_es_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_es_count_remaining')" class="mt-2" />
+                <div>
+                    <label for="tud_es_count_remaining">ES添削枠追加</label>
+                    <input type="number"id="tud_es_count_remaining" name="tud_es_count_remaining" >
+                    <x-input-error :messages="$errors->get('tud_es_count_remaining')" />
                 </div>
 
                 <!-- ケース添削枠 -->
-                <div class="mt-4">
-                    <x-input-label for="tud_case_study_count_remaining" :value="__('ケース添削枠追加')" />
-                    <x-text-input id="tud_case_study_count_remaining" class="block mt-1 w-full" type="number"
-                        name="tud_case_study_count_remaining" />
-                    <x-input-error :messages="$errors->get('tud_case_study_count_remaining')" class="mt-2" />
+                <div>
+                    <label for="tud_case_study_count_remaining">ケース添削枠追加</label>
+                    <input type="number"id="tud_case_study_count_remaining" name="tud_case_study_count_remaining" >
+                    <x-input-error :messages="$errors->get('tud_case_study_count_remaining')" />
                 </div>
 
-                <div class="flex items-center gap-4">
-                    <x-primary-button>{{ __('申請') }}</x-primary-button>
+                <div>
+                    <button type="submit">申請</button>
 
                     @if (session('status') === 'profile-updated')
-                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                            class="text-sm text-gray-600">{{ __('Saved.') }}</p>
+                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
+                            {{ __('Saved.') }}</p>
                     @endif
                 </div>
             </form>
@@ -67,5 +68,9 @@
             <a href="{{ route('reserve.index') }}">戻る</a>
 
         </div>
+    </div>
+    {{-- メニューバー --}}
+    <div class="list-box">
+        <x-menubar />
     </div>
 </x-app-layout>

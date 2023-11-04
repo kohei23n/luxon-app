@@ -14,15 +14,13 @@ class EsTableSeeder extends Seeder
     {
         EsQuestion::create([
             'tes_user_id' => 4,
-            // 'tes_industry_id' => 1,
-            'tes_company_id' => 1,
+            'tes_company_name' => '株式会社テスト',
             'tes_es_url' => 'https://www.google.com/',
         ]);
 
         EsQuestion::create([
             'tes_user_id' => 4,
-            // 'tes_industry_id' => 1,
-            'tes_company_id' => 2,
+            'tes_company_name' => '株式会社テスト2',
             'tes_es_url' => 'https://www.google2.com/',
         ]);
     }
