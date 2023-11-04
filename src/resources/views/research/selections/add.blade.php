@@ -1,3 +1,7 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/research/selections.css') }}">
+@endsection
+
 <x-app-layout>
     <x-slot name="header">
         <h2>

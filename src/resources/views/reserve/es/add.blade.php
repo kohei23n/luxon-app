@@ -1,3 +1,7 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserve/es.css') }}">
+@endsection
+
 <x-app-layout>
     <div>
         <form id="send-verification" method="post" action="{{ route('verification.send') }}">

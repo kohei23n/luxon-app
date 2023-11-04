@@ -1,3 +1,7 @@
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/reserve/complete.css') }}">
+@endsection
+
 <x-app-layout>
     <div>
         <div>

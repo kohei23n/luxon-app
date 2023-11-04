@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/research.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/research/selections.css') }}">
 @endsection
 
 <x-app-layout>

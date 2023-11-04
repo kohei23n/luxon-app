@@ -1,0 +1,34 @@
+.phase-heading {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.selection-detail {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e0e0e0;
+  background-color: #fafafa;
+}
+
+.selection-detail:last-child {
+  border-bottom: none;
+}
+
+.bottom-link {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f7f7f7;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.bottom-link:hover {
+  background-color: #fafafa;
+  color: #555;
+}

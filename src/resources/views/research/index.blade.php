@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/research.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/research/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,16 +9,14 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-full mx-0 sm:px-6 lg:px-8">
+    <div>
         <div>
-            <div>
-                @foreach ($industries as $industry)
-                    <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}"
-                        class="industry-link">{{ $industry->min_industry_name }}</a>
-                @endforeach
-            </div>
-            <a href="{{ route('index') }}" class="back-button">戻る</a>
+            @foreach ($industries as $industry)
+                <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}"
+                    class="industry-link">{{ $industry->min_industry_name }}</a>
+            @endforeach
         </div>
+        <a href="{{ route('index') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

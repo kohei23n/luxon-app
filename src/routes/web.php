@@ -3,6 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IndexController;
 
+// 選考対策
+// 選考対策：ケース
+use App\Http\Controllers\Prep\Case\CreateController as PrepCaseCreate;
+
 // 選考情報
 use App\Http\Controllers\Research\IndexController as ResearchIndex;
 // 選考情報：業界別会社情報
@@ -21,8 +25,6 @@ use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
 use App\Http\Controllers\Reserve\Event\CreateController as ReserveEventCreate;
 // 予約：ES
 use App\Http\Controllers\Reserve\Es\CreateController as ReserveEsCreate;
-// 予約：ケース
-use App\Http\Controllers\Reserve\Case\CreateController as ReserveCaseCreate;
 // 予約：チケット追加
 use App\Http\Controllers\Reserve\Ticket\UpdateController as ReserveTicketUpdate;
 
@@ -94,6 +96,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return view('prep.index');
         })->name('index');
+        // ケース
+        Route::prefix('case')->group(function () {
+            Route::get('/', [PrepCaseCreate::class, 'add'])->name('caseAdd');
+            Route::post('/', [PrepCaseCreate::class, 'create'])->name('caseCreate');
+        });
     });
 
     // 選考情報
@@ -121,11 +128,6 @@ Route::middleware('auth')->group(function () {
             Route::get('/{id}', ReserveEventShow::class)->name('eventShow');
             Route::get('/{id}/confirm', [ReserveEventCreate::class, 'add'])->name('eventAdd');
             Route::post('/{id}/confirm', [ReserveEventCreate::class, 'create'])->name('eventCreate');
-        });
-        // 予約：ケース
-        Route::prefix('case')->group(function () {
-            Route::get('/', [ReserveCaseCreate::class, 'add'])->name('caseAdd');
-            Route::post('/', [ReserveCaseCreate::class, 'create'])->name('caseCreate');
         });
         // 予約：ES
         Route::prefix('entrysheet')->group(function () {

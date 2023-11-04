@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/research.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/research/companies.css') }}">
 @endsection
 
 <x-app-layout>
@@ -14,7 +14,7 @@
             <a href="{{ route('research.selectionsIndex', $company->mco_company_id) }}"
                 class="industry-link">{{ $company->mco_company_name }}</a>
         @endforeach
-        <a href="{{ route('research.index') }}" class="back-button">戻る</a>
+        <a href="{{ route('research.index') }}">戻る</a>
     </div>
 
     {{-- メニューバー --}}

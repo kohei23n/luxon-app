@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/event.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reserve/event.css') }}">
 @endsection
 
 <x-app-layout>
