@@ -14,7 +14,7 @@
 
             @foreach ($details as $detail)
                 <div class="selection-detail">
-                    <p>{{ $detail->msd_selection_detail }}</p>
+                    <p>{!! nl2br(e($detail->msd_selection_detail)) !!}</p>
                 </div>
             @endforeach
         @endforeach
