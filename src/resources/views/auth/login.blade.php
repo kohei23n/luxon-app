@@ -45,10 +45,7 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
-            <x-primary-button style="color: white;" class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+            <button type="submit">ログイン</button>
         </div>
     </form>
 </x-guest-layout>

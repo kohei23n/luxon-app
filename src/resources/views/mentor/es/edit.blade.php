@@ -16,7 +16,7 @@
                 @method('patch')
 
                 <div>
-                    <x-primary-button>{{ __('返却') }}</x-primary-button>
+                    <button type="submit">返却</button>
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}

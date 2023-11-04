@@ -34,7 +34,7 @@
                 </div>
 
                 <div>
-                    <x-primary-button>{{ __('提出') }}</x-primary-button>
+                    <button type="submit">提出</button>
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">

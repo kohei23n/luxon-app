@@ -31,7 +31,7 @@
         </div>
 
         <div>
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <button type="submit">Save</button>
 
             @if (session('status') === 'password-updated')
                 <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>

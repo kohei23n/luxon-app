@@ -35,7 +35,7 @@
                 </div>
 
                 <div>
-                    <x-primary-button>{{ __('確定') }}</x-primary-button>
+                    <button type="submit">確定</button>
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
