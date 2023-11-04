@@ -29,8 +29,7 @@
             <!-- 選考詳細 -->
             <div>
                 <x-input-label for="msd_selection_detail" :value="__('選考詳細')" />
-                <x-text-input id="msd_selection_detail" class="block mt-1 w-full" type="text"
-                    name="msd_selection_detail" />
+                <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10"></textarea>
                 <x-input-error :messages="$errors->get('msd_selection_detail')" class="mt-2" />
             </div>
         </div>
