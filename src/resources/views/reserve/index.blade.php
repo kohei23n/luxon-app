@@ -15,7 +15,7 @@
         </ul>
     </x-slot>
 
-    <div class="py-6" style="margin-bottom:70px;">
+    <div class="reserve-container">
         <div class="reserving-list">
             <div class="reserving-box">
                 <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>

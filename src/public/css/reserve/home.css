@@ -14,14 +14,21 @@
 .ticket-list li{
    font-size: 12px;
 }
+.reserve-container {
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
 .reserving-list{
-   width: 100%;
-   margin-left: 10%;
-   margin-right: 10%;
+   width: fit-content;
+   margin-top: 60px;
+   
 }
 
 .reserving-box{
-   width: 80%;
+   width: 312px;
    height: 140px;
    justify-content: center;
    align-items: center;
