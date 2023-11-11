@@ -1,6 +1,7 @@
 html{
     margin-top: 50%;
     border-color: none;
+    display: flex;
 }
 body{
     background-color: #15397A;
@@ -55,16 +56,22 @@ button{
 [type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select{
     border-color: none;
     border-width: 0;
-    right: 100px;
-    width: 320px;
+    width: 100%;
     align-items: center;
 }
 
 .login-input-box{
     margin-top: 15px;
+    width: 80%;
 }
 .btn-box {
     background-color: #4597F7;
     margin-left: 20px;
     border-radius: 8px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -7,11 +7,12 @@
     </a>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    <h2>Mentee Sign In</h2>
+
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
+        <h2>Sign In</h2>
         <!-- Email Address -->
         <div class="login-input-box">
             <x-input-label for="mus_email_address" style="color:white; border-width: 0; margin-right: 38px;" :value="__('Email')" />
