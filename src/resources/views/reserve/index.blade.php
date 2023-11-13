@@ -1,9 +1,8 @@
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/reserve/home.css') }}">
 @endsection
-
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" class="reserve-header">
         <h2>
             {{ __('イベント予約') }}
         </h2>
