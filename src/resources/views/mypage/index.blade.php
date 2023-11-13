@@ -3,7 +3,7 @@
 @endsection
 
 <x-app-layout>
-    <div style="padding:25px 0 0 0;">
+    <div style="padding:25px 0 85px 0; display: flex; aline-item: center; justify-content: center;">
         <div>
             <p class="greet">ようこそ、{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}さん!!!</p>
             <div style="padding-bottom:0;">
@@ -21,18 +21,17 @@
                 </div>
                 <div class="reference-container">
                     <a href="">
-                        <p>お気に入り</p>
+                        <p>〜準備中〜</p>
                         <img src="{{ asset('images/plan.png') }}" alt="お気に入り">
                     </a>
                 </div>
                 <div class="news-container">
                     <a href="">
-                        <p>お知らせ</p>
+                        <p>〜準備中〜</p>
                         <img src="{{ asset('images/plan.png') }}" alt="お知らせ">
                     </a>
                 </div>
             </div>
-            <a class="back-btn" href="{{ route('reserve.index') }}">戻る</a>
         </div>
     </div>
     {{-- メニューバー --}}

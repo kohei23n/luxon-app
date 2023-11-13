@@ -3,15 +3,23 @@
 @endsection
 
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" class="reserve-header">
         <h2>
             {{ __('選考対策トップ') }}
         </h2>
     </x-slot>
-    <div>
-        <a href="{{ route('prep.caseAdd') }}">ケース添削</a><br>
-        <a href="">ケースノック</a><br>
-        <a href="">エントリーリマインダー</a><br>
+    <div class="reserve-container">
+        <div class="reserving-list">
+            <div class="reserving-box">
+                <a href="{{ route('prep.caseAdd') }}">ケース添削</a><br>
+            </div>
+            <div class="reserving-box">
+                <a href="">〜準備中〜</a><br>
+            </div>
+            <div class="reserving-box">
+                <a href="">〜準備中〜</a><br>
+            </div>
+        </div>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

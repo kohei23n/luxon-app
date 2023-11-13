@@ -8,7 +8,7 @@
             @csrf
         </form>
 
-        <form method="post" action="{{ route('reserve.esCreate') }}">
+        <form method="post" action="{{ route('reserve.esCreate') }}" class="selection-form">
             @csrf
             @method('post')
 
@@ -17,20 +17,20 @@
             {{-- チケットが0より大きい場合は表示 --}}
             @if ($count->tud_es_count_remaining > 0)
                 <!-- 会社 -->
-                <div>
+                <div class="selection-add-box">
                     <label for="tes_company_name">会社</label>
                     <input type="text" id="tes_company_name" name="tes_company_name">
                     <x-input-error :messages="$errors->get('tes_company_name')" />
                 </div>
 
                 <!-- ドキュメントURL -->
-                <div>
+                <div class="selection-add-box">
                     <label for="tes_es_url">ドキュメントURL</label>
                     <input type="text" id="tes_es_url" name="tes_es_url">
                     <x-input-error :messages="$errors->get('tes_es_url')" />
                 </div>
 
-                <div>
+                <div class="btn-box">
                     <button type="submit">提出</button>
 
                     @if (session('status') === 'profile-updated')
@@ -41,9 +41,12 @@
             @else
                 <p>チケットがありません。</p>
             @endif
+            <div class="bc-btn">
+                <a href="{{ route('reserve.index') }}">戻る</a>
+            </div>
         </form>
 
-        <a href="{{ route('reserve.index') }}">戻る</a>
+        
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

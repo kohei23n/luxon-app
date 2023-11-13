@@ -13,19 +13,19 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('mypage.selectionUpdate', $status->tss_selection_status_id) }}">
+    <form method="post" action="{{ route('mypage.selectionUpdate', $status->tss_selection_status_id) }}" class="selection-form">
         @csrf
         @method('patch')
 
         <div>
             <!-- 企業名 -->
-            <div>
+            <div class="selection-add-box">
                 <label for="tss_company_name">企業名</label>
                 <input type="text" id="tss_company_name" name="tss_company_name" value="{{ $status->tss_company_name }}" >
             </div>
 
             <!-- 選考ステータス -->
-            <div>
+            <div class="selection-add-box">
                 <label for="tss_selection_status">選考ステータス</label>
                 <select id="tss_selection_status" name="tss_selection_status">
                     <option value="" disabled selected>選択してください</option>
@@ -37,14 +37,14 @@
             </div>
 
             <!-- 志望順位 -->
-            <div>
+            <div class="selection-add-box">
                 <label for="tss_preference_ranking">志望順位</label>
                 <input type="number" id="tss_preference_ranking" name="tss_preference_ranking" value="{{ $status->tss_preference_ranking }}" >
                 <x-input-error :messages="$errors->get('tss_preference_ranking')" />
             </div>
 
             <!-- 選考日時 -->
-            <div>
+            <div class="selection-add-box">
                 <label for="tss_selection_date">選考日時</label>
                 <input type="date" id="tss_selection_date" name="tss_selection_date" value="{{ $formattedDate }}">
                 <x-input-error :messages="$errors->get('tss_selection_date')" />
@@ -52,7 +52,7 @@
 
         </div>
 
-        <div>
+        <div class="btn-box">
             <button type="submit">更新</button>
 
             @if (session('status') === 'profile-updated')

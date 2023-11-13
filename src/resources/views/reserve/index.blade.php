@@ -1,9 +1,8 @@
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/reserve/home.css') }}">
 @endsection
-
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" class="reserve-header">
         <h2>
             {{ __('イベント予約') }}
         </h2>
@@ -15,7 +14,7 @@
         </ul>
     </x-slot>
 
-    <div class="py-6" style="margin-bottom:70px;">
+    <div class="reserve-container">
         <div class="reserving-list">
             <div class="reserving-box">
                 <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
