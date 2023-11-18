@@ -1,4 +1,4 @@
-.greet{
+.greet {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
@@ -8,18 +8,16 @@
     width: 360px;
     height: 120px;
     display: flex;
-    background-color: #15397A;
+    background-color: #15397a;
     margin-bottom: 10px;
-
 }
-.plan-container img{
+.plan-container img {
     width: 105px;
     height: 105px;
     left: 10px;
     object-fit: cover;
     margin-top: 7.5px;
     margin-left: 7.5px;
-
 }
 .plan-container p {
     font-size: 32px;
@@ -32,18 +30,16 @@
     width: 360px;
     height: 120px;
     display: flex;
-    background-color: #15397A;
+    background-color: #15397a;
     margin-bottom: 10px;
-
 }
-.selection-information-container img{
+.selection-information-container img {
     width: 105px;
     height: 105px;
     left: 10px;
     object-fit: cover;
     margin-top: 7.5px;
     margin-left: 7.5px;
-
 }
 .selection-information-container p {
     font-size: 32px;
@@ -56,18 +52,16 @@
     width: 360px;
     height: 120px;
     display: flex;
-    background-color: #15397A;
+    background-color: #15397a;
     margin-bottom: 10px;
-
 }
-.reference-container img{
+.reference-container img {
     width: 105px;
     height: 105px;
     left: 10px;
     object-fit: cover;
     margin-top: 7.5px;
     margin-left: 7.5px;
-
 }
 .reference-container p {
     font-size: 32px;
@@ -80,18 +74,16 @@
     width: 360px;
     height: 120px;
     display: flex;
-    background-color: #15397A;
+    background-color: #15397a;
     margin-bottom: 30px;
-
 }
-.news-container img{
+.news-container img {
     width: 105px;
     height: 105px;
     left: 10px;
     object-fit: cover;
     margin-top: 7.5px;
     margin-left: 7.5px;
-
 }
 .news-container p {
     font-size: 32px;

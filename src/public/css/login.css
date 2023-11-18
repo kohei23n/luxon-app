@@ -1,71 +1,82 @@
-html{
+html {
     margin-top: 25%;
     border-color: none;
     display: flex;
 }
-body{
-    background-color: #15397A;
+body {
+    background-color: #15397a;
     width: 100%;
     height: 100%;
-
 }
-.login-top-space{
+.login-top-space {
     width: 100%;
     height: 120px;
     padding-top: 200px;
-    color: #15397A;
+    color: #15397a;
 }
-.mt-32{
+.mt-32 {
     margin-top: 200px;
 }
-.mb-4{
+.mb-4 {
     /* background-color: black; */
     color: white;
 }
-.mt-4{
+.mt-4 {
     /* background-color: black; */
     color: white;
 }
-.w-full{ 
+.w-full {
     width: 100%;
     height: 100%;
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     margin-top: 50px;
-    
 }
 
-.w-full h1{
+.w-full h1 {
     font-size: 60px;
     font-weight: bolder;
     text-align: center;
 }
-.ease-in-out{
-    background-color: #4597F7;
+.ease-in-out {
+    background-color: #4597f7;
     color: white;
 }
-button{
+button {
     padding: 10px;
 }
-.shadow-md{
+.shadow-md {
     --tw-shadow: none;
 }
-[type=password]{
+[type="password"] {
     border-color: none;
 }
-[type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select{
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
     border-color: none;
     border-width: 0;
     width: 100%;
     align-items: center;
 }
 
-.login-input-box{
+.login-input-box {
     margin-top: 15px;
     width: 80%;
 }
 .btn-box {
-    background-color: #4597F7;
+    background-color: #4597f7;
     margin-left: 20px;
     border-radius: 8px;
 }

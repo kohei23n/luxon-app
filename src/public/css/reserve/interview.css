@@ -3,10 +3,10 @@
     margin: 5%;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 .btn-box {
-    background-color: #15397A;
+    background-color: #15397a;
     width: 90px;
     display: flex;
     justify-content: center;

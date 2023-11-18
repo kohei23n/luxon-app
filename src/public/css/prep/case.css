@@ -4,17 +4,17 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 90px; 
+    margin-bottom: 90px;
     padding-bottom: 20px;
 }
-  .selection-add-box {
+.selection-add-box {
     margin-bottom: 20px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 .selection-add-box label {
     font-weight: bold;
 }
@@ -33,7 +33,7 @@ html {
     justify-content: center;
 }
 .btn-box button {
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     padding: 8px 20px;
     border-radius: 8px;

@@ -3,20 +3,20 @@
     margin: 5%;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 90px;
 }
-.selection-table-title th{
+.selection-table-title th {
     width: 25%;
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     padding: 10px;
 }
-.corporation-name{
+.corporation-name {
     margin-right: 20px;
     width: 80px;
 }
-.edit-btn{
+.edit-btn {
     background-color: red;
     width: 50px;
     color: white;
@@ -26,22 +26,23 @@
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-
 }
-table, th, td {
-    border-bottom:1px solid #333;
-  }
+table,
+th,
+td {
+    border-bottom: 1px solid #333;
+}
 .selection-form {
     padding-bottom: 75px;
 }
-  .selection-add-box {
+.selection-add-box {
     margin-bottom: 15%;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 .selection-add-box label {
     font-weight: bold;
 }
@@ -60,7 +61,7 @@ html {
     justify-content: center;
 }
 .btn-box button {
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     padding: 8px 20px;
     border-radius: 8px;
@@ -71,7 +72,7 @@ html {
     margin-top: 15px;
 }
 .add-btn {
-    background-color: #15397A;
+    background-color: #15397a;
     width: 90px;
     display: flex;
     justify-content: center;

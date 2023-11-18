@@ -7,7 +7,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    font-size: larger; 
+    font-size: larger;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -15,15 +15,15 @@
 }
 .btn-box {
     background-color: gray;
-      width: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      padding: 5px;
-      border-radius: 8px;
-      margin-top: 15px;
-      margin-left: 5%;
-      margin-bottom: 90px;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
-  }
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-bottom: 90px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
