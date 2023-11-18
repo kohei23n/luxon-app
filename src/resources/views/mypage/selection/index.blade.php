@@ -9,8 +9,7 @@
         </h2>
     </x-slot>
 
-    <div>
-        <h2>選考情報</h2>
+    <div class="selection-container">
         <table class="selection-table-title">
             <tr>
                 <th>企業名</th>
@@ -25,13 +24,19 @@
                     <td>{{ $status->tss_preference_ranking }}</td>
                     <td>{{ $status->tss_selection_date }}</td>
                     <td class="edit-btn"><a
-                            href="{{ route('mypage.selectionEdit', $status->tss_selection_status_id) }}">編集<br>ボタン</a>
+                            href="{{ route('mypage.selectionEdit', $status->tss_selection_status_id) }}">編集</a>
                     </td>
                 </tr>
             @endforeach
         </table>
-        <a href="{{ route('mypage.selectionAdd') }}">追加ボタン</a>
-        <a href="{{ route('mypage.index') }}">戻る</a>
+        <div class="btn-container">
+            <div class="add-btn">
+                <a href="{{ route('mypage.selectionAdd') }}">追加</a>
+            </div>
+            <div class="bk-btn">
+                <a href="{{ route('mypage.index') }}">戻る</a>
+            </div>
+        </div>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

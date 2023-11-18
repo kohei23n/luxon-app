@@ -3,7 +3,10 @@
 @endsection
 
 <x-app-layout>
-    <div>
+<x-slot name="header">
+        <p>ケース添削チケット数：{{ $count->tud_case_study_count_remaining }}</p>
+    </x-slot>
+    <div class="form-container">
         <form id="send-verification" method="post" action="{{ route('verification.send') }}">
             @csrf
         </form>
@@ -11,8 +14,6 @@
         <form method="post" action="{{ route('prep.caseCreate') }}" class="selection-form">
             @csrf
             @method('post')
-
-            <p>ケース添削チケット：{{ $count->tud_case_study_count_remaining }}</p>
 
             {{-- チケットが0より大きい場合は表示 --}}
             @if ($count->tud_case_study_count_remaining > 0)

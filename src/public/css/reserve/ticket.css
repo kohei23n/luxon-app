@@ -1,0 +1,66 @@
+.ticket-container {
+    background-color: #ffffff;
+    margin: 5%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+}
+.ticket-container p {
+    font-size: large;
+    font-weight: bold;
+}
+.ticket-manerger {
+  display: grid;
+  grid-template-columns: repeat(2, 50%); /* 2列に設定 */
+  grid-gap: 5px; /* 適宜余白を設定 */
+  list-style: none;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-manerger li {
+    width: 100%;
+}
+.add-ticket {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.ticket-name {
+    margin-right: 10px;
+    width: 127px;
+}
+.input-box {
+    width: 150px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.btn-box {
+    display: flex;
+    gap: 10px;
+}
+.btn-box button {
+    background-color: #15397A;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.bk-btn-box {
+    background-color: gray;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+}

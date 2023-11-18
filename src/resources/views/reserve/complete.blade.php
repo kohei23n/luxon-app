@@ -3,9 +3,11 @@
 @endsection
 
 <x-app-layout>
-    <div>
-        <div>
-            <p>完了しました！</p>
+    <div class="complete-container">
+        <div class="event-detail">
+            <h1>完了しました！</h1>
+        </div>
+        <div class="btn-box">
             <a href="{{ route('reserve.index') }}">戻る</a>
         </div>
     </div>

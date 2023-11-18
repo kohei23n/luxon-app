@@ -1,0 +1,18 @@
+.mentor-details {
+    background-color: #ffffff;
+    margin: 5%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
+}
+.btn-box {
+    background-color: #15397A;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 15px;
+}

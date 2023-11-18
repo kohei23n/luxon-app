@@ -49,22 +49,26 @@
 
 /* Base styles for all sections */
 .section-box {
-    width: 100%;
     /* height: 200px; */
     background-color: #f7f7f7;
-    margin: 1rem 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1rem;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 90%;
 }
 
 .section-header {
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: #f7f7f7;
-    font-size: 1.5rem;
+    background-color: #ffffff;
+    font-size: 16px;
     border-bottom: 2px solid #e0e0e0;
+    padding: 10px;
+
 }
 
 /* Event reminder section */
@@ -89,7 +93,20 @@
 html{
     width: 100%;
     height: 100vh;
-    background-color: #ffffff;
     padding-bottom: 85px;
     min-height: 667px;
+    background-color: #f7f7f7;
+}
+main {
+    padding-bottom: 85px;
+}
+.header-container {
+    width: 90%;
+    height: 15%;
+}
+h2 {
+    color: #333;
+}
+li {
+    color: #333;
 }
