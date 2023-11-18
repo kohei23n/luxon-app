@@ -16,7 +16,7 @@
                     class="industry-link">{{ $industry->min_industry_name }}</a>
             @endforeach
         </div>
-        <a href="{{ route('index') }}" class="back-button">戻る</a>
+        <a href="{{ route('research.index') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

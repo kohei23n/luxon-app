@@ -67,7 +67,7 @@
                             {{ __('Saved.') }}</p>
                     @endif
                     <div class="bk-btn-box">
-                    <a href="{{ route('reserve.index') }}">戻る</a>
+                    <a href="{{ route('reserve.eventIndex') }}">戻る</a>
                     </div>
                 </div>
             </form>

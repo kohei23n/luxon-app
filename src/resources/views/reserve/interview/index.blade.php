@@ -9,6 +9,8 @@
         </h2>
     </x-slot>
 
+    <p>LINEで日程調整した面談の日時を登録してください。</p>
+
     <div class="mentor-details">
         <h2>メンター情報</h2>
         <p class="mentor-name">メンター：{{ $mentor->mus_user_last_name }}{{ $mentor->mus_user_first_name }}</p>

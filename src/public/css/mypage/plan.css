@@ -36,6 +36,17 @@
     font-size: large;
 }
 
+.mentor-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mentor-links img {
+    width: 96px;
+    height: 96px;
+}
+
 .ticket-information {
     background-color: #ffffff;
     margin: 5%;

@@ -24,7 +24,7 @@
                     <td>{{ $status->tss_preference_ranking }}</td>
                     <td>{{ $status->tss_selection_date }}</td>
                     <td class="edit-btn"><a
-                            href="{{ route('research.mySelectionsEdit', $status->tss_selection_status_id) }}">編集<br>ボタン</a>
+                            href="{{ route('research.mySelectionsEdit', $status->tss_selection_status_id) }}">編集</a>
                     </td>
                 </tr>
             @endforeach
