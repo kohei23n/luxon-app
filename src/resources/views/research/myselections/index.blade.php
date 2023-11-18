@@ -34,7 +34,7 @@
                 <a href="{{ route('research.mySelectionsAdd') }}">追加</a>
             </div>
             <div class="bk-btn">
-                <a href="{{ route('research.mySelectionsIndex') }}">戻る</a>
+                <a href="{{ route('research.index') }}">戻る</a>
             </div>
         </div>
     </div>
