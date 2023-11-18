@@ -76,10 +76,7 @@
         <div>
             @include('mypage.plan.profile.partials.update-password-form')
         </div>
-
-        <div>
-            @include('mypage.plan.profile.partials.delete-user-form')
-        </div>
+        
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

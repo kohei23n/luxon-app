@@ -35,7 +35,6 @@ use App\Http\Controllers\MyPage\IndexController as MyPageIndex;
 use App\Http\Controllers\MyPage\Plan\IndexController as MyPagePlanIndex;
 // プラン：個人情報
 use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfileUpdate;
-use App\Http\Controllers\MyPage\Plan\Profile\DeleteController as MyPagePlanProfileDelete;
 // 選考情報
 use App\Http\Controllers\MyPage\Selection\IndexController as MyPageSelectionIndex;
 use App\Http\Controllers\MyPage\Selection\CreateController as MyPageSelectionCreate;
