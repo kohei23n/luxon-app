@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8" style="padding: 0;">
         <div class="flex justify-between h-16 bg-color">
-            <div class="flex">
+            <div class="flex" style="margin-left: 15px;">
                 @if (auth()->user() && auth()->user()->mus_is_admin)
                     {{-- 管理者用のリンク --}}
                     <a href="{{ route('admin.index') }}"><h1>Tachyon</h1></a>

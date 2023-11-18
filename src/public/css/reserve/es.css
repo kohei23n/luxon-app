@@ -1,15 +1,14 @@
-
 .selection-form {
     padding-bottom: 75px;
 }
-  .selection-add-box {
+.selection-add-box {
     margin-bottom: 15%;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 .selection-add-box label {
     font-weight: bold;
 }
@@ -28,7 +27,7 @@ html {
     justify-content: center;
 }
 .btn-box button {
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     padding: 8px 20px;
     border-radius: 8px;

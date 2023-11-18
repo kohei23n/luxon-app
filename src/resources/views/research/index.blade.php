@@ -9,10 +9,17 @@
         </h2>
     </x-slot>
 
-    <div>
-        <a href="{{ route('research.industriesIndex') }}">企業情報</a>
-        <a href="{{ route('research.mySelectionsIndex') }}">選考状況</a>
+    <div class="reserve-container">
+        <div class="reserving-list">
+            <div class="reserving-box" onclick="window.location.href = '{{ route('research.industriesIndex') }}';">
+                <a href="{{ route('research.industriesIndex') }}">企業情報</a>
+            </div>
+            <div class="reserving-box" onclick="window.location.href = '{{ route('research.mySelectionsIndex') }}';">
+                <a href="{{ route('research.mySelectionsIndex') }}">選考状況</a>
+            </div>
+        </div>
     </div>
+
     {{-- メニューバー --}}
     <div class="list-box">
         <x-menubar />

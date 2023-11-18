@@ -1,17 +1,24 @@
-
-.selection-table-title th{
-    width: 20%;
-    background-color: #15397A;
+.selection-container {
+    background-color: #ffffff;
+    margin: 5%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 90px;
+}
+.selection-table-title th {
+    width: 25%;
+    background-color: #15397a;
     color: white;
     padding: 10px;
 }
-.corporation-name{
+.corporation-name {
     margin-right: 20px;
     width: 80px;
 }
-.edit-btn{
+.edit-btn {
     background-color: red;
-    width: 80px;
+    width: 50px;
     color: white;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -19,22 +26,23 @@
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-
 }
-table, th, td {
-    border-bottom:1px solid #333;
-  }
+table,
+th,
+td {
+    border-bottom: 1px solid #333;
+}
 .selection-form {
     padding-bottom: 75px;
 }
-  .selection-add-box {
+.selection-add-box {
     margin-bottom: 15%;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 .selection-add-box label {
     font-weight: bold;
 }
@@ -53,8 +61,33 @@ html {
     justify-content: center;
 }
 .btn-box button {
-    background-color: #15397A;
+    background-color: #15397a;
     color: white;
     padding: 8px 20px;
+    border-radius: 8px;
+}
+.btn-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+.add-btn {
+    background-color: #15397a;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+.bk-btn {
+    background-color: gray;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
     border-radius: 8px;
 }

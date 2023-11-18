@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="selection-container">
         <table class="selection-table-title">
             <tr>
                 <th>企業名</th>
@@ -29,8 +29,14 @@
                 </tr>
             @endforeach
         </table>
-        <a href="{{ route('research.mySelectionsAdd') }}">追加ボタン</a>
-        <a href="{{ route('research.mySelectionsIndex') }}">戻る</a>
+        <div class="btn-container">
+            <div class="add-btn">
+                <a href="{{ route('research.mySelectionsAdd') }}">追加</a>
+            </div>
+            <div class="bk-btn">
+                <a href="{{ route('research.index') }}">戻る</a>
+            </div>
+        </div>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

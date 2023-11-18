@@ -1,14 +1,13 @@
-
 .bg-color {
-    background-color: #15397A;
+    background-color: #15397a;
 }
-.bg-color h1{
+.bg-color h1 {
     color: white;
     font-size: 40px;
     margin-left: 15px;
     margin-top: 6px;
 }
-.search-box{
+.search-box {
     background-color: white;
     width: 140px;
     height: 36px;
@@ -16,8 +15,8 @@
     margin-left: 10px;
     border-radius: 5px;
 }
-.search-box p{
-    color: 	#999999;
+.search-box p {
+    color: #999999;
     margin-top: 6px;
     margin-left: 6px;
 }
@@ -29,14 +28,14 @@
     max-width: 100%;
     height: auto;
     background-color: #ffffff;
-    border-top: 1px solid #15397A;
-    z-index:999;
+    border-top: 1px solid #15397a;
+    z-index: 999;
 }
 
-.btn-list{
+.btn-list {
     display: flex;
 }
-.btn{
+.btn {
     max-width: 20%;
     text-align: center;
     font-size: 12px;
@@ -44,27 +43,29 @@
 }
 .btn img {
     max-width: 100%;
-    
 }
 
 /* Base styles for all sections */
 .section-box {
-    width: 100%;
     /* height: 200px; */
     background-color: #f7f7f7;
-    margin: 1rem 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1rem;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
 }
 
 .section-header {
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: #f7f7f7;
-    font-size: 1.5rem;
+    background-color: #ffffff;
+    font-size: 16px;
     border-bottom: 2px solid #e0e0e0;
+    padding: 10px;
 }
 
 /* Event reminder section */
@@ -86,10 +87,23 @@
 .card-text {
     color: #777;
 }
-html{
+html {
     width: 100%;
     height: 100vh;
-    background-color: #ffffff;
     padding-bottom: 85px;
     min-height: 667px;
+    background-color: #f7f7f7;
+}
+main {
+    padding-bottom: 85px;
+}
+.header-container {
+    width: 90%;
+    height: 15%;
+}
+h2 {
+    color: #333;
+}
+li {
+    color: #333;
 }

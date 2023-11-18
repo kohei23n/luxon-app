@@ -16,14 +16,15 @@
 
     <div class="reserve-container">
         <div class="reserving-list">
-            <div class="reserving-box">
-                <a href="{{ route('reserve.interviewIndex') }}">面談予約</a>
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.interviewIndex') }}';" style="cursor: pointer;">
+            面談予約
             </div>
-            <div class="reserving-box">
-                <a href="{{ route('reserve.eventIndex') }}">イベント予約</a>
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.eventIndex') }}';" style="cursor: pointer;">
+            イベント予約
             </div>
-            <div class="reserving-box">
-                <a href="{{ route('reserve.esAdd') }}">ES添削</a>
+
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.esAdd') }}';" style="cursor: pointer;">
+             ES添削
             </div>
         </div>
     </div>
