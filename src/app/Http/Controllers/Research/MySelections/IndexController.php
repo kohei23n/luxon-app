@@ -9,8 +9,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         $user = auth()->user();
-        $selectionStatuses = $user->selectionStatuses;
-
+        $selectionStatuses = $user->selectionStatuses->sortBy('tss_selection_date');
 
         return view('research.myselections.index', compact('selectionStatuses'));
     }
