@@ -31,6 +31,6 @@ class UpdateController extends Controller
 
         $userDetail->save();
 
-        return Redirect::route('mypage.plan.profileEdit')->with('status', 'profile-updated');
+        return Redirect::route('mypage.index')->with('status', 'profile-updated');
     }
 }

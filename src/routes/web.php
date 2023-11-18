@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IndexController;
 
 // 選考対策
+use App\Http\Controllers\Prep\IndexController as PrepIndex;
 // 選考対策：ケース
 use App\Http\Controllers\Prep\Case\CreateController as PrepCaseCreate;
 
@@ -90,9 +91,7 @@ Route::middleware('auth')->group(function () {
     // 選考対策
     Route::group(['prefix' => 'prep', 'as' => 'prep.'], function () {
         // 選考対策
-        Route::get('/', function () {
-            return view('prep.index');
-        })->name('index');
+        Route::get('/', PrepIndex::class)->name('index');
         // ケース
         Route::prefix('case')->group(function () {
             Route::get('/', [PrepCaseCreate::class, 'add'])->name('caseAdd');

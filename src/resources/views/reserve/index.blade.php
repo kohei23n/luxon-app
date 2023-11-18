@@ -4,13 +4,12 @@
 <x-app-layout>
     <x-slot name="header" class="reserve-header">
         <h2>
-            {{ __('イベント予約') }}
+            {{ __('予約') }}
         </h2>
-        <ul class="flex text-xs justify-between mt-2">
+        <ul>
             <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
             <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
             <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
-            <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
         </ul>
     </x-slot>
 

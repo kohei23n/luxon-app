@@ -15,15 +15,25 @@
             <p>会員ID：{{ $user->mus_user_id }}</p>
             <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
             <p>大学：{{ $user->userDetail->tud_current_university }}</p>
-            <a href="{{ route('mypage.plan.profileEdit') }}">編集ボタン</a>
+            <p>第一志望業界：{{ $user->userDetail->tud_first_industry_preference }}</p>
+            <p>第二志望業界：{{ $user->userDetail->tud_second_industry_preference }}</p>
+            <div class="btn-box">
+                <a href="{{ route('mypage.plan.profileEdit') }}">編集</a>
+            </div>
         </div>
 
         <div class="mentor-information">
             <h2>専属メンター情報</h2>
-            <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
-            </p>
-            <p>メンターLINE URL：{{ $user->dedicatedMentor->mentorProfile->mme_line_url ?? 'なし' }}</p>
-            <p>TimeRex URL：{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url ?? 'なし' }}</p>
+            <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}</p>
+            <p>リンク：</p>
+            <div class="mentor-links">
+                <a href="{{ $user->dedicatedMentor->mentorProfile->mme_line_url }}">
+                    <img src="{{ asset('images/line.png') }}" alt="Image Description">
+                </a>
+                <a href="{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url }}">
+                    <img src="{{ asset('images/timerex.png') }}" alt="Image Description">
+                </a>
+            </div>
         </div>
 
         <div class="ticket-information">
@@ -42,7 +52,7 @@
         </div>
 
         <div class="btn-box">
-            <a href="{{ route('mypage.index') }}">戻る</a>
+            <a href="{{ route('index') }}">戻る</a>
         </div>
     </div>
     {{-- メニューバー --}}
