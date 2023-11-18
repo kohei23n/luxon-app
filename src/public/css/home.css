@@ -93,7 +93,6 @@
 html{
     width: 100%;
     height: 100vh;
-<<<<<<< HEAD
     padding-bottom: 85px;
     min-height: 667px;
     background-color: #f7f7f7;
@@ -110,9 +109,4 @@ h2 {
 }
 li {
     color: #333;
-=======
-    background-color: #ffffff;
-    padding-bottom: 85px;
-    min-height: 667px;
->>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
 }

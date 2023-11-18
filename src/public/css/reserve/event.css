@@ -4,13 +4,8 @@
 }
 .calendar-container {
   font-family: Arial, sans-serif;
-<<<<<<< HEAD
   background-color: #ffffff;
   padding: 20px;
-=======
-  background-color: #f4f4f4;
-  padding: 20px 20px 90px 20px;
->>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
   border-radius: 8px;
   margin: 15px 10px 0 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 

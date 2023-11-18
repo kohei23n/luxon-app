@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .form-container {
     background-color: #ffffff;
     margin: 5%;
@@ -13,14 +12,6 @@
 }
   .selection-add-box {
     margin-bottom: 20px;
-=======
-
-.selection-form {
-    padding-bottom: 75px;
-}
-  .selection-add-box {
-    margin-bottom: 15%;
->>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
     padding: 10px;
     display: flex;
     flex-direction: column;
