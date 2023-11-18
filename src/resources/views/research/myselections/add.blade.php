@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('mypage.selectionCreate') }}" class="selection-form">
+    <form method="post" action="{{ route('research.mySelectionsCreate') }}" class="selection-form">
         @csrf
         @method('post')
 
@@ -30,7 +30,7 @@
             <select id="tss_selection_status" name="tss_selection_status">
                 <option value="" disabled selected>選択してください</option>
                 @foreach ($selectionPhases as $phase)
-                    <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
+                    <option value="{{ $phase->msp_phase_name }}">{{ $phase->msp_phase_name }}</option>
                 @endforeach
             </select>
             <x-input-error :messages="$errors->get('tss_selection_status')" />

@@ -25,7 +25,6 @@ class CreateController extends Controller
     // リクエストデータのバリデーション
     $request->validate([
       'mev_industry_id' => 'required|integer',
-      'mev_company_id' => 'required|integer',
       'mev_event_name' => 'required|string|max:255',
       'mev_event_overview' => 'required|string|max:255',
       'mev_event_description' => 'nullable|string|max:255',
@@ -47,9 +46,9 @@ class CreateController extends Controller
     ]);
 
     if ($event) {
-      return Redirect::route('admin.eventAdd')->with('status', 'event-status-created');
+      return Redirect::route('admin.eventIndex')->with('status', 'event-status-created');
     } else {
-      return Redirect::route('admin.eventAdd')->with('error', 'error-creating-event-status');
+      return Redirect::route('admin.eventIndex')->with('error', 'error-creating-event-status');
     }
   }
 }

@@ -8,12 +8,16 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Prep\Case\CreateController as PrepCaseCreate;
 
 // 選考情報
-use App\Http\Controllers\Research\IndexController as ResearchIndex;
 // 選考情報：業界別会社情報
+use App\Http\Controllers\Research\Industries\IndexController as ResearchIndustriesIndex;
 use App\Http\Controllers\Research\Companies\IndexController as ResearchCompaniesIndex;
 // 選考情報：選考情報
 use App\Http\Controllers\Research\Selections\IndexController as ResearchSelectionsIndex;
 use App\Http\Controllers\Research\Selections\CreateController as ResearchSelectionsCreate;
+// 選考情報：ユーザー
+use App\Http\Controllers\Research\MySelections\IndexController as ResearchMySelectionsIndex;
+use App\Http\Controllers\Research\MySelections\CreateController as ResearchMySelectionsCreate;
+use App\Http\Controllers\Research\MySelections\UpdateController as ResearchMySelectionsUpdate;
 
 // 予約
 use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
@@ -31,15 +35,8 @@ use App\Http\Controllers\Reserve\Ticket\UpdateController as ReserveTicketUpdate;
 // マイページ
 // トップ
 use App\Http\Controllers\MyPage\IndexController as MyPageIndex;
-// プラン
-use App\Http\Controllers\MyPage\Plan\IndexController as MyPagePlanIndex;
 // プラン：個人情報
 use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfileUpdate;
-use App\Http\Controllers\MyPage\Plan\Profile\DeleteController as MyPagePlanProfileDelete;
-// 選考情報
-use App\Http\Controllers\MyPage\Selection\IndexController as MyPageSelectionIndex;
-use App\Http\Controllers\MyPage\Selection\CreateController as MyPageSelectionCreate;
-use App\Http\Controllers\MyPage\Selection\UpdateController as MyPageSelectionUpdate;
 
 // 管理者
 
@@ -105,14 +102,31 @@ Route::middleware('auth')->group(function () {
 
     // 選考情報
     Route::group(['prefix' => 'research', 'as' => 'research.'], function () {
-        // 選考情報
-        Route::get('/', ResearchIndex::class)->name('index');
+        // 選考情報：トップ
+        Route::get('/', function() {
+            return view('research.index');
+        })->name('index');
+        // 選考情報：業界一覧
+        Route::get('/companies', ResearchIndustriesIndex::class)->name('industriesIndex');
         // 選考情報：会社情報
         Route::get('/industry/{id}', ResearchCompaniesIndex::class)->name('companiesIndex');
         Route::prefix('company/{id}')->group(function () {
             Route::get('/', ResearchSelectionsIndex::class)->name('selectionsIndex');
             Route::get('/add', [ResearchSelectionsCreate::class, 'add'])->name('selectionsAdd');
             Route::post('/add', [ResearchSelectionsCreate::class, 'create'])->name('selectionsCreate');
+        });
+
+        // 選考情報（個人）
+        Route::prefix('myselections')->group(function () {
+            Route::get('', ResearchMySelectionsIndex::class)->name('mySelectionsIndex');
+            Route::prefix('add')->group(function () {
+                Route::get('/', [ResearchMySelectionsCreate::class, 'add'])->name('mySelectionsAdd');
+                Route::post('/', [ResearchMySelectionsCreate::class, 'create'])->name('mySelectionsCreate');
+            });
+            Route::prefix('edit/{id}')->group(function () {
+                Route::get('/', [ResearchMySelectionsUpdate::class, 'edit'])->name('mySelectionsEdit');
+                Route::patch('/', [ResearchMySelectionsUpdate::class, 'update'])->name('mySelectionsUpdate');
+            });
         });
     });
 
@@ -148,8 +162,6 @@ Route::middleware('auth')->group(function () {
     // マイページトップ
     Route::group(['prefix' => 'mypage', 'as' => 'mypage.'], function () {
         Route::get('', MyPageIndex::class)->name('index');
-        // プラン
-        Route::get('/plan', MyPagePlanIndex::class)->name('planIndex');
         // プラン：個人情報
         Route::group(['prefix' => 'pi/edit', 'as' => 'plan.'], function () {
             Route::get('/', [MyPagePlanProfileUpdate::class, 'edit'])->name('profileEdit');
@@ -157,19 +169,6 @@ Route::middleware('auth')->group(function () {
         });
         // ここは後で直したい
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profileDestroy');
-
-        // 選考情報
-        Route::prefix('selection')->group(function () {
-            Route::get('', MyPageSelectionIndex::class)->name('selectionIndex');
-            Route::prefix('add')->group(function () {
-                Route::get('/', [MyPageSelectionCreate::class, 'add'])->name('selectionAdd');
-                Route::post('/', [MyPageSelectionCreate::class, 'create'])->name('selectionCreate');
-            });
-            Route::prefix('edit/{id}')->group(function () {
-                Route::get('/', [MyPageSelectionUpdate::class, 'edit'])->name('selectionEdit');
-                Route::patch('/', [MyPageSelectionUpdate::class, 'update'])->name('selectionUpdate');
-            });
-        });
     });
 
     // 管理者
