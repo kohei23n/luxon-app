@@ -25,7 +25,6 @@ class CreateController extends Controller
     // リクエストデータのバリデーション
     $request->validate([
       'mev_industry_id' => 'required|integer',
-      'mev_company_id' => 'required|integer',
       'mev_event_name' => 'required|string|max:255',
       'mev_event_overview' => 'required|string|max:255',
       'mev_event_description' => 'nullable|string|max:255',
