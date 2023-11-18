@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\MyPage\Selection;
+namespace App\Http\Controllers\Research\MySelections;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class CreateController extends Controller
     {
         $selectionPhases = SelectionPhase::all();
 
-        return view('mypage.selection.add', compact('selectionPhases'));
+        return view('research.myselections.add', compact('selectionPhases'));
     }
 
     public function create(Request $request): RedirectResponse
@@ -40,9 +40,9 @@ class CreateController extends Controller
         ]);
 
         if ($status) {
-            return Redirect::route('mypage.selectionIndex')->with('status', 'selection-status-created');
+            return Redirect::route('research.mySelectionsIndex')->with('status', 'selection-status-created');
         } else {
-            return Redirect::route('mypage.selectionIndex')->with('error', 'error-creating-selection-status');
+            return Redirect::route('research.mySelectionsIndex')->with('error', 'error-creating-selection-status');
         }
     }
 }

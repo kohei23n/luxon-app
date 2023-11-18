@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\MyPage\Selection;
+namespace App\Http\Controllers\Research\MySelections;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

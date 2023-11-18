@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('mypage.selectionUpdate', $status->tss_selection_status_id) }}" class="selection-form">
+    <form method="post" action="{{ route('research.mySelectionsUpdate', $status->tss_selection_status_id) }}" class="selection-form">
         @csrf
         @method('patch')
 
