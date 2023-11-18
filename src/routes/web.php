@@ -31,8 +31,6 @@ use App\Http\Controllers\Reserve\Ticket\UpdateController as ReserveTicketUpdate;
 // マイページ
 // トップ
 use App\Http\Controllers\MyPage\IndexController as MyPageIndex;
-// プラン
-use App\Http\Controllers\MyPage\Plan\IndexController as MyPagePlanIndex;
 // プラン：個人情報
 use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfileUpdate;
 // 選考情報
@@ -147,8 +145,6 @@ Route::middleware('auth')->group(function () {
     // マイページトップ
     Route::group(['prefix' => 'mypage', 'as' => 'mypage.'], function () {
         Route::get('', MyPageIndex::class)->name('index');
-        // プラン
-        Route::get('/plan', MyPagePlanIndex::class)->name('planIndex');
         // プラン：個人情報
         Route::group(['prefix' => 'pi/edit', 'as' => 'plan.'], function () {
             Route::get('/', [MyPagePlanProfileUpdate::class, 'edit'])->name('profileEdit');

@@ -1,38 +1,48 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/mypage/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mypage/plan.css') }}">
 @endsection
 
 <x-app-layout>
-    <div style="padding:25px 0 85px 0; display: flex; aline-item: center; justify-content: center;">
+    <x-slot name="header">
+        <h2>
+            {{ __('マイページ') }}
+        </h2>
+    </x-slot>
+
+    <div>
+
         <div>
-            <p class="greet">ようこそ、{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}さん!!!</p>
-            <div style="padding-bottom:0;">
-                <div class="plan-container">
-                    <a href="{{ route('mypage.planIndex') }}">
-                        <p>プラン</p>
-                        <img src="{{ asset('images/plan.png') }}" alt="プラン">
-                    </a>
-                </div>
-                <div class="selection-information-container">
-                    <a href="{{ route('mypage.selectionIndex') }}">
-                        <p>選考情報</p>
-                        <img src="{{ asset('images/plan.png') }}" alt="選考情報">
-                    </a>
-                </div>
-                <div class="reference-container">
-                    <a href="">
-                        <p>〜準備中〜</p>
-                        <img src="{{ asset('images/plan.png') }}" alt="お気に入り">
-                    </a>
-                </div>
-                <div class="news-container">
-                    <a href="">
-                        <p>〜準備中〜</p>
-                        <img src="{{ asset('images/plan.png') }}" alt="お知らせ">
-                    </a>
-                </div>
-            </div>
+            <h2>会員証</h2>
+            <p>会員ID：{{ $user->mus_user_id }}</p>
+            <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
+            <p>大学：{{ $user->userDetail->tud_current_university }}</p>
+            <a href="{{ route('mypage.plan.profileEdit') }}">編集ボタン</a>
         </div>
+
+        <div>
+            <h2>専属メンター情報</h2>
+            <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
+            </p>
+            <p>メンターLINE URL：{{ $user->dedicatedMentor->mentorProfile->mme_line_url ?? 'なし' }}</p>
+            <p>TimeRex URL：{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url ?? 'なし' }}</p>
+        </div>
+
+        <div>
+            <h2>参加回数</h2>
+            <ul>
+                <li>面談枠：{{ $user->userDetail->tud_interview_count_remaining ?? 'なし' }}</li>
+                <li>イベント枠：{{ $user->userDetail->tud_event_attendance_remaining ?? 'なし' }}</li>
+                <li>ES添削枠：{{ $user->userDetail->tud_es_count_remaining ?? 'なし' }}</li>
+                <li>ケース添削枠：{{ $user->userDetail->tud_case_study_count_remaining ?? 'なし' }}</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>累積添削回数</h2>
+            <p>後に実装</p>
+        </div>
+
+        <a href="{{ route('mypage.index') }}">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">
