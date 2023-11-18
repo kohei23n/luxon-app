@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('mypage.selectionUpdate', $status->tss_selection_status_id) }}" class="selection-form">
+    <form method="post" action="{{ route('research.mySelectionsUpdate', $status->tss_selection_status_id) }}" class="selection-form">
         @csrf
         @method('patch')
 
@@ -28,9 +28,8 @@
             <div class="selection-add-box">
                 <label for="tss_selection_status">選考ステータス</label>
                 <select id="tss_selection_status" name="tss_selection_status">
-                    <option value="" disabled selected>選択してください</option>
                     @foreach ($selectionPhases as $phase)
-                        <option value="{{ $phase->msp_phase_id }}">{{ $phase->msp_phase_name }}</option>
+                        <option value="{{ $phase->msp_phase_name }}" {{ $selectedValue == $phase->msp_phase_name ? 'selected' : '' }}>{{ $phase->msp_phase_name }}</option>
                     @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('tss_selection_status')" />

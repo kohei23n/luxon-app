@@ -31,7 +31,7 @@
 
                 <!-- 会社ID -->
                 <div>
-                    <label for="mev_company_id">会社</label>
+                    <label for="mev_company_id">会社（任意）</label>
                     <select id="mev_company_id" name="mev_company_id">
                         <option value="" disabled selected>選択してください</option>
                         @foreach ($companies as $company)
@@ -65,7 +65,7 @@
                 <!-- イベント日時 -->
                 <div>
                     <label for="mev_event_datetime">日時</label>
-                    <input type="date" id="mev_event_datetime" name="mev_event_datetime">
+                    <input type="datetime-local" id="mev_event_datetime" name="mev_event_datetime">
                     <x-input-error :messages="$errors->get('mev_event_datetime')" />
                 </div>
 

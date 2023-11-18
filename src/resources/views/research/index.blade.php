@@ -5,18 +5,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2>
-            {{ __('業界一覧') }}
+            {{ __('選考情報') }}
         </h2>
     </x-slot>
 
     <div>
-        <div>
-            @foreach ($industries as $industry)
-                <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}"
-                    class="industry-link">{{ $industry->min_industry_name }}</a>
-            @endforeach
-        </div>
-        <a href="{{ route('index') }}" class="back-button">戻る</a>
+        <a href="{{ route('research.industriesIndex') }}">企業情報</a>
+        <a href="{{ route('research.mySelectionsIndex') }}">選考状況</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

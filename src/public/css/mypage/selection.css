@@ -64,6 +64,7 @@ html {
     color: white;
     padding: 8px 20px;
     border-radius: 8px;
+<<<<<<< HEAD
 }
 .btn-container {
     display: flex;
@@ -89,4 +90,6 @@ html {
     color: white;
     padding: 5px;
     border-radius: 8px;
+=======
+>>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
 }

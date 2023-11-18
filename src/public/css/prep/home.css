@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 .reserving-wrapper{
    background-color: #f7f7f7;
    padding-bottom: 85px;
 }
+=======
+>>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
 .ticket-list{
     margin: 10px 20px 20px 20px;
  }
@@ -38,12 +41,21 @@
     justify-content: center;
     align-items: center;
     display: flex;
+<<<<<<< HEAD
     background-color: #ffffff;
     border-radius: 10px;
     margin-bottom: 35px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
  }
  .reserving-box a{
+=======
+    background-color: #15397A;
+    border-radius: 10px;
+    margin-bottom: 35px;
+ }
+ .reserving-box a{
+    color: white;
+>>>>>>> 711f745bbe740dbfb3d6beba43038c269318d9ec
  }
  .box-bottom{
     display: flex;

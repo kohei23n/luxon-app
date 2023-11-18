@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\MyPage\Selection;
+namespace App\Http\Controllers\Research\MySelections;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,8 +16,9 @@ class UpdateController extends Controller
     $status = SelectionStatus::where('tss_selection_status_id', $id)->first();
     $formattedDate = date('Y-m-d', strtotime($status->tss_selection_date));
     $selectionPhases = SelectionPhase::all();
+    $selectedValue = $status->tss_selection_status;
 
-    return view('mypage.selection.edit', compact('status', 'formattedDate', 'selectionPhases'));
+    return view('research.myselections.edit', compact('status', 'formattedDate', 'selectionPhases', 'selectedValue'));
   }
 
   public function update(Request $request, $id): RedirectResponse
@@ -31,6 +32,6 @@ class UpdateController extends Controller
       'tss_selection_date' => $request->tss_selection_date,
     ]);
 
-    return Redirect::route('mypage.selectionIndex')->with('status', 'selection-status-updated');
+    return Redirect::route('research.mySelectionsIndex')->with('status', 'selection-status-updated');
   }
 }

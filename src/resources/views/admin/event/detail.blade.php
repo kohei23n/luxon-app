@@ -19,9 +19,11 @@
 
         <p>参加者一覧</p>
         <ul>
-            @foreach ($participants as $participant)
+            @forelse ($participants as $participant)
                 <li>{{ $participant['full_name'] }}（ID: {{ $participant['user_id'] }}）</li>
-            @endforeach
+            @empty
+                <li>なし</li>
+            @endforelse
         </ul>
 
         <a href="{{ route('admin.eventIndex') }}">戻る</a>
