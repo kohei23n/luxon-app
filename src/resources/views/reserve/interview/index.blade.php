@@ -25,7 +25,8 @@
     </div>
 
     <div class="interview-information">
-        <h2>予約面談一覧</h2>
+        <h2>今月の予約面談一覧</h2>
+        <p>残りチケット：{{ $count->tud_interview_count_remaining }}</p>
         @foreach ($interviews as $interview)
             <div class="interview-reserved">
                 <p>担当メンター：{{ $interview->mentor->mus_user_last_name }}</p>
@@ -39,10 +40,10 @@
                 </form>
             </div>
         @endforeach
-        <a href="{{ route('reserve.interviewAdd') }}">新しい面談日時を登録する</a>
+        <a href="{{ route('reserve.interviewAdd') }}" class="add-button">新しい面談日時を登録する</a>
     </div>
 
-    <a href="{{ route('reserve.index') }}" class="mentor-back-button">戻る</a>
+    <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
     {{-- メニューバー --}}
     <div class="list-box">
         <x-menubar />
