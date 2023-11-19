@@ -1,4 +1,12 @@
 <x-app-layout>
+    <x-slot name="header" class="reserve-header">
+        <h2>
+            {{ __('ホーム') }}
+        </h2>
+    </x-slot>
+
+    <p class="welcome-message">ようこそ、{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}さん</p>
+
     <div class="section-box">
         <h2 class="section-header">コラム・企業情報等</h2>
     </div>

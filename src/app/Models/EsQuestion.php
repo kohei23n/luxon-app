@@ -39,4 +39,9 @@ class EsQuestion extends Model
     {
         return $this->belongsTo(User::class, 'tes_mentor_id', 'mus_user_id');
     }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'tes_company_name', 'mco_company_name');
+    }
 }

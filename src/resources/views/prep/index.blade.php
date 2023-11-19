@@ -7,11 +7,11 @@
         <h2>
             {{ __('選考対策トップ') }}
         </h2>
+    </x-slot>
+    <div class="reserve-container">
         <ul>
             <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
         </ul>
-    </x-slot>
-    <div class="reserve-container">
         <div class="reserving-list">
             <div class="reserving-box" onclick="window.location.href = '{{ route('prep.caseAdd') }}';"
                 style="cursor: pointer;">

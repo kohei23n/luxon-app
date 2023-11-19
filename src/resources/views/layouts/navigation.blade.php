@@ -2,19 +2,11 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8" style="padding: 0;">
         <div class="flex justify-between h-16 bg-color">
-            <div class="flex" style="margin-left: 15px;">
-                @if (auth()->user() && auth()->user()->mus_is_admin)
-                    {{-- 管理者用のリンク --}}
-                    <a href="{{ route('admin.index') }}"><h1>Tachyon</h1></a>
-                @elseif (auth()->user() && auth()->user()->mus_is_mentor)
-                    {{-- メンター用のリンク --}}
-                    <a href="{{ route('mentor.index') }}"><h1>Tachyon</h1></a>
-                @else
-                    {{-- その他のユーザー用のリンク --}}
-                    <a href="{{ route('index') }}"><h1>Tachyon</h1></a>
-                @endif
-            </div>
-
+            @if (isset($header))
+                <div class="max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            @endif
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">

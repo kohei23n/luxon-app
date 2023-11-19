@@ -25,7 +25,7 @@ return new class extends Migration
             $table->timestamp('tes_update_timestamp')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('システム更新日時');
 
             $table->foreign('tes_user_id')->references('mus_user_id')->on('luxon_mst_user');
-            $table->foreign('tes_mentor_id')->references('mme_mentor_id')->on('luxon_mst_mentor');
+            $table->foreign('tes_mentor_id')->references('mus_user_id')->on('luxon_mst_user');
         });
     }
 
