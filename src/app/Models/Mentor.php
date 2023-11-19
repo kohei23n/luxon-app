@@ -23,7 +23,9 @@ class Mentor extends Model
         'mme_registration_datetime',
         'mme_update_datetime',
         'mme_update_timestamp',
-        'mme_line_url'
+        'mme_line_url',
+        'mme_timerex_url',
+        'mme_timerex_url_short',
     ];
 
     // メンター詳細が属するユーザー

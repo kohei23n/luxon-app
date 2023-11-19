@@ -1,21 +1,13 @@
+.welcome-message {
+    margin-top: 10px;
+    text-align: center;
+}
+
 .bg-color h1 {
     color: white;
     font-size: 40px;
     margin-left: 15px;
     margin-top: 6px;
-}
-.search-box {
-    background-color: white;
-    width: 140px;
-    height: 36px;
-    margin-top: 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-}
-.search-box p {
-    color: #999999;
-    margin-top: 6px;
-    margin-left: 6px;
 }
 
 .list-box {

@@ -15,7 +15,8 @@
             <p>氏名：{{ $mentor->mus_user_last_name }}{{ $mentor->mus_user_first_name }}</p>
             <p>メールアドレス：{{ $mentor->mus_email_address }}</p>
             <p>LINE URL：{{ $mentor->mentorProfile->mme_line_url }}</p>
-            <p>TimeRex URL：{{ $mentor->mentorProfile->mme_timerex_url }}</p>
+            <p>TimeRex URL（60分）：{{ $mentor->mentorProfile->mme_timerex_url }}</p>
+            <p>TimeRex URL（20分）：{{ $mentor->mentorProfile->mme_timerex_url_short }}</p>
             <p>面談給与：{{ $mentor->mentorProfile->mme_interview_salary }}</p>
             <p>講義作成給与：{{ $mentor->mentorProfile->mme_lecture_create_salary }}</p>
             <p>講義給与：{{ $mentor->mentorProfile->mme_lecture_salary }}</p>
