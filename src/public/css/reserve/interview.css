@@ -1,13 +1,15 @@
 /* メンター情報 */
 
-.mentor-information, .interview-information {
+.mentor-information,
+.interview-information {
     background-color: #ffffff;
     margin: 5%;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
-.mentor-information h2, .interview-information h2 {
+.mentor-information h2,
+.interview-information h2 {
     font-weight: bold;
     font-size: large;
 }
@@ -26,12 +28,26 @@
 /* 面談情報 */
 
 .interview-reserved {
-    padding: 1rem;
+    padding: 10px;
     border-top: 1px dashed #e0e0e0;
     border-bottom: 1px dashed #e0e0e0;
 }
 
-/* 戻る */
+/* 共通 */
+
+.button-blue {
+    background-color: #15397a;
+    width: fit-content;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
 
 .mentor-back-button {
     display: block;

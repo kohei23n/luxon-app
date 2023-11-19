@@ -11,7 +11,8 @@
 
     <div class="mentor-information">
         <h2>専属メンター情報</h2>
-        <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}</p>
+        <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
+        </p>
         <p>リンク：</p>
         <div class="mentor-links">
             <a href="{{ $user->dedicatedMentor->mentorProfile->mme_line_url }}">
@@ -30,7 +31,12 @@
                 <p>担当メンター：{{ $interview->mentor->mus_user_last_name }}</p>
                 <p>面談日時：{{ $interview->tin_datetime }}</p>
                 <p>面談時間：{{ $interview->tin_time }}分</p>
-                <p>ステータス：{{ $interview->tin_is_completed ? '完了' : '未完了' }}</p>
+                <form action="{{ route('reserve.interviewUpdate', $interview->tin_interview_id) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <p>ステータス：{{ $interview->tin_is_completed ? '完了' : '未完了' }}</p>
+                    <button type="submit" class="button-blue">{{ $interview->tin_is_completed ? '未完了にする' : '完了にする' }}</button>
+                </form>
             </div>
         @endforeach
         <a href="{{ route('reserve.interviewAdd') }}">新しい面談日時を登録する</a>

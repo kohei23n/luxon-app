@@ -25,6 +25,7 @@ use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
 // 予約：面談
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
 use App\Http\Controllers\Reserve\Interview\CreateController as ReserveInterviewCreate;
+use App\Http\Controllers\Reserve\Interview\UpdateController as ReserveInterviewUpdate;
 // 予約：イベント
 use App\Http\Controllers\Reserve\Event\IndexController as ReserveEventIndex;
 use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
@@ -139,6 +140,9 @@ Route::middleware('auth')->group(function () {
         Route::prefix('interview')->group(function () {
             Route::get('/add', [ReserveInterviewCreate::class, 'add'])->name('interviewAdd');
             Route::post('/add', [ReserveInterviewCreate::class, 'create'])->name('interviewCreate');
+        });
+        Route::prefix('interview/{id}')->group(function () {
+            Route::patch('/', [ReserveInterviewUpdate::class, 'update'])->name('interviewUpdate');
         });
         // 予約：イベント
         Route::prefix('event')->group(function () {
