@@ -1,1 +1,1 @@
-web: heroku-php-apache2 src/
+web: cd src && npm start
