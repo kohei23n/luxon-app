@@ -1,2 +1,3 @@
 ./docker/db-store
 /docker/db-store
+/vendor/
