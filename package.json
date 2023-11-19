@@ -1,0 +1,11 @@
+{
+  "name": "dummy",
+  "version": "1.0.0",
+  "description": "Dummy package.json for Heroku",
+  "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
