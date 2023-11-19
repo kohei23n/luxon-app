@@ -24,6 +24,7 @@ use App\Http\Controllers\Research\MySelections\UpdateController as ResearchMySel
 use App\Http\Controllers\Reserve\IndexController as ReserveIndex;
 // 予約：面談
 use App\Http\Controllers\Reserve\Interview\IndexController as ReserveInterviewIndex;
+use App\Http\Controllers\Reserve\Interview\CreateController as ReserveInterviewCreate;
 // 予約：イベント
 use App\Http\Controllers\Reserve\Event\IndexController as ReserveEventIndex;
 use App\Http\Controllers\Reserve\Event\ShowController as ReserveEventShow;
@@ -85,7 +86,7 @@ use Illuminate\Support\Facades\Route;
 
 // ユーザー
 Route::middleware('auth')->group(function () {
-
+    // トップ
     Route::get('/', IndexController::class)->name('index');
 
     // 選考対策
@@ -135,6 +136,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/', ReserveIndex::class)->name('index');
         // 予約：面談
         Route::get('/interview', ReserveInterviewIndex::class)->name('interviewIndex');
+        Route::prefix('interview')->group(function () {
+            Route::get('/add', [ReserveInterviewCreate::class, 'add'])->name('interviewAdd');
+            Route::post('/add', [ReserveInterviewCreate::class, 'create'])->name('interviewCreate');
+        });
         // 予約：イベント
         Route::prefix('event')->group(function () {
             Route::get('/', ReserveEventIndex::class)->name('eventIndex');

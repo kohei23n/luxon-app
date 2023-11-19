@@ -3,22 +3,17 @@
 namespace App\Http\Controllers\Reserve\Interview;
 
 use App\Http\Controllers\Controller;
+use App\Models\Interview;
 
 class IndexController extends Controller
 {
   public function __invoke()
   {
     $user = auth()->user();
-
-    // dedicatedMentorとそのmentorProfileを事前ロードする
     $user->load('dedicatedMentor.mentorProfile');
 
-    // メンター情報を取得する
-    $mentor = $user->dedicatedMentor;
+    $interviews = Interview::where('tin_user_id', $user->mus_user_id)->get();
 
-    // もしメンターがいれば、そのメンタープロファイルを取得する
-    $mentorProfile = $mentor ? $mentor->mentorProfile : null;
-
-    return view('reserve.interview.index', compact('mentor', 'mentorProfile'));
+    return view('reserve.interview.index', compact('user', 'interviews'));
   }
 }

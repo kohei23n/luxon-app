@@ -17,14 +17,14 @@ class UsersTableSeeder extends Seeder
             'mus_email_address' => 'mentor1@gmail.com',
             'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
             'mus_user_first_name' => '一郎',
-            'mus_user_last_name' => 'メンター',
+            'mus_user_last_name' => '麺太',
             'mus_is_mentor' => true,
         ]);
         User::create([
             'mus_email_address' => 'mentor2@gmail.com',
             'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
             'mus_user_first_name' => '次郎',
-            'mus_user_last_name' => 'メンター',
+            'mus_user_last_name' => '面太',
             'mus_is_mentor' => true,
         ]);
         User::create([

@@ -1,10 +1,64 @@
-.mentor-details {
+/* メンター情報 */
+
+.mentor-information, .interview-information {
     background-color: #ffffff;
     margin: 5%;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
+.mentor-information h2, .interview-information h2 {
+    font-weight: bold;
+    font-size: large;
+}
+
+.mentor-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mentor-links img {
+    width: 96px;
+    height: 96px;
+}
+
+/* 面談情報 */
+
+.interview-reserved {
+    padding: 1rem;
+    border-top: 1px dashed #e0e0e0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+/* 戻る */
+
+.mentor-back-button {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: #f7f7f7;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mentor-back-button:hover {
+    background-color: #e6e6e6;
+    color: #555;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-list {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
 .btn-box {
     background-color: #15397a;
     width: 90px;
@@ -15,4 +69,13 @@
     padding: 5px;
     border-radius: 8px;
     margin-top: 15px;
+}
+
+/* 面談予約 */
+
+.bc-btn a {
+    background-color: red;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
 }
