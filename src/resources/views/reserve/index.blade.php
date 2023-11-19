@@ -6,24 +6,27 @@
         <h2>
             {{ __('予約') }}
         </h2>
-        <ul>
+    </x-slot>
+
+    <div class="reserve-container">
+        <ul class="flex gap-4">
             <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
             <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
             <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
         </ul>
-    </x-slot>
-
-    <div class="reserve-container">
         <div class="reserving-list">
-            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.interviewIndex') }}';" style="cursor: pointer;">
-            面談予約
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.interviewIndex') }}';"
+                style="cursor: pointer;">
+                面談予約
             </div>
-            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.eventIndex') }}';" style="cursor: pointer;">
-            イベント予約
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.eventIndex') }}';"
+                style="cursor: pointer;">
+                イベント予約
             </div>
 
-            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.esAdd') }}';" style="cursor: pointer;">
-             ES添削
+            <div class="reserving-box" onclick="window.location.href = '{{ route('reserve.esAdd') }}';"
+                style="cursor: pointer;">
+                ES添削
             </div>
         </div>
     </div>

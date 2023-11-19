@@ -1,4 +1,10 @@
 <x-app-layout>
+    <x-slot name="header" class="reserve-header">
+        <h2>
+            {{ __('ホーム') }}
+        </h2>
+    </x-slot>
+    
     <div class="section-box">
         <h2 class="section-header">コラム・企業情報等</h2>
     </div>
