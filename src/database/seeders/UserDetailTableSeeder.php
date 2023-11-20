@@ -159,6 +159,18 @@ class UserDetailTableSeeder extends Seeder
 
         UserDetail::create([
             'tud_user_id' => 49,
+            'tud_current_university' => '東京大学',
+            'tud_first_industry_preference' => '総コン',
+            'tud_second_industry_preference' => '総合商社',
+            'tud_service_plan_id' => 1,
+            'tud_event_attendance_remaining' => 1,
+            'tud_interview_count_remaining' => 2,
+            'tud_case_study_count_remaining' => 0,
+            'tud_es_count_remaining' => 1,
+        ]);
+
+        UserDetail::create([
+            'tud_user_id' => 50,
             'tud_current_university' => '岡山大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => 'メーカー',
@@ -170,7 +182,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 50,
+            'tud_user_id' => 51,
             'tud_current_university' => '筑波大学大学院',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -182,7 +194,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 51,
+            'tud_user_id' => 52,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -194,7 +206,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 52,
+            'tud_user_id' => 53,
             'tud_current_university' => '同志社大学',
             'tud_first_industry_preference' => 'IT',
             'tud_second_industry_preference' => '総コン',
@@ -206,7 +218,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 53,
+            'tud_user_id' => 54,
             'tud_current_university' => '関東学院大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '日系金融',
@@ -218,7 +230,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 54,
+            'tud_user_id' => 55,
             'tud_current_university' => '立命館大学',
             'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => 'IT',
@@ -230,7 +242,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 55,
+            'tud_user_id' => 56,
             'tud_current_university' => '東京大学大学院',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -241,18 +253,6 @@ class UserDetailTableSeeder extends Seeder
             'tud_es_count_remaining' => 3,
         ]);
         
-        UserDetail::create([
-            'tud_user_id' => 56,
-            'tud_current_university' => '早稲田大学',
-            'tud_first_industry_preference' => '総合商社',
-            'tud_second_industry_preference' => '総合デベロッパー',
-            'tud_service_plan_id' => 1,
-            'tud_event_attendance_remaining' => 1,
-            'tud_interview_count_remaining' => 3,
-            'tud_case_study_count_remaining' => 0,
-            'tud_es_count_remaining' => 3,
-        ]);
-
         UserDetail::create([
             'tud_user_id' => 57,
             'tud_current_university' => '早稲田大学',
@@ -472,18 +472,6 @@ class UserDetailTableSeeder extends Seeder
         UserDetail::create([
             'tud_user_id' => 75,
             'tud_current_university' => '早稲田大学',
-            'tud_first_industry_preference' => '総合商社',
-            'tud_second_industry_preference' => '総コン',
-            'tud_service_plan_id' => 1,
-            'tud_event_attendance_remaining' => 1,
-            'tud_interview_count_remaining' => 2,
-            'tud_case_study_count_remaining' => 0,
-            'tud_es_count_remaining' => 1,
-        ]);
-
-        UserDetail::create([
-            'tud_user_id' => 76,
-            'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総コン',
             'tud_service_plan_id' => 1,
@@ -494,7 +482,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 77,
+            'tud_user_id' => 76,
             'tud_current_university' => '東京大学',
             'tud_first_industry_preference' => '外銀',
             'tud_second_industry_preference' => '戦コン',
@@ -506,7 +494,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 78,
+            'tud_user_id' => 77,
             'tud_current_university' => '同志社大学',
             'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => '出版',
@@ -518,7 +506,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 79,
+            'tud_user_id' => 78,
             'tud_current_university' => '大阪大学大学院',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => 'FAS',
@@ -675,18 +663,6 @@ class UserDetailTableSeeder extends Seeder
 
         UserDetail::create([
             'tud_user_id' => 91,
-            'tud_current_university' => '東京大学',
-            'tud_first_industry_preference' => '総コン',
-            'tud_second_industry_preference' => '総合商社',
-            'tud_service_plan_id' => 1,
-            'tud_event_attendance_remaining' => 1,
-            'tud_interview_count_remaining' => 2,
-            'tud_case_study_count_remaining' => 0,
-            'tud_es_count_remaining' => 1,
-        ]);
-
-        UserDetail::create([
-            'tud_user_id' => 92,
             'tud_current_university' => 'Central European University',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -698,7 +674,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 93,
+            'tud_user_id' => 92,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => 'IT',
@@ -710,7 +686,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 94,
+            'tud_user_id' => 93,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '日系IB',
             'tud_second_industry_preference' => '日系金融',
@@ -722,7 +698,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 95,
+            'tud_user_id' => 94,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => 'なし',
@@ -734,9 +710,9 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 96,
+            'tud_user_id' => 95,
             'tud_current_university' => '日本大学',
-            'tud_first_industry_preference' => '戦コン',
+            'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => '日系金融',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 1,
@@ -746,7 +722,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 97,
+            'tud_user_id' => 96,
             'tud_current_university' => '大阪府立大学',
             'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => '総合商社',
@@ -758,7 +734,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 98,
+            'tud_user_id' => 97,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総コン',
@@ -770,9 +746,9 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 99,
+            'tud_user_id' => 98,
             'tud_current_university' => '明治大学',
-            'tud_first_industry_preference' => '戦コン',
+            'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => '総合商社',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 1,
@@ -782,7 +758,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 100,
+            'tud_user_id' => 99,
             'tud_current_university' => '東京大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総合商社',
@@ -794,7 +770,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 101,
+            'tud_user_id' => 100,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総合商社',
@@ -806,7 +782,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 102,
+            'tud_user_id' => 101,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総合デベロッパー',
@@ -818,7 +794,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 103,
+            'tud_user_id' => 102,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '外銀',
@@ -830,7 +806,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 104,
+            'tud_user_id' => 103,
             'tud_current_university' => '明治大学',
             'tud_first_industry_preference' => '総合デベロッパー',
             'tud_second_industry_preference' => 'メーカー',
@@ -842,7 +818,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 105,
+            'tud_user_id' => 104,
             'tud_current_university' => 'お茶の水女子大学',
             'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => 'IT',
@@ -854,7 +830,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 106,
+            'tud_user_id' => 105,
             'tud_current_university' => '大阪大学',
             'tud_first_industry_preference' => '広告',
             'tud_second_industry_preference' => '総コン',
@@ -866,7 +842,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 107,
+            'tud_user_id' => 106,
             'tud_current_university' => '横浜国立大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => 'メーカー',
@@ -878,7 +854,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 108,
+            'tud_user_id' => 107,
             'tud_current_university' => '早稲田大学大学院',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '日系IB',
@@ -890,7 +866,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 109,
+            'tud_user_id' => 108,
             'tud_current_university' => '一橋大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '日系金融',
@@ -902,7 +878,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 110,
+            'tud_user_id' => 109,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '総合デベロッパー',
             'tud_second_industry_preference' => '広告',
@@ -914,7 +890,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 111,
+            'tud_user_id' => 110,
             'tud_current_university' => '東京理科大学',
             'tud_first_industry_preference' => 'IT',
             'tud_second_industry_preference' => '総コン',
@@ -926,9 +902,9 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 112,
+            'tud_user_id' => 111,
             'tud_current_university' => '早稲田大学',
-            'tud_first_industry_preference' => '商社',
+            'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
             'tud_service_plan_id' => 1,
             'tud_event_attendance_remaining' => 1,
@@ -938,7 +914,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 113,
+            'tud_user_id' => 112,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総コン',
@@ -950,7 +926,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 114,
+            'tud_user_id' => 113,
             'tud_current_university' => '大阪大学',
             'tud_first_industry_preference' => 'FAS',
             'tud_second_industry_preference' => '総コン',
@@ -962,7 +938,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 115,
+            'tud_user_id' => 114,
             'tud_current_university' => '北海道大学',
             'tud_first_industry_preference' => '総コン',
             'tud_second_industry_preference' => '戦コン',
@@ -974,7 +950,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 116,
+            'tud_user_id' => 115,
             'tud_current_university' => '立教大学',
             'tud_first_industry_preference' => '総合デベロッパー',
             'tud_second_industry_preference' => '総合商社',
@@ -986,7 +962,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 117,
+            'tud_user_id' => 116,
             'tud_current_university' => '大阪公立大学大学院',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -998,7 +974,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 118,
+            'tud_user_id' => 117,
             'tud_current_university' => '九州大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総合商社',
@@ -1010,7 +986,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 119,
+            'tud_user_id' => 118,
             'tud_current_university' => '京都大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => 'VC',
@@ -1022,7 +998,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 120,
+            'tud_user_id' => 119,
             'tud_current_university' => '東京大学',
             'tud_first_industry_preference' => '戦コン',
             'tud_second_industry_preference' => '総合商社',
@@ -1034,7 +1010,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 121,
+            'tud_user_id' => 120,
             'tud_current_university' => '早稲田大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -1046,7 +1022,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 122,
+            'tud_user_id' => 121,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '総合商社',
             'tud_second_industry_preference' => '総コン',
@@ -1058,7 +1034,7 @@ class UserDetailTableSeeder extends Seeder
         ]);
 
         UserDetail::create([
-            'tud_user_id' => 123,
+            'tud_user_id' => 122,
             'tud_current_university' => '慶應義塾大学',
             'tud_first_industry_preference' => '日系金融',
             'tud_second_industry_preference' => '総コン',
