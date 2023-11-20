@@ -16,10 +16,17 @@
                     class="industry-link">{{ $industry->min_industry_name }}</a>
             @endforeach
         </div>
-        <a href="{{ route('research.index') }}" class="back-button">戻る</a>
+        @if (!$isMentor)
+            <a href="{{ route('research.index') }}" class="back-button">戻る</a>
+        @else
+            <a href="{{ route('mentor.index') }}" class="back-button">戻る</a>
+        @endif
     </div>
-    {{-- メニューバー --}}
-    <div class="list-box">
-        <x-menubar />
-    </div>
+
+    @if (!$isMentor)
+        {{-- メニューバー --}}
+        <div class="list-box">
+            <x-menubar />
+        </div>
+    @endif
 </x-app-layout>

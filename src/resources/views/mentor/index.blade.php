@@ -18,7 +18,7 @@
             <a href="{{ route('mentor.esIndex') }}">ES添削依頼</a>
             <p>依頼数：{{ $entrySheets }}</p>
             <br>
-            <a href="{{ route('research.index') }}">選考情報</a><br>
+            <a href="{{ route('research.industriesIndex') }}">選考情報</a><br>
         </div>
     </div>
 </x-app-layout>
