@@ -14,7 +14,7 @@ class IndexController extends Controller
 
         $user = auth()->user();
         $isMentor = $user->mus_is_mentor;
-
+        
         return view('research.industries.index', compact('industries', 'isMentor'));
     }
 }
