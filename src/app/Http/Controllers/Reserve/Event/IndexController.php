@@ -18,7 +18,7 @@ class IndexController extends Controller
     $year = $request->get('year', date('Y'));
     $month = $request->get('month', date('m'));
     $daysInMonth = Carbon::parse("$year-$month-01")->daysInMonth;
-    $firstDayOfWeek = Carbon::parse("$year-$month-01")->dayOfWeek; 
+    $firstDayOfWeek = Carbon::parse("$year-$month-01")->dayOfWeek;
 
     // 先月、次月の取得
     $previousMonth = Carbon::parse("$year-$month-01")->subMonth();
@@ -33,6 +33,27 @@ class IndexController extends Controller
     $groupedEvents = $events->groupBy(function ($event) {
       return date('Y-m-d', strtotime($event->mev_event_datetime));
     });
+
+    // 各イベントに背景色を設定
+    foreach ($groupedEvents as $date => $events) {
+      foreach ($events as $event) {
+        switch ($event->mev_industry_id) {
+          case 1:
+            $event->backgroundColor = '#FF7276';
+            break;
+          case 2:
+            $event->backgroundColor = '#ADD8E6';
+            break;
+          case 3:
+          case 4:
+            $event->backgroundColor = '#FFFDD0';
+            break;
+          default:
+            $event->backgroundColor = '#FFFFFF'; // デフォルト色
+            break;
+        }
+      }
+    }
 
     return view('reserve.event.index', compact('count', 'year', 'month', 'daysInMonth', 'firstDayOfWeek', 'previousMonth', 'nextMonth', 'groupedEvents'));
   }

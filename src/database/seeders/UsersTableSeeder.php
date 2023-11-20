@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         // 1
         User::create([
             'mus_email_address' => 'admin@gmail.com',
-            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_user_password' => Hash::make('password'),
             'mus_user_first_name' => '管理用',
             'mus_user_last_name' => 'アドミン',
             'mus_is_admin' => true,
@@ -30,16 +30,16 @@ class UsersTableSeeder extends Seeder
         ]);
         // 3
         User::create([
-            'mus_email_address' => 'mentor1@gmail.com',
-            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_email_address' => 'mentor@gmail.com',
+            'mus_user_password' => Hash::make('password'),
             'mus_user_first_name' => 'テスト用',
             'mus_user_last_name' => 'メンター',
             'mus_is_mentor' => true,
         ]);
         // 4
         User::create([
-            'mus_email_address' => 'test@gmail.com',
-            'mus_user_password' => '$2y$10$sqsdDHcTsjTPQBfBgMAuxew1MoDmyTdJ5vSITDr7wRy1DAiqpKkli',
+            'mus_email_address' => 'user@gmail.com',
+            'mus_user_password' => Hash::make('password'),
             'mus_user_first_name' => 'テスト用',
             'mus_user_last_name' => 'ユーザー',
             'mus_dedicated_mentor_id' => 3,

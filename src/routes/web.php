@@ -68,6 +68,7 @@ use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 
 // メンター
 use App\Http\Controllers\Mentor\IndexController as MentorIndex;
+use App\Http\Controllers\Mentor\Interview\IndexController as MentorInterviewIndex;
 use App\Http\Controllers\Mentor\Es\IndexController as MentorEsIndex;
 use App\Http\Controllers\Mentor\Es\UpdateController as MentorEsUpdate;
 use App\Http\Controllers\Mentor\Case\IndexController as MentorCaseIndex;
@@ -230,6 +231,8 @@ Route::middleware('auth')->group(function () {
     // メンター
     Route::group(['prefix' => 'mentor', 'as' => 'mentor.'], function () { 
         Route::get('/', MentorIndex::class)->name('index');
+        // 面談
+        Route::get('/interview', MentorInterviewIndex::class)->name('interviewIndex');
         // ES
         Route::prefix('es')->group(function () {
             Route::get('/', MentorEsIndex::class)->name('esIndex');

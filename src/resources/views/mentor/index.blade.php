@@ -11,6 +11,7 @@
 
     <div>
         <div>
+            <a href="{{ route('mentor.interviewIndex') }}">今月の面談情報</a>
             <a href="{{ route('mentor.caseIndex') }}">ケース添削依頼</a>
             <p>依頼数：{{ $cases }}</p>
             <br>

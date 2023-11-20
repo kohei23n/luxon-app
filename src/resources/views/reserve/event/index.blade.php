@@ -16,10 +16,11 @@
 
             <div class="calendar-navigation">
                 <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"
-                    class="event-link"><<</a>
-                <span>{{ $month }}月</span>
-                <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}"
-                    class="event-link">>></a>
+                    class="event-link">
+                    <<< /a>
+                        <span>{{ $month }}月</span>
+                        <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}"
+                            class="event-link">>></a>
             </div>
 
             <table class="calendar-table">
@@ -49,7 +50,8 @@
                                         <div class="events">
                                             @foreach ($groupedEvents["$year-$month-$dayCounter"] ?? [] as $event)
                                                 <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}"
-                                                    class="event-show-link">{{ $event->mev_event_name }}</a>
+                                                    class="event-show-link"
+                                                    style="background-color: {{ $event->backgroundColor }}">{{ $event->mev_event_name }}</a>
                                             @endforeach
                                         </div>
                                         @php $dayCounter++ @endphp
@@ -60,7 +62,8 @@
                     @endwhile
                 </tbody>
             </table>
-            <a href="{{ route('reserve.index') }}" class="event-link">< 戻る</a>
+            <a href="{{ route('reserve.index') }}" class="event-link">
+                < 戻る</a>
         </div>
     </div>
     {{-- メニューバー --}}

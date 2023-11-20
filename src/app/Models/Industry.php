@@ -15,6 +15,10 @@ class Industry extends Model
 
     const CREATED_AT = 'min_registration_datetime';
     const UPDATED_AT = 'min_update_datetime';
+    const ALPHA = 1;
+    const BETA = 2;
+    const GAMMA_S = 3;
+    const GAMMA_D = 4;
 
     protected $fillable = [
         'min_industry_id',

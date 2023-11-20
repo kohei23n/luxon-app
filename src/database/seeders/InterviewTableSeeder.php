@@ -15,13 +15,13 @@ class InterviewTableSeeder extends Seeder
     {
         Interview::create([
             'tin_user_id' => 4,
-            'tin_mentor_id' => 1,
+            'tin_mentor_id' => 3,
             'tin_datetime' => '2023-11-25 20:00:00',
             'tin_time' => 60,
         ]);
         Interview::create([
             'tin_user_id' => 4,
-            'tin_mentor_id' => 1,
+            'tin_mentor_id' => 3,
             'tin_datetime' => '2023-11-28 17:00:00',
             'tin_time' => 60,
         ]);

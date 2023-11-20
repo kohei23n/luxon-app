@@ -47,7 +47,8 @@
                                         <div class="events">
                                             @foreach ($groupedEvents["$year-$month-$dayCounter"] ?? [] as $event)
                                                 <a href="{{ route('admin.eventShow', $event->mev_event_id) }}"
-                                                    class="event-show-link">{{ $event->mev_event_name }}</a>
+                                                    class="event-show-link"
+                                                    style="background-color: {{ $event->backgroundColor }}">{{ $event->mev_event_name }}</a>
                                             @endforeach
                                         </div>
                                         @php $dayCounter++ @endphp
