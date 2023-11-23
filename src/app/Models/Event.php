@@ -11,6 +11,7 @@ class Event extends Model
     use HasFactory;
     protected $table = 'luxon_mst_event';
     protected $primaryKey = 'mev_event_id';
+    protected $dates = ['mev_event_datetime'];
 
     const CREATED_AT = 'mev_registration_datetime';
     const UPDATED_AT = 'mev_update_datetime';
@@ -34,5 +35,15 @@ class Event extends Model
     public function eventParticipants()
     {
         return $this->hasMany(EventParticipant::class, 'tep_event_id', 'mev_event_id');
+    }
+
+    public function industry()
+    {
+        return $this->belongsTo(Industry::class, 'mev_industry_id', 'min_industry_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'mev_company_id', 'mco_company_id');
     }
 }

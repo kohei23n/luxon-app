@@ -6,21 +6,23 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
-use App\Models\Event;
 use App\Models\Industry;
 use App\Models\Company;
+use App\Models\Event;
 
-class CreateController extends Controller
+class UpdateController extends Controller
 {
-  public function add()
+  public function edit($id)
   {
     $industries = Industry::all();
     $companies = Company::all();
 
-    return view('admin.event.add', compact('industries', 'companies'));
+    $event = Event::with(['industry', 'company'])->findOrFail($id);
+
+    return view('admin.event.edit', compact('industries', 'companies', 'event'));
   }
 
-  public function create(Request $request): RedirectResponse
+  public function update(Request $request, $id): RedirectResponse
   {
     // リクエストデータのバリデーション
     $request->validate([
@@ -33,8 +35,10 @@ class CreateController extends Controller
       'mev_event_materials_url' => 'nullable|string|max:255',
     ]);
 
+    $event = Event::findOrfail($id);
+
     // データの保存
-    $event = Event::create([
+    $event->update([
       'mev_industry_id' => $request->mev_industry_id,
       'mev_company_id' => $request->mev_company_id,
       'mev_event_name' => $request->mev_event_name,
@@ -46,9 +50,9 @@ class CreateController extends Controller
     ]);
 
     if ($event) {
-      return Redirect::route('admin.eventIndex')->with('status', 'イベントの作成に成功しました。');
+      return Redirect::route('admin.eventShow', $id)->with('status', 'ticket-status-updated');
     } else {
-      return Redirect::route('admin.eventIndex')->with('error', 'イベントの作成に失敗しました。');
+      return Redirect::route('admin.eventShow', $id)->with('error', 'error-updating-ticket-status');
     }
   }
 }

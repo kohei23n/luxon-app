@@ -19,10 +19,6 @@
                 <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
             </ul>
 
-            <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-                @csrf
-            </form>
-
             <form method="post" action="{{ route('reserve.ticketUpdate') }}">
                 @csrf
                 @method('post')

@@ -32,4 +32,9 @@ class Company extends Model
   {
     return $this->belongsTo(Industry::class, 'mco_industry_id', 'min_industry_id');
   }
+
+  public function events()
+  {
+    return $this->hasMany(Event::class, 'mev_company_id', 'mco_company_id');
+  }
 }

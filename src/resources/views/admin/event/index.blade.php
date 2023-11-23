@@ -11,6 +11,11 @@
 
     <div>
         <div>
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
             <!-- カレンダービュー -->
             <div class="calendar-navigation">
                 <a href="{{ route('admin.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"
@@ -45,7 +50,10 @@
                                     @if ($dayCounter <= $daysInMonth)
                                         {{ $dayCounter }}
                                         <div class="events">
-                                            @foreach ($groupedEvents["$year-$month-$dayCounter"] ?? [] as $event)
+                                            @php
+                                                $formattedDay = str_pad($dayCounter, 2, '0', STR_PAD_LEFT);
+                                            @endphp
+                                            @foreach ($groupedEvents["$year-$month-$formattedDay"] ?? [] as $event)
                                                 <a href="{{ route('admin.eventShow', $event->mev_event_id) }}"
                                                     class="event-show-link"
                                                     style="background-color: {{ $event->backgroundColor }}">{{ $event->mev_event_name }}</a>

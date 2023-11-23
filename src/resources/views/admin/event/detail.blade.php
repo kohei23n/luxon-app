@@ -26,6 +26,7 @@
             @endforelse
         </ul>
 
+        <a href="{{ route('admin.eventEdit', $event->mev_event_id) }}">編集</a>
         <a href="{{ route('admin.eventIndex') }}">戻る</a>
     </div>
 </x-app-layout>

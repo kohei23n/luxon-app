@@ -9,10 +9,6 @@
         </h2>
     </x-slot>
     <div>
-        <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-            @csrf
-        </form>
-
         <form method="post" action="{{ route('admin.caseUpdate', $id) }}">
             @csrf
             @method('patch')

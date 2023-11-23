@@ -65,6 +65,9 @@ use App\Http\Controllers\Admin\Event\IndexController as AdminEventIndex;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
 // イベント追加
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
+// イベント編集
+use App\Http\Controllers\Admin\Event\UpdateController as AdminEventUpdate;
+use App\Http\Controllers\Admin\Event\DeleteController as AdminEventDelete;
 
 // メンター
 use App\Http\Controllers\Mentor\IndexController as MentorIndex;
@@ -225,6 +228,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/', AdminEventIndex::class)->name('eventIndex');
             // イベント詳細
             Route::get('/{id}', AdminEventShow::class)->name('eventShow');
+            // イベント編集
+            Route::get('/{id}/edit', [AdminEventUpdate::class, 'edit'])->name('eventEdit');
+            Route::patch('/{id}/edit', [AdminEventUpdate::class, 'update'])->name('eventUpdate');
+            Route::delete('/{id}/delete', AdminEventDelete::class)->name('eventDelete');
         });
     });
 

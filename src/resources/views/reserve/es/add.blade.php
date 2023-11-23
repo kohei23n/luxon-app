@@ -4,10 +4,6 @@
 
 <x-app-layout>
     <div>
-        <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-            @csrf
-        </form>
-
         <form method="post" action="{{ route('reserve.esCreate') }}" class="selection-form">
             @csrf
             @method('post')

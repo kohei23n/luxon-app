@@ -46,4 +46,9 @@ class Industry extends Model
     {
         return $this->hasMany(EsQuestion::class, 'tes_industry_id', 'min_industry_id');
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class, 'mev_industry_id', 'min_industry_id');
+    }
 }
