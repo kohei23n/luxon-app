@@ -9,6 +9,14 @@
         </h2>
     </x-slot>
 
+    @if (session('status') || session('error'))
+        <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+            {{ session('status') ?: session('error') }}
+        </div>
+    @endif
+
+    <a href="{{ route('admin.menteeAdd') }}">メンティーを追加する</a>
+
     <div>
         @foreach ($users as $user)
             <p>ID：{{ $user->mus_user_id }}</p>

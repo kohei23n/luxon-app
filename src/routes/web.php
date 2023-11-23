@@ -43,9 +43,10 @@ use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfi
 
 // 管理者
 
-// メンティー情報
+// メンティー
 use App\Http\Controllers\Admin\Mentee\IndexController as AdminMenteeIndex;
 use App\Http\Controllers\Admin\Mentee\ShowController as AdminMenteeShow;
+use App\Http\Controllers\Admin\Mentee\CreateController as AdminMenteeCreate;
 // メンター情報
 use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
 // チケット割り振り
@@ -189,11 +190,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return view('admin.index');
         })->name('index');
-
-        // メンティー情報
+        // メンティー
         Route::get('/mentee', AdminMenteeIndex::class)->name('menteeIndex');
+        Route::get('/mentee/add', [AdminMenteeCreate::class, 'add'])->name('menteeAdd');
+        Route::post('/mentee/add', [AdminMenteeCreate::class, 'create'])->name('menteeCreate');
         Route::get('/mentee/{id}', AdminMenteeShow::class)->name('menteeShow');
-        // メンター情報
+        // メンター
         Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');
         // チケット割り振り
         Route::prefix('count')->group(function () {

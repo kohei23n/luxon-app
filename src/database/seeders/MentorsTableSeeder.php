@@ -199,11 +199,13 @@ class MentorsTableSeeder extends Seeder
         Mentor::create([
             'mme_user_id' => 28,
             'mme_interview_salary' => 2000,
+            'mme_line_url' => 'https://liff.line.me/1645278921-kWRPP32q/?accountId=659mauev',
         ]);
 
         Mentor::create([
             'mme_user_id' => 29,
             'mme_interview_salary' => 2000,
+            'mme_line_url' => 'https://lin.ee/bdRtaXi',
             'mme_timerex_url' => 'https://timerex.net/s/hikaru.ani3941_a347/e3aa612a',
         ]);
 

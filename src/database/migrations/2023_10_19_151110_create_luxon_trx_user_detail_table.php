@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('tud_current_university', 50)->comment('所属大学');
             $table->string('tud_first_industry_preference', 50)->comment('第一志望業界');
             $table->string('tud_second_industry_preference', 50)->comment('第二志望業界');
-            $table->unsignedInteger('tud_service_plan_id')->comment('プランID');
+            $table->unsignedInteger('tud_service_plan_id')->default(1)->comment('プランID');
             $table->unsignedInteger('tud_event_attendance_remaining')->comment('イベント参加可能回数');
             $table->unsignedInteger('tud_interview_count_remaining')->comment('面談可能回数');
             $table->unsignedInteger('tud_case_study_count_remaining')->comment('ケーススタディー可能回数');
