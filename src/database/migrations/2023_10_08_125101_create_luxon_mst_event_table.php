@@ -16,11 +16,11 @@ return new class extends Migration
             $table->unsignedInteger('mev_industry_id')->comment('業界ID');
             $table->unsignedInteger('mev_company_id')->nullable()->comment('会社ID');
             $table->string('mev_event_name', 50)->comment('イベント名');
-            $table->string('mev_event_overview', 150)->comment('イベント概要');
-            $table->string('mev_event_description', 150)->nullable()->comment('イベント詳細');
+            $table->string('mev_event_overview', 255)->comment('イベント概要');
+            $table->string('mev_event_description', 255)->nullable()->comment('イベント詳細');
             $table->dateTime('mev_event_datetime')->comment('イベント日時');
-            $table->string('mev_event_participate_url', 150)->comment('イベント参加URL');
-            $table->string('mev_event_materials_url', 150)->nullable()->comment('イベント資料URL');
+            $table->string('mev_event_participate_url', 255)->comment('イベント参加URL');
+            $table->string('mev_event_materials_url', 255)->nullable()->comment('イベント資料URL');
             $table->char('mev_delete_flag', 1)->default('0')->comment('削除フラグ');
             $table->dateTime('mev_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('mev_registration_datetime')->comment('登録日時');
