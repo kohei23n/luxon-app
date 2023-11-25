@@ -9,6 +9,14 @@
         </h2>
     </x-slot>
 
+    @if (session('status') || session('error'))
+        <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+            {{ session('status') ?: session('error') }}
+        </div>
+    @endif
+
+    <a href="{{ route('admin.mentorAdd') }}">メンターを追加する</a>
+
     <div>
         @foreach ($mentors as $mentor)
             <p>ID：{{ $mentor->mus_user_id }}</p>

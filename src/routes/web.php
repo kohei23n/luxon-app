@@ -47,8 +47,9 @@ use App\Http\Controllers\MyPage\Plan\Profile\UpdateController as MyPagePlanProfi
 use App\Http\Controllers\Admin\Mentee\IndexController as AdminMenteeIndex;
 use App\Http\Controllers\Admin\Mentee\ShowController as AdminMenteeShow;
 use App\Http\Controllers\Admin\Mentee\CreateController as AdminMenteeCreate;
-// メンター情報
+// メンター
 use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
+use App\Http\Controllers\Admin\Mentor\CreateController as AdminMentorCreate;
 // チケット割り振り
 use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
 use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
@@ -197,6 +198,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/mentee/{id}', AdminMenteeShow::class)->name('menteeShow');
         // メンター
         Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');
+        Route::get('/mentor/add', function () {
+            return view('admin.mentor.add');
+        })->name('mentorAdd');
+        Route::post('/mentor/add', AdminMentorCreate::class)->name('mentorCreate');
         // チケット割り振り
         Route::prefix('count')->group(function () {
             Route::get('/', AdminCountIndex::class)->name('countIndex');

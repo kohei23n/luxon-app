@@ -268,7 +268,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 159,
+            'mme_user_id' => 38,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/LMR7Dt7',
             'mme_timerex_url' => 'https://timerex.net/s/matsumotoshiori07_ed3e/da90f772',
@@ -276,7 +276,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 160,
+            'mme_user_id' => 39,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/1w5JtnJ',
             'mme_timerex_url' => 'https://timerex.net/s/nmb.0614.mzk_4379/303b8ae5',
@@ -284,7 +284,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 161,
+            'mme_user_id' => 40,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/pFfYIzw',
             'mme_timerex_url' => 'https://timerex.net/s/kado.y.recruit_96a1/c68b7cd3',
@@ -292,7 +292,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 162,
+            'mme_user_id' => 41,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/ptzXnCU',
             'mme_timerex_url' => 'https://timerex.net/s/yuuma.okamori015710_1864/89a2dc58',
@@ -300,7 +300,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 163,
+            'mme_user_id' => 42,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://manager.line.biz/invitation/86EcvfIRYT9Mm9DOib0ng3hnBzaDkA',
             'mme_timerex_url' => 'https://timerex.net/s/yuzuyuu1230_3eb8/b3f0e468',
@@ -308,13 +308,13 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 164,
+            'mme_user_id' => 43,
             'mme_interview_salary' => 0,
             'mme_timerex_url' => 'https://timerex.net/s/hkaida12_d3c1/148e1d51',
         ]);
 
         Mentor::create([
-            'mme_user_id' => 165,
+            'mme_user_id' => 44,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/DU9cN2I',
             'mme_timerex_url' => 'https://timerex.net/s/nonakataiyou0_d7cb/79d7ffb7',
@@ -322,7 +322,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 166,
+            'mme_user_id' => 45,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/XTYGFVW',
             'mme_timerex_url' => 'https://timerex.net/s/ohtake-otoha694_a4d6/bfc1caf7',
@@ -330,7 +330,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 167,
+            'mme_user_id' => 46,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/Q1fVdym',
             'mme_timerex_url' => 'https://timerex.net/s/hirataku.72727_a622/670af290',
@@ -338,15 +338,7 @@ class MentorsTableSeeder extends Seeder
         ]);
 
         Mentor::create([
-            'mme_user_id' => 168,
-            'mme_interview_salary' => 0,
-            'mme_line_url' => 'https://liff.line.me/1645278921-kWRPP32q/?accountId=946zphcx',
-            'mme_timerex_url' => 'https://timerex.net/s/team.shin.toshi.sky_e03f/714a49cc',
-            'mme_timerex_url_short' => 'https://timerex.net/s/team.shin.toshi.sky_e03f/714a49cc',
-        ]);
-
-        Mentor::create([
-            'mme_user_id' => 169,
+            'mme_user_id' => 47,
             'mme_interview_salary' => 0,
             'mme_line_url' => 'https://lin.ee/QRSeJdj',
         ]);
