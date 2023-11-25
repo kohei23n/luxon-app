@@ -25,6 +25,7 @@ class Event extends Model
         'mev_event_datetime',
         'mev_event_participate_url',
         'mev_event_materials_url',
+        'mev_temp_enabled',
         'mev_delete_flag',
         'mev_deletion_datetime',
         'mev_registration_datetime',

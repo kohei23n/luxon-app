@@ -82,6 +82,16 @@
                     <input type="text" id="mev_event_materials_url" name="mev_event_materials_url">
                     <x-input-error :messages="$errors->get('mev_event_materials_url')" />
                 </div>
+
+                <!-- 仮予約 -->
+                <div>
+                    <label for="mev_temp_enabled">仮予約</label>
+                    <select id="mev_temp_enabled" name="mev_temp_enabled">
+                        <option value="0" selected>なし</option>
+                        <option value="1">あり</option>
+                    </select>
+                    <x-input-error :messages="$errors->get('mev_temp_enabled')" />
+                </div>
             </div>
 
             <div>

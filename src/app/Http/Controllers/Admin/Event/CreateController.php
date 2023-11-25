@@ -31,6 +31,7 @@ class CreateController extends Controller
       'mev_event_datetime' => 'required|date',
       'mev_event_participate_url' => 'required|string|max:255',
       'mev_event_materials_url' => 'nullable|string|max:255',
+      'mev_temp_enabled' => 'integer',
     ]);
 
     // データの保存
@@ -43,6 +44,7 @@ class CreateController extends Controller
       'mev_event_datetime' => $request->mev_event_datetime,
       'mev_event_participate_url' => $request->mev_event_participate_url,
       'mev_event_materials_url' => $request->mev_event_materials_url,
+      'mev_temp_enabled' => $request->mev_temp_enabled,
     ]);
 
     if ($event) {

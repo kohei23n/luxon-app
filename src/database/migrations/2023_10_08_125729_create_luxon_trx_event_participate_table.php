@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('tep_event_participate_id')->comment('イベント参加者ID');
             $table->unsignedInteger('tep_event_id')->comment('イベントID');
             $table->unsignedInteger('tep_user_id')->comment('ユーザーID');
-            $table->boolean('tep_is_temp', 1)->default(false)->comment('出席フラグ');
+            $table->boolean('tep_is_temp', 1)->default(false)->comment('仮予約フラグ');
             $table->boolean('tep_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tep_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tep_registration_datetime')->comment('登録日時');

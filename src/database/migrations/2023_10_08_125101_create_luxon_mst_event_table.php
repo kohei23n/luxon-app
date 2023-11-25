@@ -21,6 +21,7 @@ return new class extends Migration
             $table->dateTime('mev_event_datetime')->comment('イベント日時');
             $table->string('mev_event_participate_url', 255)->comment('イベント参加URL');
             $table->string('mev_event_materials_url', 255)->nullable()->comment('イベント資料URL');
+            $table->boolean('mev_temp_enabled', 255)->default(false)->comment('仮予約有効フラグ');
             $table->boolean('mev_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('mev_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('mev_registration_datetime')->comment('登録日時');
