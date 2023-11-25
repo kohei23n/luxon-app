@@ -42,14 +42,7 @@
                     <x-input-error :messages="$errors->get('tin_time')" />
                 </div>
 
-                <div class="btn-box">
-                    <button type="submit">登録</button>
-
-                    @if (session('status') === 'profile-updated')
-                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
-                            {{ __('Saved.') }}</p>
-                    @endif
-                </div>
+                <button type="submit" class="add-button">登録</button>
             @else
                 <p>チケットがありません。</p>
             @endif

@@ -1,4 +1,5 @@
 @section('head')
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/event.css') }}">
 @endsection
 
@@ -67,7 +68,7 @@
                     @endwhile
                 </tbody>
             </table>
-            <a href="{{ route('admin.index') }}" class="event-link">戻る</a>
+            <a href="{{ route('admin.index') }}" class="back-button">戻る</a>
         </div>
     </div>
 </x-app-layout>

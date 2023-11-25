@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/review/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,10 +9,9 @@
         </h2>
     </x-slot>
 
-    <div>
-        <a href="{{ route('admin.esCount') }}">ES添削</a><br>
-        <a href="{{ route('admin.caseCount') }}">ケース添削</a><br>
-
-        <a href="{{ route('admin.index') }}">戻る</a>
+    <div class="admin-menu">
+        <a href="{{ route('admin.esCount') }}" class="admin-link">ES添削</a>
+        <a href="{{ route('admin.caseCount') }}" class="admin-link">ケース添削</a>
+        <a href="{{ route('admin.index') }}" class="back-button">戻る</a>
     </div>
 </x-app-layout>

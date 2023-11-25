@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/mentee.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -15,17 +15,17 @@
         </div>
     @endif
 
-    <a href="{{ route('admin.menteeAdd') }}">メンティーを追加する</a>
+    <a href="{{ route('admin.menteeAdd') }}" class="add-button">メンティーを追加する</a>
+    <a href="{{ route('admin.index') }}" class="back-button">戻る</a>
 
-    <div>
-        @foreach ($users as $user)
+    @foreach ($users as $user)
+        <div class="admin-container">
             <p>ID：{{ $user->mus_user_id }}</p>
             <p>氏名：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
             <p>大学：{{ $user->userDetail->tud_current_university }}</p>
             <p>第一志望業界：{{ $user->userDetail->tud_first_industry_preference }}</p>
             <p>第二志望業界：{{ $user->userDetail->tud_second_industry_preference }}</p>
-            <a href="{{ route('admin.menteeShow', $user->mus_user_id) }}">面談情報</a>
-        @endforeach
-        <a href="{{ route('admin.index') }}">戻る</a>
-    </div>
+            <a href="{{ route('admin.menteeShow', $user->mus_user_id) }}" class="edit-button">面談情報</a>
+        </div>
+    @endforeach
 </x-app-layout>

@@ -1,0 +1,36 @@
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  color: #333;
+  font-size: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.admin-link {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-link:first-child {
+  margin-top: 5%;
+}
+
+.admin-container {
+  background-color: #ffffff;
+  margin: 5%;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+}

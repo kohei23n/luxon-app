@@ -2,24 +2,6 @@
     background-color: #f7f7f7;
     padding-bottom: 85px;
 }
-.back-button {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    background-color: #15397a;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.back-button:hover {
-    background-color: #fafafa;
-    color: #555;
-}
 .industry-link {
     display: block;
     width: 80%;

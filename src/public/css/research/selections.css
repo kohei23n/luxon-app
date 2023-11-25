@@ -49,32 +49,7 @@
   background-color: #fafafa;
   color: #555;
 }
-.add-button {
-  display: block;
-  width: 80%;
-  margin:  15px auto 0 auto;
-  padding: 0.5rem 1rem;
-  background-color: #15397A;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: white;
-}
-.back-button {
-  display: block;
-  width: 80%;
-  margin:  5px auto;
-  padding: 0.5rem 1rem;
-  background-color: gray;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  color: white;
-}
+
 .selection-form-container {
   background-color: #ffffff;
     margin: 10px 5% 5% 5%;

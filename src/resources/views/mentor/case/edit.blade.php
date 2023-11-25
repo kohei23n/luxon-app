@@ -18,14 +18,7 @@
             @csrf
             @method('patch')
 
-            <div>
-                <button type="submit">返却</button>
-
-                @if (session('status') === 'profile-updated')
-                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}
-                    </p>
-                @endif
-            </div>
+            <button type="submit" class="add-button">返却</button>
         </form>
 
         <a href="{{ route('mentor.caseIndex') }}">戻る</a>

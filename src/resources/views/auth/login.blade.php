@@ -15,17 +15,19 @@
         <h2>Sign In</h2>
         <!-- Email Address -->
         <div class="login-input-box">
-            <x-input-label for="mus_email_address" style="color:white; border-width: 0; margin-right: 38px;" :value="__('Email')" />
-            <x-text-input style="background-color: white; color: black;" id="mus_email_address"
-                type="email" name="mus_email_address" :value="old('mus_email_address')" required autofocus autocomplete="username" />
+            <x-input-label for="mus_email_address" style="color:white; border-width: 0; margin-right: 38px;"
+                :value="__('Email')" />
+            <x-text-input style="background-color: white; color: black;" id="mus_email_address" type="email"
+                name="mus_email_address" :value="old('mus_email_address')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('mus_email_address')" />
         </div>
 
         <!-- Password -->
         <div class="login-input-box" style="display: flex; flex-direction: column;">
-            <x-input-label for="mus_user_password" style="color:white; border-width: 0; margin-right: 10px;" :value="__('Password')" />
-            <x-text-input style=" background-color: white; color: black;" id="mus_user_password"
-                type="password" name="mus_user_password" required autocomplete="current-password" />
+            <x-input-label for="mus_user_password" style="color:white; border-width: 0; margin-right: 10px;"
+                :value="__('Password')" />
+            <x-text-input style=" background-color: white; color: black;" id="mus_user_password" type="password"
+                name="mus_user_password" required autocomplete="current-password" />
 
             <x-input-error :messages="$errors->get('mus_user_password')" />
         </div>
@@ -47,7 +49,7 @@
                 </a>
             @endif
             <div class="btn-box">
-            <button type="submit" style="backgroud-color: #4597F7;">ログイン</button>
+                <button type="submit" style="backgroud-color: #4597F7;">ログイン</button>
             </div>
         </div>
     </form>

@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/mentor.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -15,10 +15,11 @@
         </div>
     @endif
 
-    <a href="{{ route('admin.mentorAdd') }}">メンターを追加する</a>
+    <a href="{{ route('admin.mentorAdd') }}" class="add-button">メンターを追加する</a>
+    <a href="{{ route('admin.index') }}" class="back-button">戻る</a>
 
-    <div>
-        @foreach ($mentors as $mentor)
+    @foreach ($mentors as $mentor)
+        <div class="admin-container">
             <p>ID：{{ $mentor->mus_user_id }}</p>
             <p>氏名：{{ $mentor->mus_user_last_name }}{{ $mentor->mus_user_first_name }}</p>
             <p>メールアドレス：{{ $mentor->mus_email_address }}</p>
@@ -28,8 +29,6 @@
             <p>面談給与：{{ $mentor->mentorProfile->mme_interview_salary }}</p>
             <p>講義作成給与：{{ $mentor->mentorProfile->mme_lecture_create_salary }}</p>
             <p>講義給与：{{ $mentor->mentorProfile->mme_lecture_salary }}</p>
-            <br><br>
-        @endforeach
-        <a href="{{ route('admin.index') }}">戻る</a>
-    </div>
+        </div>
+    @endforeach
 </x-app-layout>

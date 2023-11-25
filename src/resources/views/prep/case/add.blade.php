@@ -3,7 +3,7 @@
 @endsection
 
 <x-app-layout>
-<x-slot name="header">
+    <x-slot name="header">
         <p>ケース添削チケット数：{{ $count->tud_case_study_count_remaining }}</p>
     </x-slot>
     <div class="form-container">
@@ -38,20 +38,13 @@
                     <x-input-error :messages="$errors->get('tca_case_url')" />
                 </div>
 
-                <div class="btn-box">
-                    <button type="submit">提出</button>
-
-                    @if (session('status') === 'profile-updated')
-                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
-                            {{ __('Saved.') }}</p>
-                    @endif
-                </div>
+                <button type="submit" class="add-button">提出</button>
             @else
                 <p>チケットがありません。</p>
             @endif
-            <div class="bc-btn">
-            <a href="{{ route('prep.index') }}">戻る</a>
-        </div>
+            <div class="back-button">
+                <a href="{{ route('prep.index') }}">戻る</a>
+            </div>
         </form>
 
     </div>

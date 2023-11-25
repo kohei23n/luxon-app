@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/review/es.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,10 +9,10 @@
         </h2>
     </x-slot>
 
-    <div>
-        <a href="{{ route('admin.esIndex', ['type' => 'unassigned']) }}">未割り振り：{{ $unassigned }}</a><br>
-        <a href="{{ route('admin.esIndex', ['type' => 'assigned']) }}">割り振り済み未返却：{{ $assigned }}</a><br>
-        <a href="{{ route('admin.esIndex', ['type' => 'returned']) }}">返却済み：{{ $returned }}</a><br>
-        <a href="{{ route('admin.reviewHome') }}">戻る</a>
+    <div class="admin-menu">
+        <a href="{{ route('admin.esIndex', ['type' => 'unassigned']) }}" class="admin-link">未割り振り：{{ $unassigned }}</a>
+        <a href="{{ route('admin.esIndex', ['type' => 'assigned']) }}" class="admin-link">割り振り済み未返却：{{ $assigned }}</a>
+        <a href="{{ route('admin.esIndex', ['type' => 'returned']) }}" class="admin-link">返却済み：{{ $returned }}</a>
+        <a href="{{ route('admin.reviewHome') }}" class="back-button">戻る</a>
     </div>
 </x-app-layout>

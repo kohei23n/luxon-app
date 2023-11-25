@@ -8,12 +8,12 @@
             {{ __('管理者トップ') }}
         </h2>
     </x-slot>
-    <div>
-        <a href="{{ route('admin.menteeIndex') }}">メンティー情報</a><br>
-        <a href="{{ route('admin.mentorIndex') }}">メンター情報</a><br>
-        <a href="{{ route('admin.countIndex') }}">チケット割り振り</a><br>
-        <a href="{{ route('admin.reviewHome') }}">添削割り振り</a><br>
-        <a href="{{ route('admin.eventAdd') }}">イベント登録</a><br>
-        <a href="{{ route('admin.eventIndex') }}">イベント確認</a>
+    <div class="admin-menu">
+        <a href="{{ route('admin.menteeIndex') }}" class="admin-link">メンティー情報</a>
+        <a href="{{ route('admin.mentorIndex') }}" class="admin-link">メンター情報</a>
+        <a href="{{ route('admin.countIndex') }}" class="admin-link">チケット割り振り</a>
+        <a href="{{ route('admin.reviewHome') }}" class="admin-link">添削割り振り</a>
+        <a href="{{ route('admin.eventAdd') }}" class="admin-link">イベント登録</a>
+        <a href="{{ route('admin.eventIndex') }}" class="admin-link">イベント確認</a>
     </div>
 </x-app-layout>

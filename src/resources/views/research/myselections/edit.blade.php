@@ -9,7 +9,8 @@
         </h2>
     </x-slot>
 
-    <form method="post" action="{{ route('research.mySelectionsUpdate', $status->tss_selection_status_id) }}" class="selection-form">
+    <form method="post" action="{{ route('research.mySelectionsUpdate', $status->tss_selection_status_id) }}"
+        class="selection-form">
         @csrf
         @method('patch')
 
@@ -17,7 +18,8 @@
             <!-- 企業名 -->
             <div class="selection-add-box">
                 <label for="tss_company_name">企業名</label>
-                <input type="text" id="tss_company_name" name="tss_company_name" value="{{ $status->tss_company_name }}" >
+                <input type="text" id="tss_company_name" name="tss_company_name"
+                    value="{{ $status->tss_company_name }}">
             </div>
 
             <!-- 選考ステータス -->
@@ -25,7 +27,9 @@
                 <label for="tss_selection_status">選考ステータス</label>
                 <select id="tss_selection_status" name="tss_selection_status">
                     @foreach ($selectionPhases as $phase)
-                        <option value="{{ $phase->msp_phase_name }}" {{ $selectedValue == $phase->msp_phase_name ? 'selected' : '' }}>{{ $phase->msp_phase_name }}</option>
+                        <option value="{{ $phase->msp_phase_name }}"
+                            {{ $selectedValue == $phase->msp_phase_name ? 'selected' : '' }}>
+                            {{ $phase->msp_phase_name }}</option>
                     @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('tss_selection_status')" />
@@ -34,7 +38,8 @@
             <!-- 志望順位 -->
             <div class="selection-add-box">
                 <label for="tss_preference_ranking">志望順位</label>
-                <input type="number" id="tss_preference_ranking" name="tss_preference_ranking" value="{{ $status->tss_preference_ranking }}" >
+                <input type="number" id="tss_preference_ranking" name="tss_preference_ranking"
+                    value="{{ $status->tss_preference_ranking }}">
                 <x-input-error :messages="$errors->get('tss_preference_ranking')" />
             </div>
 
@@ -46,14 +51,8 @@
             </div>
 
         </div>
-
-        <div class="btn-box">
-            <button type="submit">更新</button>
-
-            @if (session('status') === 'profile-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>
-            @endif
-        </div>
+        
+        <button type="submit" class="add-button">更新</button>
     </form>
     {{-- メニューバー --}}
     <div class="list-box">

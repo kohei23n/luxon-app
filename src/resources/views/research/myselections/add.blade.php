@@ -46,14 +46,7 @@
             <x-input-error :messages="$errors->get('tss_selection_date')" />
         </div>
 
-
-        <div class="btn-box">
-            <button type="submit">追加</button>
-
-            @if (session('status') === 'profile-updated')
-                <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">{{ __('Saved.') }}</p>
-            @endif
-        </div>
+        <button type="submit" class="add-button">追加</button>
     </form>
     {{-- メニューバー --}}
     <div class="list-box">

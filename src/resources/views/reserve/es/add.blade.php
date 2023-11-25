@@ -26,23 +26,14 @@
                     <x-input-error :messages="$errors->get('tes_es_url')" />
                 </div>
 
-                <div class="btn-box">
-                    <button type="submit">提出</button>
-
-                    @if (session('status') === 'profile-updated')
-                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
-                            {{ __('Saved.') }}</p>
-                    @endif
-                </div>
+                <button type="submit" class="add-button">提出</button>
             @else
                 <p>チケットがありません。</p>
             @endif
-            <div class="bc-btn">
-                <a href="{{ route('reserve.index') }}">戻る</a>
-            </div>
+            <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
         </form>
 
-        
+
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

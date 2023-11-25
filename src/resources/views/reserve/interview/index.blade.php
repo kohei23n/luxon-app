@@ -36,7 +36,7 @@
                     @csrf
                     @method('PATCH')
                     <p>ステータス：{{ $interview->tin_is_completed ? '完了' : '未完了' }}</p>
-                    <button type="submit" class="button-blue">{{ $interview->tin_is_completed ? '未完了にする' : '完了にする' }}</button>
+                    <button type="submit" class="add-button">{{ $interview->tin_is_completed ? '未完了にする' : '完了にする' }}</button>
                 </form>
             </div>
         @endforeach

@@ -8,11 +8,11 @@
             {{ __('ケース割り振り') }}
         </h2>
     </x-slot>
-    <div>
-        <form method="post" action="{{ route('admin.caseUpdate', $id) }}">
-            @csrf
-            @method('patch')
+    <form method="post" action="{{ route('admin.caseUpdate', $id) }}">
+        @csrf
+        @method('patch')
 
+        <div class="admin-container">
             <!-- ケース情報 -->
             <div>
                 <p>提出者：{{ $case->user->mus_user_last_name }}{{ $case->user->mus_user_first_name }}</p>
@@ -32,16 +32,9 @@
                 <x-input-error :messages="$errors->get('tca_mentor_id')" />
             </div>
 
-            <div>
-                <button type="submit">確定</button>
+            <button type="submit" class="add-button">確定</button>
+        </div>
+    </form>
 
-                @if (session('status') === 'profile-updated')
-                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)">
-                        {{ __('Saved.') }}</p>
-                @endif
-            </div>
-        </form>
-
-        <a href="{{ route('admin.caseCount') }}">戻る</a>
-    </div>
+    <a href="{{ route('admin.caseCount') }}" class="back-button">戻る</a>
 </x-app-layout>

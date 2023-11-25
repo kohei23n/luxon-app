@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/review/es.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -24,24 +24,21 @@
         </h2>
     </x-slot>
 
-    <div>
-        <div>
-            <div>
-                @forelse ($entrySheets as $sheet)
-                    <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
-                    <p>会社：{{ $sheet->tes_company_name }}</p>
-                    <p>ドキュメントURL：{{ $sheet->tes_es_url }}</p>
-                    @if ($type == 'unassigned')
-                        <a href="{{ route('admin.esEdit', $sheet->tes_es_id) }}">割り振る</a>
-                    @else
-                        <p>添削メンター：{{ $sheet->mentor->mus_user_last_name }}</p>
-                    @endif
-                    <br><br>
-                @empty
-                    <p>提出はありません！</p>
-                @endforelse
-                <a href="{{ route('admin.esCount') }}">戻る</a>
-            </div>
+    @forelse ($entrySheets as $sheet)
+        <div class="admin-container">
+            <p>提出者：{{ $sheet->user->mus_user_last_name }}{{ $sheet->user->mus_user_first_name }}</p>
+            <p>会社：{{ $sheet->tes_company_name }}</p>
+            <p>ドキュメントURL：{{ $sheet->tes_es_url }}</p>
+            @if ($type == 'unassigned')
+                <a href="{{ route('admin.esEdit', $sheet->tes_es_id) }}" class="add-button">割り振る</a>
+            @else
+                <p>添削メンター：{{ $sheet->mentor->mus_user_last_name }}</p>
+            @endif
         </div>
-    </div>
+    @empty
+        <div class="admin-container">
+            <p>提出はありません！</p>
+        </div>
+    @endforelse
+    <a href="{{ route('admin.esCount') }}" class="back-button">戻る</a>
 </x-app-layout>

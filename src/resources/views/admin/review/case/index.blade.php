@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/review/case.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -24,20 +24,21 @@
         </h2>
     </x-slot>
 
-    <div>
-        @forelse ($cases as $case)
+    @forelse ($cases as $case)
+        <div class="admin-container">
             <p>提出者：{{ $case->user->mus_user_last_name }}{{ $case->user->mus_user_first_name }}</p>
             <p>ケース設問：{{ $case->tca_case_content }}</p>
             <p>ドキュメントURL：{{ $case->tca_case_url }}</p>
             @if ($type == 'unassigned')
-                <a href="{{ route('admin.caseEdit', $case->tca_case_id) }}">割り振る</a>
+                <a href="{{ route('admin.caseEdit', $case->tca_case_id) }}" class="add-button">割り振る</a>
             @else
                 <p>添削メンター：{{ $case->mentor->mus_user_last_name }}</p>
             @endif
-            <br><br>
+        </div>
         @empty
+        <div class="admin-container">
             <p>提出はありません！</p>
-        @endforelse
-        <a href="{{ route('admin.caseCount') }}">戻る</a>
-    </div>
+        </div>
+    @endforelse
+    <a href="{{ route('admin.caseCount') }}" class="back-button">戻る</a>
 </x-app-layout>

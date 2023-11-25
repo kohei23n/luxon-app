@@ -17,14 +17,13 @@
             <p>大学：{{ $user->userDetail->tud_current_university }}</p>
             <p>第一志望業界：{{ $user->userDetail->tud_first_industry_preference }}</p>
             <p>第二志望業界：{{ $user->userDetail->tud_second_industry_preference }}</p>
-            <div class="btn-box">
-                <a href="{{ route('mypage.plan.profileEdit') }}">編集</a>
-            </div>
+            <a href="{{ route('mypage.plan.profileEdit') }}" class="add-button">編集</a>
         </div>
 
         <div class="mentor-information">
             <h2>専属メンター情報</h2>
-            <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}</p>
+            <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
+            </p>
             <p>リンク：</p>
             <div class="mentor-links">
                 <a href="{{ $user->dedicatedMentor->mentorProfile->mme_line_url }}">
@@ -51,9 +50,7 @@
             <h2>COMING SOON</h2>
         </div>
 
-        <div class="btn-box">
-            <a href="{{ route('index') }}">戻る</a>
-        </div>
+        <a href="{{ route('index') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

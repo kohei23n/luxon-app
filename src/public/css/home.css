@@ -34,6 +34,33 @@
     max-width: 100%;
 }
 
+.add-button {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 0.5rem 1rem;
+    background-color: #15397a;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.back-button, .edit-button {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 0.5rem 1rem;
+    background-color: lightgray;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 /* Base styles for all sections */
 .section-box {
     /* height: 200px; */
