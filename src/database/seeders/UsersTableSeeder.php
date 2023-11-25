@@ -318,6 +318,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('YasuTach'),
             'mus_user_first_name' => '明日香',
             'mus_user_last_name' => '八杉',
+            'mus_dedicated_mentor_id' => 166,
         ]);
         // 39
         User::create([
@@ -365,6 +366,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('risdef1129'),
             'mus_user_first_name' => '良介',
             'mus_user_last_name' => '岩田',
+            'mus_dedicated_mentor_id' => 169,
         ]);
         // 45
         User::create([
@@ -428,6 +430,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('iwillgetnaitei_'),
             'mus_user_first_name' => '啓介',
             'mus_user_last_name' => '中村',
+            'mus_dedicated_mentor_id' => 159,
         ]);
         // 53
         User::create([
@@ -459,6 +462,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Jun71021'),
             'mus_user_first_name' => '柊',
             'mus_user_last_name' => '田中',
+            'mus_dedicated_mentor_id' => 159,
         ]);
         // 57
         User::create([
@@ -490,6 +494,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Aizon0518'),
             'mus_user_first_name' => '晃希',
             'mus_user_last_name' => '相園',
+            'mus_dedicated_mentor_id' => 165,
         ]);
         // 61
         User::create([
@@ -584,6 +589,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('99sc0101xp'),
             'mus_user_first_name' => '敦郎',
             'mus_user_last_name' => '伊藤',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 73
         User::create([
@@ -591,6 +597,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Plmn0567'),
             'mus_user_first_name' => '莉空',
             'mus_user_last_name' => '田中',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 74
         User::create([
@@ -613,6 +620,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Harrypotter1024'),
             'mus_user_first_name' => '伶王',
             'mus_user_last_name' => '三浦',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 77
         User::create([
@@ -635,6 +643,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('kankeiopass120'),
             'mus_user_first_name' => '漢',
             'mus_user_last_name' => '山本',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 80
         User::create([
@@ -650,6 +659,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('rw0727'),
             'mus_user_first_name' => '崇史',
             'mus_user_last_name' => '岩永',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 82
         User::create([
@@ -695,6 +705,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('soutarotachyon'),
             'mus_user_first_name' => '宗太郎',
             'mus_user_last_name' => '嶋田',
+            'mus_dedicated_mentor_id' => 163,
         ]);
         // 88
         User::create([
@@ -710,6 +721,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Takumaro1221'),
             'mus_user_first_name' => '琢磨',
             'mus_user_last_name' => '飯阪',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 90
         User::create([
@@ -725,6 +737,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Jk3131231'),
             'mus_user_first_name' => '丈',
             'mus_user_last_name' => '工藤',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 92
         User::create([
@@ -771,6 +784,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('1220mato'),
             'mus_user_first_name' => '東磨',
             'mus_user_last_name' => '松下',
+            'mus_dedicated_mentor_id' => 167,
         ]);
         // 98
         User::create([
@@ -786,6 +800,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('hajimeneymar11'),
             'mus_user_first_name' => '孟',
             'mus_user_last_name' => '北川',
+            'mus_dedicated_mentor_id' => 167,
         ]);
         // 100
         User::create([
@@ -809,6 +824,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('kakumoto0123'),
             'mus_user_first_name' => '憲祐',
             'mus_user_last_name' => '角本',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 103
         User::create([
@@ -832,6 +848,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('ryota0924WAO!'),
             'mus_user_first_name' => '亮太',
             'mus_user_last_name' => '森村',
+            'mus_dedicated_mentor_id' => 162,
         ]);
         // 106
         User::create([
@@ -839,6 +856,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('kj3285'),
             'mus_user_first_name' => 'BUMJIN',
             'mus_user_last_name' => 'KIM',
+            'mus_dedicated_mentor_id' => 162,
         ]);
         // 107
         User::create([
@@ -846,6 +864,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Abcd1234'),
             'mus_user_first_name' => '翔',
             'mus_user_last_name' => '詹合',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 108
         User::create([
@@ -861,6 +880,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('miki0204'),
             'mus_user_first_name' => '美輝',
             'mus_user_last_name' => '鹿倉',
+            'mus_dedicated_mentor_id' => 162,
         ]);
         // 110
         User::create([
@@ -884,6 +904,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('alphaheighzzz'),
             'mus_user_first_name' => '敦司',
             'mus_user_last_name' => '岸名',
+            'mus_dedicated_mentor_id' => 167,
         ]);
         // 113
         User::create([
@@ -953,6 +974,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('yurimitsumura'),
             'mus_user_first_name' => '友里',
             'mus_user_last_name' => '三ツ村',
+            'mus_dedicated_mentor_id' => 159,
         ]);
         // 122
         User::create([
@@ -967,6 +989,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Izumi117'),
             'mus_user_first_name' => '改',
             'mus_user_last_name' => '近藤',
+            'mus_dedicated_mentor_id' => 169,
         ]);
         // 124
         User::create([
@@ -974,6 +997,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('0611'),
             'mus_user_first_name' => '秀太',
             'mus_user_last_name' => '藤井',
+            'mus_dedicated_mentor_id' => 162,
         ]);
         // 125
         User::create([
@@ -989,6 +1013,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Sukemaru0710'),
             'mus_user_first_name' => '健太',
             'mus_user_last_name' => '長山',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 127
         User::create([
@@ -1027,6 +1052,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('sayo3434'),
             'mus_user_first_name' => '沙予',
             'mus_user_last_name' => '大野',
+            'mus_dedicated_mentor_id' => 160,
         ]);
         // 132
         User::create([
@@ -1064,6 +1090,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Makitanipon7531'),
             'mus_user_first_name' => '正大',
             'mus_user_last_name' => '牧谷',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 137
         User::create([
@@ -1095,6 +1122,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('3B59d012'),
             'mus_user_first_name' => '宏太',
             'mus_user_last_name' => '髙橋',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 141
         User::create([
@@ -1156,6 +1184,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('mf013014'),
             'mus_user_first_name' => '美岬',
             'mus_user_last_name' => '福嶋',
+            'mus_dedicated_mentor_id' => 162,
         ]);
         // 149
         User::create([
@@ -1171,6 +1200,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('79089797979'),
             'mus_user_first_name' => '之琳',
             'mus_user_last_name' => '劉',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 151
         User::create([
@@ -1178,6 +1208,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('sakosako'),
             'mus_user_first_name' => '祐成',
             'mus_user_last_name' => '迫口',
+            'mus_dedicated_mentor_id' => 161,
         ]);
         // 152
         User::create([
@@ -1185,6 +1216,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('nodoka24'),
             'mus_user_first_name' => '和',
             'mus_user_last_name' => '上原',
+            'mus_dedicated_mentor_id' => 167,
         ]);
         // 153
         User::create([
@@ -1192,6 +1224,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Skzoor0918'),
             'mus_user_first_name' => '拓人',
             'mus_user_last_name' => '岡垣',
+            'mus_dedicated_mentor_id' => 165,
         ]);
         // 154
         User::create([
@@ -1223,6 +1256,101 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('marika0831'),
             'mus_user_first_name' => '真理佳',
             'mus_user_last_name' => '鈴木',
+        ]);
+        // 158
+        User::create([
+            'mus_email_address' => 'shukutsu.bird2025@gmail.com',
+            'mus_user_password' => Hash::make('yatugare8454'),
+            'mus_user_first_name' => '莉奈',
+            'mus_user_last_name' => '羽鳥',
+        ]);
+
+        // 再びメンター
+        // 159
+        User::create([
+            'mus_email_address' => 'matsumotoshiori07@gmail.com',
+            'mus_user_password' => Hash::make('matsushio0717'),
+            'mus_user_first_name' => '史織',
+            'mus_user_last_name' => '松本',
+        ]);
+        
+        // 160
+        User::create([
+            'mus_email_address' => 'namba-mizuki-yp@ynu.jp',
+            'mus_user_password' => Hash::make('<okioy>0619'),
+            'mus_user_first_name' => '瑞貴',
+            'mus_user_last_name' => '難波',
+        ]);
+
+        // 161
+        User::create([
+            'mus_email_address' => 'kado.y.recruit@gmail.com',
+            'mus_user_password' => Hash::make('KaDoY0128'),
+            'mus_user_first_name' => '悠真',
+            'mus_user_last_name' => '門脇',
+        ]);
+
+        // 162
+        User::create([
+            'mus_email_address' => 'luxon0830@gmail.com',
+            'mus_user_password' => Hash::make('Luxon@0929'),
+            'mus_user_first_name' => '勇磨',
+            'mus_user_last_name' => '岡森',
+        ]);
+
+        // 163
+        User::create([
+            'mus_email_address' => 'ayueriumaru@yahoo.co.jp',
+            'mus_user_password' => Hash::make('ayumt917'),
+            'mus_user_first_name' => '愛弓',
+            'mus_user_last_name' => '中山',
+        ]);
+
+        // 164
+        User::create([
+            'mus_email_address' => 'hkaida12@gmail.com',
+            'mus_user_password' => Hash::make('BT4f8glo'),
+            'mus_user_first_name' => '比呂子',
+            'mus_user_last_name' => '海田',
+        ]);
+
+        // 165
+        User::create([
+            'mus_email_address' => 'n.t.basket.n.t@gmail.con',
+            'mus_user_password' => Hash::make('1415'),
+            'mus_user_first_name' => '太陽',
+            'mus_user_last_name' => '野中',
+        ]); 
+
+        // 166
+        User::create([
+            'mus_email_address' => 'otohamarumaru@gmail.com',
+            'mus_user_password' => Hash::make('OtohaTach12'),
+            'mus_user_first_name' => '乙葉',
+            'mus_user_last_name' => '大竹',
+        ]);
+
+        // 167
+        User::create([
+            'mus_email_address' => 'hirataku.72727@gmail.com',
+            'mus_user_password' => Hash::make('inuinu2345'),
+            'mus_user_last_name' => 'H',
+        ]);
+
+        // 168
+        User::create([
+            'mus_email_address' => 'team.shin.toshi.sky@gmail.com',
+            'mus_user_password' => Hash::make('Ksui2n_3666'),
+            'mus_user_first_name' => '進之介',
+            'mus_user_last_name' => '河原',
+        ]);
+
+        // 169
+        User::create([
+            'mus_email_address' => 'akisuke0527@gmail.com',
+            'mus_user_password' => Hash::make('5baseball27'),
+            'mus_user_first_name' => '喜介',
+            'mus_user_last_name' => '秋吉',
         ]);
     }
 }

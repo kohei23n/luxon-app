@@ -244,9 +244,111 @@ class MentorsTableSeeder extends Seeder
         Mentor::create([
             'mme_user_id' => 34,
             'mme_interview_salary' => 0,
-            'mme_line_url' => 'https://liff.line.me/1645278921-kWRPP32q/?accountId=478ybreg',
-            'mme_timerex_url' => 'https://timerex.net/s/souta000211_1564/b4abf04d',
-            'mme_timerex_url_short' => 'https://timerex.net/s/souta000211_1564/3210aec3',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 35,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/OAkg8aVW',
+            'mme_timerex_url' => 'https://timerex.net/s/soccer0504_2546/8b25ccc3',
+            'mme_timerex_url_short' => 'https://timerex.net/s/soccer0504_2546/daa431a0',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 36,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/VyZiRdJ',
+            'mme_timerex_url' => 'https://timerex.net/s/kabochashiho_ecd0/7ac125b9',
+            'mme_timerex_url_short' => 'https://timerex.net/s/kabochashiho_ecd0/660a384d',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 37,
+            'mme_interview_salary' => 0,
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 159,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/LMR7Dt7',
+            'mme_timerex_url' => 'https://timerex.net/s/matsumotoshiori07_ed3e/da90f772',
+            'mme_timerex_url_short' => 'https://timerex.net/s/matsumotoshiori07_ed3e/997ca467',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 160,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/1w5JtnJ',
+            'mme_timerex_url' => 'https://timerex.net/s/nmb.0614.mzk_4379/303b8ae5',
+            'mme_timerex_url_short' => 'https://timerex.net/s/nmb.0614.mzk_4379/1d3dccdc',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 161,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/pFfYIzw',
+            'mme_timerex_url' => 'https://timerex.net/s/kado.y.recruit_96a1/c68b7cd3',
+            'mme_timerex_url_short' => 'https://timerex.net/s/kado.y.recruit_96a1/9e03cf93',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 162,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/ptzXnCU',
+            'mme_timerex_url' => 'https://timerex.net/s/yuuma.okamori015710_1864/89a2dc58',
+            'mme_timerex_url_short' => 'https://timerex.net/s/yuuma.okamori015710_1864/33',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 163,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://manager.line.biz/invitation/86EcvfIRYT9Mm9DOib0ng3hnBzaDkA',
+            'mme_timerex_url' => 'https://timerex.net/s/yuzuyuu1230_3eb8/b3f0e468',
+            'mme_timerex_url_short' => 'https://timerex.net/s/yuzuyuu1230_3eb8/a3a1e31d',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 164,
+            'mme_interview_salary' => 0,
+            'mme_timerex_url' => 'https://timerex.net/s/hkaida12_d3c1/148e1d51',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 165,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/DU9cN2I',
+            'mme_timerex_url' => 'https://timerex.net/s/nonakataiyou0_d7cb/79d7ffb7',
+            'mme_timerex_url_short' => 'https://timerex.net/s/nonakataiyou0_d7cb/79d7ffb7',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 166,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/XTYGFVW',
+            'mme_timerex_url' => 'https://timerex.net/s/ohtake-otoha694_a4d6/bfc1caf7',
+            'mme_timerex_url_short' => 'https://timerex.net/s/ohtake-otoha694_a4d6/fdf6ee58',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 167,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/Q1fVdym',
+            'mme_timerex_url' => 'https://timerex.net/s/hirataku.72727_a622/670af290',
+            'mme_timerex_url_short' => 'https://timerex.net/s/hirataku.72727_a622/8dac754e',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 168,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://liff.line.me/1645278921-kWRPP32q/?accountId=946zphcx',
+            'mme_timerex_url' => 'https://timerex.net/s/team.shin.toshi.sky_e03f/714a49cc',
+            'mme_timerex_url_short' => 'https://timerex.net/s/team.shin.toshi.sky_e03f/714a49cc',
+        ]);
+
+        Mentor::create([
+            'mme_user_id' => 169,
+            'mme_interview_salary' => 0,
+            'mme_line_url' => 'https://lin.ee/QRSeJdj',
         ]);
     }
 }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('mus_user_id')->comment('ユーザーID');
             $table->string('mus_email_address', 50)->unique()->comment('メールアドレス');
             $table->string('mus_user_password', 255)->comment('ユーザーパスワード'); 
-            $table->string('mus_user_first_name', 50)->comment('ユーザー名');
-            $table->string('mus_user_last_name', 50)->comment('ユーザー姓');
+            $table->string('mus_user_first_name', 50)->nullable()->comment('名');
+            $table->string('mus_user_last_name', 50)->comment('姓');
             $table->boolean('mus_is_admin')->default(false)->comment('管理者フラグ');
             $table->boolean('mus_is_mentor')->default(false)->comment('メンターフラグ');
             $table->unsignedInteger('mus_dedicated_mentor_id')->nullable()->comment('担当メンターID');

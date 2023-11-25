@@ -1476,5 +1476,17 @@ class UserDetailTableSeeder extends Seeder
             'tud_case_study_count_remaining' => 0,
             'tud_es_count_remaining' => 1,
         ]);
+
+        UserDetail::create([
+            'tud_user_id' => 158,
+            'tud_current_university' => '鳥取大学',
+            'tud_first_industry_preference' => '戦コン',
+            'tud_second_industry_preference' => '総コン',
+            'tud_service_plan_id' => 1,
+            'tud_event_attendance_remaining' => 1,
+            'tud_interview_count_remaining' => 3,
+            'tud_case_study_count_remaining' => 0,
+            'tud_es_count_remaining' => 3,
+        ]);
     }
 }
