@@ -198,10 +198,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/mentee/{id}', AdminMenteeShow::class)->name('menteeShow');
         // メンター
         Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');
-        Route::get('/mentor/add', function () {
-            return view('admin.mentor.add');
-        })->name('mentorAdd');
-        Route::post('/mentor/add', AdminMentorCreate::class)->name('mentorCreate');
+        Route::get('/mentor/add', [AdminMentorCreate::class, 'add'])->name('mentorAdd');
+        Route::post('/mentor/add', [AdminMentorCreate::class, 'create'])->name('mentorCreate');
         // チケット割り振り
         Route::prefix('count')->group(function () {
             Route::get('/', AdminCountIndex::class)->name('countIndex');

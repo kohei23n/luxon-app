@@ -14,6 +14,7 @@ class Mentor extends Model
     const UPDATED_AT = 'mme_update_datetime';
 
     protected $fillable = [
+        'mme_user_id',
         'mme_interview_salary',
         'mme_lecture_create_salary',
         'mme_lecture_salary',
