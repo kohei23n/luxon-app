@@ -65,6 +65,7 @@ use App\Http\Controllers\Admin\Review\Case\UpdateController as AdminCaseUpdate;
 // イベント管理
 use App\Http\Controllers\Admin\Event\IndexController as AdminEventIndex;
 use App\Http\Controllers\Admin\Event\ShowController as AdminEventShow;
+use App\Http\Controllers\Admin\Event\ConfirmController as AdminEventConfirm;
 // イベント追加
 use App\Http\Controllers\Admin\Event\CreateController as AdminEventCreate;
 // イベント編集
@@ -233,6 +234,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', AdminEventIndex::class)->name('eventIndex');
             // イベント詳細
             Route::get('/{id}', AdminEventShow::class)->name('eventShow');
+            // イベントの参加者確定
+            Route::get('/{id}/confirm', AdminEventConfirm::class)->name('eventConfirm');
             // イベント編集
             Route::get('/{id}/edit', [AdminEventUpdate::class, 'edit'])->name('eventEdit');
             Route::patch('/{id}/edit', [AdminEventUpdate::class, 'update'])->name('eventUpdate');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Event;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\EventParticipant;
 
 class ShowController extends Controller
 {
@@ -13,10 +14,10 @@ class ShowController extends Controller
 
     $participants = $event->eventParticipants;
 
-    $participants = $participants->map(function ($participant) {
+    $participants = $event->eventParticipants->map(function ($participant) {
       return [
         'full_name' => $participant->user->mus_user_last_name . " " . $participant->user->mus_user_first_name,
-        'user_id' => $participant->user->mus_user_id
+        'user_id' => $participant->user->mus_user_id,
       ];
     });
 

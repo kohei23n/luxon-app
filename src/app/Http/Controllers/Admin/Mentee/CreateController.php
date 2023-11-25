@@ -68,11 +68,11 @@ class CreateController extends Controller
       DB::commit();
       
       if ($user && $userDetail) {
-        return Redirect::route('admin.menteeIndex')->with('status', 'ユーザーの作成に成功しました。');
+        return Redirect::route('admin.menteeIndex')->with('status', 'メンティーの作成に成功しました。');
       }
     } catch (\Exception $e) {
       DB::rollBack();
-      return Redirect::route('admin.menteeIndex')->with('error', 'ユーザーの作成に失敗しました。');
+      return Redirect::route('admin.menteeIndex')->with('error', 'メンティーの作成に失敗しました。');
     }
   }
 }

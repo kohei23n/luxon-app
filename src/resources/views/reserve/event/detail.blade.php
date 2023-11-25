@@ -7,10 +7,17 @@
         <h2>
             {{ __('イベント予約') }}
         </h2>
-        <p>所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
     </x-slot>
 
     <div>
+        @if (session('status') || session('error'))
+            <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+                {{ session('status') ?: session('error') }}
+            </div>
+        @endif
+
+        <p>所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
+
         <div class="event-detail">
             <h1>イベント名：{{ $event->mev_event_name }}</h1>
 
@@ -23,6 +30,8 @@
                 <p>ステータス：このイベントはすでに予約されています。</p>
             @elseif ($count->tud_event_attendance_remaining <= 0)
                 <p>イベント枠がありません</p>
+            @elseif ($isTemporaryReservationEnabled)
+                <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">仮予約</a>
             @else
                 <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">予約</a>
             @endif

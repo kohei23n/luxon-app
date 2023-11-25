@@ -13,11 +13,13 @@ class ShowController extends Controller
 
     $user = auth()->user();
 
-    $count = auth()->user()->userDetail;
+    $count = $user->userDetail;
     $isAlreadyBooked = $user->eventParticipants()
       ->where('tep_event_id', $event->mev_event_id)
       ->exists();
 
-    return view('reserve.event.detail', compact('event', 'count', 'isAlreadyBooked'));
+    $isTemporaryReservationEnabled = $event->mev_temp_enabled;
+
+    return view('reserve.event.detail', compact('event', 'count', 'isAlreadyBooked', 'isTemporaryReservationEnabled'));
   }
 }

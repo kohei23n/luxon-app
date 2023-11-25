@@ -5,7 +5,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2>
-            {{ __('メンティー追加') }}
+            {{ __('メンター追加') }}
         </h2>
     </x-slot>
 

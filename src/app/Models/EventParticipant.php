@@ -10,10 +10,11 @@ class EventParticipant extends Model
 {
     use HasFactory;
     protected $table = 'luxon_trx_event_participate';
-    protected $primaryKey = 'tep_participant_id';
+    protected $primaryKey = 'tep_event_participate_id';
 
     const CREATED_AT = 'tep_registration_datetime';
     const UPDATED_AT = 'tep_update_datetime';
+    const IS_CONFIRMED = 0;
 
     protected $fillable = [
         'tep_event_id',

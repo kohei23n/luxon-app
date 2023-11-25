@@ -10,6 +10,12 @@
     </x-slot>
 
     <div>
+        @if (session('status') || session('error'))
+            <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+                {{ session('status') ?: session('error') }}
+            </div>
+        @endif
+
         <h1>イベント名：{{ $event->mev_event_name }}</h1>
 
         <h2>イベント概要：{{ $event->mev_event_overview }}</h2>
@@ -27,6 +33,7 @@
         </ul>
 
         <a href="{{ route('admin.eventEdit', $event->mev_event_id) }}">編集</a>
+        <a href="{{ route('admin.eventConfirm', $event->mev_event_id) }}">予約者を確定する</a>
         <a href="{{ route('admin.eventIndex') }}">戻る</a>
     </div>
 </x-app-layout>

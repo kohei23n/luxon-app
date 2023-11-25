@@ -317,6 +317,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('matsushio0717'),
             'mus_user_first_name' => '史織',
             'mus_user_last_name' => '松本',
+            'mus_is_mentor' => true,
         ]);
         
         // 39
@@ -325,6 +326,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('<okioy>0619'),
             'mus_user_first_name' => '瑞貴',
             'mus_user_last_name' => '難波',
+            'mus_is_mentor' => true,
         ]);
 
         // 40
@@ -333,6 +335,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('KaDoY0128'),
             'mus_user_first_name' => '悠真',
             'mus_user_last_name' => '門脇',
+            'mus_is_mentor' => true,
         ]);
 
         // 41
@@ -341,6 +344,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('Luxon@0929'),
             'mus_user_first_name' => '勇磨',
             'mus_user_last_name' => '岡森',
+            'mus_is_mentor' => true,
         ]);
 
         // 42
@@ -349,6 +353,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('ayumt917'),
             'mus_user_first_name' => '愛弓',
             'mus_user_last_name' => '中山',
+            'mus_is_mentor' => true,
         ]);
 
         // 43
@@ -357,6 +362,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('BT4f8glo'),
             'mus_user_first_name' => '比呂子',
             'mus_user_last_name' => '海田',
+            'mus_is_mentor' => true,
         ]);
 
         // 44
@@ -365,6 +371,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('1415'),
             'mus_user_first_name' => '太陽',
             'mus_user_last_name' => '野中',
+            'mus_is_mentor' => true,
         ]); 
 
         // 45
@@ -373,6 +380,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('OtohaTach12'),
             'mus_user_first_name' => '乙葉',
             'mus_user_last_name' => '大竹',
+            'mus_is_mentor' => true,
         ]);
 
         // 46
@@ -380,6 +388,7 @@ class UsersTableSeeder extends Seeder
             'mus_email_address' => 'hirataku.72727@gmail.com',
             'mus_user_password' => Hash::make('inuinu2345'),
             'mus_user_last_name' => 'H',
+            'mus_is_mentor' => true,
         ]);
 
         // 47
@@ -388,6 +397,7 @@ class UsersTableSeeder extends Seeder
             'mus_user_password' => Hash::make('5baseball27'),
             'mus_user_first_name' => '喜介',
             'mus_user_last_name' => '秋吉',
+            'mus_is_mentor' => true,
         ]);
 
         // ここからメンティー

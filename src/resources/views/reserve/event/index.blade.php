@@ -17,7 +17,7 @@
             <div class="calendar-navigation">
                 <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"
                     class="event-link">
-                    <<< /a>
+                    << </a>
                         <span>{{ $month }}月</span>
                         <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}"
                             class="event-link">>></a>
@@ -52,7 +52,7 @@
                                                 $formattedDay = str_pad($dayCounter, 2, '0', STR_PAD_LEFT);
                                             @endphp
                                             @foreach ($groupedEvents["$year-$month-$formattedDay"] ?? [] as $event)
-                                                <a href="{{ route('admin.eventShow', $event->mev_event_id) }}"
+                                                <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}"
                                                     class="event-show-link"
                                                     style="background-color: {{ $event->backgroundColor }}">{{ $event->mev_event_name }}</a>
                                             @endforeach

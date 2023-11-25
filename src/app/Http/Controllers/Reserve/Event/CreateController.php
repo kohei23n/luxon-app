@@ -30,16 +30,23 @@ class CreateController extends Controller
     ]);
 
     $user = auth()->user();
+    $event = Event::findOrFail($id);
+
+    // イベントが仮予約可能かどうかを判断
+    $isTemporaryReservation = $event->mev_temp_enabled;
 
     // データの保存
     $participant = EventParticipant::create([
       'tep_event_id' => $id,
       'tep_user_id' => $user->mus_user_id,
+      'tep_is_temp' => $isTemporaryReservation ? 1 : 0,
     ]);
 
-    // ユーザーのチケット残数を1減らす
-    $user->userDetail->tud_event_attendance_remaining = $user->userDetail->tud_event_attendance_remaining - 1;
-    $user->userDetail->save();
+    // 仮予約ではない場合にチケット残数を減らす
+    if (!$isTemporaryReservation) {
+      $user->userDetail->tud_event_attendance_remaining -= 1;
+      $user->userDetail->save();
+    }
 
     if ($participant) {
       return Redirect::route('reserve.complete')->with('status', 'event-status-created');
