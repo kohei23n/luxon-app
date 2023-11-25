@@ -24,7 +24,7 @@ class CreateController extends Controller
   {
     // リクエストデータのバリデーション
     $validatedData = $request->validate([
-      'mus_email_address' => 'required|string|max:255',
+      'mus_email_address' => 'required|string|max:255|unique:luxon_mst_user,mus_email_address',
       'mus_user_password' => 'required|string|max:255',
       'mus_user_last_name' => 'required|string|max:255',
       'mus_user_first_name' => 'required|string|max:255',
@@ -66,13 +66,24 @@ class CreateController extends Controller
 
       // トランザクションをコミット
       DB::commit();
-      
+
       if ($user && $userDetail) {
         return Redirect::route('admin.menteeIndex')->with('status', 'メンティーの作成に成功しました。');
       }
     } catch (\Exception $e) {
       DB::rollBack();
-      return Redirect::route('admin.menteeIndex')->with('error', 'メンティーの作成に失敗しました。');
+
+      $errorMessage = 'メンティーの作成に失敗しました。';
+      if ($e instanceof \Illuminate\Database\QueryException) {
+        // QueryException の場合の処理
+        $errorMessage .= ' データベースエラーが発生しました。';
+      } else {
+        // その他の例外の場合の処理
+        $errorMessage .= ' 不明なエラーが発生しました。';
+      }
+
+
+      return Redirect::route('admin.menteeIndex')->with('error', $errorMessage);
     }
   }
 }

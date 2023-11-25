@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('tud_first_industry_preference', 50)->comment('第一志望業界');
             $table->string('tud_second_industry_preference', 50)->comment('第二志望業界');
             $table->unsignedInteger('tud_service_plan_id')->default(1)->comment('プランID');
-            $table->unsignedInteger('tud_event_attendance_remaining')->comment('イベント参加可能回数');
-            $table->unsignedInteger('tud_interview_count_remaining')->comment('面談可能回数');
-            $table->unsignedInteger('tud_case_study_count_remaining')->comment('ケーススタディー可能回数');
-            $table->unsignedInteger('tud_es_count_remaining')->comment('ES提出可能回数');
+            $table->unsignedInteger('tud_event_attendance_remaining')->nullable()->comment('イベント参加可能回数');
+            $table->unsignedInteger('tud_interview_count_remaining')->nullable()->comment('面談可能回数');
+            $table->unsignedInteger('tud_case_study_count_remaining')->nullable()->comment('ケーススタディー可能回数');
+            $table->unsignedInteger('tud_es_count_remaining')->nullable()->comment('ES提出可能回数');
             $table->boolean('tud_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tud_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tud_registration_datetime')->comment('登録日時');

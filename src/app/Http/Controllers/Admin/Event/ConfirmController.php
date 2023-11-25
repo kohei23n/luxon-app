@@ -34,6 +34,6 @@ class ConfirmController extends Controller
       $userDetail->save();
     }
 
-    return Redirect::route('admin.eventShow', $event->mev_event_id)->with('status', 'event-status-updated');
+    return Redirect::route('admin.eventShow', $event->mev_event_id)->with('status', '予約者を確定しました。');
   }
 }

@@ -3,6 +3,11 @@
 @endsection
 
 <x-app-layout>
+    <x-slot name="header">
+        <h2>
+            {{ __('予約完了画面') }}
+        </h2>
+    </x-slot>
     <div class="complete-container">
         <div class="event-detail">
             <h1>完了しました！</h1>

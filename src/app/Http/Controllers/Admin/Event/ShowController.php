@@ -21,6 +21,12 @@ class ShowController extends Controller
       ];
     });
 
-    return view('admin.event.detail', compact('event', 'participants'));
+    $isTemporaryReservationEnabled = $event->mev_temp_enabled;
+
+    $participantsConfirmed = $event->eventParticipants->every(function ($participant) {
+      return $participant->tep_is_temp === EventParticipant::IS_CONFIRMED;
+    });
+
+    return view('admin.event.detail', compact('event', 'participants', 'isTemporaryReservationEnabled', 'participantsConfirmed'));
   }
 }

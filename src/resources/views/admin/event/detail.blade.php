@@ -23,7 +23,11 @@
 
         <p>イベント日時：{{ $event->mev_event_datetime }}</p>
 
+        @if ($participantsConfirmed)
         <p>参加者一覧</p>
+        @else
+        <p>仮予約者一覧</p>
+        @endif
         <ul>
             @forelse ($participants as $participant)
                 <li>{{ $participant['full_name'] }}（ID: {{ $participant['user_id'] }}）</li>
@@ -33,7 +37,9 @@
         </ul>
 
         <a href="{{ route('admin.eventEdit', $event->mev_event_id) }}">編集</a>
-        <a href="{{ route('admin.eventConfirm', $event->mev_event_id) }}">予約者を確定する</a>
+        @if ($isTemporaryReservationEnabled && !$participantsConfirmed)
+            <a href="{{ route('admin.eventConfirm', $event->mev_event_id) }}">予約者を確定する</a>
+        @endif
         <a href="{{ route('admin.eventIndex') }}">戻る</a>
     </div>
 </x-app-layout>
