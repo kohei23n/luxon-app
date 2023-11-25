@@ -109,4 +109,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(EsQuestion::class, 'mes_case_user_id', 'mus_user_id');
     }
+
+    public function getIsMentorAttribute()
+    {
+        return $this->mus_is_mentor;
+    }
 }

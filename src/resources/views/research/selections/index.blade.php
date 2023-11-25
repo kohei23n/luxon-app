@@ -23,7 +23,10 @@
         <a href="{{ route('research.companiesIndex', $industry->mco_industry_id) }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
-    <div class="list-box">
-        <x-menubar />
-    </div>
+    @if (!$user->isMentor)
+        {{-- メニューバー --}}
+        <div class="list-box">
+            <x-menubar />
+        </div>
+    @endif
 </x-app-layout>

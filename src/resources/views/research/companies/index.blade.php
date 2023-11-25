@@ -14,11 +14,14 @@
             <a href="{{ route('research.selectionsIndex', $company->mco_company_id) }}"
                 class="industry-link">{{ $company->mco_company_name }}</a>
         @endforeach
-        <a href="{{ route('research.index') }}" class="back-button">戻る</a>
+        <a href="{{ route('research.industriesIndex') }}" class="back-button">戻る</a>
     </div>
 
     {{-- メニューバー --}}
-    <div class="list-box">
-        <x-menubar />
-    </div>
+    @if (!$user->isMentor)
+        {{-- メニューバー --}}
+        <div class="list-box">
+            <x-menubar />
+        </div>
+    @endif
 </x-app-layout>

@@ -29,7 +29,8 @@
             <!-- 選考詳細 -->
             <div class="selection-detail-container">
                 <label for="msd_selection_detail">選考詳細</label>
-                <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10" class="selection-detail-input" placeholder="選考情報を記入してください"></textarea>
+                <textarea name="msd_selection_detail" id="msd_selection_detail" cols="30" rows="10"
+                    class="selection-detail-input" placeholder="選考情報を記入してください"></textarea>
                 <x-input-error :messages="$errors->get('msd_selection_detail')" />
             </div>
         </div>
@@ -44,7 +45,10 @@
     </form>
 
     {{-- メニューバー --}}
-    <div class="list-box">
-        <x-menubar />
-    </div>
+    @if (!$user->isMentor)
+        {{-- メニューバー --}}
+        <div class="list-box">
+            <x-menubar />
+        </div>
+    @endif
 </x-app-layout>

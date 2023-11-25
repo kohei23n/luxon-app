@@ -19,7 +19,9 @@ class CreateController extends Controller
 
     $selectionPhases = SelectionPhase::all();
 
-    return view('research.selections.add', compact('selectionDetails', 'id', 'selectionPhases'));
+    $user = auth()->user();
+
+    return view('research.selections.add', compact('selectionDetails', 'id', 'selectionPhases', 'user'));
   }
 
   public function create(Request $request, $id): RedirectResponse

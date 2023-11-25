@@ -13,8 +13,7 @@ class IndexController extends Controller
         $industries = Industry::all();
 
         $user = auth()->user();
-        $isMentor = $user->mus_is_mentor;
         
-        return view('research.industries.index', compact('industries', 'isMentor'));
+        return view('research.industries.index', compact('industries', 'user'));
     }
 }

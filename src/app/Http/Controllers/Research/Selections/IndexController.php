@@ -20,6 +20,8 @@ class IndexController extends Controller
         // 業界情報の取得
         $industry = Company::findOrFail($id);
 
-        return view('research.selections.index', compact('id', 'selections', 'industry'));
+        $user = auth()->user();
+
+        return view('research.selections.index', compact('id', 'selections', 'industry', 'user'));
     }
 }
