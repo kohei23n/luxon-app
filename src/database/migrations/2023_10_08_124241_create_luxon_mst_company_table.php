@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('mco_company_name')->comment('会社名');
             $table->string('mco_company_logo_s3_url')->comment('会社ロゴS3 URL');
             $table->text('mco_company_overview')->comment('会社概要');
-            $table->char('mco_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('mco_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('mco_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('mco_registration_datetime')->comment('登録日時');
             $table->dateTime('mco_update_datetime')->comment('更新日時');

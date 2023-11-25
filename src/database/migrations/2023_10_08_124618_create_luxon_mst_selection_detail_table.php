@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('msd_selection_phase_id')->comment('選考段階名');
             $table->string('msd_selection_detail', 10000)->comment('選考詳細');
             $table->string('msd_selection_materials_url')->nullable()->comment('選考資料URL');
-            $table->char('msd_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('msd_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('msd_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('msd_registration_datetime')->comment('登録日時');
             $table->dateTime('msd_update_datetime')->comment('更新日時');

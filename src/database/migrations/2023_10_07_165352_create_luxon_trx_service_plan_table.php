@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('tsp_es_count')->comment('ES添削回数');
             $table->unsignedInteger('tsp_case_study_count')->comment('ケース添削回数');
             $table->string('tsp_service_plan_month', 50)->comment('サービス対象月');
-            $table->char('tsp_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('tsp_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tsp_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tsp_registration_datetime')->comment('登録日時');
             $table->dateTime('tsp_update_datetime')->comment('更新日時');

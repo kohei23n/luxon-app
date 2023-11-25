@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tes_company_name', 50)->comment('会社名');
             $table->string('tes_es_url', 100)->comment('ESのドキュメントURL');
             $table->boolean('tes_is_returned')->default(false)->comment('返却フラグ');
-            $table->char('tes_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('tes_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tes_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tes_registration_datetime')->comment('登録日時');
             $table->dateTime('tes_update_datetime')->comment('更新日時');

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tss_selection_status', 50)->comment('選考ステータス');
             $table->integer('tss_preference_ranking')->comment('志望順位');
             $table->dateTime('tss_selection_date')->comment('選考日時');
-            $table->char('tss_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('tss_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tss_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tss_registration_datetime')->comment('登録日時');
             $table->dateTime('tss_update_datetime')->comment('更新日時');

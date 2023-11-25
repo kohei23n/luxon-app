@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedInteger('tud_interview_count_remaining')->comment('面談可能回数');
             $table->unsignedInteger('tud_case_study_count_remaining')->comment('ケーススタディー可能回数');
             $table->unsignedInteger('tud_es_count_remaining')->comment('ES提出可能回数');
-            $table->char('tud_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('tud_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tud_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tud_registration_datetime')->comment('登録日時');
             $table->dateTime('tud_update_datetime')->comment('更新日時');

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('mme_line_url', 150)->nullable()->comment('LINE URL');
             $table->string('mme_timerex_url', 150)->nullable()->comment('TimeRex URL 60分');
             $table->string('mme_timerex_url_short', 150)->nullable()->comment('TimeRex URL 20分');
-            $table->char('mme_access_right', 1)->default('0')->comment('閲覧権限');
-            $table->char('mme_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('mme_access_right', 1)->default(false)->comment('閲覧権限');
+            $table->boolean('mme_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('mme_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('mme_registration_datetime')->comment('登録日時');
             $table->dateTime('mme_update_datetime')->comment('更新日時');

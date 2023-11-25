@@ -18,6 +18,7 @@ class EventParticipant extends Model
     protected $fillable = [
         'tep_event_id',
         'tep_user_id',
+        'tep_is_temp',
         'tep_delete_flag',
         'tep_deletion_datetime',
         'tep_registration_datetime',

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->dateTime('tin_datetime')->comment('面接日時');
             $table->unsignedInteger('tin_time')->comment('面接時間');
             $table->boolean('tin_is_completed')->default(false)->comment('完了フラグ');
-            $table->char('tin_delete_flag', 1)->default('0')->comment('削除フラグ');
+            $table->boolean('tin_delete_flag', 1)->default(false)->comment('削除フラグ');
             $table->dateTime('tin_deletion_datetime')->nullable()->comment('削除日時');
             $table->dateTime('tin_registration_datetime')->comment('登録日時');
             $table->dateTime('tin_update_datetime')->comment('更新日時');
