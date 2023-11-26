@@ -4,11 +4,11 @@
 
 <x-app-layout>
     <div>
-        <form method="post" action="{{ route('reserve.interviewCreate') }}" class="selection-form">
+        <form method="post" action="{{ route('reserve.interviewCreate') }}">
             @csrf
             @method('post')
 
-            <p>面談枠チケット：{{ $count->tud_interview_count_remaining }}</p>
+            <p>面談チケットチケット：{{ $count->tud_interview_count_remaining }}</p>
 
             {{-- チケットが0より大きい場合は表示 --}}
             @if ($count->tud_interview_count_remaining > 0)

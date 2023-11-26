@@ -21,8 +21,8 @@
 }
 
 .mentor-links img {
-    width: 96px;
-    height: 96px;
+    width: 64px;
+    height: 64px;
 }
 
 /* 面談情報 */
@@ -39,12 +39,6 @@
     background-color: #e6e6e6;
     color: #555;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-.btn-list {
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    margin-top: 10px;
 }
 
 .btn-box {

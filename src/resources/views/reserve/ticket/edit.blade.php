@@ -13,45 +13,45 @@
 
             <p>現在のチケット数</p>
             <ul class="ticket-manerger">
-                <li>イベント枠：{{ $count->tud_event_attendance_remaining }}</li>
-                <li>面談枠：{{ $count->tud_interview_count_remaining }}</li>
-                <li>ES添削枠：{{ $count->tud_es_count_remaining }}</li>
-                <li>ケース添削枠：{{ $count->tud_case_study_count_remaining }}</li>
+                <li>イベントチケット：{{ $count->tud_event_attendance_remaining }}</li>
+                <li>面談チケット：{{ $count->tud_interview_count_remaining }}</li>
+                <li>ES添削チケット：{{ $count->tud_es_count_remaining }}</li>
+                <li>ケース添削チケット：{{ $count->tud_case_study_count_remaining }}</li>
             </ul>
 
             <form method="post" action="{{ route('reserve.ticketUpdate') }}">
                 @csrf
                 @method('post')
 
-                <!-- イベント参加枠 -->
+                <!-- イベント参加チケット -->
                 <div class="add-ticket">
-                    <label class="ticket-name" for="tud_event_attendance_remaining">イベント枠追加</label>
+                    <label class="ticket-name" for="tud_event_attendance_remaining">イベントチケット追加</label>
                     <input type="number" class="input-box" id="tud_event_attendance_remaining"
                         name="tud_event_attendance_remaining">
                     <label for="tud_es_count_remaining"> 枚</label>
                     <x-input-error :messages="$errors->get('tud_event_attendance_remaining')" />
                 </div>
 
-                <!-- 面談枠 -->
+                <!-- 面談チケット -->
                 <div class="add-ticket">
-                    <label class="ticket-name" for="tud_interview_count_remaining">面談枠追加</label>
+                    <label class="ticket-name" for="tud_interview_count_remaining">面談チケット追加</label>
                     <input type="number" class="input-box" id="tud_interview_count_remaining"
                         name="tud_interview_count_remaining">
                     <label for="tud_es_count_remaining"> 枚</label>
                     <x-input-error :messages="$errors->get('tud_interview_count_remaining')" />
                 </div>
 
-                <!-- ES添削枠 -->
+                <!-- ES添削チケット -->
                 <div class="add-ticket">
-                    <label class="ticket-name" for="tud_es_count_remaining">ES添削枠追加</label>
+                    <label class="ticket-name" for="tud_es_count_remaining">ES添削チケット追加</label>
                     <input type="number" class="input-box" id="tud_es_count_remaining" name="tud_es_count_remaining">
                     <label for="tud_es_count_remaining"> 枚</label>
                     <x-input-error :messages="$errors->get('tud_es_count_remaining')" />
                 </div>
 
-                <!-- ケース添削枠 -->
+                <!-- ケース添削チケット -->
                 <div class="add-ticket">
-                    <label class="ticket-name" for="tud_case_study_count_remaining">ケース添削枠追加</label>
+                    <label class="ticket-name" for="tud_case_study_count_remaining">ケース添削チケット追加</label>
                     <input type="number" class="input-box" id="tud_case_study_count_remaining"
                         name="tud_case_study_count_remaining">
                     <label for="tud_es_count_remaining"> 枚</label>

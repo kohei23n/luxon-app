@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <form method="post" action="{{ route('research.mySelectionsCreate') }}" class="selection-form">
+    <form method="post" action="{{ route('research.mySelectionsCreate') }}">
         @csrf
         @method('post')
 

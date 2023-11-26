@@ -1,5 +1,5 @@
-.mypage-plan-container {
-    padding-bottom: 90px;
+.mypage-container {
+    padding-bottom: 70px;
 }
 
 .membership-container {
@@ -43,8 +43,8 @@
 }
 
 .mentor-links img {
-    width: 96px;
-    height: 96px;
+    width: 64px;
+    height: 64px;
 }
 
 .ticket-information {

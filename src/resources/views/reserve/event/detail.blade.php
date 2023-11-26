@@ -29,7 +29,7 @@
             @if ($isAlreadyBooked)
                 <p>ステータス：このイベントはすでに予約されています。</p>
             @elseif ($count->tud_event_attendance_remaining <= 0)
-                <p>イベント枠がありません</p>
+                <p>イベントチケットがありません</p>
             @elseif ($isTemporaryReservationEnabled)
                 <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">仮予約</a>
             @else

@@ -10,12 +10,10 @@
     </x-slot>
 
     <div>
-        <div>
-            @foreach ($industries as $industry)
-                <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}"
-                    class="industry-link">{{ $industry->min_industry_name }}</a>
-            @endforeach
-        </div>
+        @foreach ($industries as $industry)
+            <a href="{{ route('research.companiesIndex', $industry->min_industry_id) }}"
+                class="industry-link">{{ $industry->min_industry_name }}</a>
+        @endforeach
         @if (!$user->isMentor)
             <a href="{{ route('research.index') }}" class="back-button">戻る</a>
         @else

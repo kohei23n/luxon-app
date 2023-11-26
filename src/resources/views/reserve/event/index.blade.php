@@ -11,16 +11,16 @@
 
     <div class="calender-wrapper">
         <div class="calendar-container">
-            <p>チケット：{{ $count->tud_event_attendance_remaining }}</p>
-            <a href="{{ route('reserve.ticketEdit') }}" class="event-link">チケットを増やす ></a>
+            <p>イベントチケット：{{ $count->tud_event_attendance_remaining }}</p>
+            <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
 
             <div class="calendar-navigation">
                 <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"
                     class="event-link">
-                    << </a>
+                    前月</a>
                         <span>{{ $month }}月</span>
                         <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}"
-                            class="event-link">>></a>
+                            class="event-link">次月</a>
             </div>
 
             <table class="calendar-table">
@@ -65,8 +65,7 @@
                     @endwhile
                 </tbody>
             </table>
-            <a href="{{ route('reserve.index') }}" class="event-link">
-                < 戻る</a>
+            <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
         </div>
     </div>
     {{-- メニューバー --}}

@@ -14,6 +14,7 @@ class CreateController extends Controller
 {
   public function add($id)
   {
+    $company = Company::findOrFail($id);
     //ユーザー情報表示
     $selectionDetails = SelectionDetail::where('msd_company_id', $id)->get();
 
@@ -21,7 +22,7 @@ class CreateController extends Controller
 
     $user = auth()->user();
 
-    return view('research.selections.add', compact('selectionDetails', 'id', 'selectionPhases', 'user'));
+    return view('research.selections.add', compact('company', 'selectionDetails', 'id', 'selectionPhases', 'user'));
   }
 
   public function create(Request $request, $id): RedirectResponse

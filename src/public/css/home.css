@@ -1,14 +1,59 @@
+html {
+    width: 100%;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+li {
+    color: #333;
+}
+
 .welcome-message {
-    margin-top: 10px;
+    margin-top: 5%;
     text-align: center;
 }
 
-.bg-color h1 {
-    color: white;
-    font-size: 40px;
-    margin-left: 15px;
-    margin-top: 6px;
+/* リマインダーセクション */
+
+.section-box {
+    background-color: #f7f7f7;
+    margin: 1rem 5% 0 5%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
 }
+
+.section-header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #ffffff;
+    font-size: 16px;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 10px;
+}
+
+.event-box {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px dashed #e0e0e0;
+    background-color: #fafafa;
+}
+
+.event-box:last-child {
+    border-bottom: none;
+}
+
+.event-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #777;
+}
+
+/* メニューバー */
 
 .list-box {
     position: fixed;
@@ -33,6 +78,8 @@
 .btn img {
     max-width: 100%;
 }
+
+/* 共通ボタン */
 
 .add-button {
     display: block;
@@ -61,62 +108,42 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Base styles for all sections */
-.section-box {
-    /* height: 200px; */
-    background-color: #f7f7f7;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 90%;
+/* 共通メニュー */
+
+.container {
+    margin-top: 3%;
 }
 
-.section-header {
+.counter {
+    text-align: center;
+}
+
+.menu-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+
+.menu-item {
+    width: 80%;
+    height: 140px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
-    font-size: 16px;
-    border-bottom: 2px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 共通フォーム */
+
+.form-container {
+    background-color: #ffffff;
+    margin: 5%;
     padding: 10px;
-}
-
-/* Event reminder section */
-.event-box {
-    padding: 0.5rem 1rem;
-    border-bottom: 1px dashed #e0e0e0;
-    background-color: #fafafa;
-}
-
-.event-box:last-child {
-    border-bottom: none;
-}
-
-.event-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-text {
-    color: #777;
-}
-html {
-    width: 100%;
-    height: 100vh;
-    padding-bottom: 85px;
-    min-height: 667px;
-    background-color: #f7f7f7;
-}
-main {
-    padding-bottom: 85px;
-}
-.header-container {
-    width: 90%;
-    height: 15%;
-}
-li {
-    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }

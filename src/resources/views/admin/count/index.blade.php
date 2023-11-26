@@ -5,10 +5,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2>
-            {{ __('面談枠情報') }}
+            {{ __('面談チケット情報') }}
         </h2>
     </x-slot>
-    
+
     <a href="{{ route('admin.index') }}" class="back-button">戻る</a>
 
     @foreach ($users as $user)

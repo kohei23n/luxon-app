@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div class="company-wrapper">
+    <div>
         @foreach ($companies as $company)
             <a href="{{ route('research.selectionsIndex', $company->mco_company_id) }}"
                 class="industry-link">{{ $company->mco_company_name }}</a>

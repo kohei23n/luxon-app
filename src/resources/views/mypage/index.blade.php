@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div class="mypage-plan-container">
+    <div class="mypage-container">
         <div class="membership-container">
             <h2>会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>
@@ -38,10 +38,10 @@
         <div class="ticket-information">
             <h2>参加回数</h2>
             <ul>
-                <li>面談枠：{{ $user->userDetail->tud_interview_count_remaining ?? 'なし' }}</li>
-                <li>イベント枠：{{ $user->userDetail->tud_event_attendance_remaining ?? 'なし' }}</li>
-                <li>ES添削枠：{{ $user->userDetail->tud_es_count_remaining ?? 'なし' }}</li>
-                <li>ケース添削枠：{{ $user->userDetail->tud_case_study_count_remaining ?? 'なし' }}</li>
+                <li>面談チケット：{{ $user->userDetail->tud_interview_count_remaining ?? 'なし' }}</li>
+                <li>イベントチケット：{{ $user->userDetail->tud_event_attendance_remaining ?? 'なし' }}</li>
+                <li>ES添削チケット：{{ $user->userDetail->tud_es_count_remaining ?? 'なし' }}</li>
+                <li>ケース添削チケット：{{ $user->userDetail->tud_case_study_count_remaining ?? 'なし' }}</li>
             </ul>
         </div>
 

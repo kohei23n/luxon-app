@@ -50,46 +50,29 @@
   color: #555;
 }
 
-.selection-form-container {
-  background-color: #ffffff;
-    margin: 10px 5% 5% 5%;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 120px;
-}
-.selection-phase-container {
+.selection-section-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
-.selection-phase-container label {
+.selection-section-container label {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .select-selection-phase {
   width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
   border-radius: 8px;
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
   color: #555;
 }
-.selection-detail-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.selection-detail-container label {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+
 .selection-detail-input {
   border-radius: 8px;
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
   width: 100%;
-  height: 50%;
+  height: 200px;
 }
 .btn-box {
   background-color: #15397A;
