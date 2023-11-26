@@ -19,9 +19,8 @@
     @yield('head')
 </head>
 
-<body class="font-sans text-gray-900 antialiased" style="backgroud-color:navy;">
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg"
-        style="margin-top: 0;">
+<body class="font-sans text-white bg-black">
+    <div class="w-full sm:max-w-md mt-6 px-6 py-4 overflow-hidden sm:rounded-lg">
         {{ $slot }}
     </div>
     </div>
