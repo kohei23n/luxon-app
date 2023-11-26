@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/mentor/es.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mentor/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="mentor-container">
         <p>提出者：{{ $entrySheet->user->mus_user_last_name }}{{ $entrySheet->user->mus_user_first_name }}</p>
         <p>会社名：{{ $entrySheet->tes_company_name }}</p>
         <p>URL：{{ $entrySheet->tes_es_url }}</p>
@@ -21,6 +21,6 @@
             <button type="submit" class="add-button">返却</button>
         </form>
 
-        <a href="{{ route('mentor.esIndex') }}">戻る</a>
+        <a href="{{ route('mentor.esIndex') }}" class="back-button">戻る</a>
     </div>
 </x-app-layout>

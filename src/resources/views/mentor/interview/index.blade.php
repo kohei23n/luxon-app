@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/mentor/interview.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mentor/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,14 +9,12 @@
         </h2>
     </x-slot>
 
-    <div>
-        @foreach ($interviews as $interview)
-            <div>
-                <p>メンティー：{{ $interview->user->mus_user_last_name }}</p>
-                <p>面談日時：{{ $interview->tin_datetime }}</p>
-                <p>面談時間：{{ $interview->tin_time }}分</p>
-            </div>
-        @endforeach
-        <a href="{{ route('mentor.index') }}">戻る</a>
-    </div>
+    @foreach ($interviews as $interview)
+        <div class="mentor-container">
+            <p>メンティー：{{ $interview->user->mus_user_last_name }}</p>
+            <p>面談日時：{{ $interview->tin_datetime }}</p>
+            <p>面談時間：{{ $interview->tin_time }}分</p>
+        </div>
+    @endforeach
+    <a href="{{ route('mentor.index') }}" class="back-button">戻る</a>
 </x-app-layout>

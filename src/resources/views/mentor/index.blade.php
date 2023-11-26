@@ -9,16 +9,10 @@
         </h2>
     </x-slot>
 
-    <div>
-        <div>
-            <a href="{{ route('mentor.interviewIndex') }}">今月の面談情報</a>
-            <a href="{{ route('mentor.caseIndex') }}">ケース添削依頼</a>
-            <p>依頼数：{{ $cases }}</p>
-            <br>
-            <a href="{{ route('mentor.esIndex') }}">ES添削依頼</a>
-            <p>依頼数：{{ $entrySheets }}</p>
-            <br>
-            <a href="{{ route('research.industriesIndex') }}">選考情報</a><br>
-        </div>
+    <div class="mentor-menu">
+        <a href="{{ route('mentor.interviewIndex') }}" class="mentor-link">今月の面談情報</a>
+        <a href="{{ route('mentor.caseIndex') }}" class="mentor-link">ケース添削依頼<br>（依頼数：{{ $cases }}）</a>
+        <a href="{{ route('mentor.esIndex') }}" class="mentor-link">ES添削依頼<br>（依頼数：{{ $entrySheets }}）</a>
+        <a href="{{ route('research.industriesIndex') }}" class="mentor-link" class="mentor-link">選考情報</a>
     </div>
 </x-app-layout>
