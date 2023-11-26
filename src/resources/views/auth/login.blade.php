@@ -18,7 +18,7 @@
         </div>
 
         <!-- Password -->
-        <div class="login-input-box" style="display: flex; flex-direction: column;">
+        <div class="login-input-box">
             <label for="mus_user_password">Password</label>
             <input type="password" id="mus_user_password" name="mus_user_password" required
                 autocomplete="current-password">
