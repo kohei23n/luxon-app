@@ -16,7 +16,7 @@
             </div>
         @endif
 
-        <p>所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
+        <p class="counter">所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
 
         <div class="event-detail">
             <h1>イベント名：{{ $event->mev_event_name }}</h1>

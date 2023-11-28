@@ -9,7 +9,7 @@
     </x-slot>
 
     <div class="container">
-        <ul class="flex gap-4 justify-center">
+        <ul class="flex gap-4 justify-center text-xs">
             <li>面談チケット：{{ $count->tud_interview_count_remaining }}</li>
             <li>イベントチケット：{{ $count->tud_event_attendance_remaining }}</li>
             <li>ES添削チケット：{{ $count->tud_es_count_remaining }}</li>
