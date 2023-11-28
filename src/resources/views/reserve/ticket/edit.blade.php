@@ -10,7 +10,7 @@
     </x-slot>
     <div class="ticket-container">
         <p>現在のチケット数</p>
-        <ul class="ticket-manerger">
+        <ul class="ticket-manager text-xs">
             <li>イベントチケット：{{ $count->tud_event_attendance_remaining }}</li>
             <li>面談チケット：{{ $count->tud_interview_count_remaining }}</li>
             <li>ES添削チケット：{{ $count->tud_es_count_remaining }}</li>

@@ -9,7 +9,7 @@
     font-size: large;
     font-weight: bold;
 }
-.ticket-manerger {
+.ticket-manager {
     display: grid;
     grid-template-columns: repeat(2, 50%); /* 2列に設定 */
     grid-gap: 5px; /* 適宜余白を設定 */
@@ -19,7 +19,7 @@
     margin-bottom: 20px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.ticket-manerger li {
+.ticket-manager li {
     width: 100%;
 }
 .add-ticket {

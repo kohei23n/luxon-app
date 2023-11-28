@@ -6,6 +6,7 @@
 
     <div class="container">
         <p class="counter">ES添削チケット：{{ $count->tud_es_count_remaining }}</p>
+        <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
 
         <div class="form-container">
             <form method="post" action="{{ route('reserve.esCreate') }}">

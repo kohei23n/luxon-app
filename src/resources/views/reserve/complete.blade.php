@@ -5,7 +5,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2>
-            {{ __('予約完了画面') }}
+            {{ __('完了画面') }}
         </h2>
     </x-slot>
     <div class="complete-container">

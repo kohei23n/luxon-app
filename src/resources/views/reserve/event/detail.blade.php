@@ -25,10 +25,9 @@
 
             <p>開催日：{{ $event->mev_event_datetime }}</p>
             <p>詳細：{{ $event->mev_event_description }}</p>
-            <a href={{ $event->mev_event_participate_url}}>URL：{{ $event->mev_event_participate_url }}</a>
-        
 
             @if ($isAlreadyBooked)
+                <a href={{ $event->mev_event_participate_url }}>URL：{{ $event->mev_event_participate_url }}</a>
                 <p>ステータス：このイベントはすでに予約されています。</p>
             @elseif ($count->tud_event_attendance_remaining <= 0)
                 <p>イベントチケットがありません</p>

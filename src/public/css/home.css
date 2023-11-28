@@ -149,3 +149,9 @@ li {
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* その他共通クラス */
+
+.ticket-link {
+    color: blue;
+}
