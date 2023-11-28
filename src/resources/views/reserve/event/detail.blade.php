@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="container">
         @if (session('status') || session('error'))
             <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
                 {{ session('status') ?: session('error') }}

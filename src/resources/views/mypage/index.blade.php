@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div class="mypage-container">
+    <div class="container">
         <div class="membership-container">
             <h2>会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>
