@@ -25,7 +25,7 @@
 
             <p>開催日：{{ $event->mev_event_datetime }}</p>
             <p>詳細：{{ $event->mev_event_description }}</p>
-            <p>URL：{{ $event->mev_event_participate_url }}</p>
+            <a href={{ $event->mev_event_participate_url}}>URL：{{ $event->mev_event_participate_url }}</a>
         
 
             @if ($isAlreadyBooked)
