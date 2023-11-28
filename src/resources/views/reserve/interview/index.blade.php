@@ -27,7 +27,7 @@
 
         <div class="interview-information">
             <h2>今月の予約面談一覧</h2>
-            <p>残りチケット：{{ $count->tud_interview_count_remaining }}</p>
+            <p class="counter">残りチケット：{{ $count->tud_interview_count_remaining }}</p>
             <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
             @foreach ($interviews as $interview)
                 <div class="interview-reserved">
