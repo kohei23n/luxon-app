@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <div class="calender-wrapper">
+    <div class="container">
         <div class="calendar-container">
             <p>イベントチケット：{{ $count->tud_event_attendance_remaining }}</p>
             <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
