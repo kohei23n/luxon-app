@@ -154,4 +154,6 @@ li {
 
 .ticket-link {
     color: blue;
+    display: flex;
+    justify-content: center;
 }
