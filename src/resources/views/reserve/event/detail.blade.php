@@ -38,9 +38,7 @@
                 <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">予約</a>
             @endif
         </div>
-        <div class="btn-box">
-            <a href="{{ route('reserve.eventIndex') }}">戻る</a>
-        </div>
+        <a href="{{ route('reserve.eventIndex') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">
