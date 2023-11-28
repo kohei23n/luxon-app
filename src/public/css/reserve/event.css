@@ -74,6 +74,11 @@
 .event-detail h2 {
     font-size: large;
 }
+
+.event-detail h1, .event-detail h2, .event-detail p {
+    margin-bottom: 10px;
+}
+
 .btn-box {
     background-color: gray;
     width: 90px;
