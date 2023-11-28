@@ -38,6 +38,7 @@ li {
     padding: 0.5rem 1rem;
     border-bottom: 1px dashed #e0e0e0;
     background-color: #fafafa;
+    overflow: scroll;
 }
 
 .event-box:last-child {
