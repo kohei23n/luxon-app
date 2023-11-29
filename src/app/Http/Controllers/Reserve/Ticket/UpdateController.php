@@ -20,12 +20,12 @@ class UpdateController extends Controller
   public function update(Request $request): RedirectResponse
   {
     // リクエストデータのバリデーション
-    // $request->validate([
-    //   'tsp_event_attendance' => 'required|integer',
-    //   'tsp_interview_count' => 'required|integer',
-    //   'tsp_es_count' => 'required|integer',
-    //   'tsp_case_study_count' => 'required|integer',
-    // ]);
+    $request->validate([
+      'tsp_event_attendance' => 'required|integer',
+      'tsp_interview_count' => 'required|integer',
+      'tsp_es_count' => 'required|integer',
+      'tsp_case_study_count' => 'required|integer',
+    ]);
 
     $count = auth()->user()->userDetail;
 

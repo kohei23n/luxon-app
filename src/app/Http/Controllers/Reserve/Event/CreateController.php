@@ -44,7 +44,15 @@ class CreateController extends Controller
 
     // 仮予約ではない場合にチケット残数を減らす
     if (!$isTemporaryReservation) {
-      $user->userDetail->tud_event_attendance_remaining -= 1;
+      // イベントチケットが1以上の場合
+      if ($user->userDetail->tud_event_attendance_remaining > 0) {
+        $user->userDetail->tud_event_attendance_remaining -= 1;
+      }
+      // イベントチケットが0の場合
+      elseif ($user->userDetail->tud_event_attendance_remaining == 0) {
+        $user->userDetail->tud_interview_count_remaining -= 1;
+      }
+
       $user->userDetail->save();
     }
 
