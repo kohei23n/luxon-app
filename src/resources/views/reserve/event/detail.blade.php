@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <p class="counter">所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
+        <p class="counter">イベントチケット数：{{ $count->tud_event_attendance_remaining }}</p>
+        <p class="counter">面談チケット数：{{ $count->tud_interview_count_remaining }}</p>
 
         <div class="event-detail">
             <h1>イベント名：{{ $event->mev_event_name }}</h1>
@@ -27,16 +28,19 @@
             <p>詳細：{{ $event->mev_event_description }}</p>
 
             @if ($isAlreadyBooked)
-                <a href={{ $event->mev_event_participate_url }}>URL：{{ $event->mev_event_participate_url }}</a>
+                <a href="{{ $event->mev_event_participate_url }}">URL：{{ $event->mev_event_participate_url }}</a>
                 <p>ステータス：このイベントはすでに予約されています。</p>
-            @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0)
-                <p>イベントチケットがありません。面談チケットを消費して参加できます。</p>
-            @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining <= 0)
-                <p>チケットがありません。</p>
-            @elseif ($isTemporaryReservationEnabled)
-                <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">仮予約</a>
             @else
-                <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">予約</a>
+                @if ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining <= 0)
+                    <p>チケットがありません。</p>
+                @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0)
+                    <p>イベントチケットがありません。面談チケットを消費して参加できます。</p>
+                    <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">予約</a>
+                @elseif ($isTemporaryReservationEnabled)
+                    <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">仮予約</a>
+                @else
+                    <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="confirm-btn">予約</a>
+                @endif
             @endif
         </div>
         <a href="{{ route('reserve.eventIndex') }}" class="back-button">戻る</a>

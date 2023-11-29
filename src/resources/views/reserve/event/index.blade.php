@@ -12,6 +12,7 @@
     <div class="container">
         <div class="calendar-container">
             <p class="counter">イベントチケット：{{ $count->tud_event_attendance_remaining }}</p>
+            <p class="counter">面談チケット（イベントにも使えます）：{{ $count->tud_interview_count_remaining }}</p>
             <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
 
             <div class="calendar-navigation">

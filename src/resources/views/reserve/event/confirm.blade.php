@@ -10,7 +10,8 @@
     </x-slot>
 
     <div>
-        <p class="counter">所持チケット数：{{ $count->tud_event_attendance_remaining }}</p>
+        <p class="counter">イベントチケット数：{{ $count->tud_event_attendance_remaining }}</p>
+        <p class="counter">面談チケット数：{{ $count->tud_interview_count_remaining }}</p>
 
         <div class="event-detail">
             <h1>イベント名：{{ $event->mev_event_name }}</h1>
