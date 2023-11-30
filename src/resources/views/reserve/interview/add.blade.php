@@ -3,12 +3,12 @@
 @endsection
 
 <x-app-layout>
-    <div>
-        <form method="post" action="{{ route('reserve.interviewCreate') }}">
+    <div class="container">
+        <p class="counter">面談チケット：{{ $count->tud_interview_count_remaining }}</p>
+
+        <form method="post" action="{{ route('reserve.interviewCreate') }}" class="form-container">
             @csrf
             @method('post')
-
-            <p>面談チケット：{{ $count->tud_interview_count_remaining }}</p>
 
             {{-- チケットが0より大きい場合は表示 --}}
             @if ($count->tud_interview_count_remaining > 0)
@@ -46,9 +46,7 @@
             @else
                 <p>チケットがありません。</p>
             @endif
-            <div class="bc-btn">
-                <a href="{{ route('reserve.interviewIndex') }}">戻る</a>
-            </div>
+            <a href="{{ route('reserve.interviewIndex') }}" class="back-button">戻る</a>
         </form>
 
 
