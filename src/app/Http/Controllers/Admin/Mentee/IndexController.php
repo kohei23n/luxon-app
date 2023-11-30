@@ -12,7 +12,14 @@ class IndexController extends Controller
         //選考情報表示
         $users = User::with(['userDetail', 'dedicatedMentor'])->where('mus_is_admin', 0)->where('mus_is_mentor', 0)->get();
 
-        dd($users->dedicatedMentor);
+        // 専属メンターの名前を取得
+        $users->each(function ($user) {
+            $mentor = User::with('mentorProfile')
+                ->where('mus_user_id', $user->mus_dedicated_mentor_id)
+                ->first();
+
+            $user->dedicatedMentorName = $mentor ? $mentor->mus_user_last_name : null;
+        });
 
         return view('admin.mentee.index', compact('users'));
     }
