@@ -3,6 +3,12 @@
 @endsection
 
 <x-app-layout>
+    <x-slot name="header">
+        <h2>
+            {{ __('面談予約') }}
+        </h2>
+    </x-slot>
+    
     <div class="container">
         <p class="counter">面談チケット：{{ $count->tud_interview_count_remaining }}</p>
 
