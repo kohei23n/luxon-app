@@ -43,9 +43,7 @@
                 @else
                     <p>チケットがありません。</p>
                 @endif
-                <div class="back-button">
-                    <a href="{{ route('prep.index') }}">戻る</a>
-                </div>
+                <a href="{{ route('prep.index') }}" class="back-button">戻る</a>
             </form>
         </div>
     </div>
