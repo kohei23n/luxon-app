@@ -26,11 +26,11 @@
             </p>
             <p>リンク：</p>
             <div class="mentor-links">
-                <a href="{{ $user->dedicatedMentor->mentorProfile->mme_line_url }}">
+                <a href="{{ $user->dedicatedMentor->mentorProfile->mme_line_url }}" target="_blank">
                     <img src="{{ asset('images/line.png') }}" alt="Image Description">
                 </a>
                 <a href="{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url }}">
-                    <img src="{{ asset('images/timerex.png') }}" alt="Image Description">
+                    <img src="{{ asset('images/timerex.png') }}" alt="Image Description" target="_blank">
                 </a>
             </div>
         </div>
