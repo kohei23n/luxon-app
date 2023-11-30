@@ -45,8 +45,9 @@
             @endforeach
             <a href="{{ route('reserve.interviewAdd') }}" class="add-button">新しい面談日時を登録する</a>
         </div>
+        <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
+
     </div>
-    <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
     {{-- メニューバー --}}
     <div class="list-box">
         <x-menubar />

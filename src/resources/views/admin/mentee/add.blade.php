@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
 
-    <!-- イベント追加フォーム -->
+    <!-- メンティー追加フォーム -->
     <form method="post" action="{{ route('admin.menteeCreate') }}">
         @csrf
         @method('post')

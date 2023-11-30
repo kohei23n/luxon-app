@@ -82,7 +82,6 @@ class CreateController extends Controller
         $errorMessage .= ' 不明なエラーが発生しました。';
       }
 
-
       return Redirect::route('admin.menteeIndex')->with('error', $errorMessage);
     }
   }
