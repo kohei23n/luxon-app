@@ -9,7 +9,7 @@
 
     <div class="container">
         <p class="counter">チケット数：{{ $count->tud_case_study_count_remaining }}</p>
-        <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a>
+        {{-- <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a> --}}
 
         <div class="form-container">
             <form method="post" action="{{ route('prep.caseCreate') }}">
