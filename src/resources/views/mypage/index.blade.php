@@ -10,6 +10,13 @@
     </x-slot>
 
     <div class="container">
+
+        @if (session('status') || session('error'))
+            <div class="alert-message">
+                {{ session('status') ?: session('error') }}
+            </div>
+        @endif
+        
         <div class="membership-container">
             <h2>会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>

@@ -152,6 +152,11 @@ li {
 
 /* その他共通クラス */
 
+.font-bold {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .alert-message {
     color: blue;
     text-align: center;
