@@ -12,9 +12,7 @@
         <div class="event-detail">
             <h1>完了しました！</h1>
         </div>
-        <div class="btn-box">
-            <a href="{{ route('reserve.index') }}">戻る</a>
-        </div>
+        <a href="{{ route('reserve.index') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

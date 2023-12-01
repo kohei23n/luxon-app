@@ -24,12 +24,10 @@
             <form action="{{ route('reserve.eventCreate', $event->mev_event_id) }}" method="post">
                 @csrf
                 <input type="hidden" name="mev_event_id" value="{{ $event->mev_event_id }}">
-                <button type="submit" class="confirm-btn">予約を確定する</button>
+                <button type="submit" class="add-button">予約を確定する</button>
             </form>
         </div>
-        <div class="btn-box">
-            <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}">戻る</a>
-        </div>
+        <a href="{{ route('reserve.eventShow', $event->mev_event_id) }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

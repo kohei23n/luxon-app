@@ -8,11 +8,6 @@
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
-.mentor-information h2,
-.interview-information h2 {
-    font-weight: bold;
-    font-size: large;
-}
 
 .mentor-links {
     display: flex;
@@ -31,35 +26,6 @@
     padding: 10px;
     border-top: 1px dashed #e0e0e0;
     border-bottom: 1px dashed #e0e0e0;
-}
-
-/* 共通 */
-
-.mentor-back-button:hover {
-    background-color: #e6e6e6;
-    color: #555;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.btn-box {
-    background-color: #15397a;
-    width: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 5px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-
-/* 面談予約 */
-
-.bc-btn a {
-    background-color: gray;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 8px;
 }
 
 /* 面談登録 */

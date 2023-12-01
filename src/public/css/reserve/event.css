@@ -73,31 +73,3 @@
 .event-detail h1, .event-detail h2, .event-detail p {
     margin-bottom: 10px;
 }
-
-.btn-box {
-    background-color: gray;
-    width: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 5px;
-    border-radius: 8px;
-    margin-top: 15px;
-    margin-left: 5%;
-    margin-bottom: 90px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-.confirm-btn {
-    background-color: #15397a;
-    width: fit-content;
-    min-width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 5px;
-    border-radius: 8px;
-    margin-top: 15px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}

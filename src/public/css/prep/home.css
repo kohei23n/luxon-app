@@ -50,26 +50,6 @@
     border-bottom: none;
 }
 
-.mentor-back-button {
-    display: block;
-    width: 80%;
-    margin: 1rem auto;
-    padding: 0.5rem 1rem;
-    background-color: #f7f7f7;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.mentor-back-button:hover {
-    background-color: #e6e6e6;
-    color: #555;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
 .reserve-header {
     background-color: #777777;
 }

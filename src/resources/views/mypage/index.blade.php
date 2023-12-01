@@ -18,7 +18,7 @@
         @endif
 
         <div class="membership-container">
-            <h2>会員証</h2>
+            <h2 class="font-bold">会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>
             <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
             <p>大学：{{ $user->userDetail->tud_current_university }}</p>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="mentor-information">
-            <h2>専属メンター情報</h2>
+            <h2 class="font-bold">専属メンター情報</h2>
             <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
             </p>
             <p>リンク：</p>

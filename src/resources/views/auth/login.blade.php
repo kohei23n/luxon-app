@@ -31,8 +31,6 @@
             </div>
         @endif
 
-        <div class="btn-box">
-            <button type="submit">ログイン</button>
-        </div>
+        <button type="submit" class="login-button">ログイン</button>
     </form>
 </x-guest-layout>

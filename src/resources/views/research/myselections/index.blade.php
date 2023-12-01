@@ -29,14 +29,8 @@
                 </tr>
             @endforeach
         </table>
-        <div class="btn-container">
-            <div class="add-btn">
-                <a href="{{ route('research.mySelectionsAdd') }}">追加</a>
-            </div>
-            <div class="bk-btn">
-                <a href="{{ route('research.index') }}">戻る</a>
-            </div>
-        </div>
+        <a href="{{ route('research.mySelectionsAdd') }}" class="add-button">追加</a>
+        <a href="{{ route('research.index') }}" class="back-button">戻る</a>
     </div>
     {{-- メニューバー --}}
     <div class="list-box">

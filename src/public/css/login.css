@@ -38,12 +38,9 @@ select {
     color: #000;
 }
 
-.btn-box {
+.login-button {
     background-color: #4597f7;
     margin: 16px 0 20px 0;
     border-radius: 8px;
-}
-
-.btn-box button {
     padding: 10px;
 }

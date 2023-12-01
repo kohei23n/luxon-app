@@ -18,20 +18,3 @@ select {
 html {
     background-color: #f7f7f7;
 }
-.btn-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.btn-box button {
-    background-color: #15397a;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 8px;
-}
-.bc-btn a {
-    background-color: gray;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 8px;
-}
