@@ -22,10 +22,10 @@ class UpdateController extends Controller
   {
     // リクエストデータのバリデーション
     $request->validate([
-      'tsp_event_attendance' => 'required|integer',
-      'tsp_interview_count' => 'required|integer',
-      'tsp_es_count' => 'required|integer',
-      'tsp_case_study_count' => 'required|integer',
+      'tud_event_attendance' => 'required|integer',
+      'tud_interview_count' => 'required|integer',
+      'tud_es_count' => 'required|integer',
+      'tud_case_study_count' => 'required|integer',
     ]);
 
     $count = User::findOrfail($id)->userDetail;
