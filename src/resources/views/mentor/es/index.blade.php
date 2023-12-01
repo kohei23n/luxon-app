@@ -9,6 +9,12 @@
         </h2>
     </x-slot>
 
+    @if (session('status') || session('error'))
+        <div class="alert-message">
+            {{ session('status') ?: session('error') }}
+        </div>
+    @endif
+
     <h3 class="mentor-title">返却前</h3>
     @forelse ($entrySheets as $entrySheet)
         <div class="mentor-container">

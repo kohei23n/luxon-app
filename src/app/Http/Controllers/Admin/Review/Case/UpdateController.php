@@ -35,9 +35,9 @@ class UpdateController extends Controller
     ]);
 
     if ($case) {
-      return Redirect::route('admin.caseCount', $id)->with('status', 'case-status-updated');
+      return Redirect::route('admin.caseCount', $id)->with('status', 'ケース添削が割り当てられました。');
     } else {
-      return Redirect::route('admin.caseCount', $id)->with('error', 'error-updating-case-status');
+      return Redirect::route('admin.caseCount', $id)->with('error', 'ケース添削の割り当てに失敗しました。');
     }
   }
 }

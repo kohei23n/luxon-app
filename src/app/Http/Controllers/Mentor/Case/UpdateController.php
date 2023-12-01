@@ -24,6 +24,6 @@ class UpdateController extends Controller
       'tca_is_returned' => CaseQuestion::IS_RETURNED,
     ]);
 
-    return Redirect::route('mentor.caseIndex')->with('status', 'case-status-updated');
+    return Redirect::route('mentor.caseIndex')->with('status', 'ケースのステータスが更新されました。');
   }
 }

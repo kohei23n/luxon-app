@@ -50,9 +50,9 @@ class UpdateController extends Controller
     ]);
 
     if ($event) {
-      return Redirect::route('admin.eventShow', $id)->with('status', 'ticket-status-updated');
+      return Redirect::route('admin.eventShow', $id)->with('status', 'イベント情報が更新されました。');
     } else {
-      return Redirect::route('admin.eventShow', $id)->with('error', 'error-updating-ticket-status');
+      return Redirect::route('admin.eventShow', $id)->with('error', 'イベント情報の更新に失敗しました。');
     }
   }
 }

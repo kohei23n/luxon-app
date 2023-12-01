@@ -24,6 +24,6 @@ class UpdateController extends Controller
       'tes_is_returned' => EsQuestion::IS_RETURNED,
     ]);
 
-    return Redirect::route('mentor.esIndex')->with('status', 'es-status-updated');
+    return Redirect::route('mentor.esIndex')->with('status', 'ESのステータスが更新されました。');
   }
 }

@@ -9,6 +9,12 @@
         </h2>
     </x-slot>
 
+    @if (session('status') || session('error'))
+        <div class="alert-message">
+            {{ session('status') ?: session('error') }}
+        </div>
+    @endif
+
     <div class="admin-menu">
         <a href="{{ route('admin.caseIndex', ['type' => 'unassigned']) }}" class="admin-link">未割り振り：{{ $unassigned }}</a>
         <a href="{{ route('admin.caseIndex', ['type' => 'assigned']) }}" class="admin-link">割り振り済み未返却：{{ $assigned }}</a>

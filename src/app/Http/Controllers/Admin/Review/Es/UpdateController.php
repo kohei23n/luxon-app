@@ -35,9 +35,9 @@ class UpdateController extends Controller
     ]);
 
     if ($sheet) {
-      return Redirect::route('admin.esCount', $id)->with('status', 'es-status-updated');
+      return Redirect::route('admin.esCount', $id)->with('status', 'ES添削が割り当てられました。');
     } else {
-      return Redirect::route('admin.esCount', $id)->with('error', 'error-updating-es-status');
+      return Redirect::route('admin.esCount', $id)->with('error', 'ES添削の割り当てに失敗しました。');
     }
   }
 }

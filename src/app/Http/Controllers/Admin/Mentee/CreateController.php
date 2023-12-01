@@ -68,12 +68,12 @@ class CreateController extends Controller
       DB::commit();
 
       if ($user && $userDetail) {
-        return Redirect::route('admin.menteeIndex')->with('status', 'メンティーの作成に成功しました。');
+        return Redirect::route('admin.menteeIndex')->with('status', 'メンティーが追加されました。');
       }
     } catch (\Exception $e) {
       DB::rollBack();
 
-      $errorMessage = 'メンティーの作成に失敗しました。';
+      $errorMessage = 'メンティーの追加に失敗しました。';
       if ($e instanceof \Illuminate\Database\QueryException) {
         // QueryException の場合の処理
         $errorMessage .= ' データベースエラーが発生しました。';

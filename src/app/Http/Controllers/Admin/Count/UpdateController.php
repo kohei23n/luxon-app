@@ -21,12 +21,12 @@ class UpdateController extends Controller
   public function update(Request $request, $id): RedirectResponse
   {
     // リクエストデータのバリデーション
-    // $request->validate([
-    //   'tsp_event_attendance' => 'required|integer',
-    //   'tsp_interview_count' => 'required|integer',
-    //   'tsp_es_count' => 'required|integer',
-    //   'tsp_case_study_count' => 'required|integer',
-    // ]);
+    $request->validate([
+      'tsp_event_attendance' => 'required|integer',
+      'tsp_interview_count' => 'required|integer',
+      'tsp_es_count' => 'required|integer',
+      'tsp_case_study_count' => 'required|integer',
+    ]);
 
     $count = User::findOrfail($id)->userDetail;
 
@@ -39,9 +39,9 @@ class UpdateController extends Controller
     ]);
 
     if ($count) {
-      return Redirect::route('admin.countEdit', $id)->with('status', 'ticket-status-updated');
+      return Redirect::route('admin.countEdit', $id)->with('status', 'ユーザーのチケット数が更新されました。');
     } else {
-      return Redirect::route('admin.countEdit', $id)->with('error', 'error-updating-ticket-status');
+      return Redirect::route('admin.countEdit', $id)->with('error', 'ユーザーのチケット数更新に失敗しました。');
     }
   }
 }
