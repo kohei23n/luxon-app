@@ -9,7 +9,7 @@
         </h2>
     </x-slot>
     <div class="container">
-        <p class="counter">ケース添削チケット：{{ $count->tud_case_study_count_remaining }}</p>
+        <p class="counter text-xs">ケース添削チケット：{{ $count->tud_case_study_count_remaining }}</p>
         <div class="menu-list">
             <div class="menu-item" onclick="window.location.href = '{{ route('prep.caseAdd') }}';"
                 style="cursor: pointer;">
