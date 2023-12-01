@@ -18,7 +18,7 @@
                     <h3>{{ $event->mev_event_name }}</h3>
                     <p class="card-text">{{ $event->mev_event_datetime }}</p>
                     <a href="{{ $event->mev_event_participate_url }}"
-                        class="card-text">{{ $event->mev_event_participate_url }}</a>
+                        class="card-text" target="_blank">{{ $event->mev_event_participate_url }}</a>
                 </div>
             @endforeach
         </div>
