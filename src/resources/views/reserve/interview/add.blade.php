@@ -8,7 +8,7 @@
             {{ __('面談予約') }}
         </h2>
     </x-slot>
-    
+
     <div class="container">
         <p class="counter">面談チケット：{{ $count->tud_interview_count_remaining }}</p>
 
@@ -54,7 +54,6 @@
             @endif
             <a href="{{ route('reserve.interviewIndex') }}" class="back-button">戻る</a>
         </form>
-
 
     </div>
     {{-- メニューバー --}}
