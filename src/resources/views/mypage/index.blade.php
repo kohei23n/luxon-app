@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <div class="membership-container">
+        <div class="mypage-container">
             <h2 class="font-bold">会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>
             <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
@@ -27,7 +27,7 @@
             <a href="{{ route('mypage.plan.profileEdit') }}" class="add-button">編集</a>
         </div>
 
-        <div class="mentor-information">
+        <div class="mypage-container">
             <h2 class="font-bold">専属メンター情報</h2>
             <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
             </p>
@@ -45,8 +45,8 @@
             </div>
         </div>
 
-        <div class="ticket-information">
-            <h2>参加回数</h2>
+        <div class="mypage-container">
+            <h2 class="font-bold">参加回数</h2>
             <ul>
                 <li>面談チケット：{{ $user->userDetail->tud_interview_count_remaining ?? 'なし' }}</li>
                 <li>イベントチケット：{{ $user->userDetail->tud_event_attendance_remaining ?? 'なし' }}</li>
@@ -55,9 +55,9 @@
             </ul>
         </div>
 
-        <div class="cumulative-revision-count">
-            <h2>累積添削回数</h2><br>
-            <h2>COMING SOON</h2>
+        <div class="mypage-container">
+            <h2 class="font-bold">累積添削回数</h2>
+            <p>COMING SOON</p>
         </div>
 
         <a href="{{ route('index') }}" class="back-button">戻る</a>

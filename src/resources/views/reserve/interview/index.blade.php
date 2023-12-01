@@ -17,7 +17,7 @@
             </div>
         @endif
 
-        <div class="mentor-information">
+        <div class="mentor-info-container">
             <h2 class="font-bold">専属メンター情報</h2>
             <p>氏名：{{ $user->dedicatedMentor->mus_user_last_name ?? 'なし' }}{{ $user->dedicatedMentor->mus_user_first_name ?? 'なし' }}
             </p>
@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="interview-information">
+        <div class="mentor-info-container">
             <h2 class="font-bold">今月の予約面談一覧</h2>
             {{-- <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a> --}}
             @foreach ($interviews as $interview)

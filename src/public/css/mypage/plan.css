@@ -1,12 +1,4 @@
-.membership-container {
-    background-color: #ffffff;
-    margin: 5%;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-.mentor-information {
+.mypage-container {
     background-color: #ffffff;
     margin: 5%;
     padding: 10px;
@@ -23,31 +15,4 @@
 .mentor-links img {
     width: 64px;
     height: 64px;
-}
-
-.ticket-information {
-    background-color: #ffffff;
-    margin: 5%;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-.ticket-information h2 {
-    font-weight: bold;
-    font-size: large;
-}
-.cumulative-revision-count {
-    background-color: #ffffff;
-    margin: 5%;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-.cumulative-revision-count h2 {
-    font-weight: bold;
-    font-size: large;
 }
