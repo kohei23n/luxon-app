@@ -42,8 +42,8 @@
                     <label for="tin_time">面談時間（分）</label>
                     <select id="tin_time" name="tin_time">
                         <option value="" disabled selected>選択してください</option>
+                        <option value="20">20</option>
                         <option value="60">60</option>
-                        <option value="75">75</option>
                     </select>
                     <x-input-error :messages="$errors->get('tin_time')" />
                 </div>

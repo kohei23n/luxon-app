@@ -36,8 +36,8 @@
             <div class="add-box">
                 <label for="tin_time">面談時間（分）</label>
                 <select id="tin_time" name="tin_time">
+                    <option value="20" {{ $interview->tin_time === 20 ? 'selected' : '' }}>20</option>
                     <option value="60" {{ $interview->tin_time === 60 ? 'selected' : '' }}>60</option>
-                    <option value="75" {{ $interview->tin_time === 75 ? 'selected' : '' }}>75</option>
                 </select>
                 <x-input-error :messages="$errors->get('tin_time')" />
             </div>
