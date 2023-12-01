@@ -31,16 +31,15 @@
                 <a href="{{ $event->mev_event_participate_url }}">URL：{{ $event->mev_event_participate_url }}</a>
                 <p>ステータス：このイベントはすでに予約されています。</p>
             @else
-                @if ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining <= 0)
-                    <p>チケットがありません。</p>
-                @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0 && !$isTemporaryReservationEnabled)
-                    <p>イベントチケットがありません。面談チケットを消費して参加できます。</p>
-                    <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="add-button">予約</a>
-                @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0 && $isTemporaryReservationEnabled)
+                {{-- 仮予約あり、イベントチケットなし & 面談チケットあり --}}
+                @if ($isTemporaryReservationEnabled && $count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0)
                     <p>イベントチケットがありません。面談チケットを消費して参加できます。</p>
                     <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="add-button">仮予約</a>
                 @elseif ($isTemporaryReservationEnabled)
                     <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="add-button">仮予約</a>
+                @elseif ($count->tud_event_attendance_remaining <= 0 && $count->tud_interview_count_remaining > 0)
+                    <p>イベントチケットがありません。面談チケットを消費して参加できます。</p>
+                    <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="add-button">予約</a>
                 @else
                     <a href="{{ route('reserve.eventAdd', $event->mev_event_id) }}" class="add-button">予約</a>
                 @endif
