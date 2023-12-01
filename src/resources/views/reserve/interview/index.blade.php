@@ -27,7 +27,10 @@
                     <img src="{{ asset('images/line.png') }}" alt="Image Description">
                 </a>
                 <a href="{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url }}" target="_blank">
-                    <img src="{{ asset('images/timerex.png') }}" alt="Image Description">
+                    <img src="{{ asset('images/timerex-60.jpg') }}" alt="Image Description">
+                </a>
+                <a href="{{ $user->dedicatedMentor->mentorProfile->mme_timerex_url_short }}" target="_blank">
+                    <img src="{{ asset('images/timerex-20.jpg') }}" alt="Image Description">
                 </a>
             </div>
         </div>
