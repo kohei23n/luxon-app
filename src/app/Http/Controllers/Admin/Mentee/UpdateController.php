@@ -56,7 +56,7 @@ class UpdateController extends Controller
       DB::commit();
 
       if ($user && $userDetail) {
-        return Redirect::route('admin.menteeIndex')->with('status', 'メンティーの編集に成功しました。');
+        return Redirect::route('admin.menteeIndex')->with('status', 'メンティーの情報が更新されました。');
       }
     } catch (\Exception $e) {
       DB::rollBack();

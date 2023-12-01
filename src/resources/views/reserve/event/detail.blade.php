@@ -11,7 +11,7 @@
 
     <div class="container">
         @if (session('status') || session('error'))
-            <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+            <div class="alert-message">
                 {{ session('status') ?: session('error') }}
             </div>
         @endif

@@ -152,6 +152,11 @@ li {
 
 /* その他共通クラス */
 
+.alert-message {
+    color: blue;
+    text-align: center;
+}
+
 .ticket-link {
     color: blue;
     display: flex;

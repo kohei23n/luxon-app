@@ -1,5 +1,5 @@
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/admin/event.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/home.css') }}">
 @endsection
 
 <x-app-layout>
@@ -9,9 +9,9 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="admin-container">
         @if (session('status') || session('error'))
-            <div class="alert {{ session('status') ? 'alert-success' : 'alert-danger' }}">
+            <div class="alert-message">
                 {{ session('status') ?: session('error') }}
             </div>
         @endif
@@ -24,9 +24,9 @@
         <p>イベント日時：{{ $event->mev_event_datetime }}</p>
 
         @if ($participantsConfirmed)
-        <p>参加者一覧</p>
+            <p>参加者一覧</p>
         @else
-        <p>仮予約者一覧</p>
+            <p>仮予約者一覧</p>
         @endif
         <ul>
             @forelse ($participants as $participant)
@@ -36,10 +36,10 @@
             @endforelse
         </ul>
 
-        <a href="{{ route('admin.eventEdit', $event->mev_event_id) }}">編集</a>
+        <a href="{{ route('admin.eventEdit', $event->mev_event_id) }}" class="add-button">編集</a>
         @if ($isTemporaryReservationEnabled && !$participantsConfirmed)
-            <a href="{{ route('admin.eventConfirm', $event->mev_event_id) }}">予約者を確定する</a>
+            <a href="{{ route('admin.eventConfirm', $event->mev_event_id) }}" class="add-button">予約者を確定する</a>
         @endif
-        <a href="{{ route('admin.eventIndex') }}">戻る</a>
+        <a href="{{ route('admin.eventIndex') }}" class="back-button">戻る</a>
     </div>
 </x-app-layout>

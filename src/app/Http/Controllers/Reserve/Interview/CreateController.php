@@ -46,9 +46,9 @@ class CreateController extends Controller
     $user->userDetail->save();
 
     if ($interview) {
-      return Redirect::route('reserve.interviewIndex')->with('status', 'interview-created');
+      return Redirect::route('reserve.interviewIndex')->with('status', '面談情報が追加されました。');
     } else {
-      return Redirect::route('reserve.interviewIndex')->with('error', 'error-creating-interview');
+      return Redirect::route('reserve.interviewIndex')->with('error', '面談情報の追加に失敗しました。');
     }
   }
 }
