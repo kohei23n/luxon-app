@@ -21,9 +21,9 @@
             <h2 class="font-bold">会員証</h2>
             <p>会員ID：{{ $user->mus_user_id }}</p>
             <p>名前：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
-            <p>大学：{{ $user->userDetail->tud_current_university }}</p>
-            <p>第一志望業界：{{ $user->userDetail->tud_first_industry_preference }}</p>
-            <p>第二志望業界：{{ $user->userDetail->tud_second_industry_preference }}</p>
+            <p>大学：{{ optional($user->userDetail)->tud_current_university }}</p>
+            <p>第一志望業界：{{ optional($user->userDetail)->tud_first_industry_preference }}</p>
+            <p>第二志望業界：{{ optional($user->userDetail)->tud_second_industry_preference }}</p>
             <a href="{{ route('mypage.plan.profileEdit') }}" class="add-button">編集</a>
         </div>
 
