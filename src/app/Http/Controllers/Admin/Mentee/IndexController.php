@@ -18,7 +18,7 @@ class IndexController extends Controller
             ->find(173);
 
         // userDetailをdd()で出力
-        dd($user->userDetail);
+        dd($user);
 
         // 専属メンターの名前を取得
         $users->each(function ($user) {
