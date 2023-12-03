@@ -22,9 +22,9 @@
         <div class="admin-container">
             <p>ID：{{ $user->mus_user_id }}</p>
             <p>氏名：{{ $user->mus_user_last_name }}{{ $user->mus_user_first_name }}</p>
-            <p>大学：{{ $user->userDetail->tud_current_university }}</p>
-            <p>第一志望業界：{{ $user->userDetail->tud_first_industry_preference }}</p>
-            <p>第二志望業界：{{ $user->userDetail->tud_second_industry_preference }}</p>
+            <p>大学：{{ optional($user->userDetail)->tud_current_university }}</p>
+            <p>第一志望業界：{{ optional($user->userDetail)->tud_first_industry_preference }}</p>
+            <p>第二志望業界：{{ optional($user->userDetail)->tud_second_industry_preference }}</p>
             <p>専属メンター：{{ $user->dedicatedMentorName }}</p>
             <a href="{{ route('admin.menteeEdit', $user->mus_user_id) }}" class="add-button">編集</a>
             <a href="{{ route('admin.menteeShow', $user->mus_user_id) }}" class="edit-button">面談情報</a>

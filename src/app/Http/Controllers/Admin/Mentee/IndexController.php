@@ -12,14 +12,6 @@ class IndexController extends Controller
         //選考情報表示
         $users = User::with(['userDetail', 'dedicatedMentor'])->where('mus_is_admin', 0)->where('mus_is_mentor', 0)->get();
 
-        // $user = User::with(['userDetail', 'dedicatedMentor'])
-        //     ->where('mus_is_admin', 0)
-        //     ->where('mus_is_mentor', 0)
-        //     ->find(173);
-
-        // // userDetailをdd()で出力
-        // dd($user);
-
         // 専属メンターの名前を取得
         $users->each(function ($user) {
             $mentor = User::with('mentorProfile')
