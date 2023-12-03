@@ -28,9 +28,9 @@ class CreateController extends Controller
       'mme_line_url' => 'required|string|max:255',
       'mme_timerex_url' => 'required|string|max:255',
       'mme_timerex_url_short' => 'required|string|max:255',
-      'mme_interview_salary' => 'integer',
-      'mme_lecture_create_salary' => 'integer',
-      'mme_lecture_salary' => 'integer',
+      'mme_interview_salary' => 'nullable|integer',
+      'mme_lecture_create_salary' => 'nullable|integer',
+      'mme_lecture_salary' => 'nullable|integer',
     ]);
 
     try {
@@ -42,6 +42,7 @@ class CreateController extends Controller
         'mus_user_password' => Hash::make($validatedData['mus_user_password']),
         'mus_user_last_name' => $validatedData['mus_user_last_name'],
         'mus_user_first_name' => $validatedData['mus_user_first_name'],
+        'mus_is_mentor' => true,
       ];
       $user = User::create($musData);
 
