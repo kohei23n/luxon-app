@@ -14,6 +14,9 @@ class IndexController extends Controller
 
         // 専属メンターの名前を取得
         $users->each(function ($user) {
+
+            dd($user->userDetail);
+            
             $mentor = User::with('mentorProfile')
                 ->where('mus_user_id', $user->mus_dedicated_mentor_id)
                 ->first();
