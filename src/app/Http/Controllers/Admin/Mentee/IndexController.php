@@ -15,7 +15,7 @@ class IndexController extends Controller
         $user = User::with(['userDetail', 'dedicatedMentor'])
             ->where('mus_is_admin', 0)
             ->where('mus_is_mentor', 0)
-            ->find(170);
+            ->find(175);
 
         // userDetailをdd()で出力
         dd($user->userDetail);
