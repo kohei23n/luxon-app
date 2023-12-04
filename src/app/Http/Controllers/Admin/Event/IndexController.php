@@ -24,6 +24,7 @@ class IndexController extends Controller
 
         $events = Event::whereMonth('mev_event_datetime', $month)
             ->whereYear('mev_event_datetime', $year)
+            ->where('mev_delete_flag', false)
             ->orderBy('mev_event_datetime')
             ->get();
 

@@ -27,6 +27,7 @@ class IndexController extends Controller
     // 月毎のイベント一覧
     $events = Event::whereMonth('mev_event_datetime', $month)
       ->whereYear('mev_event_datetime', $year)
+      ->where('mev_delete_flag', false)
       ->orderBy('mev_event_datetime')
       ->get();
 
