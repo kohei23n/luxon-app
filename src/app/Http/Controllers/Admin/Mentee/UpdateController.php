@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\UserDetail;
 
@@ -38,7 +37,7 @@ class UpdateController extends Controller
       DB::beginTransaction();
 
       // ユーザーデータの保存
-      $user = User::find($id); // $userId は更新対象のユーザーID
+      $user = User::findOrFail($id); // $userId は更新対象のユーザーID
       $user->mus_email_address = $validatedData['mus_email_address'];
       $user->mus_user_last_name = $validatedData['mus_user_last_name'];
       $user->mus_user_first_name = $validatedData['mus_user_first_name'];
@@ -46,7 +45,7 @@ class UpdateController extends Controller
       $user->save();
 
       // ユーザー詳細データの保存
-      $userDetail = UserDetail::where('tud_user_id', $id)->first(); // $userId は更新対象のユーザーID
+      $userDetail = UserDetail::where('tud_user_id', $id)->first(); 
       $userDetail->tud_current_university = $validatedData['tud_current_university'];
       $userDetail->tud_first_industry_preference = $validatedData['tud_first_industry_preference'];
       $userDetail->tud_second_industry_preference = $validatedData['tud_second_industry_preference'];

@@ -53,6 +53,8 @@ use App\Http\Controllers\Admin\Mentee\DeleteController as AdminMenteeDelete;
 // メンター
 use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
 use App\Http\Controllers\Admin\Mentor\CreateController as AdminMentorCreate;
+use App\Http\Controllers\Admin\Mentor\UpdateController as AdminMentorUpdate;
+use App\Http\Controllers\Admin\Mentor\DeleteController as AdminMentorDelete;
 // チケット割り振り
 use App\Http\Controllers\Admin\Count\IndexController as AdminCountIndex;
 use App\Http\Controllers\Admin\Count\UpdateController as AdminCountUpdate;
@@ -209,6 +211,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');
         Route::get('/mentor/add', [AdminMentorCreate::class, 'add'])->name('mentorAdd');
         Route::post('/mentor/add', [AdminMentorCreate::class, 'create'])->name('mentorCreate');
+        Route::get('/mentor/edit/{id}', [AdminMentorUpdate::class, 'edit'])->name('mentorEdit');
+        Route::patch('/mentor/edit/{id}', [AdminMentorUpdate::class, 'update'])->name('mentorUpdate');
+        Route::delete('/mentor/delete/{id}', AdminMentorDelete::class)->name('mentorDelete');
         // チケット割り振り
         Route::prefix('count')->group(function () {
             Route::get('/', AdminCountIndex::class)->name('countIndex');

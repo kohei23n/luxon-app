@@ -9,6 +9,7 @@ class Mentor extends Model
 {
     use HasFactory;
     protected $table = 'luxon_mst_mentor';
+    protected $primaryKey = 'mme_mentor_id';
 
     const CREATED_AT = 'mme_registration_datetime';
     const UPDATED_AT = 'mme_update_datetime';

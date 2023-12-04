@@ -29,6 +29,7 @@
             <p>面談給与：{{ $mentor->mentorProfile->mme_interview_salary }}</p>
             <p>講義作成給与：{{ $mentor->mentorProfile->mme_lecture_create_salary }}</p>
             <p>講義給与：{{ $mentor->mentorProfile->mme_lecture_salary }}</p>
+            <a href="{{ route('admin.mentorEdit', $mentor->mus_user_id) }}" class="add-button">編集</a>
         </div>
     @endforeach
 </x-app-layout>
