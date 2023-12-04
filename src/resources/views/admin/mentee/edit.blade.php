@@ -56,7 +56,7 @@
             <div>
                 <label for="tud_current_university">所属大学</label>
                 <input type="text" id="tud_current_university" name="tud_current_university"
-                    value="{{ $user->userDetail->tud_current_university }}">
+                    value="{{ optional($user->userDetail)->tud_current_university }}">
                 <x-input-error :messages="$errors->get('tud_current_university')" />
             </div>
 
@@ -64,7 +64,7 @@
             <div>
                 <label for="tud_first_industry_preference">第一志望業界</label>
                 <input type="text" id="tud_first_industry_preference" name="tud_first_industry_preference"
-                    value="{{ $user->userDetail->tud_first_industry_preference }}">
+                    value="{{ optional($user->userDetail)->tud_first_industry_preference }}">
                 <x-input-error :messages="$errors->get('tud_first_industry_preference')" />
             </div>
 
@@ -72,7 +72,7 @@
             <div>
                 <label for="tud_second_industry_preference">第二志望業界</label>
                 <input type="text" id="tud_second_industry_preference" name="tud_second_industry_preference"
-                    value="{{ $user->userDetail->tud_second_industry_preference }}">
+                    value="{{ optional($user->userDetail)->tud_second_industry_preference }}">
                 <x-input-error :messages="$errors->get('tud_second_industry_preference')" />
             </div>
 
