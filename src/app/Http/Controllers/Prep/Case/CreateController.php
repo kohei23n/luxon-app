@@ -38,7 +38,7 @@ class CreateController extends Controller
     ]);
 
     // ユーザーのチケット残数を1減らす
-    $user->userDetail->tud_case_study_count_remaining = $user->userDetail->tud_case_study_count_remaining - 1;
+    $user->userDetail->decrement('tud_case_study_count_remaining');
     $user->userDetail->save();
 
     if ($case) {

@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $mentors = User::whereHas('mentorProfile')->get();
+        $mentors = User::whereHas('mentorProfile')->where('mus_delete_flag', false)->get();
 
         return view('admin.mentor.index', compact('mentors'));
     }

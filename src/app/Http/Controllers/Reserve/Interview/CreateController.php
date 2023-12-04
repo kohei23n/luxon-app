@@ -26,7 +26,7 @@ class CreateController extends Controller
   {
     // リクエストデータのバリデーション
     $request->validate([
-      'tin_mentor_id' => 'required|integer', 
+      'tin_mentor_id' => 'required|integer',
       'tin_datetime' => 'required|date',
       'tin_time' => 'required|integer',
     ]);
@@ -42,8 +42,10 @@ class CreateController extends Controller
     ]);
 
     // ユーザーのチケット残数を1減らす
-    $user->userDetail->tud_interview_count_remaining = $user->userDetail->tud_interview_count_remaining - 1;
-    $user->userDetail->save();
+    if ($request->tin_time == 60) {
+      $user->userDetail->decrement('tud_interview_count_remaining');
+      $user->userDetail->save();
+    }
 
     if ($interview) {
       return Redirect::route('reserve.interviewIndex')->with('status', '面談情報が追加されました。');
