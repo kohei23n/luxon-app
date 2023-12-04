@@ -49,6 +49,7 @@ use App\Http\Controllers\Admin\Mentee\IndexController as AdminMenteeIndex;
 use App\Http\Controllers\Admin\Mentee\ShowController as AdminMenteeShow;
 use App\Http\Controllers\Admin\Mentee\CreateController as AdminMenteeCreate;
 use App\Http\Controllers\Admin\Mentee\UpdateController as AdminMenteeUpdate;
+use App\Http\Controllers\Admin\Mentee\DeleteController as AdminMenteeDelete;
 // メンター
 use App\Http\Controllers\Admin\Mentor\IndexController as AdminMentorIndex;
 use App\Http\Controllers\Admin\Mentor\CreateController as AdminMentorCreate;
@@ -202,6 +203,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/mentee/add', [AdminMenteeCreate::class, 'create'])->name('menteeCreate');
         Route::get('/mentee/edit/{id}', [AdminMenteeUpdate::class, 'edit'])->name('menteeEdit');
         Route::patch('/mentee/edit/{id}', [AdminMenteeUpdate::class, 'update'])->name('menteeUpdate');
+        Route::delete('/mentee/delete/{id}', AdminMenteeDelete::class)->name('menteeDelete');
         Route::get('/mentee/{id}', AdminMenteeShow::class)->name('menteeShow');
         // メンター
         Route::get('/mentor', AdminMentorIndex::class)->name('mentorIndex');

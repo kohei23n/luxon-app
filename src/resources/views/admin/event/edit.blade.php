@@ -8,7 +8,7 @@
             {{ __('イベント編集') }}
         </h2>
     </x-slot>
-    <div>
+    <div class="admin-container">
         <!-- イベント更新 -->
         <form method="post" action="{{ route('admin.eventUpdate', $event->mev_event_id) }}">
             @csrf
@@ -94,13 +94,14 @@
                 </div>
             </div>
 
-            <button type="submit">更新</button>
+            <button type="submit" class="add-button">更新</button>
         </form>
         <!-- イベント削除 -->
         <form method="post" action="{{ route('admin.eventDelete', $event->mev_event_id) }}">
             @csrf
             @method('delete')
-            <button type="submit">削除</button>
+            <button type="submit" class="delete-button">削除</button>
         </form>
+        <a href="{{ route('admin.eventIndex') }}" class="back-button">戻る</a>
     </div>
 </x-app-layout>

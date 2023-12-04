@@ -12,7 +12,7 @@
 
     <div class="admin-container">
         @if (session('status'))
-            <div class="alert alert-success">
+            <div class="alert-message">
                 {{ session('status') }}
             </div>
         @endif

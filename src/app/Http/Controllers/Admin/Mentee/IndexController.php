@@ -10,7 +10,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         //選考情報表示
-        $users = User::with(['userDetail', 'dedicatedMentor'])->where('mus_is_admin', 0)->where('mus_is_mentor', 0)->get();
+        $users = User::with(['userDetail', 'dedicatedMentor'])->where('mus_is_admin', 0)->where('mus_is_mentor', 0)->where('mus_delete_flag', false)->get();
 
         // 専属メンターの名前を取得
         $users->each(function ($user) {

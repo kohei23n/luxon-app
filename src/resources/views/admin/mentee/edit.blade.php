@@ -9,7 +9,6 @@
         </h2>
     </x-slot>
 
-    <!-- メンティー編集フォーム -->
     <div class="admin-container">
 
         @if (session('status') || session('error'))
@@ -17,7 +16,7 @@
                 {{ session('status') ?: session('error') }}
             </div>
         @endif
-
+        <!-- メンティー編集フォーム -->
         <form method="post" action="{{ route('admin.menteeUpdate', $user->mus_user_id) }}">
             @csrf
             @method('patch')
@@ -91,8 +90,14 @@
             </div>
 
             <button type="submit" class="add-button">更新</button>
-            <a href="{{ route('admin.menteeIndex') }}" class="back-button">戻る</a>
         </form>
+        <!-- メンティー削除 -->
+        <form method="post" action="{{ route('admin.menteeDelete', $user->mus_user_id) }}">
+            @csrf
+            @method('delete')
+            <button type="submit" class="delete-button">削除</button>
+        </form>
+        <a href="{{ route('admin.menteeIndex') }}" class="back-button">戻る</a>
     </div>
 
 </x-app-layout>
