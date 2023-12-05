@@ -37,6 +37,23 @@ class UpdateController extends Controller
       'tin_time' => $request->tin_time,
     ]);
 
+    $previousTime = $interview->tin_time;
+
+    // tin_time の値が変更された場合、適切な操作を行う
+    if ($previousTime != $request->tin_time) {
+      $user = auth()->user();
+
+      if ($previousTime == 60) {
+          // 以前の tin_time が 60 だった場合、インクリメント
+          $user->userDetail->increment('tud_interview_count_remaining');
+      } elseif ($request->tin_time == 60) {
+          // 新しい tin_time が 60 に変更された場合、デクリメント
+          $user->userDetail->decrement('tud_interview_count_remaining');
+      }
+
+      $user->userDetail->save();
+  }
+
     if ($interview) {
       return Redirect::route('reserve.interviewIndex')->with('status', '面談情報が更新されました。');
     } else {
