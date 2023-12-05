@@ -30,14 +30,14 @@ class UpdateController extends Controller
 
     $interview = Interview::findOrfail($id);
 
+    $previousTime = $interview->tin_time;
+
     // データの保存
     $interview->update([
       'tin_mentor_id' => $request->tin_mentor_id,
       'tin_datetime' => $request->tin_datetime,
       'tin_time' => $request->tin_time,
     ]);
-
-    $previousTime = $interview->tin_time;
 
     // tin_time の値が変更された場合、適切な操作を行う
     if ($previousTime != $request->tin_time) {
