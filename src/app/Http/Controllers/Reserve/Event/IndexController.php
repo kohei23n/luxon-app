@@ -16,13 +16,22 @@ class IndexController extends Controller
 
     // dateの取得
     $year = $request->get('year', date('Y'));
-    $month = $request->get('month', date('m'));
+    $unformattedMonth = $request->get('month', date('m'));
+    $month = sprintf('%02d', $unformattedMonth);
+
     $daysInMonth = Carbon::parse("$year-$month-01")->daysInMonth;
     $firstDayOfWeek = Carbon::parse("$year-$month-01")->dayOfWeek;
 
     // 先月、次月の取得
     $previousMonth = Carbon::parse("$year-$month-01")->subMonth();
     $nextMonth = Carbon::parse("$year-$month-01")->addMonth();
+
+    // 年と月の取得
+    $previousMonthYear = $previousMonth->year;
+    $previousMonthNumber = $previousMonth->format('m');
+
+    $nextMonthYear = $nextMonth->year;
+    $nextMonthNumber = $nextMonth->format('m');
 
     // 月毎のイベント一覧
     $events = Event::whereMonth('mev_event_datetime', $month)
@@ -56,6 +65,6 @@ class IndexController extends Controller
       }
     }
 
-    return view('reserve.event.index', compact('count', 'year', 'month', 'daysInMonth', 'firstDayOfWeek', 'previousMonth', 'nextMonth', 'groupedEvents'));
+    return view('reserve.event.index', compact('count', 'year', 'month', 'daysInMonth', 'firstDayOfWeek', 'previousMonthYear', 'previousMonthNumber', 'nextMonthYear', 'nextMonthNumber', 'groupedEvents'));
   }
 }

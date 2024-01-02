@@ -16,11 +16,11 @@
             {{-- <a href="{{ route('reserve.ticketEdit') }}" class="ticket-link">チケットを増やす ></a> --}}
 
             <div class="calendar-navigation">
-                <a href="{{ route('reserve.eventIndex', ['year' => $previousMonth->year, 'month' => $previousMonth->month]) }}"
+                <a href="{{ route('reserve.eventIndex', ['year' => $previousMonthYear, 'month' => $previousMonthNumber]) }}"
                     class="event-link">
                     前月</a>
                         <span>{{ $month }}月</span>
-                        <a href="{{ route('reserve.eventIndex', ['year' => $nextMonth->year, 'month' => $nextMonth->month]) }}"
+                        <a href="{{ route('reserve.eventIndex', ['year' => $nextMonthYear, 'month' => $nextMonthNumber]) }}"
                             class="event-link">次月</a>
             </div>
 
